@@ -1,0 +1,13 @@
+Formulaire de contact permettant à l'utilisateur (inscrit ou non)
+de communiquer avec l'administrateur via un mail.
+
+L'utilisateur devra indiquer :
+-Son email
+-Le sujet
+-Le message
+-Valider l'envoi via un captcha anti-robot
+
+contactRG01 : Adresse E-Mail : Type Email : xx@xx.xx, Obligatoire
+contactRG02 : Sujet : 50 Caractère Maximum, Obligatoire
+contactRG03 : Message : 1000 Caractère Maximum, Obligatoire
+contactRG04 : Captcha : reCAPTCHA type Checkbox, Obligatoire
