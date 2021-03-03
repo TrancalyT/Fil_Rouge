@@ -1,0 +1,53 @@
+Formulaire d'inscription
+Permet d'injecter tous les renseignements nécessaires à l'inscription sur le site et aux données utiles pour le forum et la boutique en ligne.
+
+______________________________________________________________________________________________
+
+L'utilisateur devra indiquer :
+
+-- Nom
+-- Prénom
+-- Pseudonyme
+-- E-mail
+
+-- Adresse
+-- Ville
+-- Code postal
+-- Numéro de téléphone
+
+- Film préféré
+- Série préférée
+- Groupe de musique préféré
+
+-- Mot de passe à créer
+
+-- Checkbox pour souscrire à la newsletter
+
+-- Valider l'envoi via un captcha anti-robot
+
+______________________________________________________________________________________________
+
+registerRG01 Nom Lettre, 20 Caractères Maximum, Obligatoire
+registerRG02 Prénom Lettre, 20 Caractères Maximum, Obligatoire
+RegisterRG03 Pseudonyme, 20 Caractères Maximum, Obligatoire (sera affiché dans forum) (**)
+registerRG04 E-Mail Type Email : xx@xx.xx, Obligatoire (**)
+
+registerRG05 Adresse 50 Caractères Maximum, Obligatoire (*)
+registerRG06 Code Postal Nombre, 5 Maximum, Obligatoire (*)
+registerRG07 Ville Lettre, 40 Caractères maximum, Oblitaoire(*)
+registerRG08 Téléphone Nombre, Minimum et Maximum 10 Obligatoire (*)
+
+registerRG09 Film préféré 50 caractères Maximum, Facultatif
+registerRG10 Série préférée 50 caractères Maximum, Facultatif
+registerRG11 Groupe de musique préféré 50 caractères Maximum, Facultatif
+
+registerRG12 Mot de Passe 8 Caractère Minimum, 20 Maximum, (1 Chiffre, 1 Lettre Minuscule, 1 Lettre Majuscule, 1 Caractère spéciale), Obligatoire
+
+registerRG13 Checkbox, à cocher, Facultatif
+
+registerRG14 Captcha, à cocher après avoir rempli tous les champs, OBLIGATOIRE
+
+______________________________________________________________________________________________
+
+(*) Adresse de facturation pour la boutique
+(**) Vérification des champs si le pseudo et le mail sont déjà utilisés
