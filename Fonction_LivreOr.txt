@@ -1,0 +1,20 @@
+Fonction Livre d'Or
+
+Permet à un utilisateur préalablement inscrit sur le site de pouvoir laisser un mot sous forme de commentaire à propos du site.
+
+______________________________________________________________________________________________
+
+
+- Répondre au livre d'or à la suite du commentaire initial
+
+
+Pagination dans le sujet au delà de 10 réponses
+
+______________________________________________________________________________________________
+
+
+goldenRG01 NOUVEAU COMMENTAIRE "1000" Caractères Maximum
+goldenRGO2 MISE EN PAGE format de texte du topic
+goldenRG03 MODIFIER COMMENTAIRE
+goldenRG04 SUPPRIMER COMMENTAIRE
+goldenRG05 SUPPRIMER version admin (peut tout supprimer)
