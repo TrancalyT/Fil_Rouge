@@ -1,0 +1,31 @@
+Fonction Boutique
+
+Permet aux utilisateurs et visiteurs du site de consulter la boutique du
+musée. Ils ont la possibilité d'acheter les objets présents dans la boutique.
+
+_________________________________________________________________________
+
+- La boutique sera gérer par l'administrateur.
+- Les objets en lien avec l'exposition actuels seront mis en avant (mot clé, metaobjet)
+- Les utilisateurs / visiteurs ont accès à la fonction Recherche au sein
+de la boutique. Affichage max sur la page 10 objets.
+- Chaque objet dispose d'un bouton "Achat" qui renvois à un formulaire
+à remplir avec possibilité de paiement, adresse de livraison, facturation,
+suivi de commande (recu par mail après achat)
+
+_________________________________________________________________________
+
+boutiqueRG01 : Ajout d'objet (admin) : Photo, Nom (50 caractère max, obligatoire)
+Description (500 caractère max, obligatoire), Prix (Number, obligatoire)
+boutiqueRG02 : Recherche : Mot clé (50 caractère max, obligatoire),
+Filtre (selon le type d'objet : vetement, accessoire, figurine ...)
+boutiqueRG03 : Pagination : Bouton numéroté, bouton suivant
+bouton précedent, bouton revenir à la 1ère page.
+boutiqueRG04 : Bouton achat : Renvois vers formulaire achat
+
+achatRG01 : Nom : 100 caractère max, obligatoire
+achatRG02 : Prenom : 100 caractère max, obligatoire
+achatRG03 : Ville : 100 caractère max, obligatoire (avec proposition ville)
+achatRG04 : Rue / Lieu dit : 100 caractère max, obligatoire
+achatRG05 : Code postale : number, obligatoire
+achatRG06 : Moyen de paiement : Lien paypal ou fenetre Carte bleu

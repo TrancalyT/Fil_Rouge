@@ -1,37 +1,46 @@
 Fonction Forum
 
-Permet à un utilisateur préalablement inscrit sur le site de pouvoir créer un sujet ou de répondre à un précédent au sein d'une catégorie. Par soucis d'optimisation chaque catégorie relative à une expo ou un thème particulier sera clivable en menu déroulant.
+Permet à un utilisateur préalablement inscrit sur le site de pouvoir 
+créer un sujet ou de répondre à un précédent au sein d'une catégorie. 
+Par soucis d'optimisation chaque catégorie relative à une expo ou 
+un thème particulier sera clivable en menu déroulant.
 
 ______________________________________________________________________________________________
 
 AFFICHAGE FORUM
-Le forum est une page dédiée du site qui permet aux utilisateurs de parler des thèmes du Musée
+Le forum est une page dédiée du site qui permet aux utilisateurs de 
+parler des thèmes du Musée
 
 --- Créer une catégorie (disponible pour l'admin)
 - Ouvrir un nouveau sujet dans la catégorie dédiée
-- Répondre à un sujet déjà ouvert par un autre utilisateur ou par soi-même
+- Répondre à un sujet déjà ouvert par un autre utilisateur ou 
+par soi-même
 - Modifier un sujet/un commentaire préalablement créé
 - Supprimer un sujet/un commentaire préalablement créé
-- Rechercher un sujet directement via la fonction rechercher, puis affiner avec le forum
+- Rechercher un sujet directement via la fonction rechercher, 
+puis affiner avec le forum
 
 Page forum
-Menus déroulants pour les catégories
+Menus déroulants pour les catégories (création possible uniquement admin)
 Nom du topic | date de création | (modifier / supprimer (version admin))
 
 Page topic
 Affichage d'un avatar et du profil sur la gauche
 Affichage du sujet sur la droite
 Affichage des réponses en dessous
-Présence du bouton modifier supprimer pour l'utilisateur qui a créé ou répondu
+Présence du bouton modifier supprimer pour l'utilisateur qui a créé ou 
+répondu
 Présence du bouton supprimer sur chaque sujet et réponse pour l'admin
 Pagination dans le sujet au delà de 10 réponses
 
 ______________________________________________________________________________________________
 
 forumRG01 NOUVEAU TOPIC 50 Caractères Maximum, Obligatoire
-forumRG02 CONTENU TOPIC "1000" Caractères Maximum, Obligatoire
-forumRG03 NOUVEAU COMMENTAIRE "1000" Caractères Maximum
-forumRGO4 MISE EN PAGE format de texte du topic
-forumRG05 SUPPRIMER COMMENTAIRE
+forumRG02 CONTENU TOPIC Caractères infini, Obligatoire
+forumRG03 NOUVEAU COMMENTAIRE / REPONSE Caractères infini
+forumRGO4 MISE EN PAGE Inclus au Commentaire : format de texte du topic
+forumRG05 SUPPRIMER COMMENTAIRE pour utilisateur qui l'a créer
 forumRG06 SUPPRIMER version admin (peut tout supprimer)
 forumRG07 NOUVELLE CATEGORIE 100 Caractères Maximum, admin uniquement
+
+A COMPLETER AVEC MAQUETTAGE

@@ -1,0 +1,22 @@
+Fonction Recherche
+
+Une barre de recherche disponible sur chaque fenêtre du site
+
+_________________________________________________________________________
+
+- La recherche est disponible pour tous
+- Recherche par mot clés avec différent filtre disponible après avoir
+entrer le mot clé
+- Une pagination de 10 pages max est présente sur les résultats
+
+_________________________________________________________________________
+
+rechercheRG01 : Mot clé : 100 caractère max, obligatoire
+rechercheRG02 : Filtre  par date (barre horizontale)
+			par genre / univers (liste deroulante des genre)
+			par support (ciné, musique, mode) (liste déroulante)
+			et plus si affinité.
+rechercheRG03 : Pagination : Bouton numéroté, bouton suivant
+bouton précedent, bouton revenir à la 1ère page.
+rechercheRG04 : Checkbox "Recherche dans le forum" : Renvois le mot clé
+uniquement sur la page du Forum.

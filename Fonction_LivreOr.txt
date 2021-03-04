@@ -5,7 +5,9 @@ Permet à un utilisateur préalablement inscrit sur le site de pouvoir laisser u
 ______________________________________________________________________________________________
 
 
-- Répondre au livre d'or à la suite du commentaire initial
+- L'utilisateur pourra laisser un message dans le livre d'or du musée sa signature sera visible
+- Tout le monde peut consulter le livre d'or
+- Seul l'admin est autorisé à modifier ou supprimer un message
 
 
 Pagination dans le sujet au delà de 10 réponses
@@ -13,8 +15,6 @@ Pagination dans le sujet au delà de 10 réponses
 ______________________________________________________________________________________________
 
 
-goldenRG01 NOUVEAU COMMENTAIRE "1000" Caractères Maximum
-goldenRGO2 MISE EN PAGE format de texte du topic
-goldenRG03 MODIFIER COMMENTAIRE
-goldenRG04 SUPPRIMER COMMENTAIRE
-goldenRG05 SUPPRIMER version admin (peut tout supprimer)
+goldenRG01 NOUVEAU COMMENTAIRE "500" Caractères Maximum
+goldenRG02 SIGNATURE "20" Caractères Maximum
+goldenRG03 SUPPRIMER version admin (peut tout supprimer)
