@@ -1,0 +1,16 @@
+Fonction mapping expo
+Un menu déroulant sur la gauche sous forme de salles du musée à suivre et à cliquer.
+
+_________________________________________________________________________
+
+- L'utilisateur peut ouvrir et fermer le menu de la salle.
+- Chaque salle shématisée est cliquable et permet de changer de page pour aller à la suite de l'expo.
+- La première salle est une salle d'attente pour se préparer à la visite de l'expo
+- La dernière salle peut être un jeu, un quiz interactif, une demande d'impression du visiteur
+
+- Cette fonctionnalité permet de fractionner une galerie afin de ne pas faire une page trop longue
+
+_________________________________________________________________________
+
+MapRG01: Menu déroulant cliquable / Opacité réduite pour la transparence
+MapRG02: shématisation des pages par des blocs cliquables avec le lien menant vers la suite
