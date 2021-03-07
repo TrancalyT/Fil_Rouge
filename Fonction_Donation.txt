@@ -1,0 +1,13 @@
+Formulaire de contact permettant à l'utilisateur (inscrit) de faire un don en faveur du Musée.
+
+L'utilisateur devra compléter si ce n'est fait le formulaire d'inscription au complet.
+Il pourra ensuite choisir le montant de son choix parmi les propositions puis payer par CB ou paypal.
+
+- Inscription requise
+- Choix du don avec les montants proposés ou en don libre
+- Inscription sur la page des bienfaiteurs du musée (à la manière de contributeurs pour un crowdfunding)
+
+DonRG01 : Demande de fiche d'inscrition remplie
+DonRG02 : Bouton à cocher (10, 20, 50, 100, 500, montant libre "€")
+DonRG03 : Validation avec bouton paypal ou CB (redirection) (même module que pour la boutique)
+DonRG04 : récupération du pseudo pour le wall of fame des bienfaiteurs
