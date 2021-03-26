@@ -1,0 +1,13 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 0.5fr 2.6fr 0.4fr;
+    grid-template-rows: 0.6fr 2fr 0.4fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . ."
+      ". form_contact ."
+      ". . .";
+  }
+  
+  .form_contact { grid-area: form_contact; }
+  
