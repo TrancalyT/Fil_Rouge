@@ -1,3 +1,4 @@
+/* GENERAL */
 html,
 body,
 .grid-container {
@@ -12,12 +13,35 @@ html {
   text-rendering: optimizelegibility;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 body {
   font-size: 1.3em;
 }
 
-/* MENU HAMBURGER*/
+.button1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+.button1:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+}
 
+/* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
   top: 50px;
@@ -50,15 +74,12 @@ body {
 
   cursor: pointer;
 
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0;
+  z-index: 2;
 
   -webkit-touch-callout: none;
 }
 
-/*
-    * Just a quick hamburger
-    */
 #menuToggle span {
   display: block;
   width: 33px;
@@ -66,8 +87,9 @@ body {
   margin-bottom: 5px;
   position: relative;
 
-  background: #444;
+  background: #fff;
   border-radius: 3px;
+  border: 1px solid black;
 
   z-index: 1;
 
@@ -85,35 +107,21 @@ body {
   transform-origin: 0% 100%;
 }
 
-/* 
-    * Transform all the slices of hamburger
-    * into a crossmark.
-    */
 #menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-/*
-    * But let's hide the middle one.
-    */
 #menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
-    * Ohyeah and the last one should go the other direction
-    */
 #menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
-    * Make this absolute positioned
-    * at the top left of the screen
-    */
 #menu {
   position: absolute;
   width: 300px;
@@ -124,7 +132,6 @@ body {
   background: #ededed;
   list-style-type: none;
   -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
 
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
@@ -139,15 +146,11 @@ body {
   letter-spacing: 0.2rem;
 }
 
-/*
-    * And let's slide it in from the left
-    */
 #menuToggle input:checked ~ ul {
   transform: none;
 }
 
-/* header */
-
+/* HEADER */
 header {
   height: 100vh;
   position: relative;
@@ -192,26 +195,6 @@ h3 {
 }
 
 /* CORPS */
-
-.button1 {
-  font-weight: bold;
-  text-transform: uppercase;
-  color: white;
-  border: 1px solid white;
-  display: inline-block;
-  margin-top: 20px;
-  padding: 18px 50px;
-  transition: all 0.3s ease-in 0s;
-  border-radius: 20px;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-}
-.button1:hover {
-  background: #eae0c7;
-  color: #392d3b;
-  text-decoration: none;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -238,14 +221,17 @@ h3 {
   grid-area: About;
   background: linear-gradient(#0f2027, #203a43, #2c5364);
   padding: 1rem;
+  border-top: solid 2px #fff;
 }
 
 .titleAbout {
   grid-area: titleAbout;
+  color: #fff;
 }
 
 .bodyAbout {
   grid-area: bodyAbout;
+  color: #fff;
 }
 
 .Expos {
@@ -305,11 +291,13 @@ h3 {
 
 .titleNews {
   grid-area: titleNews;
+  color: #fff;
 }
 
 .Events {
   grid-area: Events;
   padding: 1rem;
+  color: #fff;
 }
 
 .support {
@@ -319,6 +307,7 @@ h3 {
   align-items: center;
   flex-direction: column;
   padding: 1rem;
+  color: #fff;
 }
 
 .support img {
@@ -327,27 +316,66 @@ h3 {
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.support p {
-  color: #fff;
-}
-
+/* FOOTER */
 .Footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem 1rem;
+  grid-template-areas: "one two three four";
   grid-area: Footer;
   background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
-  height: 10rem;
+  border-top: solid 2px #fff;
+}
+.one {
+  grid-area: one;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
 }
 
-/* For presentation only, no need to copy the code below */
-.grid-container * {
-  border: 1px solid red;
-  position: relative;
+.one a {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-.grid-container *:after {
-  content: attr(class);
-  position: absolute;
-  top: 0;
-  left: 0;
+.one a:hover {
+  letter-spacing: 0.3rem;
+  transition-duration: 1s;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.four .button1 {
+  margin-top: 10px;
+  padding: 8px 20px;
+}
+.four form {
+  border: medium none !important;
+}
+
+.four input {
+  border-radius: 5px;
+  height: 1rem;
+  padding: 0, 5em;
+  width: auto;
 }
 
 /* RESPONSIVE */
@@ -367,12 +395,31 @@ h3 {
   .support img {
     width: 90vw;
   }
+  .Footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1rem 1rem;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four";
+    grid-area: Footer;
+    background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
+  }
 
+  .four {
+    width: 100%;
+  }
   .About,
   .News,
   .Expos,
   .Events,
-  .support {
+  .support,
+  .Footer,
+  .one,
+  .four {
     padding: 0;
   }
   .gallery {
