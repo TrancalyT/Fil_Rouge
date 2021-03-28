@@ -16,40 +16,113 @@
     <title>Contact</title>
 </head>
 <body>
-    <div class="grid-container">
-        <div class="form_contact">
-            <form action="" method="post" class="col g-3 justify-content form-info">
-                <div class="container-lg">
-                    <div class="mb-3">
-                        <div class="row justify-content-end">
-                            <label for="E-Mail" class="col-sm col-form-label">E-Mail : </label>
-                            <div class="col-sm-8">
-                                <input id="E-Mail" size="50" maxlength="100" type="mail" placeholder="Entrez votre adresse e-mail ici" name="mail" class="form-control" required>
+
+    <!-- MENU HAMBURGER -->
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="#">
+                    <li>Accueil</li>
+                </a>
+                <a href="#">
+                    <li>Musée</li>
+                </a>
+                <a href="#">
+                    <li>Expositions</li>
+                </a>
+                <a href="#">
+                    <li>Evènements</li>
+                </a>
+                <a href="#">
+                    <li>Forum</li>
+                </a>
+                <a href="#">
+                    <li>Boutique</li>
+                </a>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- FORMULAIRE CONTACT -->
+    <div class="container">
+        <div class="row">
+            <div class="form_contact">
+                <form action="" method="post" class="col g-3 justify-content form-info">
+                    <div class="container-lg">
+                        <div class="mb-3">
+                            <div class="row justify-content-end">
+                                <label for="E-Mail" class="col-sm col-form-label">E-Mail : </label>
+                                <div class="col-sm-8">
+                                    <input id="E-Mail" size="50" maxlength="100" type="mail" placeholder="Entrez votre adresse e-mail ici" name="mail" class="form-control" required>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row justify-content-end">
-                            <label for="Sujet" class="col-sm col-form-label">Sujet : </label>
-                            <div class="col-sm-8">
-                                <input id="Sujet" size="50" maxlength="100" type="text" placeholder="De quoi voulez vous nous parler ?" name="sujet" class="form-control" required>
+                        <div class="mb-3">
+                            <div class="row justify-content-end">
+                                <label for="Sujet" class="col-sm col-form-label">Sujet : </label>
+                                <div class="col-sm-8">
+                                    <input id="Sujet" size="50" maxlength="100" type="text" placeholder="De quoi voulez vous nous parler ?" name="sujet" class="form-control" required>
+                                </div>
                             </div>
                         </div>
+                        <div class="mb-3">
+                            <label for="Message" class="form-label">Message : </label>
+                            <div class="input-group">
+                                <textarea class="form-control" id="Message" rows="8"></textarea>
+                              </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="g-recaptcha row justify-content-center" data-sitekey="your_site_key"></div>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <button type="submit" class="btn btn-outline-secondary">Envoyer</button>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="Message" class="form-label">Message : </label>
-                        <div class="input-group">
-                            <textarea class="form-control" id="Message" rows="8"></textarea>
-                          </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="g-recaptcha row justify-content-center" data-sitekey="your_site_key"></div>
-                    </div>
-                    <div class="mb-3 text-center">
-                        <button type="submit" class="btn btn-outline-secondary">Envoyer</button>
-                    </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
+
+    <!-- FOOTER -->
+    <footer class="Footer">
+        <div class="one">
+            <ul>
+                <a href="#">
+                    <li>Accueil</li>
+                </a>
+                <a href="#">
+                    <li>Musée</li>
+                </a>
+                <a href="#">
+                    <li>Expositions</li>
+                </a>
+                <a href="#">
+                    <li>Evènements</li>
+                </a>
+                <a href="#">
+                    <li>Forum</li>
+                </a>
+                <a href="#">
+                    <li>Boutique</li>
+                </a>
+            </ul>
+        </div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four">
+            <form action="" method="post">
+                <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter"
+                    name="mail" class="form-control">
+            </form>
+            <a href="#" class="button1">Envoyer</a>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>
