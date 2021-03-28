@@ -149,7 +149,7 @@ h4{
     margin: 15px;
     box-sizing: border-box;
     min-width: 210px;
-    height: 400px;
+    height: 500px;
 }
 #coordonnees{
   background-color: rgb(242, 242, 242);
@@ -208,7 +208,7 @@ h1{
   text-decoration: underline;
 }
 #accordeon1 section .formulaire{
-  display: none;
+  
   text-align: center;
 }
 #accordeon1 section:target .formulaire{
