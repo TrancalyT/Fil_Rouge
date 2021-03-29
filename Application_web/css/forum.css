@@ -1,0 +1,117 @@
+/* GENERAL */
+html,
+body,
+.grid-container {
+  height: 100%;
+  margin: 0;
+}
+ 
+html {
+  font: 1em/1.5 "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+ 
+ul,
+li {
+  list-style: none;
+}
+ 
+body {
+  font-size: 1.3em;
+}
+/*head*/
+h1{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45px;
+    color: seashell;
+    background:tomato;
+    height: 6%;
+}
+head, ul, li{
+    display: inline;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45px;
+    left:83%;
+}
+.connexion a{
+    text-decoration: none;
+    color: seashell;
+}
+/*corp nav et admin*/
+
+.overlay{
+    background:tomato;
+    border-radius: 5px 5px 0px 0px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#navigation{
+    margin-top:50px;
+    border-radius: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+    background-color: rgb(242 ,242, 242);
+}
+.text{
+    text-align: center;
+    text-transform: uppercase;
+    color: seashell;
+}
+#navigation ul li a{
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 5%;
+    padding-bottom: 2%;
+    color: black;
+}
+#navigation ul li a:hover{
+    color: rgb(255, 9, 9);
+}
+
+#admin{
+    margin-top:50px;
+    border-radius: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+    background-color: rgb(242 ,242, 242);
+}
+#admin ul li a{
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    margin-left: 5%;
+    padding-bottom: 2%;
+    color: black;
+}
+#admin ul li a:hover{
+    color: rgb(255, 9, 9);
+}
+.formulaire{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+/*affichage droite*/
+#forum{
+    background-color: rgb(242 ,242, 242);
+    border-radius: 5px;
+    padding-left: 0%;
+    padding-right: 0%;
+    background-color: rgb(242 ,242, 242);
+    margin-top: 2.4em;
+    max-width: 700px;
+    margin-left: 50px;
+}
+.overlay2{
+    background: tomato;
+    border-radius: 5px 5px 0px 0px;
+    padding-top:2.5%;
+    padding-bottom:2.5%;
+    max-width: 700px;
+}
