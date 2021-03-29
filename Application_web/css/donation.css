@@ -107,117 +107,116 @@
   transform: none;
 }
 /*colonne*/
-.overlay{
-    padding-top: 10%;
-    padding-bottom: 8%;
-    margin-bottom: 10%;
-    border: #3F6ABF 1px solid;
-    border-radius: 5px 5px 0px 0px;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: #3F6ABF;
+.overlay {
+  padding-top: 10%;
+  padding-bottom: 8%;
+  margin-bottom: 10%;
+  border: #3f6abf 1px solid;
+  border-radius: 5px 5px 0px 0px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #3f6abf;
 }
-h4{
+h4 {
   padding-top: 5px;
   text-align: center;
   text-transform: capitalize;
 }
-.text{
-    margin-bottom: 15px;
-    color: white;
+.text {
+  margin-bottom: 15px;
+  color: white;
 }
-.formulaire{
-    padding-left: 5%;
-    padding-right: 5%;
+.formulaire {
+  padding-left: 5%;
+  padding-right: 5%;
 }
-.formulaire3{
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-bottom: 10%;
-    border-bottom: #010326 1px solid;
+.formulaire3 {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 10%;
+  border-bottom: #010326 1px solid;
 }
-.money{
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-top: 35px;
+.money {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 35px;
 }
-#soutien{
-    background-color: rgb(242, 242, 242);
-    border-radius: 5px;
-    padding-left: 0%;
-    padding-right: 0%;
-    margin: 15px;
-    box-sizing: border-box;
-    min-width: 210px;
-    height: 500px;
-}
-#coordonnees{
+#soutien {
   background-color: rgb(242, 242, 242);
-    border-radius: 5px;
-    padding-left: 0%;
-    padding-right: 0%;
-    margin: 15px;
-    box-sizing: border-box;
-    min-width: 210px;
+  border-radius: 5px;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin: 15px;
+  box-sizing: border-box;
+  min-width: 210px;
+  height: 500px;
 }
-#reglement{
-    background-color: rgb(242, 242, 242);
-    border-radius: 5px;
-    padding-left: 0%;
-    padding-right: 0%;
-    margin: 15px;
-    box-sizing: border-box;
-    min-width: 210px;
-    height: 570px;
+#coordonnees {
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin: 15px;
+  box-sizing: border-box;
+  min-width: 210px;
+}
+#reglement {
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
+  padding-left: 0%;
+  padding-right: 0%;
+  margin: 15px;
+  box-sizing: border-box;
+  min-width: 210px;
+  height: 570px;
 }
 /*accordeon reglement*/
-h1{
+h1 {
   font-size: medium;
   text-transform: uppercase;
 }
-#accordeon section .formulaire{
+#accordeon section .formulaire {
   display: none;
   text-align: center;
 }
-#accordeon section a{
+#accordeon section a {
   display: block;
   text-align: center;
   text-decoration: none;
   margin-top: 10px;
 }
-#accordeon section a:hover{
+#accordeon section a:hover {
   text-decoration: underline;
 }
-#accordeon section:target .formulaire{
+#accordeon section:target .formulaire {
   display: block;
 }
-#carte{
+#carte {
   border-bottom: black 1px solid;
 }
-#paypal{
+#paypal {
   border-bottom: black 1px solid;
 }
 /*accordeon soutien*/
-#accordeon1 section a{
+#accordeon1 section a {
   display: block;
   text-align: center;
   text-decoration: none;
   margin-top: 10px;
 }
-#accordeon1 section a:hover{
+#accordeon1 section a:hover {
   text-decoration: underline;
 }
-#accordeon1 section .formulaire{
-  
+#accordeon1 section .formulaire {
   text-align: center;
 }
-#accordeon1 section:target .formulaire{
+#accordeon1 section:target .formulaire {
   display: block;
 }
-#choix1{
+#choix1 {
   border-bottom: black 1px solid;
 }
-#choix2{
+#choix2 {
   border-bottom: black 1px solid;
 }
 /* FOOTER */
@@ -352,6 +351,3 @@ li {
     padding: 0;
   }
 }
-
-
-

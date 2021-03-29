@@ -15,18 +15,22 @@
   <body>
     <nav role="navigation">
     <div id="menuToggle">
-      <input type="checkbox" />
+      <input class="input" type="checkbox" />
         <span></span>
         <span></span>
         <span></span>
         <ul id="menu">
+          <a href="#" id="connexion"><li>Connexion</li></a>
+          <hr>
           <a href="#"><li>Accueil</li></a>
           <a href="#" ><li>Musée</li></a>
           <a href="#"><li>Expositions</li></a>
           <a href="#"><li>Evènements</li></a>
           <a href="#"><li>Forum</li></a>
           <a href="#"><li>Boutique</li></a>
-        </ul>
+          <hr>
+          <input id="search" type="search" placeholder="Vas chercher Lycos !" name="search" class="form-control">
+        </ul> 
     </div>
   </nav>
 
@@ -35,8 +39,7 @@
   <div class="bg"></div>
   <header>
     <div class="content">
-      <h1>Musée de poche de la POP culture</h1>
-      <h3>Hé ouais bitch</h3>
+      <h1><span>Pocket museum of pop culture</span></h1>
     </div>
   </header>
 
@@ -46,7 +49,7 @@
 
     <section class="About">
       <section class="titleAbout">
-          <h2>Titre about</h2>
+          <h2 class="poptitle">C'est quoi ce musée ?!</h2>
       </section>
       <section class="bodyAbout">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
@@ -55,7 +58,7 @@
 
     <section class="Expos">
       <section class="titleExpos">
-        <h2>Titre expos</h2>
+        <h2>Retrouvez nos expos en cours</h2>
       </section>
       <section class="bodyExpos">
             <div class="gallery">
@@ -68,9 +71,22 @@
 
     <section class="News">
       <section class="titleNews">
-        <h2>Titre News</h2>
+        <h2>Quoi de neuf doc ?</h2>
       </section>
-      <section class="Events"></section>
+      <section class="Events">
+        <div class="cadreNews">
+          <h3>La guerre des Mazettes !</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
+        </div>
+        <div class="cadreNews">
+          <h3>La Mazette contre-attaque !</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
+        </div>
+        <div class="cadreNews">
+          <h3>Le retour de Mazette !</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
+        </div>
+      </section>
       <section class="support">
           <img src="images/unclegandalf2.png" alt="we-need-you" />
           <a href="#" class="button1">Soutenez le musée</a>  
@@ -96,6 +112,9 @@
         <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail" class="form-control">
       </form>
       <a href="#" class="button1">Envoyer</a>
+    </div>
+    <div class="five">
+      copyright
     </div>
 
     </footer>
