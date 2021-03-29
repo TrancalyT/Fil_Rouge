@@ -1,5 +1,29 @@
 
-  /* MENU HAMBURGER*/
+ /* GENERAL */
+html,
+body,
+.grid-container {
+  height: 100%;
+  margin: 0;
+}
+ 
+html {
+  font: 1em/1.5 "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+ 
+ul,
+li {
+  list-style: none;
+}
+ 
+body {
+  font-size: 1.3em;
+}
+
+ /* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
   top: 50px;
@@ -109,12 +133,52 @@
 }
   /* FORMULAIRE CONTACT */
 
-  .form_contact{
-    padding-top: 8%;
-    padding-bottom: 8%;
-    margin-bottom: 5%;
-    border-radius: 5px 5px 5px 5px;
-    text-transform: uppercase;
+.form_contact{
+  padding-top: 8%;
+  padding-bottom: 8%;
+  margin-bottom: 5%;
+  border-radius: 5px 5px 5px 5px;
+  text-transform: uppercase;
+  color : #392d3b;
+}
+  #Sujet::placeholder{
+    font-style: italic;
+    font-family: Lato;
+  }
+
+  #E-Mail-Contact::placeholder{
+    font-style: italic;
+    font-family: Lato;
+  }
+
+.buttonmain {
+  color: #392d3b;
+  border: 1px solid #ced4da;
+  background: #fff;
+  display: inline-block;
+  padding: 9px 25px;
+  transition: all 0.2s ease-out;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+  .buttonmain:hover {
+    color: #fff;
+    text-decoration: none;
+    background : tomato;;
+    border: 1px solid #fff;
+  }
+
+  .form-control {
+    color: #392d3b;
+    border-radius: 20px;
+    border: 1px solid #ced4da;;
+  }
+
+  #Message {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
   }
 
   /* FOOTER */
@@ -201,6 +265,11 @@ li {
   color: #392d3b;
   text-decoration: none;
 }
+
+#E-Mail{
+  box-sizing : unset;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .News {
