@@ -1,0 +1,58 @@
+_____________________/*css inscription*/________________________
+.wrapper
+{
+   padding-bottom:50px;
+   padding-top: 20px;
+   max-width: 500px;
+   align-content: center;
+   display: inline-table;
+}
+.inscription{
+    font-size: 25px;
+}
+#table-connexion
+{
+    margin: 15px 70px;
+}
+#table-inscription
+{
+    margin: 15px 15px;
+    padding-bottom: 9px;
+}
+td{
+    text-align: right;
+    font-size: 20px;
+    padding-top:10px;
+}
+.erreur{
+    font-size: 10px;
+}
+#lien
+{
+ color: #31302c;
+}
+#lien:hover
+{
+    color: #f29200;
+}
+.input
+{
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.5s ease;
+   
+}
+.input:hover
+{
+    border:2px double #f29200;
+}
+.submit
+{
+    border-radius: 5px ;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+.submit:hover
+{
+    border:2px double #f29200;
+}
