@@ -1,0 +1,6 @@
+il faut ajouter une nouvelle page à laquelle on a pas forcément penser, mais une page profil utilisateur
+il faut créer la page recherche qui sera le résultat de la recherche dans la barre "Vas chercher lycos !"
+il faut creer au moins une expo et son gros contenu
+il faut alimenter la page d'accueil
+il faut faire correspondre nos pages entres elle en href
+il faut homogeneiser nos styles de pages et y inclure la version finale du burger / footeer
