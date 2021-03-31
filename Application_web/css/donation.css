@@ -223,7 +223,7 @@ header span {
 }
 .bg {
   display: block;
-  position: fixed;
+  position: absolute;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -278,8 +278,8 @@ h4 {
   padding-left: 0%;
   padding-right: 0%;
   margin-right: 15px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   box-sizing: border-box;
   min-width: 210px;
   height: 500px;
@@ -290,8 +290,8 @@ h4 {
   padding-left: 0%;
   padding-right: 0%;
   margin-right: 15px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   box-sizing: border-box;
   min-width: 210px;
 }
@@ -301,8 +301,8 @@ h4 {
   padding-left: 0%;
   padding-right: 0%;
   margin-right: 15px;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   box-sizing: border-box;
   min-width: 210px;
   height: 570px;
