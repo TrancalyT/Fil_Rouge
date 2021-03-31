@@ -94,8 +94,7 @@
                                 <h1>Montant libre</h1>
                             </a>
                             <div class="formulaire" style="margin-top: 20px;margin-bottom: 20px;">
-                                <input type="number" class="form-control" name="montant" required autofocus
-                                    placeholder="ex: 15€">
+                                <input type="number" class="form-control" name="montant" placeholder="ex: 15€">
                             </div>
                         </section>
                     </main>
@@ -108,8 +107,7 @@
                     </div>
                     <form class="formulaire" action="traitement.php" method="POST">
                         <div class="form-group">
-                            <input type="email" class="form-control" name="mail" required autofocus
-                                placeholder="Email*">
+                            <input type="email" class="form-control" name="mail" placeholder="Email*">
                         </div>
                         <p>
                             <select name="civilite">
@@ -119,27 +117,22 @@
                             </select>
                         </p>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="nom" required autofocus placeholder="Nom*">
+                            <input type="text" class="form-control" name="nom" placeholder="Nom*">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="prenom" required autofocus
-                                placeholder="Prenom*">
+                            <input type="text" class="form-control" name="prenom" placeholder="Prenom*">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="adresse" required autofocus
-                                placeholder="Adresse*">
+                            <input type="text" class="form-control" name="adresse" placeholder="Adresse*">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="complement_adresse" required autofocus
-                                placeholder="Complément d'adresse*">
+                            <input type="text" class="form-control" name="complement_adresse"placeholder="Complément d'adresse*">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="code_postal" required autofocus
-                                placeholder="Code postal*">
+                            <input type="text" class="form-control" name="code_postal"placeholder="Code postal*">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="ville" required autofocus
-                                placeholder="Ville*">
+                            <input type="text" class="form-control" name="ville"placeholder="Ville*">
                         </div>
                         <p class="pays">
                             <select name="pays">
@@ -148,13 +141,11 @@
                             </select>
                         </p>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="telephone" required autofocus
-                                placeholder="Téléphone*">
+                            <input type="text" class="form-control" name="telephone"placeholder="Téléphone*">
                         </div>
                         <p>Date de naissance</p>
                         <div class="form-group">
-                            <input type="date" class="form-control" name="date_de_naissance" required autofocus
-                                placeholder="jj/mm/aaaa*">
+                            <input type="date" class="form-control" name="date_de_naissance"placeholder="jj/mm/aaaa*">
                         </div>
                         <p>
                             <label>Je souhaite mon reçu fiscal par :*</label><br />
@@ -186,20 +177,17 @@
                             </a>
                             <form class="formulaire" method="POST" action="https://secure.payzen.eu/vads-payment/">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="numeroCarte" required autofocus
-                                        placeholder="Saisissez vos numéro de carte bancaire">
+                                    <input type="text" class="form-control" name="numeroCarte"placeholder="Saisissez vos numéro de carte bancaire">
                                 </div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" name="dateExpiration" required autofocus
-                                        placeholder="Date d'expiration">
+                                    <input type="date" class="form-control" name="dateExpiration"placeholder="Date d'expiration">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="crypto" required autofocus
-                                        placeholder="Cryptogramme">
+                                    <input type="text" class="form-control" name="crypto"placeholder="Cryptogramme">
                                 </div>
                                 <div class="formulaire">
                                     <input type="submit" class="btn btn-primary" style="margin-bottom: 10px;"
-                                        name="submit" required autofocus placeholder="je valide">
+                                        name="submit" placeholder="je valide">
                                 </div>
                             </form>
                         </section>
@@ -209,7 +197,7 @@
                             </a>
                             <a href="https://www.paypal.com/fr/home" class="formulaire">
                                 <input type="submit" class="btn btn-primary" style="margin-bottom: 10px;" name="submit"
-                                    required autofocus placeholder="je valide">
+                                    placeholder="je valide">
                             </a>
                         </section>
                         <section id="iban">
@@ -218,11 +206,10 @@
                             </a>
                             <div class="formulaire">
                                 <label for="iban">Votre numéro IBAN</label><br />
-                                <input type="text" class="form-control" name="iban" required autofocus>
+                                <input type="text" class="form-control" name="iban">
                                 <label for="iban">Votre code BIC</label><br />
-                                <input type="text" class="form-control" name="bic" required autofocus><br>
-                                <input type="submit" class="btn btn-primary" name="submit" required autofocus
-                                    placeholder="je valide">
+                                <input type="text" class="form-control" name="bic"><br>
+                                <input type="submit" class="btn btn-primary" name="submit" placeholder="je valide">
                             </div>
                         </section>
                     </main>
