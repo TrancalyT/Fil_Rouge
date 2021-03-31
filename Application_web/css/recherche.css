@@ -1,4 +1,11 @@
 /* GENERAL */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 @font-face {
     font-family: Phosphate;
     src: url("../fonts/PhosphatePro-Inline.otf");
@@ -47,6 +54,7 @@ h6 {
 
   -webkit-user-select: none;
   user-select: none;
+  box-sizing: content-box;
 }
 
 #menuToggle a {
