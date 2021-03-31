@@ -1,29 +1,73 @@
+/* GENERAL */
 
- /* GENERAL */
+* {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+@font-face {
+  font-family: Phosphate;
+  src: url("../fonts/PhosphatePro-Inline.otf");
+}
+
 html,
 body,
 .grid-container {
   height: 100%;
   margin: 0;
 }
- 
+
 html {
   font: 1em/1.5 "Lato", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
 }
- 
+
 ul,
 li {
   list-style: none;
 }
- 
+
 body {
   font-size: 1.3em;
 }
 
- /* MENU HAMBURGER*/
+.button1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+.button1:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0.4rem;
+  font-family: Phosphate;
+}
+
+/* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
   top: 50px;
@@ -46,7 +90,7 @@ body {
   color: tomato;
 }
 
-#menuToggle input {
+#menuToggle .input {
   display: block;
   width: 40px;
   height: 32px;
@@ -89,18 +133,18 @@ body {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menuToggle .input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle .input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle .input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -128,28 +172,137 @@ body {
   letter-spacing: 0.2rem;
 }
 
-#menuToggle input:checked ~ ul {
+#menuToggle .input:checked ~ ul {
   transform: none;
 }
-  /* FORMULAIRE CONTACT */
 
-.form_contact{
+#menu input {
+  border-radius: 5px;
+  height: 1.5rem;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#menu #connexion {
+  color: tomato;
+}
+#menu #connexion:hover {
+  color: #232323;
+}
+
+/* HEADER */
+header {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background: rgba(0, 0, 0, 0.6);
+}
+header .content {
+  position: relative;
+  display: block;
+  color: #ffffff;
+  top: 30%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+/* h1 {
+    font-size: 3em;
+    font-weight: normal;
+  } */
+
+header h1 {
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  display: inline-block;
+  border: 4px double rgba(255, 255, 255, 0.25);
+  border-width: 4px 0;
+  padding: 1.5em 0em;
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  width: 40em;
+  margin: 0 0 0 -20em;
+  font-size: larger;
+  font-weight: lighter;
+}
+
+header span {
+  font: 700 4em/1 "Phosphate", sans-serif;
+  letter-spacing: 0;
+  padding: 0.25em 0 0.325em;
+  display: block;
+  margin: 0 auto;
+  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
+
+  /* Clip Background Image */
+
+  background: url(../images/animated-text-fill.png) repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Animate Background Image */
+
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: aitf 80s linear infinite;
+
+  /* Activate hardware acceleration for smoother animations */
+
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.bg {
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: url("../images/vehiculesBG.jpg") center no-repeat;
+  background-size: stretch;
+  -moz-transition: 0.1s;
+  -o-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* FORMULAIRE CONTACT */
+
+.form_contact {
   padding-top: 8%;
   padding-bottom: 8%;
-  margin-bottom: 5%;
+  /* margin-bottom: 5%; */
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
-  color : #392d3b;
+  color: #392d3b;
+  background-color: #fff;
 }
-  #Sujet::placeholder{
-    font-style: italic;
-    font-family: Lato;
-  }
+#Sujet::placeholder {
+  font-style: italic;
+  font-family: Lato;
+}
 
-  #E-Mail-Contact::placeholder{
-    font-style: italic;
-    font-family: Lato;
-  }
+#E-Mail-Contact::placeholder {
+  font-style: italic;
+  font-family: Lato;
+}
 
 .buttonmain {
   color: #392d3b;
@@ -163,25 +316,25 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
-  .buttonmain:hover {
-    color: #fff;
-    text-decoration: none;
-    background : tomato;;
-    border: 1px solid #fff;
-  }
+.buttonmain:hover {
+  color: #fff;
+  text-decoration: none;
+  background: tomato;
+  border: 1px solid #fff;
+}
 
-  .form-control {
-    color: #392d3b;
-    border-radius: 20px;
-    border: 1px solid #ced4da;;
-  }
+.form-control {
+  color: #392d3b;
+  border-radius: 20px;
+  border: 1px solid #ced4da;
+}
 
-  #Message {
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-  }
+#Message {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 
-  /* FOOTER */
+/* FOOTER */
 .Footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -266,8 +419,8 @@ li {
   text-decoration: none;
 }
 
-#E-Mail{
-  box-sizing : unset;
+#E-Mail {
+  box-sizing: unset;
 }
 
 /* RESPONSIVE */
@@ -318,4 +471,3 @@ li {
     padding: 0;
   }
 }
-
