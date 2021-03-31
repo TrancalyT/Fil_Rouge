@@ -12,57 +12,133 @@
     <link rel="stylesheet" href="css/forum.css">
 </head>
 <body>
-    <head>
-        <h1>Forum</h1>
-        <ul class="connexion">
-            <li><a href="#">connexion</a></li>
-            <li><a href="#">/ Déconnexion</a></li>
-        </ul>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-4 col-md-5 col-lg-4" id="navigation">
-                    <div class="overlay">
-                        <div class="text">navigation</div>
-                    </div>
-                    <ul>
-                        <li><a href="#">Acceuil Forum</a></li>
-                        <li><a href="#">Mon profil</a></li>
-                        <li><a href="#">Mes messages</a></li>
-                        <li><a href="#">Messages du forum</a></li>
-                    </ul>
-                </div>
+    <nav role="navigation">
+        <div id="menuToggle">
+            <input class="input" type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="#" id="connexion">
+                    <li>Connexion</li>
+                </a>
+                <hr>
+                <a href="#">
+                    <li>Accueil</li>
+                </a>
+                <a href="#">
+                    <li>Musée</li>
+                </a>
+                <a href="#">
+                    <li>Expositions</li>
+                </a>
+                <a href="#">
+                    <li>Evènements</li>
+                </a>
+                <a href="#">
+                    <li>Forum</li>
+                </a>
+                <a href="#">
+                    <li>Boutique</li>
+                </a>
+                <hr>
+                <input id="search" type="search" placeholder="Vas chercher Lycos !" name="search" class="form-control">
+            </ul>
+        </div>
+    </nav>
+    <!-- HEADER -->
 
-                <div  id="forum">
+    <div class="bg"></div>
+    <header>
+        <div class="content">
+            <h1><span>Pocket museum of pop culture</span></h1>
+        </div>
+    </header>
+    <!-- corp -->
+    <nav style="--bs-breadcrumb-divider: '>';text-decoration: none;" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Forum</li>
+        </ol>
+      </nav>   
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5" id="navigation">
+                <div class="overlay">
+                    <div class="text">navigation</div>
+                </div>
+                <ul>
+                    <li><a href="#">Acceuil Forum</a></li>
+                    <li><a href="#">Mon profil</a></li>
+                    <li><a href="#">Mes messages</a></li>
+                    <li><a href="#">Messages du forum</a></li>
+                </ul>
+            </div>
+            
+            <div class="col-sm-offset-1 col-sm-5" id="admin">
+                <div class="overlay">
+                    <div class="text">Administration</div>
+                </div>
+                <ul>
+                    <li><a href="#">Réglages de mon profil</a></li>
+                    <li><a href="#">Administration du site</a></li>
+                </ul>
+                <div class="formulaire">
+                    <input type="text" class="form-control" name="recherche">
+                </div>
+                <div class="button">
+                    <input type="submit" class="btn btn-secondary" style="margin-bottom: 10px;margin-left: 40%;background:rgb(106, 127, 153);"
+                        name="submit" placeholder="je valide">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-11" id="forum">
                     <div class="overlay2">
-                        <div class="text">Messages de ...</div>
+                        <div class="text">Messages de Liyah</div>
                     </div>
-                    <p>Where does it come from?
+                    <p>Where does it come from?<br><br>
                         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
                         making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
                         looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature,
                         discovered the undoubtable source.</p>
                 </div>
-                
-                <div class="col-md-5 col-lg-4" id="admin">
-                    <div class="overlay">
-                        <div class="text">Administration</div>
-                    </div>
-                    <ul>
-                        <li><a href="#">Réglages de mon profil</a></li>
-                        <li><a href="#">Administration du site</a></li>
-                    </ul>
-                    <div class="formulaire">
-                        <input type="text" class="form-control" name="recherche" required autofocus>
-                    </div>
-                    <div>
-                        <input type="submit" class="btn btn-primary" style="margin-bottom: 10px;margin-left: 40%;"
-                            name="submit" required autofocus placeholder="je valide">
-                    </div>
-                </div>
             </div>
-            <div class="row"></div>
         </div>
-    </head>
-    
+    </div>
+    <footer class="Footer">
+        <div class="one">
+            <ul>
+                <a href="#">
+                    <li>Accueil</li>
+                </a>
+                <a href="#">
+                    <li>Musée</li>
+                </a>
+                <a href="#">
+                    <li>Expositions</li>
+                </a>
+                <a href="#">
+                    <li>Evènements</li>
+                </a>
+                <a href="#">
+                    <li>Forum</li>
+                </a>
+                <a href="#">
+                    <li>Boutique</li>
+                </a>
+            </ul>
+        </div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <div class="four">
+            <form action="" method="post">
+                <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter"
+                    name="mail" class="form-control">
+            </form>
+            <a href="#" class="button1">Envoyer</a>
+        </div>
+        <div class="five">
+            copyright
+        </div>
 </body>
 </html>
