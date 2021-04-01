@@ -1,13 +1,16 @@
 /* GENERAL */
 
-
-html {
-  box-sizing: border-box;
+* {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
-*, *:before, *:after {
-  box-sizing: inherit;
+*:before,
+*:after {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
 }
-
 
 @font-face {
   font-family: Phosphate;
@@ -74,7 +77,6 @@ h6 {
 
   -webkit-user-select: none;
   user-select: none;
-  box-sizing: content-box;
 }
 
 #menuToggle a {
@@ -271,7 +273,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/stayintouch.jpg") center repeat round;
+  background: url("../images/vehiculesBG.jpg") center no-repeat;
   background-size: stretch;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -285,13 +287,12 @@ header span {
 
 .form_contact {
   padding-top: 8%;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
   /* margin-bottom: 5%; */
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
   color: #392d3b;
   background-color: #fff;
-  box-sizing: border-box;
 }
 #Sujet::placeholder {
   font-style: italic;
@@ -469,24 +470,4 @@ li {
   .gallery {
     padding: 0;
   }
-
-}
-
-@media (max-width: 425px) {
-  header h1 {
-    text-transform: uppercase;
-    letter-spacing: 0.5em;
-    display: inline-block;
-    border: 4px double rgba(255, 255, 255, 0.25);
-    border-width: 4px 0;
-    padding: 1.5em 0em;
-    position: absolute;
-    top: 18%;
-    left: 50%;
-    width: 40em;
-    margin: 0 0 0 -20em;
-    font-size: medium;
-    font-weight: lighter;
-  }
-
 }

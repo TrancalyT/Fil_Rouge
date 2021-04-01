@@ -16,6 +16,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -54,6 +55,37 @@ h6 {
   font-family: Phosphate;
 }
 
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: tomato;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+  clip-path: polygon(
+    50% 0,
+    0 40%,
+    30% 40%,
+    30% 100%,
+    70% 100%,
+    70% 40%,
+    100% 40%
+  );
+  box-shadow: 0px 0px 0px 5px #a0a0a0, inset 0px 10px 27px -8px #ff8000,
+    inset 0px -10px 27px -8px #a31925, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#myBtn:hover {
+  background-color: #555;
+  transition-duration: 1s;
+}
+
 /* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
@@ -84,12 +116,9 @@ h6 {
   position: absolute;
   top: -7px;
   left: -5px;
-
   cursor: pointer;
-
   opacity: 0;
   z-index: 2;
-
   -webkit-touch-callout: none;
 }
 
@@ -196,10 +225,6 @@ header .content {
   transform: translate(-50%, -50%);
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
-/* h1 {
-  font-size: 3em;
-  font-weight: normal;
-} */
 
 header h1 {
   text-transform: uppercase;
@@ -225,23 +250,18 @@ header span {
   margin: 0 auto;
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
 
-  /* Clip Background Image */
-
   background: url(../images/animated-text-fill.png) repeat-y;
   -webkit-background-clip: text;
   background-clip: text;
 
-  /* Animate Background Image */
+  -webkit-text-fill-color: transparent;
 
   -webkit-text-fill-color: transparent;
   -webkit-animation: aitf 80s linear infinite;
 
-  /* Activate hardware acceleration for smoother animations */
-
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
 }
-
 /* Animate Background Image */
 
 @-webkit-keyframes aitf {
@@ -260,7 +280,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/suitcase.jpg") center no-repeat;
+  background: url("../images/suitcase2.png") center no-repeat;
   background-size: cover;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -274,10 +294,11 @@ header span {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "About"
+    "Evenements"
     "Expos"
     "News"
     "Footer";
@@ -296,7 +317,7 @@ header span {
     "bodyAbout";
   grid-area: About;
   background: linear-gradient(#0f2027, #203a43, #2c5364);
-  padding: 1rem;
+  padding: 10rem;
   border-top: solid 2px #fff;
 }
 
@@ -304,11 +325,30 @@ header span {
   grid-area: titleAbout;
   color: #fff;
   text-shadow: black 2px 2px 0px, #9c9c9c 4px 4px 0px;
+  text-align: center;
 }
 
 .bodyAbout {
   grid-area: bodyAbout;
   color: #fff;
+  text-align: justify;
+}
+
+.Evenements {
+  grid-area: Evenements;
+  background: url("../images/stayintouch.jpg") center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10rem;
+  padding-top: 5rem;
+  box-shadow: inset 0 0 0 2000px rgba(255, 0, 150, 0.3);
+}
+
+.Evenements h2 {
+  text-shadow: black 2px 2px 0px, #9c9c9c 4px 4px 0px;
 }
 
 .Expos {
@@ -327,6 +367,7 @@ header span {
 .titleExpos {
   grid-area: titleExpos;
   text-shadow: #fff 2px 2px 0px, #9c9c9c 4px 4px 0px;
+  text-align: center;
 }
 
 .bodyExpos {
@@ -350,6 +391,13 @@ header span {
   transform: scale(1.04);
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
+}
+
+.gallery a {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  margin-top: 1rem;
 }
 
 .News {
@@ -384,25 +432,58 @@ header span {
   align-items: center;
 }
 
-.cadreNews {
-  border: 1px solid black;
-  border-radius: 20px;
-  background: rgb(214, 209, 209);
-  opacity: 0.9;
-  width: 90%;
-  color: #090a0f;
-  padding: 1rem;
+.postit {
+  line-height: 1;
+  text-align: justify;
+  width: 30vw;
   margin-bottom: 1rem;
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  min-height: 250px;
+  max-height: 250px;
+  padding: 1rem;
+  position: relative;
+  border: 1px solid #e8e8e8;
+  border-top: 60px solid #fdfd86;
+  border-bottom-right-radius: 60px 5px;
+  color: #000000;
+  display: inline-block;
+  font-family: "lato";
+  background: #ffff88; /* Old browsers */
+  background: -moz-linear-gradient(
+    -45deg,
+    #ffff88 81%,
+    #ffff88 82%,
+    #ffff88 82%,
+    #ffffc6 100%
+  );
   box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
     5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
 
-.cadreNews h3 {
+.postit:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
+}
+
+.postit:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -0px;
+  bottom: 1em;
+  width: 5vw;
+  height: 35vh;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 15px 5px rgba(0, 0, 0, 0.4);
+  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
+  transform: matrix(-1, -0.1, 0, 1, 0, 0);
+}
+
+.postit h3 {
   font-weight: lighter;
   text-align: center;
-  border-bottom: solid tomato 2px;
 }
 
 .support {
@@ -413,6 +494,7 @@ header span {
   flex-direction: column;
   padding: 1rem;
   color: #fff;
+  text-align: justify;
 }
 
 .support img {
@@ -424,7 +506,7 @@ header span {
 /* FOOTER */
 .Footer {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 0.5fr 0.5fr 1fr 1fr;
   grid-template-rows: 1fr 0.1fr;
   gap: 1rem 1rem;
   grid-template-areas:
@@ -456,10 +538,57 @@ header span {
 
 .two {
   grid-area: two;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.two a {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.two a:hover {
+  letter-spacing: 0.3rem;
+  transition-duration: 1s;
 }
 
 .three {
   grid-area: three;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.three h4 {
+  color: #fff;
+  text-shadow: black 2px 2px 0px, #9c9c9c 4px 4px 0px;
+  font-size: medium;
+  margin: 0;
+  padding: 0;
+}
+
+.three p {
+  color: #fff;
+  font-size: small;
+  margin: 0;
+  padding: 0;
+}
+
+.three a {
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.three a:hover {
+  letter-spacing: 0.3rem;
+  transition-duration: 1s;
 }
 
 .four {
@@ -468,7 +597,7 @@ header span {
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  margin-top: 1rem;
+  padding: 1rem;
 }
 .four .button1 {
   margin-top: 10px;
@@ -490,6 +619,14 @@ header span {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1rem;
+}
+footer .five h5 {
+  color: #f7faff;
+  font-size: smaller;
+  letter-spacing: 0.2em;
+  text-shadow: 3px 1px 3px rgba(255, 117, 175, 1),
+    -3px -2px 3px rgba(0, 117, 175, 1);
 }
 
 /* RESPONSIVE */
@@ -497,7 +634,7 @@ header span {
   .News {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 1.9fr 1.9fr;
+    grid-template-rows: 0.1fr 1.9fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
       "titleNews"
@@ -512,6 +649,10 @@ header span {
   .Expos {
     padding-bottom: 1rem;
   }
+  .postit {
+    width: 80vw;
+  }
+
   .support img {
     width: 90vw;
   }
@@ -521,7 +662,7 @@ header span {
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
     gap: 1rem 1rem;
     grid-template-areas:
       "one"
@@ -536,23 +677,27 @@ header span {
   .four {
     width: 100%;
   }
-  .About,
+
   .News,
   .Events,
-  .support,
   .Footer,
   .one,
-  .four {
+  .two,
+  .four,
+  .five {
     padding: 0;
   }
   .gallery {
     padding: 0;
   }
-  .Expos {
+  /* .Expos {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 1rem;
+  } */
+  .About {
+    padding: 1rem;
   }
 }
 
@@ -582,6 +727,12 @@ header span {
     width: 90vw;
     left: 90%;
   }
+  .Expos {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 @media (max-width: 320px) {
@@ -589,5 +740,14 @@ header span {
     /* font-size: 0.6rem; */
     width: 90vw;
     left: 105%;
+  }
+  .four input {
+    width: 60vw;
+  }
+  footer .five h5 {
+    font-size: x-small;
+  }
+  .support {
+    padding: 0;
   }
 }

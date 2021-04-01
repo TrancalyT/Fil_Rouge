@@ -1,12 +1,4 @@
 /* GENERAL */
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 @font-face {
     font-family: Phosphate;
     src: url("../fonts/PhosphatePro-Inline.otf");
@@ -45,7 +37,7 @@ h6 {
   padding-bottom: 3%;
 }
  
-/* MENU HAMBURGER*/
+ /* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
   top: 50px;
@@ -55,7 +47,6 @@ h6 {
 
   -webkit-user-select: none;
   user-select: none;
-  box-sizing: content-box;
 }
 
 #menuToggle a {
@@ -69,7 +60,7 @@ h6 {
   color: tomato;
 }
 
-#menuToggle .input {
+#menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -112,18 +103,18 @@ h6 {
   transform-origin: 0% 100%;
 }
 
-#menuToggle .input:checked ~ span {
+#menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle .input:checked ~ span:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle .input:checked ~ span:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -151,115 +142,8 @@ h6 {
   letter-spacing: 0.2rem;
 }
 
-#menuToggle .input:checked ~ ul {
+#menuToggle input:checked ~ ul {
   transform: none;
-}
-
-#menu input {
-  border-radius: 5px;
-  height: 1.5rem;
-  padding: 0.5em;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-#menu #connexion {
-  color: tomato;
-}
-#menu #connexion:hover {
-  color: #232323;
-}
-
-/* HEADER */
-header {
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background: rgba(0, 0, 0, 0.6);
-}
-header .content {
-  position: relative;
-  display: block;
-  color: #ffffff;
-  top: 30%;
-  left: 50%;
-  text-align: center;
-  transform: translate(-50%, -50%);
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
-}
-/* h1 {
-    font-size: 3em;
-    font-weight: normal;
-  } */
-
-header h1 {
-  text-transform: uppercase;
-  letter-spacing: 0.5em;
-  display: inline-block;
-  border: 4px double rgba(255, 255, 255, 0.25);
-  border-width: 4px 0;
-  padding: 1.5em 0em;
-  position: absolute;
-  top: 18%;
-  left: 50%;
-  width: 40em;
-  margin: 0 0 0 -20em;
-  font-size: larger;
-  font-weight: lighter;
-}
-
-header span {
-  font: 700 4em/1 "Phosphate", sans-serif;
-  letter-spacing: 0;
-  padding: 0.25em 0 0.325em;
-  display: block;
-  margin: 0 auto;
-  text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
-
-  /* Clip Background Image */
-
-  background: url(../images/animated-text-fill.png) repeat-y;
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  /* Animate Background Image */
-
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: aitf 80s linear infinite;
-
-  /* Activate hardware acceleration for smoother animations */
-
-  -webkit-transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-}
-
-/* Animate Background Image */
-
-@-webkit-keyframes aitf {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.bg {
-  display: block;
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  background: url("../images/connexion.jpg") center no-repeat;
-  background-size: stretch;
-  -moz-transition: 0.1s;
-  -o-transition: 0.1s;
-  -webkit-transition: 0.1s;
-  transition: 0.1s;
-  z-index: -1;
-  overflow: hidden;
 }
 
 /* FORMULAIRE INSCRITPION & CONNEXION */
@@ -270,8 +154,6 @@ header span {
     border-radius: 5px 5px 5px 5px;
     text-transform: uppercase;
     color : #392d3b;
-    background-color: #fff;
-
   }
   .form_inscription h5{
       color : tomato;
@@ -279,12 +161,11 @@ header span {
 
   .form_connexion{
     padding-top: 8%;
-    padding-bottom: 5%;
-    /* margin-bottom: 5%; */
+    padding-bottom: 1%;
+    margin-bottom: 5%;
     border-radius: 5px 5px 5px 5px;
     text-transform: uppercase;
     color : #392d3b;
-    background-color: #fff;
   }
 
   input::placeholder{
@@ -482,25 +363,6 @@ header span {
     .gallery {
       padding: 0;
     }
-  }
-
-  @media (max-width: 425px) {
-    header h1 {
-      text-transform: uppercase;
-      letter-spacing: 0.5em;
-      display: inline-block;
-      border: 4px double rgba(255, 255, 255, 0.25);
-      border-width: 4px 0;
-      padding: 1.5em 0em;
-      position: absolute;
-      top: 18%;
-      left: 50%;
-      width: 40em;
-      margin: 0 0 0 -20em;
-      font-size: medium;
-      font-weight: lighter;
-    }
-  
   }
   
   
