@@ -1,4 +1,14 @@
-/* ------------------------------------------------------GENERAL------------------------------------------------------ */
+/* GENERAL */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 @font-face {
   font-family: Phosphate;
   src: url("../fonts/PhosphatePro-Inline.otf");
@@ -16,7 +26,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
-  scroll-behavior: smooth;
 }
 
 ul,
@@ -35,6 +44,11 @@ h5,
 h6 {
   letter-spacing: 0.4rem;
   font-family: Phosphate;
+}
+
+input::placeholder {
+  font-style: italic;
+  font-family: Lato;
 }
 
 /* ------------------------------------------------------BOUTON TO TOP------------------------------------------------------ */
@@ -79,6 +93,7 @@ h6 {
 
   -webkit-user-select: none;
   user-select: none;
+  box-sizing: content-box;
 }
 
 #menuToggle a {
@@ -92,7 +107,7 @@ h6 {
   color: tomato;
 }
 
-#menuToggle input {
+#menuToggle .input {
   display: block;
   width: 40px;
   height: 32px;
@@ -135,18 +150,18 @@ h6 {
   transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked ~ span {
+#menuToggle .input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: #232323;
 }
 
-#menuToggle input:checked ~ span:nth-last-child(3) {
+#menuToggle .input:checked ~ span:nth-last-child(3) {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
+#menuToggle .input:checked ~ span:nth-last-child(2) {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
@@ -174,11 +189,26 @@ h6 {
   letter-spacing: 0.2rem;
 }
 
-#menuToggle input:checked ~ ul {
+#menuToggle .input:checked ~ ul {
   transform: none;
 }
 
-/* ------------------------------------------------------HEADER------------------------------------------------------ */
+#menu input {
+  border-radius: 5px;
+  height: 1.5rem;
+  padding: 0.5em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#menu #connexion {
+  color: tomato;
+}
+#menu #connexion:hover {
+  color: #232323;
+}
+
+/* HEADER */
 header {
   height: 100vh;
   position: relative;
@@ -196,6 +226,10 @@ header .content {
   transform: translate(-50%, -50%);
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
+/* h1 {
+      font-size: 3em;
+      font-weight: normal;
+    } */
 
 header h1 {
   text-transform: uppercase;
@@ -221,18 +255,24 @@ header span {
   margin: 0 auto;
   text-shadow: 0 0 80px rgba(255, 255, 255, 0.5);
 
+  /* Clip Background Image */
+
   background: url(../images/animated-text-fill.png) repeat-y;
   -webkit-background-clip: text;
   background-clip: text;
 
-  -webkit-text-fill-color: transparent;
+  /* Animate Background Image */
 
   -webkit-text-fill-color: transparent;
   -webkit-animation: aitf 80s linear infinite;
 
+  /* Activate hardware acceleration for smoother animations */
+
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
 }
+
+/* Animate Background Image */
 
 @-webkit-keyframes aitf {
   0% {
@@ -250,7 +290,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/suitcase2.png") center no-repeat;
+  background: url("../images/goldenbook.jpg") center no-repeat;
   background-size: cover;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -264,11 +304,13 @@ header span {
 
 .form_livreor {
   padding-top: 8%;
-  padding-bottom: 8%;
+  padding-bottom: 5%;
+  /* margin-bottom: 5%; */
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
   color: #392d3b;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 .notif {
@@ -349,7 +391,7 @@ header span {
   color: gray;
 }
 
-/* FOOTER */
+/* ------------------------------------------------------FOOTER------------------------------------------------------ */
 .Footer {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 1fr 1fr;
@@ -498,7 +540,8 @@ footer .five h5 {
   box-sizing: unset;
 }
 
-/* ------------------------------------------------------RESPONSIVE------------------------------------------------------ */
+/* RESPONSIVE */
+
 @media (max-width: 768px) {
   .Footer {
     display: grid;
@@ -524,10 +567,6 @@ footer .five h5 {
     font-size: 1em;
   }
 
-  header h1 {
-    width: 90vw;
-    left: 80%;
-  }
   h2,
   h3,
   h4,
@@ -536,20 +575,14 @@ footer .five h5 {
     font-size: larger;
     padding: 1rem;
   }
-}
 
-@media (max-width: 375px) {
   header h1 {
-    width: 90vw;
-    left: 90%;
+    font-size: medium;
   }
 }
+
 
 @media (max-width: 320px) {
-  header h1 {
-    width: 90vw;
-    left: 105%;
-  }
   .four input {
     width: 60vw;
   }
