@@ -269,7 +269,15 @@ header span {
   z-index: -1;
   overflow: hidden;
 }
-
+/* corp */
+.construction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: #090a0f;
+  height: 100vh;
+}
 /*colonne*/
 
 .container-fluid {
