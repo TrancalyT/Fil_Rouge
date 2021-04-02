@@ -299,7 +299,7 @@ header span {
   -o-transition: 0.1s;
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
 }
 
@@ -326,7 +326,7 @@ header span {
   width: 80px;
   position: absolute;
   right: -40px;
-  bottom: 10%;
+  bottom: 50%;
   border-radius: 50%;
 }
 
@@ -360,6 +360,14 @@ header span {
   color: tomato;
 }
 
+.nav .salle:active {
+  background: lightgrey;
+  text-decoration: none;
+  transition-duration: 1s;
+  opacity: 1;
+  color: tomato;
+}
+
 .nav .vertical {
   height: 100px;
   /* right: 50px;
@@ -378,6 +386,19 @@ header span {
   background-color: #232323;
   height: auto;
   box-sizing: border-box;
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 10rem;
+}
+
+.presentation p {
+  text-align: justify;
 }
 
 .expo {
@@ -577,6 +598,9 @@ footer .five h5 {
     flex-direction: column;
     padding: 0;
   }
+  .nav p {
+    font-size: small;
+  }
 }
 
 @media (max-width: 425px) {
@@ -611,6 +635,9 @@ footer .five h5 {
   header h1 {
     width: 90vw;
     left: 90%;
+  }
+  .nav .vertical {
+    height: 50px;
   }
 }
 
