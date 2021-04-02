@@ -260,7 +260,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/suitcase2.png") center no-repeat;
+  background: url("../images/unclegandalf2.png") center no-repeat;
   background-size: cover;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -287,11 +287,9 @@ header span {
   text-align: center;
   text-transform: uppercase;
   background-color: #3f6abf;
-}
-h4 {
-  padding-top: 5px;
-  text-align: center;
-  text-transform: capitalize;
+  font-family: 'phosphate','sans-serif';
+  font-size: 15px;
+  letter-spacing: 0.2rem;
 }
 .text {
   margin-bottom: 15px;
@@ -317,35 +315,46 @@ h4 {
   border-radius: 5px;
   padding-left: 0%;
   padding-right: 0%;
-  margin-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  box-sizing: border-box;
-  min-width: 210px;
+  min-width: 200px;
+  max-width: 350px;
   height: 500px;
+  font-family: 'lato','sans-serif';
+  letter-spacing: 0.2rem;
 }
 #coordonnees {
   background-color: rgb(242, 242, 242);
   border-radius: 5px;
   padding-left: 0%;
   padding-right: 0%;
-  margin-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  box-sizing: border-box;
-  min-width: 210px;
+  min-width: 200px;
+  max-width: 350px;
+  font-family: 'lato','sans-serif';
+  font-size: 13px;
+  letter-spacing: 0.2rem;
 }
 #reglement {
   background-color: rgb(242, 242, 242);
   border-radius: 5px;
   padding-left: 0%;
   padding-right: 0%;
-  margin-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-  box-sizing: border-box;
-  min-width: 210px;
+  min-width: 200px;
+  max-width: 350px;
   height: 570px;
+  font-family: 'lato','sans-serif';
+  font-size: 13px;
+  letter-spacing: 0.2rem;
 }
 /* soutien*/
 #accordeon1 section a {

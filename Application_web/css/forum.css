@@ -1,4 +1,8 @@
 /* GENERAL */
+*{
+  margin:0;
+  padding: 0;
+}
 @font-face {
   font-family: Phosphate;
   src: url("../fonts/PhosphatePro-Inline.otf");
@@ -260,7 +264,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/taverne.png") center no-repeat;
+  background: url("../images/Khajiit_forme.jpg") center no-repeat;
   background-size: cover;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
@@ -277,10 +281,6 @@ header span {
   margin: 0;
   padding: 0;
 }
-
-.breadcrumb {
-  margin-top: 5px;
-}
 .overlay {
   background: rgb(106, 127, 153);
   border-radius: 5px 5px 0px 0px;
@@ -289,11 +289,13 @@ header span {
 }
 #navigation {
   margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 5px;
   padding-left: 0%;
   padding-right: 0%;
   background-color: rgb(242, 242, 242);
-  min-width: 225px;
+  min-width: 200px;
+  max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -301,6 +303,9 @@ header span {
   text-align: center;
   text-transform: uppercase;
   color: seashell;
+  font-family: 'phosphate','sans-serif';
+  font-size: 19px;
+  letter-spacing: 0.2rem;
 }
 #navigation ul li a {
   display: block;
@@ -310,6 +315,10 @@ header span {
   margin-top: 10px;
   padding-bottom: 2%;
   color: black;
+  font-family: 'lato','sans-serif';
+  font-size: 13px;
+  letter-spacing: 0.2rem;
+
 }
 #navigation ul li a:hover {
   color: rgb(255, 9, 9);
@@ -317,11 +326,13 @@ header span {
 
 #admin {
   margin-top: 50px;
+  margin-bottom: 50px;
   border-radius: 5px;
   padding-left: 0%;
   padding-right: 0%;
   background-color: rgb(242, 242, 242);
-  min-width: 225px;
+  min-width: 200px;
+  max-width: 350px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -333,6 +344,9 @@ header span {
   margin-top: 10px;
   padding-bottom: 2%;
   color: black;
+  font-family: 'lato','sans-serif';
+  font-size: 13px;
+  letter-spacing: 0.2rem;
 }
 #admin ul li a:hover {
   color: rgb(255, 9, 9);
@@ -343,8 +357,23 @@ header span {
   margin-top: 5%;
   margin-bottom: 5%;
 }
-.button {
-  margin-left: -20px;
+.button2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: rgb(106, 127, 153);
+  border: 1px solid white;
+  display: inline-block;
+  margin:20px 30px 20px 30px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+.button2:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
 }
 /*affichage message*/
 #forum {
@@ -356,16 +385,21 @@ header span {
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
-  min-width: 485px;
-  max-width: 1000px;
+  min-width: 180px;
+  max-width: 840px;
 }
 #forum p {
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: 'lato','sans-serif';
+  font-size: 13px;
+  letter-spacing: 0.2rem;
 }
 .overlay2 {
   background: rgb(106, 127, 153);
   border-radius: 5px 5px 0px 0px;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 
 /* FOOTER */
