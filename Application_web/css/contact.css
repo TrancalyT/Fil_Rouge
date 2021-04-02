@@ -1,6 +1,6 @@
 /* GENERAL */
 
-* {
+/* * {
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -10,7 +10,7 @@
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
   box-sizing: content-box;
-}
+} */
 
 @font-face {
   font-family: Phosphate;
@@ -288,7 +288,7 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/vehiculesBG.jpg") center no-repeat;
+  background: url("../images/stayintouch.jpg") center no-repeat;
   background-size: stretch;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;

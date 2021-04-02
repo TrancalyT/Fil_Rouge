@@ -306,8 +306,8 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/vehiculesBG.jpg") center no-repeat;
-  background-size: stretch;
+  background: url("../images/event.jpg") center no-repeat;
+  background-size: cover;
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
   -webkit-transition: 0.1s;
