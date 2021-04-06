@@ -603,6 +603,10 @@ footer .five h5 {
   padding: .25rem .5rem;
 }
 
+.buttonmain2{
+  padding: 10px 5px;
+}
+
 }
 
 @media (max-width: 425px) {
@@ -622,6 +626,27 @@ footer .five h5 {
   header h1 {
     font-size: medium;
   }
+
+  .buttonmain2{
+    padding: 15px 15px;
+    text-indent: -9999px;
+    line-height: 0;
+    }
+  
+    .buttonmain2::after {
+      text-indent: 0;
+      display : block;
+      line-height: initial;
+    }
+
+  .buttonmain{
+    padding: 5px 15px;
+  }
+
+  .dropdown-toggle::after {
+    margin-left: .0em;
+  }
+
 }
 
 
@@ -638,5 +663,9 @@ footer .five h5 {
 
   .buttonmain4 {
     padding: 1px 5px;
+}
+
+.buttonmain{
+  padding: 5px 10px;
 }
 }

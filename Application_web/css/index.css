@@ -86,6 +86,11 @@ h6 {
   transition-duration: 1s;
 }
 
+input::placeholder {
+  font-style: italic;
+  font-family: Lato;
+}
+
 /* MENU HAMBURGER*/
 #menuToggle {
   position: fixed;
