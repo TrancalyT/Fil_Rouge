@@ -300,6 +300,7 @@ header span {
     font-size: 22px;
     letter-spacing: 0.2rem;
     padding-top: 5px;
+    font-family: 'phosphate','sans-serif';
 }
 input::placeholder {
   font-style: italic;
