@@ -6,7 +6,7 @@
 html,
 body,
 .grid-container {
-  height: 151%;
+  height: 151.5%;
   margin: 0;
 }
 
@@ -304,6 +304,9 @@ header span {
 input::placeholder {
   font-style: italic;
   font-family: Lato;
+}
+.formulaire input{
+  border-radius: 5px;
 }
 
 /* ---------------------------soutien------------------------------------------- */
