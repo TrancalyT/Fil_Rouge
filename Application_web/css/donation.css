@@ -6,7 +6,7 @@
 html,
 body,
 .grid-container {
-  height: 150%;
+  height: 151%;
   margin: 0;
 }
 
@@ -290,9 +290,7 @@ header span {
 }
 /* ----------------------------CORP----------------------------------------- */
 .grid-container{
-  
   background: linear-gradient(#0f2027, #203a43, #2c5364);
-  
 }
 .overlay{
     color: #8695b3;
@@ -307,6 +305,7 @@ input::placeholder {
   font-style: italic;
   font-family: Lato;
 }
+
 /* ---------------------------soutien------------------------------------------- */
 #soutien {
   background-color: rgb(242, 242, 242);
