@@ -201,7 +201,7 @@ input::placeholder {
   border-radius: 5px;
   height: 1.5rem;
   padding: 0.5em;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
 }
 
@@ -210,6 +210,23 @@ input::placeholder {
 }
 #menu #connexion:hover {
   color: #232323;
+}
+
+#menu .recherche {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#menu #srcbutton {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#menu #srcbutton:hover {
+  background: tomato;
 }
 
 /* HEADER */
@@ -299,13 +316,14 @@ header span {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "About"
     "Evenements"
     "Expos"
     "News"
+    "goldenbook"
     "Footer";
   position: relative;
   /* background: #fff; */
@@ -506,6 +524,13 @@ header span {
   border-radius: 50%;
   border: 1px solid black;
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.goldenbook {
+  grid-area: goldenbook;
+  height: 300px;
+  background-color: lightcoral;
+  text-align: center;
 }
 
 /* FOOTER */
