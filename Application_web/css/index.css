@@ -223,6 +223,9 @@ input::placeholder {
   height: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  justify-content: center;
+  padding-left: 0em;
+  padding-right: 0em;
 }
 
 #menu #srcbutton:hover {
@@ -528,10 +531,193 @@ header span {
 
 .goldenbook {
   grid-area: goldenbook;
-  height: 300px;
   background-color: lightcoral;
   text-align: center;
 }
+
+.titleGoldenbook {
+  grid-area: titleNews;
+  color: black;
+  display: flex;
+  justify-content: center;
+  text-shadow: #fff 2px 2px 0px, #9c9c9c 4px 4px 0px;
+}
+
+/* CARROUSEL */
+
+  .carrousel {
+    text-align: center;
+    padding-bottom: 4em;
+    /* height: 7.5em; */
+    max-width: 750px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carrousel .slides {
+    width: 400%;
+    left: 0;
+    padding-left: 0;
+    padding-top: 1em;
+    overflow: hidden;
+    list-style: none;
+    position: relative;
+
+    -webkit-transition: transform .5s;
+    -moz-transition: transform .5s;
+    -o-transition: transform .5s;
+    transition: transform .5s;
+  }
+  .carrousel .slides li {
+    width: 25%;
+    position: relative;
+    float: left;
+  }
+  .carrousel li p{
+    margin-top: 0;  
+  }
+  .carrousel li q {
+    max-width: 90%;
+    margin: auto;
+    color: #fff;
+    font-size: 1.3em;
+    font-family: Lato;
+  }
+  .carrousel li img {
+    width: 3em;
+    height: 3em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: -1.5em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+  }
+  .carrousel li span.author {
+    margin-top:0.5em;
+    font-size: 1.2em;
+    color: #fff;
+    display: block;
+    font-family: Lato;
+    font-style: italic;
+  }
+  .carrousel .slidesNavigation {
+    display: block;
+    list-style: none;
+    text-align: center;
+    bottom: 1em;
+      position: absolute; 
+      width: 104px; 
+      left: 50%;
+      margin-left: -52px;
+  }
+  .carrousel input {
+    display: none;
+  }
+  .carrousel .slidesNavigation label {
+    float: left;
+    margin: 6px;
+    display: block;
+    height: 10px;
+    width: 10px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: solid 2px tomato;
+    font-size: 0;
+  }
+
+  #radio-1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  #radio-2:checked ~ .slides {
+    transform: translateX(-25%);
+  }
+  #radio-3:checked ~ .slides {
+    transform: translateX(-50%);
+  }
+  #radio-4:checked ~ .slides {
+    transform: translateX(-75%);
+  }
+
+
+  .carrousel .slidesNavigation label:hover {
+    cursor: pointer;
+  }
+
+  .carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
+  .carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
+  .carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
+  .carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4 {
+    background: tomato;
+  }
+
+  @media  (max-width: 796px) {
+    .carrousel{
+      height: 8.5em;
+    }
+  }
+  @media  (max-width: 480px) {
+    .carrousel li p {
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+    }
+    .carrousel li q {
+        font-size: 0.9em;
+    }
+    .carrousel li img {
+      width:2em;
+      margin-left: -1em;
+      margin-right: 0.25em;
+    }
+  }
+
+  /* ANIMATION CAROUSEL */
+
+  /* @keyframes slider {
+    0%, 20%, 100%	{ left: 0 }
+    25%, 45%		{ left: -100% }
+    50%, 70%		{ left: -200% }
+    75%, 95%		{ left: -300% }
+  }
+
+  .carrousel .slides {
+    animation: slider 32s infinite;
+  }
+
+  .carrousel .slidesNavigation {
+    animation: dotser 32s infinite;
+  }
+
+
+
+  .slidesNavigation label:first-child a:after {
+    animation: slider 32s infinite;
+  }
+
+  .slidesNavigation label:first-child a:before { display:none; }
+
+  @keyframes dotser {
+    0%, 100% 	{ opacity: 1; left: 0; 		}
+       
+    20%			{ opacity: 1; left: 0;		}
+    22%			{ opacity: 0; left: 0;		}
+    23%			{ opacity: 0; left: 18px;	}
+    25%			{ opacity: 1; left: 18px;	}
+       
+    45%			{ opacity: 1; left: 18px;	}
+    47%			{ opacity: 0; left: 18px;	}
+    48%			{ opacity: 0; left: 36px;	}
+    50%			{ opacity: 1; left: 36px;	}
+       
+    70%			{ opacity: 1; left: 36px;	}
+    72%			{ opacity: 0; left: 36px;	}
+    73%			{ opacity: 0; left: 54px;	}
+    75%			{ opacity: 1; left: 54px;	}
+       
+    95%			{ opacity: 1; left: 54px;	}
+    97%			{ opacity: 0; left: 54px;	}
+    98%			{ opacity: 0; left: 0;	}
+  } */
 
 /* FOOTER */
 .Footer {
