@@ -3,7 +3,7 @@ il faut alimenter la page d'accueil
 il faut faire correspondre nos pages entres elle en href
 il faut homogeneiser nos styles de pages (couleur / police) et y inclure la version finale du burger / footeer
 
-Mettre bouton sur Lycos qui va vers recherche
+Mettre bouton sur Lycos qui va vers recherche et MAJ page avec burger
 Mettre placeholder partout
 Mettre caroussel
 
