@@ -693,6 +693,12 @@ header span {
     margin-right: 0.25em;
   }
 }
+  @media (max-width: 320px) {
+    .carrousel li q {
+      font-size: 0.8em;
+  }
+
+  }
 
 /* ANIMATION CAROUSEL */
 
