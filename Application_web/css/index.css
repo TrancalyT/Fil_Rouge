@@ -46,6 +46,28 @@ body {
   color: #392d3b;
   text-decoration: none;
 }
+
+.button2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #392d3b;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  background: #fff;
+  opacity: 0.6;
+}
+.button2:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+  opacity: 1;
+}
 h2,
 h3,
 h4,
@@ -213,8 +235,6 @@ input::placeholder {
 }
 
 #menu .recherche {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
@@ -230,6 +250,7 @@ input::placeholder {
 
 #menu #srcbutton:hover {
   background: tomato;
+  transition: all 0.3s ease-in 0s;
 }
 
 /* HEADER */
@@ -342,9 +363,10 @@ header span {
     "titleAbout"
     "bodyAbout";
   grid-area: About;
-  background: linear-gradient(#0f2027, #203a43, #2c5364);
+  background-color: #232323;
   padding: 10rem;
-  border-top: solid 2px #fff;
+  border-top: solid 10px #fff;
+  border-bottom: solid 10px #fff;
 }
 
 .titleAbout {
@@ -533,10 +555,11 @@ header span {
   grid-area: goldenbook;
   background-color: lightcoral;
   text-align: center;
+  border-top: solid 10px #fff;
 }
 
 .titleGoldenbook {
-  grid-area: titleNews;
+  /* grid-area: titleNews; */
   color: black;
   display: flex;
   justify-content: center;
@@ -545,135 +568,134 @@ header span {
 
 /* CARROUSEL */
 
+.carrousel {
+  text-align: center;
+  padding-bottom: 4em;
+  /* height: 7.5em; */
+  max-width: 750px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carrousel .slides {
+  width: 400%;
+  left: 0;
+  padding-left: 0;
+  padding-top: 1em;
+  overflow: hidden;
+  list-style: none;
+  position: relative;
+
+  -webkit-transition: transform 0.5s;
+  -moz-transition: transform 0.5s;
+  -o-transition: transform 0.5s;
+  transition: transform 0.5s;
+}
+.carrousel .slides li {
+  width: 25%;
+  position: relative;
+  float: left;
+}
+.carrousel li p {
+  margin-top: 0;
+}
+.carrousel li q {
+  max-width: 90%;
+  margin: auto;
+  color: #fff;
+  font-size: 1.3em;
+  font-family: Lato;
+}
+.carrousel li img {
+  width: 3em;
+  height: 3em;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-left: -1.5em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.carrousel li span.author {
+  margin-top: 0.5em;
+  font-size: 1.2em;
+  color: #fff;
+  display: block;
+  font-family: Lato;
+  font-style: italic;
+}
+.carrousel .slidesNavigation {
+  display: block;
+  list-style: none;
+  text-align: center;
+  bottom: 1em;
+  position: absolute;
+  width: 104px;
+  left: 50%;
+  margin-left: -52px;
+}
+.carrousel input {
+  display: none;
+}
+.carrousel .slidesNavigation label {
+  float: left;
+  margin: 6px;
+  display: block;
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: solid 2px tomato;
+  font-size: 0;
+}
+
+#radio-1:checked ~ .slides {
+  transform: translateX(0%);
+}
+#radio-2:checked ~ .slides {
+  transform: translateX(-25%);
+}
+#radio-3:checked ~ .slides {
+  transform: translateX(-50%);
+}
+#radio-4:checked ~ .slides {
+  transform: translateX(-75%);
+}
+
+.carrousel .slidesNavigation label:hover {
+  cursor: pointer;
+}
+
+.carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
+.carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
+.carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
+.carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4 {
+  background: tomato;
+}
+
+@media (max-width: 796px) {
   .carrousel {
-    text-align: center;
-    padding-bottom: 4em;
-    /* height: 7.5em; */
-    max-width: 750px;
-    margin: auto;
-    position: relative;
-    overflow: hidden;
+    height: 8.5em;
   }
-
-  .carrousel .slides {
-    width: 400%;
-    left: 0;
-    padding-left: 0;
-    padding-top: 1em;
-    overflow: hidden;
-    list-style: none;
-    position: relative;
-
-    -webkit-transition: transform .5s;
-    -moz-transition: transform .5s;
-    -o-transition: transform .5s;
-    transition: transform .5s;
-  }
-  .carrousel .slides li {
-    width: 25%;
-    position: relative;
-    float: left;
-  }
-  .carrousel li p{
-    margin-top: 0;  
+}
+@media (max-width: 480px) {
+  .carrousel li p {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
   }
   .carrousel li q {
-    max-width: 90%;
-    margin: auto;
-    color: #fff;
-    font-size: 1.3em;
-    font-family: Lato;
+    font-size: 0.9em;
   }
   .carrousel li img {
-    width: 3em;
-    height: 3em;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-left: -1.5em;
-    margin-right: 0.5em;
-    vertical-align: middle;
+    width: 2em;
+    margin-left: -1em;
+    margin-right: 0.25em;
   }
-  .carrousel li span.author {
-    margin-top:0.5em;
-    font-size: 1.2em;
-    color: #fff;
-    display: block;
-    font-family: Lato;
-    font-style: italic;
-  }
-  .carrousel .slidesNavigation {
-    display: block;
-    list-style: none;
-    text-align: center;
-    bottom: 1em;
-      position: absolute; 
-      width: 104px; 
-      left: 50%;
-      margin-left: -52px;
-  }
-  .carrousel input {
-    display: none;
-  }
-  .carrousel .slidesNavigation label {
-    float: left;
-    margin: 6px;
-    display: block;
-    height: 10px;
-    width: 10px;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    border: solid 2px tomato;
-    font-size: 0;
-  }
+}
 
-  #radio-1:checked ~ .slides {
-    transform: translateX(0%);
-  }
-  #radio-2:checked ~ .slides {
-    transform: translateX(-25%);
-  }
-  #radio-3:checked ~ .slides {
-    transform: translateX(-50%);
-  }
-  #radio-4:checked ~ .slides {
-    transform: translateX(-75%);
-  }
+/* ANIMATION CAROUSEL */
 
-
-  .carrousel .slidesNavigation label:hover {
-    cursor: pointer;
-  }
-
-  .carrousel #radio-1:checked ~ .slidesNavigation label#dotForRadio-1,
-  .carrousel #radio-2:checked ~ .slidesNavigation label#dotForRadio-2,
-  .carrousel #radio-3:checked ~ .slidesNavigation label#dotForRadio-3,
-  .carrousel #radio-4:checked ~ .slidesNavigation label#dotForRadio-4 {
-    background: tomato;
-  }
-
-  @media  (max-width: 796px) {
-    .carrousel{
-      height: 8.5em;
-    }
-  }
-  @media  (max-width: 480px) {
-    .carrousel li p {
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-    }
-    .carrousel li q {
-        font-size: 0.9em;
-    }
-    .carrousel li img {
-      width:2em;
-      margin-left: -1em;
-      margin-right: 0.25em;
-    }
-  }
-
-  /* ANIMATION CAROUSEL */
-
-  /* @keyframes slider {
+/* @keyframes slider {
     0%, 20%, 100%	{ left: 0 }
     25%, 45%		{ left: -100% }
     50%, 70%		{ left: -200% }
@@ -730,7 +752,7 @@ header span {
     "five five five five";
   grid-area: Footer;
   background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
-  border-top: solid 2px #fff;
+  border-top: solid 10px #fff;
 }
 .one {
   grid-area: one;
