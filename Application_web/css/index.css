@@ -553,7 +553,8 @@ header span {
 
 .goldenbook {
   grid-area: goldenbook;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
+  background: url("../images/goldenbook.jpg") center no-repeat;
   text-align: center;
   border-top: solid 10px #fff;
 }
