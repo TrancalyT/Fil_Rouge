@@ -6,7 +6,7 @@
 html,
 body,
 .grid-container {
-  height: 150%;
+  height: 100%;
   margin: 0;
 }
 
@@ -288,114 +288,104 @@ header span {
   z-index: -1;
   overflow: hidden;
 }
-/* ----------------------------CORP----------------------------------------- */
-.grid-container{
-  background: linear-gradient(#0f2027, #203a43, #2c5364);
-}
-.overlay{
-    color: #8695b3;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 22px;
-    letter-spacing: 0.2rem;
-    padding-top: 5px;
-    font-family: 'phosphate','sans-serif';
-}
-input::placeholder {
-  font-style: italic;
-  font-family: Lato;
-}
-.formulaire input{
-  border-radius: 5px;
-}
+/* ---------------------CORP----------------------------------------------- */
 
-/* ---------------------------soutien------------------------------------------- */
-#soutien {
+
+/*----------------------------- SOUTIEN --------------------------------*/
+#contenant{
+  background: linear-gradient(#214453, #315864, #426e80); 
+}
+#soutien{
   background-color: rgb(242, 242, 242);
   border-radius: 5px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 50px;
-  min-width: auto;
-  max-width:480px;
-  height:auto;
-  font-family: 'lato','sans-serif';
-  letter-spacing: 0.2rem;
 }
-#accordeon1 section a {
-  text-align: center;
-  text-decoration: none;
+.text{
   color: #687a9c;
+  text-align: center;
+  padding-bottom: 1.5vw;
+  font-size: 1em;
 }
-#accordeon1 section a:hover {
-  color: tomato;
+#choix1 h5{
+  font-family: 'Lato','sans-serif';
+  text-align: center;
+  font-size: 0.8em;
 }
-#accordeon1 .formulaire .button1{
+#choix2 h5{
+  font-family: 'Lato','sans-serif';
+  text-align: center;
+  font-size: 0.8em;
+}
+#choix3 h5{
+  font-family: 'Lato','sans-serif';
+  text-align: center;
+  font-size: 0.8em;
+}
+.formulaire{
+  text-align: center;
+  padding-bottom: 15px;
+  border-bottom:#687a9c 1px solid;
+}
+.formulaire2{
+  text-align: center;
+  font-size: 0.8em;
+  font-family: 'lato','sans-serif';
+ 
+}
+.formulaire2 input{
+  border-radius: 5px;
+  margin-bottom:10px;
+}
+.button2{
   font-weight: bold;
   text-transform: uppercase;
   color: #687a9c;
-  border: 1px solid #687a9c;
+  border: 1px solid white;
+  display: inline-block;
+  padding: 5px 18px;
   transition: all 0.3s ease-in 0s;
   border-radius: 20px;
   text-decoration: none;
+  border-bottom: #090a0f 1px solid;
 }
-.button1:hover {
+.button2:hover {
   background: #fff;
-  color: #687a9c;
+  color: tomato;
   text-decoration: none;
 }
-#choix1 {
-  border-bottom: #687a9c 1px solid;
-  padding-bottom:20px;
+input::placeholder {
+  font-style: italic;
+  font-family: 'Lato';
 }
-#choix2 {
-  border-bottom: #687a9c 1px solid;
-  padding-bottom:20px;
+/*----------------------------- COORDONNEES --------------------------------*/
+#coordonnees{
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
 }
-.formulaire{
-  padding-left: 5%;
-  padding-right: 5%;
+/*------------------------------REGLEMENT----------------------------------- */
+#reglement{
+  background-color: rgb(242, 242, 242);
+  border-radius: 5px;
 }
-.formulaire3 {
+#accordeon h5{
+  font-family: 'Lato','sans-serif';
   text-align: center;
-  padding-bottom: 10%;
-  size: 1vw;
-}
-/* -----------------------------coordonnees---------------------------------- */
-#coordonnees {
-  background-color: rgb(242, 242, 242);
-  border-radius: 5px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  min-width: auto;
-  max-width:480px;
-  height:auto;
-  font-family: 'lato','sans-serif';
-  letter-spacing: 0.2rem;
-}
-/* -----------------------------------reglement---------------------------- */
-#reglement {
-  background-color: rgb(242, 242, 242);
-  border-radius: 5px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  min-width: auto;
-  max-width: 480px;
-  height: auto;
-  font-family: 'lato','sans-serif';
-  font-size: 13px;
-  letter-spacing: 0.2rem;
-}
-h1 {
-  font-size: medium;
+  font-size: 0.7em;
   text-transform: uppercase;
-  padding-bottom: 25px;
 }
-#accordeon section .formulaire2 {
+.formulaire3{
+  border-radius: 5px;
+  text-align: center;
+  padding-bottom: 15px;
+}
+#accordeon{
+  padding: 7px;
+}
+#accordeon input{
+  border-radius: 5px;
+  margin-bottom:10px;
+  font-size: 0.7em;
+}
+#accordeon section .formulaire3 {
   display: none;
   text-align: center;
 }
@@ -409,27 +399,38 @@ h1 {
 #accordeon section a:hover {
   color: tomato;
 }
-#accordeon section:target .formulaire2 {
+#accordeon section:target .formulaire3 {
+  display: block;
+}
+#accordeon section .formulaire {
+  display: none;
+  text-align: center;
+}
+#accordeon section a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 10px;
+  color: #687a9c;
+}
+#accordeon section a:hover {
+  color: tomato;
+}
+#accordeon section:target .formulaire {
   display: block;
 }
 #carte {
-  border-bottom: black 1px solid;
+  border-bottom: #687a9c 1px solid;
 }
 #paypal {
-  border-bottom: black 1px solid;
+  border-bottom: #687a9c 1px solid;
 }
-.formulaire2{
-  text-align: center;
-  padding-bottom:5%;
-  size: 1vw;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-#accordeon .formulaire .button3{
+#accordeon .button3{
   font-weight: bold;
   text-transform: uppercase;
   color: #687a9c;
   border: 1px solid #687a9c;
+  padding: 5px 18px;
   transition: all 0.3s ease-in 0s;
   border-radius: 20px;
   text-decoration: none;
@@ -438,6 +439,9 @@ h1 {
   background: #fff;
   color: #687a9c;
   text-decoration: none;
+}
+#iban{
+  padding-bottom: 10px;
 }
 /*------------------------------ FOOTER --------------------------------------*/
 .Footer {
@@ -547,7 +551,7 @@ h1 {
   border-radius: 5px;
   height: 1rem;
   padding: 0.5em;
-  width: auto;
+  width:auto;
 }
 .five {
   grid-area: five;
