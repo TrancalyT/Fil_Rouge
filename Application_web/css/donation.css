@@ -18,6 +18,15 @@ html {
   scroll-behavior: smooth;
 }
 
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 ul,
 li {
   list-style: none;
@@ -25,6 +34,7 @@ li {
 
 body {
   font-size: 1.3em;
+  font-family: "Lato", sans-serif;
 }
 
 .button1 {
@@ -85,6 +95,11 @@ h6 {
   transition-duration: 1s;
 }
 
+input::placeholder {
+  font-style: italic;
+  font-family: Lato;
+}
+
 /*------------------------------- MENU HAMBURGER-------------------------------*/
 #menuToggle {
   position: fixed;
@@ -95,6 +110,7 @@ h6 {
 
   -webkit-user-select: none;
   user-select: none;
+  box-sizing: content-box;
 }
 
 #menuToggle a {
@@ -195,7 +211,7 @@ h6 {
   border-radius: 5px;
   height: 1.5rem;
   padding: 0.5em;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
 }
 
@@ -206,6 +222,24 @@ h6 {
   color: #232323;
 }
 
+#menu .recherche {
+  justify-content: space-between;
+  align-items: center;
+}
+#menu #srcbutton {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
+#menu #srcbutton:hover {
+  background: tomato;
+  transition: all 0.3s ease-in 0s;
+}
 /* ------------------------------HEADER ----------------------------------------*/
 header {
   height: 100vh;
@@ -454,7 +488,6 @@ input::placeholder {
     "five five five five";
   grid-area: Footer;
   background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
-  border-top: solid 2px #fff;
 }
 .one {
   grid-area: one;
@@ -551,7 +584,7 @@ input::placeholder {
   border-radius: 5px;
   height: 1rem;
   padding: 0.5em;
-  width:auto;
+  width: auto;
 }
 .five {
   grid-area: five;
