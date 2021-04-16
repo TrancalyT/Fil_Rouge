@@ -94,7 +94,6 @@
         </ul>
       </nav>       
     </div>
-  <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
   </div>
 </div>
 

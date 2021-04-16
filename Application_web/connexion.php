@@ -4,84 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" href="images/icon-index.png">
     <link rel="stylesheet" href="css/bootstrap.min.css" >
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="css/inscription.css">
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <title>Inscription</title>
+    <link rel="stylesheet" href="commondocs/commons.css">
+    <link rel="stylesheet" href="css/connexion.css">
+    <title>Connexion / Inscription</title>
 </head>
 <body>
 
-    <!-- MENU HAMBURGER -->
-        <nav role="navigation">
-            <div id="menuToggle">
-              <input class="input" type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="menu">
-                  <a href="inscription.html" id="connexion"><li>Connexion</li></a>
-                  <hr>
-                  <a href="index.html"><li>Accueil</li></a>
-                  <a href="musee.html" ><li>Musée</li></a>
-                  <a href="vehiculespopbefore.html"><li>Expositions</li></a>
-                  <a href="evenements.html"><li>Evènements</li></a>
-                  <a href="forum.html"><li>Forum</li></a>
-                  <a href="shop.html"><li>Boutique</li></a>
-                  <hr>
-                  <input id="search" type="search" placeholder="Va chercher Lycos !" name="search" class="form-control">
-                </ul> 
-            </div>
-          </nav>
+<!-- MENU HAMBURGER -->
 
-          <!-- HEADER -->
+    <?php include('includes/Nav.php'); ?>
 
-  <div class="bg"></div>
-  <header>
-    <div class="content">
-      <h1><span>Connexion</span></h1>
+<!-- HEADER -->
+
+    <div class="bg"></div>
+    <header>
+        <div class="content">
+        <h1><span>Connexion</span></h1>
     </div>
-  </header>
+    </header>
 
-    <!-- INSCRIPTION ET CONNEXION -->
-    <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
-    <!-- CONNEXION -->
+<!-- INSCRIPTION ET CONNEXION -->
+<!-- CONNEXION -->
+
     <div class="form_connexion">
-            <form action="" method="get" class="col g-3 justify-content form-info">
-                <div class="container-lg">
-                    <div class="mb-3">
-                        <div class="row justify-content-end">
-                            <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>
-                            <div class="col-sm-8">
-                                <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailconnexion" class="form-control" required>
-                            </div>
+        <form action="" method="get" class="col g-3 justify-content form-info">
+            <div class="container-lg">
+                <div class="mb-3">
+                    <div class="row justify-content-end">
+                        <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>
+                        <div class="col-sm-8">
+                            <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailconnexion" class="form-control" required>
                         </div>
-                    </div>
-                    <div class="mb-3">
-                        <div class="row justify-content-end">
-                            <label for="MDPco" class="col-sm col-form-label">Mot de passe : </label>
-                            <div class="col-sm-8">
-                                <input id="MDPco" size="50" maxlength="100" type="password" placeholder="" name="mdpco" class="form-control" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3 text-center">
-                        <button type="submit" class="buttonmain">Connexion</button>
-                    </div>
-                    <div class="mb-3 text-center">
-                        <button type="button" class="buttonmain2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Besoin d'un compte ?</button>
                     </div>
                 </div>
-            </form>
-        </div>
+                <div class="mb-3">
+                    <div class="row justify-content-end">
+                        <label for="MDPco" class="col-sm col-form-label">Mot de passe : </label>
+                        <div class="col-sm-8">
+                            <input id="MDPco" size="50" maxlength="100" type="password" placeholder="" name="mdpco" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="submit" class="buttonmain">Connexion</button>
+                </div>
+                <div class="mb-3 text-center">
+                    <button type="button" class="buttonmain2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Besoin d'un compte ?</button>
+                </div>
+            </div>
+        </form>
+    </div>
    
-    <!-- INSCRIPTION -->
+<!-- INSCRIPTION -->
 
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
         <div class="modal-dialog modal-xl">
@@ -224,45 +207,12 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
-    <!-- FOOTER -->
-    <footer class="Footer">
-        <div class="one">
-          <ul>
-            <a href="index.html"><li>Accueil</li></a>
-            <a href="musee.html" ><li>Musée</li></a>
-            <a href="vehiculespopbefore.html"><li>Expositions</li></a>
-            <a href="evenements.html"><li>Evènements</li></a>
-            <a href="forum.html"><li>Forum</li></a>
-            <a href="shop.html"><li>Boutique</li></a>
-          </ul>
-        </div>
-      <div class="two">
-        <ul>
-          <a href="inscription.html"><li>Connexion</li></a>
-          <a href="livreor.html"><li>Livre d'Or</li></a>
-        </ul>
-      </div>
-      <div class="three">
-        <h4>Pocket museum of pop culture</h4>
-      </br>
-        <p>Ouvert de minuit à 23:59pm</p>
-        <p>On ne se repose qu'une minute par jour !</p>
-      </br>
-        <a href="contact.html"><li>Contactez-nous</li></a>
-      </div>
-      <div class="four">
-        <form action="" method="post">
-          <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail" class="form-control">
-        </form>
-        <a href="#" class="button1">Envoyer</a>
-      </div>
-      <div class="five">
-        <h5>© copyright - 2021 - Team Rocket !</h5>
-      </div>
-      </footer>
-      
-      <script type="text/javascript" src="js/script.js"></script>
+<!-- FOOTER -->
+
+    <?php include('includes/Footer.php') ?>
+
+<script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

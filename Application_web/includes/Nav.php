@@ -5,7 +5,7 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <a href="inscription.html" id="connexion">
+            <a href="connexion.php" id="connexion">
                 <li>Connexion</li>
             </a>
             <hr>

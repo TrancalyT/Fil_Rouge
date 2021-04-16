@@ -23,10 +23,10 @@
     </div>
     <div class="two">
         <ul>
-            <a href="inscription.html">
+            <a href="connexion.php">
                 <li>Connexion</li>
             </a>
-            <a href="livreor.html">
+            <a href="livreor.php">
                 <li>Livre d'Or</li>
             </a>
         </ul>
