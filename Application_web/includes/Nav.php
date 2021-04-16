@@ -9,7 +9,7 @@
                 <li>Connexion</li>
             </a>
             <hr>
-            <a href="index.html">
+            <a href="acceuil.php">
                 <li>Accueil</li>
             </a>
             <a href="musee.html">
