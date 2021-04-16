@@ -189,6 +189,30 @@ h6 {
 #menu #connexion:hover {
   color: #232323;
 }
+#menu .recherche {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+#menuToggle a {
+  display: flex;
+}
+
+#menu #srcbutton {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  padding-left: 0em;
+  padding-right: 0em;
+}
+
+#menu #srcbutton:hover {
+  background: tomato;
+  transition: all 0.3s ease-in 0s;
+}
 
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
 header {
@@ -262,8 +286,8 @@ header span {
   height: 100vh;
   top: 0;
   left: 0;
-  background: url("../images/suitcase2.png") center no-repeat;
-  background-size: cover;
+  /*background: url("../images/suitcase2.png") center no-repeat;*/ /* Elément à spécifier sur chacune des pages pour changer le background de fond*/
+  /* background-size: cover; */
   -moz-transition: 0.1s;
   -o-transition: 0.1s;
   -webkit-transition: 0.1s;
@@ -399,61 +423,3 @@ footer .five h5 {
 }
 
 /* ------------------------------------------------------RESPONSIVE------------------------------------------------------ */
-@media (max-width: 768px) {
-  .Footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
-    gap: 1rem 1rem;
-    grid-template-areas:
-      "one"
-      "two"
-      "three"
-      "four"
-      "five";
-    grid-area: Footer;
-    background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
-  }
-  .Footer {
-    padding: 0;
-  }
-}
-
-@media (max-width: 425px) {
-  body {
-    font-size: 1em;
-  }
-
-  header h1 {
-    width: 90vw;
-    left: 80%;
-  }
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-size: larger;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 375px) {
-  header h1 {
-    width: 90vw;
-    left: 90%;
-  }
-}
-
-@media (max-width: 320px) {
-  header h1 {
-    width: 90vw;
-    left: 105%;
-  }
-  .four input {
-    width: 60vw;
-  }
-  footer .five h5 {
-    font-size: x-small;
-  }
-}
