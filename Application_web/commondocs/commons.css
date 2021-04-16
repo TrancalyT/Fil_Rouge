@@ -37,6 +37,30 @@ h6 {
   font-family: Phosphate;
 }
 
+input::placeholder {
+  font-style: italic;
+  font-family: Lato;
+}
+
+.button1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+.button1:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+}
+
 /* ------------------------------------------------------BOUTON TO TOP------------------------------------------------------ */
 #myBtn {
   display: none;

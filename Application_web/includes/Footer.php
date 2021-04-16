@@ -1,7 +1,7 @@
 <footer class="Footer">
     <div class="one">
         <ul>
-            <a href="index.html">
+            <a href="accueil.php">
                 <li>Accueil</li>
             </a>
             <a href="musee.html">
@@ -37,7 +37,7 @@
         <p>Ouvert de minuit à 23:59pm</p>
         <p>On ne se repose qu'une minute par jour !</p>
         </br>
-        <a href="contact.html">
+        <a href="contact.php">
             <li>Contactez-nous</li>
         </a>
     </div>
