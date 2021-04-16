@@ -79,6 +79,10 @@
           <p class="fs-3">Resultat 4</p>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
         </div>
+        <div class="rechercheback">
+          <p class="fs-3">Resultat 5</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
+        </div>
       </section>
     </div>
     <div class="pagine row align-items-end">
