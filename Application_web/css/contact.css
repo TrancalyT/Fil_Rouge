@@ -26,6 +26,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
+  scroll-behavior: smooth;
 }
 
 ul,
@@ -37,6 +38,46 @@ body {
   font-size: 1.3em;
 }
 
+.button1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+}
+.button1:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+}
+
+.button2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #392d3b;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  background: #fff;
+  opacity: 0.6;
+}
+.button2:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+  opacity: 1;
+}
 h2,
 h3,
 h4,
@@ -44,6 +85,37 @@ h5,
 h6 {
   letter-spacing: 0.4rem;
   font-family: Phosphate;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: tomato;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  font-size: 18px;
+  clip-path: polygon(
+    50% 0,
+    0 40%,
+    30% 40%,
+    30% 100%,
+    70% 100%,
+    70% 40%,
+    100% 40%
+  );
+  box-shadow: 0px 0px 0px 5px #a0a0a0, inset 0px 10px 27px -8px #ff8000,
+    inset 0px -10px 27px -8px #a31925, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#myBtn:hover {
+  background-color: #555;
+  transition-duration: 1s;
 }
 
 input::placeholder {
@@ -114,12 +186,9 @@ input::placeholder {
   position: absolute;
   top: -7px;
   left: -5px;
-
   cursor: pointer;
-
   opacity: 0;
   z-index: 2;
-
   -webkit-touch-callout: none;
 }
 
@@ -197,8 +266,9 @@ input::placeholder {
   border-radius: 5px;
   height: 1.5rem;
   padding: 0.5em;
-  width: 100%;
+  width: 90%;
   box-sizing: border-box;
+  font-size: initial;
 }
 
 #menu #connexion {
@@ -206,6 +276,27 @@ input::placeholder {
 }
 #menu #connexion:hover {
   color: #232323;
+}
+
+#menu .recherche {
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+#menu #srcbutton {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  padding-left: 0em;
+  padding-right: 0em;
+  font-size: initial;
+}
+
+#menu #srcbutton:hover {
+  background: tomato;
+  transition: all 0.3s ease-in 0s;
 }
 
 /* HEADER */
@@ -461,6 +552,7 @@ header span {
   height: 1rem;
   padding: 0.5em;
   width: auto;
+  font-size: initial;
 }
 .five {
   grid-area: five;
