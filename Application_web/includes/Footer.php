@@ -43,7 +43,7 @@
     </div>
     <div class="four">
         <form action="" method="post">
-            <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail" class="form-control">
+            <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail">
         </form>
         <a href="#" class="button1">Envoyer</a>
     </div>
