@@ -31,7 +31,7 @@
             <form action="recherche.php" method="post">
                 <div class="recherche">
                     <input id="search" type="search" placeholder="Va chercher Lycos !" name="search">
-                    <a href="recherche.php"><button id="srcbutton" title="GO !" type="submit"><i class="fas fa-search"></i></button></a>
+                    <a href=""><button id="srcbutton" title="GO !" type="submit"><i class="fas fa-search"></i></button></a>
                 </div>
             </form>
         </ul>

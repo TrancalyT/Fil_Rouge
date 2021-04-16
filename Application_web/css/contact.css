@@ -10,6 +10,7 @@ html {
 }
 
 /* ------------------------------------------------------MENU HAMBURGER------------------------------------------------------ */
+
 #menuToggle {
   box-sizing: content-box;
 }
@@ -45,15 +46,6 @@ html {
   color: #392d3b;
   background-color: #fff;
   box-sizing: border-box;
-}
-#Sujet::placeholder {
-  font-style: italic;
-  font-family: Lato;
-}
-
-#E-Mail-Contact::placeholder {
-  font-style: italic;
-  font-family: Lato;
 }
 
 .buttonmain {
