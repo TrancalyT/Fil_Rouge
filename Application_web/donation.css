@@ -1,8 +1,9 @@
-/*---------------------------- GENERAL---------------------------------- */
+/*--------------------------- GENERAL-------------------------------- */
 @font-face {
   font-family: Phosphate;
   src: url("../fonts/PhosphatePro-Inline.otf");
 }
+
 html,
 body,
 .grid-container {
@@ -18,15 +19,6 @@ html {
   scroll-behavior: smooth;
 }
 
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
 ul,
 li {
   list-style: none;
@@ -34,7 +26,6 @@ li {
 
 body {
   font-size: 1.3em;
-  font-family: "Lato", sans-serif;
 }
 
 .button1 {
@@ -54,6 +45,28 @@ body {
   background: #fff;
   color: #392d3b;
   text-decoration: none;
+}
+
+.button2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #392d3b;
+  border: 1px solid white;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 18px 50px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  background: #fff;
+  opacity: 0.6;
+}
+.button2:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+  opacity: 1;
 }
 h2,
 h3,
@@ -100,7 +113,7 @@ input::placeholder {
   font-family: Lato;
 }
 
-/*------------------------------- MENU HAMBURGER-------------------------------*/
+/*------------------------- MENU HAMBURGER--------------------------------*/
 #menuToggle {
   position: fixed;
   top: 50px;
@@ -110,7 +123,6 @@ input::placeholder {
 
   -webkit-user-select: none;
   user-select: none;
-  box-sizing: content-box;
 }
 
 #menuToggle a {
@@ -240,13 +252,15 @@ input::placeholder {
   background: tomato;
   transition: all 0.3s ease-in 0s;
 }
-/* ------------------------------HEADER ----------------------------------------*/
+
+/* ------------------------HEADER-------------------------------------- */
 header {
   height: 100vh;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background: rgba(0, 0, 0, 0.6);
+  border-bottom: solid 10px #fff;
 }
 header .content {
   position: relative;
@@ -322,22 +336,36 @@ header span {
   z-index: -1;
   overflow: hidden;
 }
-/* ---------------------CORP----------------------------------------------- */
-
-
-/*----------------------------- SOUTIEN --------------------------------*/
-#contenant{
-  background: linear-gradient(#214453, #315864, #426e80); 
+/* ---------------------CORP----------------------------------- */
+.contenant{
+  background-color: rgb(190, 190, 190);
 }
-#soutien{
-  background-color: rgb(242, 242, 242);
+.box {
   border-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+  height:auto;
+  margin: 15px;
+  position: relative;
+  width: 300px;
+  background-color: rgb(242, 242, 242);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.35);
+}
+#produit{
+  max-width: 1000px;
+  margin: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  word-wrap: break-word;
 }
 .text{
-  color: #687a9c;
+  color: #8695b3;
   text-align: center;
-  padding-bottom: 1.5vw;
-  font-size: 1em;
+  text-transform: uppercase;
+  font-size: 22px;
+  letter-spacing: 0.2rem;
+  padding-top: 5px;
+  font-family: 'phosphate','sans-serif';
 }
 #choix1 h5{
   font-family: 'Lato','sans-serif';
@@ -390,16 +418,7 @@ input::placeholder {
   font-style: italic;
   font-family: 'Lato';
 }
-/*----------------------------- COORDONNEES --------------------------------*/
-#coordonnees{
-  background-color: rgb(242, 242, 242);
-  border-radius: 5px;
-}
-/*------------------------------REGLEMENT----------------------------------- */
-#reglement{
-  background-color: rgb(242, 242, 242);
-  border-radius: 5px;
-}
+/* --------------------------reglement------------------------------------- */
 #accordeon h5{
   font-family: 'Lato','sans-serif';
   text-align: center;
@@ -410,6 +429,7 @@ input::placeholder {
   border-radius: 5px;
   text-align: center;
   padding-bottom: 15px;
+  font-size: smaller;
 }
 #accordeon{
   padding: 7px;
@@ -477,7 +497,7 @@ input::placeholder {
 #iban{
   padding-bottom: 10px;
 }
-/*------------------------------ FOOTER --------------------------------------*/
+/*------------------------ FOOTER -----------------------------------*/
 .Footer {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr 1fr 1fr;
@@ -488,6 +508,7 @@ input::placeholder {
     "five five five five";
   grid-area: Footer;
   background: linear-gradient(#2c5364, #203a43, #0f2027, #090a0f);
+  border-top: solid 10px #fff;
 }
 .one {
   grid-area: one;
@@ -602,7 +623,7 @@ footer .five h5 {
     -3px -2px 3px rgba(0, 117, 175, 1);
 }
 
-/*--------------------------- RESPONSIVE--------------------------------------- */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .News {
     display: grid;
@@ -663,12 +684,6 @@ footer .five h5 {
   .gallery {
     padding: 0;
   }
-  /* .Expos {
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 1rem;
-  } */
   .About {
     padding: 1rem;
   }

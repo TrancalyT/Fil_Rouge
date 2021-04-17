@@ -7,54 +7,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="css/donation.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
 
 </head>
 
 <body>
-    <!---------------------------------------- MENU HAMBURGER -------------------------------------->
-    <nav role="navigation">
-        <div id="menuToggle">
-          <input class="input" type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <ul id="menu">
-              <a href="inscription.html" id="connexion"><li>Connexion</li></a>
-              <hr>
-              <a href="index.html"><li>Accueil</li></a>
-              <a href="musee.html" ><li>Musée</li></a>
-              <a href="vehiculespopbefore.html"><li>Expositions</li></a>
-              <a href="evenements.html"><li>Evènements</li></a>
-              <a href="forum.html"><li>Forum</li></a>
-              <a href="shop.html"><li>Boutique</li></a>
-              <hr>
-              <form action="" method="post">
-                <div class="recherche">
-                  <input id="search" type="search" placeholder="Va chercher Lycos !" name="search" class="form-control">
-                  <a href="recherche.html"><button id="srcbutton" title="GO !" type="submit"><i class="fas fa-search"></i></button></a>
-                </div>
-              </form>
-            </ul> 
-        </div>
-      </nav>
-    <!---------------------------------------- HEADER -------------------------------------->
+    <!--------------- MENU BURGER ------------------------------------->
+    <?php include('includes/Nav.php'); ?>
+
+    <!-- -------------------------HEADER--------------------------------- -->
 
     <div class="bg"></div>
     <header>
         <div class="content">
-            <h1><span>DONATION</span></h1>
+            <h1><span>donation</span></h1>
         </div>
     </header>
     <!-------------------------------------CORP--------------------------------------------->
-    <div class="w3-row w3-border" id="contenant">
+    <main class="contenant">
         <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
-        <div class="w3-third w3-container">
-            <section id="soutien">
-                <h3 class="text">1. Mon soutien</h3>
+        <div id="produit">
+            <div class="box">
+                <div class="text">1.mon soutien</div>
                 <div id="choix1">
                     <a>
                         <h5><strong>Je donne une fois</strong></h5>
@@ -81,13 +57,12 @@
                     </a>
                     <div class="formulaire2">
                         <input type="number" class="form-control" name="montant" placeholder="ex: 15€">
+                        <input type="button" class="button2" value="Je valide">
                     </div>
                 </div>
-            </section>
-        </div>
-        <div class="w3-third w3-container">
-            <section id="coordonnees">
-                <h3 class="text">2. Mes coordonnées</h3>
+            </div>
+            <div class="box">
+                <div class="text" style="margin-bottom:30px;">2. Mes coordonnées</div>
                 <form class="formulaire2" action="traitement.php" method="POST">
                     <input type="email" class="form-control" name="email" placeholder="E-Mail*"><br><br>
                     <select name="civilite">
@@ -115,19 +90,17 @@
                     <input type="checkbox" name="courrier" value="courrier">
                     <label for="courrier">Par courrier</label><br />
 
-                    <p style="font-size:1em;">
+                    <p style="font-size:0.6em;">
                         <strong> *</strong> : Champs obligatoire(ces informations sont indispensables
                         pour bénéficier de votre réduction fiscale)
                     </p>
                 </form>
-            </section>
-        </div>
-        <div class="w3-third w3-container">
-            <section id="reglement">
-                <h3 class="text">3. Mon règlement</h3>
+            </div>
+            <div class="box">
+                <div class="text">3. Mon règlement</div>
                 <div class="formulaire">
                     <img src="images/verrou.png" style="width: 1em;">
-                    <span style="font-size:1em;"><strong>Plateforme de paiement 100% sécurisée</strong></span>
+                    <span style="font-size:0.7em;"><strong>Plateforme de paiement 100% sécurisée</strong></span>
                 </div>
                 <!-- Menu accordeon -->
                 <main id="accordeon">
@@ -165,65 +138,12 @@
                         </div>
                     </section>
                 </main>
-            </section>
+            </div>
         </div>
-    </div>
-    <!---------------------------------------- FOOTER -------------------------------------->
+    </main>
 
-    <footer class="Footer">
-        <div class="one">
-            <ul>
-                <a href="index.html">
-                    <li>Accueil</li>
-                </a>
-                <a href="musee.html">
-                    <li>Musée</li>
-                </a>
-                <a href="vehiculespopbefore.html">
-                    <li>Expositions</li>
-                </a>
-                <a href="evenements.html">
-                    <li>Evènements</li>
-                </a>
-                <a href="forum.html">
-                    <li>Forum</li>
-                </a>
-                <a href="shop.html">
-                    <li>Boutique</li>
-                </a>
-            </ul>
-        </div>
-        <div class="two">
-            <ul>
-                <a href="inscription.html">
-                    <li>Connexion</li>
-                </a>
-                <a href="livreor.html">
-                    <li>Livre d'Or</li>
-                </a>
-            </ul>
-        </div>
-        <div class="three">
-            <h4>Pocket museum of pop culture</h4>
-            </br>
-            <p>Ouvert de minuit à 23:59pm</p>
-            <p>On ne se repose qu'une minute par jour !</p>
-            </br>
-            <a href="contact.html">
-                <li>Contactez-nous</li>
-            </a>
-        </div>
-        <div class="four">
-            <form action="" method="post">
-                <input id="E-Mail"  maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter"
-                    name="mail" class="form-control">
-            </form>
-            <a href="#" class="button1">Envoyer</a>
-        </div>
-        <div class="five">
-            <h5>© copyright - 2021 - Team Rocket !</h5>
-        </div>
-    </footer>
+    <!---------------------------------------- FOOTER -------------------------------------->
+    <?php include('includes/Footer.php') ?>
 
     <!---------------------------------------- SCRIPT -------------------------------------->
     <script type="text/javascript" src="js/script.js"></script>
