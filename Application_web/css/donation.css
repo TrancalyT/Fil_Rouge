@@ -479,19 +479,21 @@ input::placeholder {
 #paypal {
   border-bottom: #687a9c 1px solid;
 }
-#accordeon .button3{
+.button3{
   font-weight: bold;
   text-transform: uppercase;
   color: #687a9c;
-  border: 1px solid #687a9c;
+  border: 1px solid white;
+  display: inline-block;
   padding: 5px 18px;
   transition: all 0.3s ease-in 0s;
   border-radius: 20px;
   text-decoration: none;
+  border-bottom: #090a0f 1px solid;
 }
 .button3:hover {
   background: #fff;
-  color: #687a9c;
+  color: tomato;
   text-decoration: none;
 }
 #iban{
