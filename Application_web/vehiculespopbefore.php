@@ -9,6 +9,7 @@
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" > -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="commondocs/commons.css">
     <link rel="stylesheet" href="css/vehiculespop.css"> 
     
 </head>
@@ -38,11 +39,11 @@
 
     <!-- MENU EXPO -->
     <div class="nav">
-      <a href="index.html"><div class="salle"><p>Retour au musée</p></div></a>
+      <a href="accueil.php"><div class="salle"><p>Retour au musée</p></div></a>
           <ul><hr></ul>
-        <a href="vehiculespopbefore.html"><div class="salle"><p>Avant la visite</p></div></a>
+        <a href="vehiculespopbefore.php"><div class="salle"><p>Avant la visite</p></div></a>
             <span class="vertical"></span>
-        <a href="vehiculespop.html"><div class="salle"><p>Salle des véhicules terrestres</p></div></a>
+        <a href="vehiculespop.php"><div class="salle"><p>Salle des véhicules terrestres</p></div></a>
             <span class="vertical"></span>
         <a href="#"><div class="salle"><p>Salle des véhicules volants</p></div></a>
             <span class="vertical"></span>
@@ -68,41 +69,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="Footer">
-    <div class="one">
-      <ul>
-        <a href="index.html"><li>Accueil</li></a>
-        <a href="musee.html" ><li>Musée</li></a>
-        <a href="vehiculespop.html"><li>Expositions</li></a>
-        <a href="evenements.html"><li>Evènements</li></a>
-        <a href="forum.html"><li>Forum</li></a>
-        <a href="shop.html"><li>Boutique</li></a>
-      </ul>
-    </div>
-  <div class="two">
-    <ul>
-      <a href="inscription.html"><li>Connexion</li></a>
-      <a href="livreor.html"><li>Livre d'Or</li></a>
-    </ul>
-  </div>
-  <div class="three">
-    <h4>Pocket museum of pop culture</h4>
-  </br>
-    <p>Ouvert de minuit à 23:59pm</p>
-    <p>On ne se repose qu'une minute par jour !</p>
-  </br>
-    <a href="contact.html"><li>Contactez-nous</li></a>
-  </div>
-  <div class="four">
-    <form action="" method="post">
-      <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail" class="form-control">
-    </form>
-    <a href="#" class="button1">Envoyer</a>
-  </div>
-  <div class="five">
-    <h5>© copyright - 2021 - Team Rocket !</h5>
-  </div>
-  </footer>
+  <?php include('includes/Footer.php') ?>
   </main>
   <!-- SCRIPT -->
     <script type="text/javascript" src="js/script.js"></script>

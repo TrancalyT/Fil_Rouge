@@ -46,7 +46,7 @@
     </section>
 
     <section class="Evenements">
-      <a href="evenements.html" class="button2">évenements à venir</a>
+      <a href="evenements.php" class="button2">évenements à venir</a>
 
 
     </section>
@@ -58,7 +58,7 @@
       <!-- Les photos doivent être redim au même format, idéalement 1300*1200 -->
       <section class="bodyExpos">
         <div class="gallery">
-          <a href="vehiculespop.html"><img src="images/vehiculesBG2.jpg">Les véhicules à travers la Pop Culture</a>
+          <a href="vehiculespop.php"><img src="images/vehiculesBG2.jpg">Les véhicules à travers la Pop Culture</a>
           <a href="#"><img src="https://source.unsplash.com/1300x1200/?lebanon"></a>
           <a href="#"><img src="https://source.unsplash.com/1300x1200/?qatar"></a>
         </div>
@@ -85,7 +85,7 @@
       </section>
       <section class="support">
         <img src="images/unclegandalf2.png" alt="we-need-you" />
-        <a href="donation.html" class="button1">Soutenez le musée</a>
+        <a href="donation.php" class="button1">Soutenez le musée</a>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolorum praesentium itaque provident fuga, tempore illo incidunt laboriosam quis labore repellat unde at officia hic, minima recusandae. Modi, placeat fugit?</p>
       </section>
     </section>
