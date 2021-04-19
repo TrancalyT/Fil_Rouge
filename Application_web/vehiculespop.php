@@ -14,6 +14,7 @@
     
 </head>
   <body>
+
     <!-- <nav role="navigation">
     <div id="menuToggle">
       <input class="input" type="checkbox" />
@@ -37,7 +38,8 @@
 
   <!-- Menu désactivé en expo ! -->
 
-    <!-- MENU EXPO -->
+<!-- MENU EXPO -->
+
     <div class="nav">
       <a href="accueil.php"><div class="salle"><p>Retour au musée</p></div></a>
           <ul><hr></ul>
@@ -50,7 +52,8 @@
         <a href="#"><div class="salle"><p>Les machins bizarres</p></div></a>
     </div>
 
-  <!-- HEADER -->
+<!-- HEADER -->
+
   <div class="bg"></div>
   <header>
     <div class="content">
@@ -58,7 +61,8 @@
     </div>
   </header>
 
-  <!-- CORPS -->
+<!-- CORPS -->
+
   <main class="grid-container">
     <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
     <section class="expo">
@@ -97,7 +101,9 @@
   <!-- FOOTER -->
   <?php include('includes/Footer.php') ?>
   </main>
+
   <!-- SCRIPT -->
     <script type="text/javascript" src="js/script.js"></script>
+    
   </body>
 </html>

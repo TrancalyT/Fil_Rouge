@@ -18,24 +18,29 @@
 </head>
 <body>
 
-    <!-- MENU HAMBURGER -->
-    <?php include('includes/Nav.php'); ?>
+<!-- MENU HAMBURGER -->
+  <?php include('includes/Nav.php'); ?>
 
-     <!-- HEADER -->
+<!-- HEADER -->
+  
   <div class="bg"></div>
-  <header>
-    <div class="content">
-      <h1><span>Boutique</span></h1>
-    </div>
-  </header>
+    <header>
+      <div class="content">
+        <h1><span>Boutique</span></h1>
+      </div>
+    </header>
 
-    <section class="construction">
-        <h2>Adoptez bientôt un artéfact !</h2>
-    </section>
+<!-- SHOP -->
 
-            <!-- FOOTER -->
-            <?php include('includes/Footer.php') ?>
-        <!-- SCRIPT -->
-              <script type="text/javascript" src="js/script.js"></script>
+  <section class="construction">
+    <h2>Adoptez bientôt un artéfact !</h2>
+  </section>
+
+<!-- FOOTER -->
+  <?php include('includes/Footer.php') ?>
+
+<!-- SCRIPT -->
+  <script type="text/javascript" src="js/script.js"></script>
+  
 </body>
 </html>

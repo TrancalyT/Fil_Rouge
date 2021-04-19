@@ -72,6 +72,9 @@
 
   <?php include('includes/Footer.php') ?>
       
-<script type="text/javascript" src="js/script.js"></script>
+<!-- SCRIPT -->
+
+  <script type="text/javascript" src="js/script.js"></script>
+
 </body>
 </html>
