@@ -12,19 +12,19 @@
             <a href="accueil.php">
                 <li>Accueil</li>
             </a>
-            <a href="musee.html">
+            <a href="musee.php">
                 <li>Musée</li>
             </a>
-            <a href="vehiculespopbefore.html">
+            <a href="vehiculespopbefore.php">
                 <li>Expositions</li>
             </a>
-            <a href="evenements.html">
+            <a href="evenements.php">
                 <li>Evènements</li>
             </a>
             <a href="forum.html">
                 <li>Forum</li>
             </a>
-            <a href="shop.html">
+            <a href="shop.php">
                 <li>Boutique</li>
             </a>
             <hr>

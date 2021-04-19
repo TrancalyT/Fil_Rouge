@@ -29,7 +29,6 @@
     </header>
     <!-------------------------------------CORP--------------------------------------------->
     <main class="contenant">
-        <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
         <div id="produit">
             <div class="box">
                 <div class="text">1.mon soutien</div>
