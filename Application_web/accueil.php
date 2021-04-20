@@ -95,54 +95,24 @@
         <h2>DANS NOTRE LIVRE D'OR</h2>
       </section>
       <div class="carrousel">
-        <input type="radio" name="slides" id="radio-1" checked>
-        <input type="radio" name="slides" id="radio-2">
-        <input type="radio" name="slides" id="radio-3">
-        <input type="radio" name="slides" id="radio-4">
-        <ul class="slides">
-          <li class="slide">
-            <p>
-              <q>Laissez moi vous dire qu'à coté, la Terre du Milieu c'est de la chiasse !</q>
-              <span class="author">
-                <img src="https://th.thgim.com/news/international/m1m01s/article26984481.ece/alternates/FREE_300/30TH-TOLKIEN">
-                JR Tolkien
-              </span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Un lieu exceptionnel, la preuve, il m'a fait revivre.</q>
-              <span class="author">
-                <img src="https://i.pinimg.com/736x/3f/c5/87/3fc587af121759209c53132a71c03c97--record-player-swing.jpg">
-                Sinatra
-              </span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Dommage, qu'il n'y ai pas encore d'exposition dédié à un public plus âgé si vous voyez ce que je veux dire ;)</q>
-              <span class="author">
-                <img src="https://pbs.twimg.com/profile_images/1832861297/GordonShumway12.jpg">
-                Alf
-              </span>
-            </p>
-          </li>
-          <li class="slide">
-            <p>
-              <q>Les zorglogs apprécient ce site. Gloire aux zorglogs !</q>
-              <span class="author">
-                <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-                The octocat
-              </span>
-            </p>
-          </li>
-        </ul>
-        <div class="slidesNavigation">
-          <label for="radio-1" id="dotForRadio-1"></label>
-          <label for="radio-2" id="dotForRadio-2"></label>
-          <label for="radio-3" id="dotForRadio-3"></label>
-          <label for="radio-4" id="dotForRadio-4"></label>
-        </div>
+        <p class="item-1">This is your last chance. After this, there is no turning back.              
+          <span class="author">
+            <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
+              The octocat
+          </span>
+        </p>
+        <p class="item-2">You take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe.
+        <span class="author">
+            <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
+              The octocat
+          </span>
+        </p>
+        <p class="item-3">You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.
+        <span class="author">
+            <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
+              The octocat
+          </span>
+        </p>
       </div>
     </section>
 
