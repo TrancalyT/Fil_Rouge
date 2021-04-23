@@ -9,8 +9,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="js/rangeslider.js"></script>
+  <script src="js/wrunner-native.js"></script>
   <link rel="shortcut icon" href="images/icon-index.png">
+  <link rel="stylesheet" href="css/wrunner-default-theme.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -48,7 +49,8 @@
                 <div class="dropdown-menu">
                   <div class="mb-3">
                     <label for="parDate" class="form-label mainlabel">Par date</label>
-                    <input type="range" class="form-range range_css" min="1970" max="2021" step="10" id="parDate">
+                    <!-- <input type="range" class="form-range range_css" min="1970" max="2021" step="10" id="parDate"> -->
+                    <div class="my-js-slider"></div>
                   </div>
                   <div class="dropdown-divider"></div>
                   <div class="mb-3">
@@ -178,8 +180,65 @@
 
   <!-- SCRIPT -->
 
+  <script>
+    var setting = {
+        roots: document.querySelector('.my-js-slider'),
+        type: 'range',
+        step: 10,
+        limits : {     minLimit: 1900,      maxLimit: 2020   },
+        theme : 'default',
+        direction : 'horizontal',
+        valueNoteDisplay : true,
+        }
+    var slider = wRunner(setting);
+  </script>
   <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 
 </html>
+
+<!-- POUR RECUPERER LA VALEUR DU RANGE : Selectionner une des fonctions suivantes (à tester) :
+
+var rangeSlider = wRunner();
+ 
+// set/get parent element
+rangeSlider.setRoots(roots);
+rangeSlider.getRoots();
+ 
+// true or false
+rangeSlider.setValueNoteDisplay(value);
+rangeSlider.getValueNoteDisplay();
+ 
+// set/get type: 'single' or 'range'
+rangeSlider.setType(type);
+rangeSlider.getType();
+ 
+// set/get limits
+rangeSlider.setLimits(limits);
+rangeSlider.getLimits();
+ 
+// set/get value(s)
+rangeSlider.setSingleValue(value);
+rangeSlider.setRangeValue([values]);
+rangeSlider.getValue();
+ 
+// set nearest value
+rangeSlider.setNearestValue(value, viaPercents);
+ 
+// set/get the number of divisions
+rangeSlider.setDivisionsCount(count);
+rangeSlider.getDivisionCount(count);
+ 
+// set/get theme
+rangeSlider.setTheme(theme);
+rangeSlider.hetTheme();
+ 
+// set/get direciton
+// 'horizontal' or 'vertical'
+rangeSlider.setDirection(direction);
+rangeSlider.getDirection();
+ 
+// set/get step size
+rangeSlider.setStep(stepSize);
+rangeSlider.getStep(); -->
