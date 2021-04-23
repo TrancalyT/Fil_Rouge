@@ -16,7 +16,7 @@ html {
 }
 
 #menu input {
-  font-size: initial;
+  font-size: 0.83rem;
 }
 
 #menu .recherche {
@@ -24,7 +24,7 @@ html {
 }
 
 #menu #srcbutton {
-  font-size: initial;
+  font-size: 0.83rem;
 	display: flex;
 	align-items: center;
 }
@@ -81,7 +81,7 @@ html {
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
 
 .four input {
-  font-size: initial;
+  font-size: 0.83rem;
 }
 
 #E-Mail {

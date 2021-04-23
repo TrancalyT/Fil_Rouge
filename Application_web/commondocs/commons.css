@@ -205,6 +205,7 @@ input::placeholder {
   padding: 0.5em;
   width: 90%;
   box-sizing: border-box;
+  font-family :inherit;
 }
 
 #menu #connexion {
@@ -429,6 +430,7 @@ header span {
   height: 1rem;
   padding: 0.5em;
   width: auto;
+  font-family :inherit;
 }
 .five {
   grid-area: five;
