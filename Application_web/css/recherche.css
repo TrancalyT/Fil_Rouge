@@ -154,6 +154,40 @@ html {
   padding-top: 3%;
 }
 
+/* --- FILTRES ---*/
+
+.mainlabel{
+  color : tomato;
+}
+
+.dropdown-menu.show {
+    text-align: center;
+}
+
+.form-check .form-check-input {
+  float: unset;
+}
+
+.form-check-input[type=checkbox]:checked {
+  background-color: tomato;
+  border-color: #392d3b;
+}
+
+.form-range {
+    width: 95%;
+}
+
+.range_css::-webkit-slider-thumb{
+  -webkit-appearance:none;  
+  border:1px solid #392d3b;
+  width:1rem;
+  height:1rem;
+  border-radius:40%;
+  background:tomato;
+  box-shadow:0 0 .125rem #aaa;
+}
+
+
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
 
 .four input {
