@@ -268,7 +268,7 @@
   background: url("../images/goldenbook.jpg") center no-repeat;
   text-align: center;
   border-top: solid 10px #fff;
-  position : relative;
+  position: relative;
 }
 
 .titleGoldenbook {
@@ -281,13 +281,13 @@
 
 /* CARROUSEL */
 
-.carrousel{
+.carrousel {
   padding-bottom: 4em;
   height: 20em;
   max-width: 750px;
   margin: auto;
   position: relative;
-  width: 400%;
+  /* width: 400%; */
   overflow: hidden;
 }
 
@@ -309,53 +309,87 @@
   font-style: italic;
 }
 
-.item-1, 
-.item-2, 
+.item-1,
+.item-2,
 .item-3 {
-	position:absolute;
+  position: absolute;
   display: block;
-	top: 1.8em;
-  
+  top: 1.8em;
+
   width: 60%;
-  
+
   font-size: 1.5em;
-  color : #fff;
+  color: #fff;
 
-	animation-duration: 20s;
-	animation-timing-function: ease-in-out;
-	animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
 
-.item-1{
-	animation-name: anim-1;
+.item-1 {
+  animation-name: anim-1;
 }
 
-.item-2{
-	animation-name: anim-2;
+.item-2 {
+  animation-name: anim-2;
 }
 
-.item-3{
-	animation-name: anim-3;
+.item-3 {
+  animation-name: anim-3;
 }
 
 @keyframes anim-1 {
-	0%, 8.3% { left: -100%; opacity: 0; }
-  8.3%,25% { left: 25%; opacity: 1; }
-  33.33%, 100% { left: 110%; opacity: 0; }
+  0%,
+  8.3% {
+    left: -100%;
+    opacity: 0;
+  }
+  8.3%,
+  25% {
+    left: 25%;
+    opacity: 1;
+  }
+  33.33%,
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
 
 @keyframes anim-2 {
-	0%, 33.33% { left: -100%; opacity: 0; }
-  41.63%, 58.29% { left: 25%; opacity: 1; }
-  66.66%, 100% { left: 110%; opacity: 0; }
+  0%,
+  33.33% {
+    left: -100%;
+    opacity: 0;
+  }
+  41.63%,
+  58.29% {
+    left: 25%;
+    opacity: 1;
+  }
+  66.66%,
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
 
 @keyframes anim-3 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+  0%,
+  66.66% {
+    left: -100%;
+    opacity: 0;
+  }
+  74.96%,
+  91.62% {
+    left: 25%;
+    opacity: 1;
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
 }
-
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
@@ -447,9 +481,9 @@
     font-size: larger;
     padding: 1rem;
   }
-  
-  .carrousel{
-    width : 100%;
+
+  .carrousel {
+    width: 100%;
   }
 }
 
