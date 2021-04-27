@@ -130,8 +130,8 @@ p:nth-child(1) a:hover {
     opacity: 1;
 }
 .grid-container { 
-    display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1.1fr 1.1fr 0.8fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas:
