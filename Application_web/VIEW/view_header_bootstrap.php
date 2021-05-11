@@ -29,5 +29,21 @@ function callHeader(string $title, string $css)
 
         <!-- MENU BURGER -->
 
-    <?php require_once(__DIR__ . '/../includes/Nav.php');
-} ?>
+    <?php
+    require_once(__DIR__ . '/../includes/Nav.php');
+}
+    ?>
+
+    <?php
+    function CallMainTitle(string $title)
+    {
+    ?>
+
+        <div class="bg"></div>
+        <header>
+            <div class="content">
+                <h1><span><?= $title ?></span></h1>
+            </div>
+        </header>
+    <?php
+    }

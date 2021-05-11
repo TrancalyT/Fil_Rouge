@@ -9,12 +9,7 @@
 
 <!-- HEADER -->
 
-<div class="bg"></div>
-<header>
-  <div class="content">
-    <h1><span>contact</span></h1>
-  </div>
-</header>
+<?php CallMainTitle("Contact") ?>
 
 <!-- FORMULAIRE CONTACT -->
 

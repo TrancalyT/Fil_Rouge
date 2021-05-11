@@ -1,15 +1,10 @@
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
-<?php callHeader("Accueil"); ?>
+<?php callHeader("Accueil", "css/index.css"); ?>
 
 <!-- HEADER -->
 
-<div class="bg"></div>
-<header>
-  <div class="content">
-    <h1><span>Pocket museum of pop culture</span></h1>
-  </div>
-</header>
+<?php CallMainTitle("Pocket Museum of Pop Culture") ?>
 
 <!-- CORPS -->
 
