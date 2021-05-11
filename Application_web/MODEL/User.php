@@ -3,8 +3,8 @@
 class User
 {
     private int $ID;
-    private string $NOM;
-    private string $PRENOM;
+    private string $NAME;
+    private string $LASTNAME;
     private string $NICKNAME;
 
     private string $MAIL;
@@ -37,27 +37,27 @@ class User
         return $this;
     }
     //////////////////////////////////////////////////////
-    public function getNOM()
+    public function getNAME()
     {
-        return $this->NOM;
+        return $this->NAME;
     }
 
 
-    public function setNOM($NOM)
+    public function setNAME($NAME)
     {
-        $this->NOM = $NOM;
+        $this->NAME = $NAME;
 
         return $this;
     }
     //////////////////////////////////////////////////////
-    public function getPRENOM()
+    public function getLASTNAME()
     {
-        return $this->PRENOM;
+        return $this->LASTNAME;
     }
 
-    public function setPRENOM($PRENOM)
+    public function setLASTNAME($LASTNAME)
     {
-        $this->PRENOM = $PRENOM;
+        $this->LASTNAME = $LASTNAME;
 
         return $this;
     }

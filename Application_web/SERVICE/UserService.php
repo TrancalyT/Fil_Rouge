@@ -1,19 +1,27 @@
 <?php
 include_once(__DIR__ . "/../DAO/UserDAO.php");
+include_once(__DIR__ . "/../EXCEPTIONS/UserDAOException.php");
+include_once(__DIR__ . "/../EXCEPTIONS/UserServiceException.php");
 
 class UserService
 {
     public function login($MAIL)
     {
         $userDAO = new UserDAO;
-        $sql = $userDAO->login($MAIL);
-        return $sql;
+        try {
+            $login = $userDAO->login($MAIL);
+        } catch (UserDAOException $e) {
+            throw new UserServiceException($e->getMessage(), $e->getCode());
+        }
+        return $login;
     }
 
-    public function register($newUser, $newPass): void
+    public function register($user): void
     {
-        $pass = password_hash($newPass, PASSWORD_DEFAULT);
+        $passwordHash = password_hash($user->getPASSWORD(), PASSWORD_DEFAULT);
+        $user->drtPASSWORD($passwordHash);
+
         $userDAO = new UserDAO;
-        $userDAO->register($newUser, $pass);
+        $userDAO->register($user);
     }
 }
