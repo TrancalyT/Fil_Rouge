@@ -35,7 +35,7 @@ function callHeader(string $title, string $css)
     ?>
 
     <?php
-    function CallMainTitle(string $title)
+    function callMainTitle(string $title)
     {
     ?>
 

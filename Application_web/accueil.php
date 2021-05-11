@@ -4,7 +4,7 @@
 
 <!-- HEADER -->
 
-<?php CallMainTitle("Pocket Museum of Pop Culture") ?>
+<?php callMainTitle("Pocket Museum of Pop Culture") ?>
 
 <!-- CORPS -->
 

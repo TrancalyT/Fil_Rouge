@@ -9,7 +9,7 @@
 
 <!-- HEADER -->
 
-<?php CallMainTitle("Contact") ?>
+<?php callMainTitle("Contact") ?>
 
 <!-- FORMULAIRE CONTACT -->
 
