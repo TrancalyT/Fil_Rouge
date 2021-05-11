@@ -33,23 +33,23 @@
 <!-- FORMULAIRE LIVRE D'OR -->
 
   <div class="form_livreor">
-    <form action="" method="post" class="col g-3 justify-content form-info">
+    <form action="livreor.php" method="post" class="col g-3 justify-content form-info">
       <div class="container-lg">
         <div class="mb-3">
           <label for="Message" class="form-label">LAISSEZ NOUS VOTRE AVIS : </label>
           <div class="input-group">
-            <textarea class="form-control" id="Message" rows="8"></textarea>
+            <textarea class="form-control" id="Message" name="avis" rows="8"></textarea>
           </div>
           <div class="notif">
             <p class="text">(*) Votre commentaire est soumis à modération avant diffusion</p>
           </div>
           <div class="rating">
             <div class="stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+              <input name="5stars" id="5star" type="radio"></a><label for="5star">★</label>
+              <input name="4stars" id="4star" type="radio"></a><label for="4star">★</label>
+              <input name="3stars" id="3star" type="radio"></a><label for="3star">★</label>
+              <input name="2stars" id="2star" type="radio"></a><label for="2star">★</label>
+              <input name="1stars" id="1star" type="radio"></a><label for="1star">★</label>
             </div>
           </div>
         </div>
