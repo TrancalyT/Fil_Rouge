@@ -6,7 +6,7 @@
         <span></span>
         <ul id="menu">
             <a href="connexion.php" id="connexion">
-                <li>Connexion</li>
+                <li>Mon Compte</li>
             </a>
             <hr>
             <a href="accueil.php">
