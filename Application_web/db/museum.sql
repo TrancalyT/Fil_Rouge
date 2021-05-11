@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 03 mai 2021 à 10:11
+-- Généré le : mar. 11 mai 2021 à 15:01
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.2
 
@@ -115,8 +115,8 @@ CREATE TABLE `goldbook` (
 
 CREATE TABLE `user` (
   `ID` int(5) NOT NULL,
-  `NOM` varchar(20) NOT NULL,
-  `PRENOM` varchar(20) NOT NULL,
+  `NAME` varchar(20) NOT NULL,
+  `LASTNAME` varchar(20) NOT NULL,
   `NICKNAME` varchar(20) NOT NULL,
   `MAIL` varchar(50) NOT NULL,
   `PASSWORD` varchar(255) NOT NULL,
@@ -130,7 +130,8 @@ CREATE TABLE `user` (
   `SPORT` varchar(100) NOT NULL,
   `VG` varchar(100) NOT NULL,
   `BIO` text NOT NULL,
-  `AVATAR` blob NOT NULL
+  `AVATAR` blob NOT NULL,
+  `ROLE` varchar(20) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
