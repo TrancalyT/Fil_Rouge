@@ -27,7 +27,7 @@ class UserDAO extends Connection
             $user = (new User)
                 ->setID($value['ID'])
                 ->setMail($value['MAIL'])
-                ->setName($value['NAME'])
+                ->setNICKNAME($value['NICKNAME'])
                 ->setPassword($value['PASSWORD']);
         }
         if (empty($user)) {
@@ -87,8 +87,8 @@ class UserDAO extends Connection
         $users = [];
         foreach ($data as $value) {
             $user = (new User)
-                ->setName($value['NAME'])
-                ->setMail($value['MAIL']);
+                ->setNICKNAME($value['NICKNAME'])
+                ->setMAIL($value['MAIL']);
             $users[] = $user;
         }
 
