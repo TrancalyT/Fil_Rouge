@@ -14,7 +14,7 @@
 <!-- FORMULAIRE CONTACT -->
 
 <div class="form_contact">
-  <form action="contact.php" method="POST" class="col g-3 justify-content form-info">
+  <form action="controller/contact_process.php" method="POST" class="col g-3 justify-content form-info">
     <div class="container-lg">
       <div class="mb-3">
         <div class="row justify-content-end">
@@ -45,22 +45,19 @@
         <button type="submit" name="envoyer" class="buttonmain">Envoyer</button>
       </div>
     </div>
+    <?php if (@$success) : ?>
+      <div class="alert alert-success alert-dismissible fade show" role="alert"><button type=" button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button><?= $success ?>
+      </div>
+    <?php endif ?>
+    <?php if (@$error) : ?>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert"><button type=" button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button><?= $error ?>
+      </div>
+    <?php endif ?>
   </form>
-
-  <?php
-  if (isset($_POST['envoyer'])) {
-    $position_arobase = strpos($_POST['mailcontact'], '@');
-    if ($position_arobase === false)
-      echo '<p>Votre email doit comporter un arobase.</p>';
-    else {
-      $return = mail('jesuisun@mail.com', 'Envoi depuis la page Contact', $_POST['message'], 'From: ' . $_POST['mailcontact']);
-      if ($return)
-        echo '<p>Votre message a été envoyé.</p>';
-      else
-        echo '<p>Erreur.</p>';
-    }
-  }
-  ?>
 
 </div>
 
