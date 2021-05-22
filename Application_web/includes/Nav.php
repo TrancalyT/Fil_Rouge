@@ -21,7 +21,7 @@
             <a href="evenements.php">
                 <li>Evènements</li>
             </a>
-            <a href="forum.html">
+            <a href="forum.php">
                 <li>Forum</li>
             </a>
             <a href="shop.php">

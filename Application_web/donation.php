@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once('VIEW/view_header.php'); ?>
+<?php require_once('VIEW/view_footer.php'); ?>
+<?php callHeader("Donation", "css/donation.css"); ?>
 
-<head>
-    <title>Donation</title>
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="commondocs/commons.css">
-    <link rel="stylesheet" href="css/donation.css">
+<!-- HEADER -->
 
-
-</head>
+<?php callMainTitle("Forum") ?>
 
 <body>
-    <!--------------- MENU BURGER ------------------------------------->
-    <?php include('includes/Nav.php'); ?>
 
-    <!-- -------------------------HEADER--------------------------------- -->
-
-    <div class="bg"></div>
-    <header>
-        <div class="content">
-            <h1><span>donation</span></h1>
-        </div>
-    </header>
     <!-------------------------------------CORP--------------------------------------------->
     <main class="contenant">
         <div id="produit">
@@ -74,8 +55,7 @@
                     <input type="text" class="form-control" name="nom" placeholder="Nom*">
                     <input type="text" class="form-control" name="prenom" placeholder="Prenom*"><br>
                     <input type="text" class="form-control" name="adresse" placeholder="Adresse*">
-                    <input type="text" class="form-control" name="complement_adresse"
-                        placeholder="Complément d'adresse*"><br>
+                    <input type="text" class="form-control" name="complement_adresse" placeholder="Complément d'adresse*"><br>
                     <input type="text" class="form-control" name="code_postal" placeholder="Code postal*">
                     <input type="text" class="form-control" name="ville" placeholder="Ville*"><br>
                     <select name="pays">
@@ -110,12 +90,10 @@
                             <h5><strong>Je paie en carte bancaire</strong></h5>
                         </a>
                         <form class="formulaire3" method="POST" action="https://secure.payzen.eu/vads-payment/">
-                            <input type="text" class="form-control" name="numeroCarte"
-                                placeholder="Saisissez vos numéro de carte bancaire">
-                            <input type="date" class="form-control" name="dateExpiration"
-                                placeholder="Date d'expiration">
+                            <input type="text" class="form-control" name="numeroCarte" placeholder="Saisissez vos numéro de carte bancaire">
+                            <input type="date" class="form-control" name="dateExpiration" placeholder="Date d'expiration">
                             <input type="text" class="form-control" name="crypto" placeholder="Cryptogramme"><br>
-                            <input type="button" style="margin-bottom: 10px;"class="button3" value="Je valide">
+                            <input type="button" style="margin-bottom: 10px;" class="button3" value="Je valide">
                         </form>
                     </section>
                     <section id="paypal" class="paypal">
@@ -135,7 +113,7 @@
                             <input type="text" class="form-control" name="iban"><br>
                             <label for="iban"><strong>Votre code BIC</strong></label><br>
                             <input type="text" class="form-control" name="bic"><br>
-                            <input type="submit" name="submit"class="button3" style="margin-bottom: 20px;" placeholder="je valide">
+                            <input type="submit" name="submit" class="button3" style="margin-bottom: 20px;" placeholder="je valide">
                         </div>
                     </section>
                 </main>
@@ -144,7 +122,8 @@
     </main>
 
     <!---------------------------------------- FOOTER -------------------------------------->
-    <?php include('includes/Footer.php') ?>
+
+    <?php callFooter(); ?>
 
     <!---------------------------------------- SCRIPT -------------------------------------->
     <script type="text/javascript" src="js/script.js"></script>
