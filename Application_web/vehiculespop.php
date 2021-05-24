@@ -18,17 +18,16 @@
   if (isset($_POST["submit"])) {
 
     $expo_title = $_POST["expo_title"];
-    $expo_image = $_POST["expo_image"];
+    // $expo_image = $_POST["expo_image"];
+    $expo_image = ($_FILES["expo_image"]["name"]);
     $expo_description = $_POST["expo_description"];
     $expo_type = $_POST["expo_type"];
   }
+  if (!empty($expo_title) && !empty($expo_image) && !empty($expo_description) && !empty($expo_type)) {
 
-  if (empty($expo_title) || empty($expo_image) || empty($expo_description) || empty($expo_type)) {
-    echo "empty";
-  } else {
+
 
     $db = new mysqli("localhost", "root", "", "museum");
-
     $query = ("INSERT INTO popvehicules (`NAME`, `IMAGE`, `CONTENT`, `TYPE`)
                             VALUES ('$expo_title','$expo_image','$expo_description','$expo_type');");
     $create_vehicule = mysqli_query($db, $query);
@@ -36,7 +35,9 @@
     if (!$create_vehicule) {
       die('QUERY FAILED' . mysqli_error($db));
     }
+    header("Location: vehiculespop.php");
   }
+
 
 
   ?>
@@ -64,6 +65,7 @@
   <?php
   $vehicules = (new VehiculeService())->displayVehicule("terrestre");
   foreach ($vehicules as $value) {
+    $id = $value->getID();
     $title = $value->getNAME();
     $content = $value->getCONTENT();
     $image = $value->getIMAGE();
@@ -81,7 +83,9 @@
         </div>
       </div>
     <?php
+
   }
+
     ?>
 
 

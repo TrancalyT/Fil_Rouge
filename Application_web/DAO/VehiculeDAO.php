@@ -47,6 +47,7 @@ class VehiculeDAO extends Connection
         $vehicules = [];
         foreach ($data as $value) {
             $vehicules[] = (new Vehicule())
+                ->setID($value["ID"])
                 ->setNAME($value["NAME"])
                 ->setDESCRIPTION($value["DESCRIPTION"])
                 ->setIMAGE($value["IMAGE"])
@@ -54,5 +55,44 @@ class VehiculeDAO extends Connection
                 ->setTYPE($value["TYPE"]);
         }
         return $vehicules;
+    }
+    function deleteVehicule($id): void
+    {
+        try {
+            $db = $this->connectionDB();
+            $stmt = $db->prepare("DELETE FROM popvehicules WHERE ID = $id");
+            $stmt->execute();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            throw new VehiculeDAOException($message);
+        }
+    }
+
+    function modifyVehicule($vehicule): void
+    {
+        try {
+            $db = $this->connectionDB();
+            $stmt = $db->prepare("UPDATE popvehicules SET
+        NAME = ?,
+        DESCRIPTION = ?,
+        IMAGE = ?,
+        CONTENT = ?,
+        TYPE = ?
+        WHERE ID = " . $vehicule->getID() . ";");
+            $stmt->bind_param(
+                "sssss",
+                $vehicule->getNAME(),
+                $vehicule->getDESCRIPTION(),
+                $vehicule->getIMAGE(),
+                $vehicule->getCONTENT(),
+                $vehicule->getTYPE()
+            );
+            $stmt->execute();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            throw new VehiculeDAOException($message);
+        }
     }
 }
