@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 24 mai 2021 à 18:17
+-- Généré le : lun. 24 mai 2021 à 21:28
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.2
 
@@ -115,6 +115,27 @@ CREATE TABLE `goldbook` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `news`
+--
+
+CREATE TABLE `news` (
+  `ID` int(11) NOT NULL,
+  `TITLE` varchar(255) NOT NULL,
+  `CONTENT` text NOT NULL,
+  `DATE` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `news`
+--
+
+INSERT INTO `news` (`ID`, `TITLE`, `CONTENT`, `DATE`) VALUES
+(1, 'Les tables sont créées !', 'En effet chers visiteurs, depuis quelques sprints, notre contenu est devenu très dynamique ! Fini les sites statiques, dorénavant le site est plus léger, mais la base de donnée possède une étrange créature... le BLOB !', '2021-05-24'),
+(2, 'Nouvelle exposition !', 'Les véhicules de la pop culture </br>\r\nDécouvrez la nouvelle exposition de notre musée <a href=\"vehiculespopbefore.php\">ICI</a> ', '2021-05-24');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `popvehicules`
 --
 
@@ -221,6 +242,12 @@ ALTER TABLE `goldbook`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Index pour la table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Index pour la table `popvehicules`
 --
 ALTER TABLE `popvehicules`
@@ -266,6 +293,12 @@ ALTER TABLE `forum_topic`
 --
 ALTER TABLE `goldbook`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `news`
+--
+ALTER TABLE `news`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `popvehicules`

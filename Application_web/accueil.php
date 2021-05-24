@@ -2,6 +2,7 @@
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php callHeader("Accueil", "css/index.css"); ?>
+<?php require_once('Service/NewsService.php'); ?>
 
 <?php callNav() ?>
 
@@ -17,9 +18,10 @@
       <h2>C'est quoi ce musée ?!</h2>
     </section>
     <section class="bodyAbout">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.
+      <p>Le Pocket Museum of POP Culture est avant tout un projet d'école collaboratif, visant à créer une application web responsive à partir de rien ou presque (on a quand même choisi le thème !).
+        Cette application est un hommage à, vous vous endoutez, la POP Culture sous toutes ses formes. </br>
+        Vous retrouverez ici diverses expos accessibles à tout moment, puisque le Pocket Museum se trouve... dans votre poche !</br></br>
+        Musique, cinéma, items cultes, acteurs, références mais aussi espaces de discussion, boutique et évènements LIVE seront au rendez-vous. Alors n'attendez-plus et partez à la poursuite d'Octobre Rouge !
       </p>
     </section>
   </section>
@@ -49,24 +51,34 @@
       <h2>Quoi de neuf doc ?</h2>
     </section>
     <section class="Events">
-      <div class="postit">
-        <h3>La Mazette !</h3>
-        <p>Click here to sign up for updates!</p>
-      </div>
-      <div class="postit">
-        <h3>La Mazette contre-attaque !</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
-      </div>
-      <div class="postit">
-        <h3>Le retour de Mazette !</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat mollitia quidem, officiis autem temporibus, vitae repellendus ullam ipsum quasi laboriosam, corporis dolor neque eius itaque pariatur assumenda. Aspernatur, culpa.</p>
-      </div>
+
+      <?php
+
+      $news = (new NewsService())->displayNews();
+      foreach ($news as $value) {
+        $id = $value->getID();
+        $title = $value->getTITLE();
+        $content = $value->getCONTENT();
+        $date = $value->getDATE();
+
+      ?>
+
+        <div class="postit">
+          <h3><?= $title ?></h3>
+          <p><?= $content ?></p>
+          <span class="date"><?= $date ?></span>
+        </div>
+
+      <?php } ?>
+
     </section>
     <section class="support">
       <img src="images/unclegandalf2.png" alt="we-need-you" />
       <a href="donation.php" class="button1">Soutenez le musée</a>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur dolorum praesentium itaque provident fuga, tempore illo incidunt laboriosam quis labore repellat unde at officia hic, minima recusandae. Modi, placeat fugit?</p>
+      <p>Le Pocket Museum of POP Culture est ouvert 23h59/24, 7j/7 ! Il est totalement GRATUIT : pas de tickets d'entrée, pas de file d'attente, pas de jours feriés...
+        Mais si toutefois l'envie vous venait de soutenir l'initiative, alors suivez le magicien. Cette fois, vous PASSEREZ !</p>
     </section>
+
   </section>
 
   <section class="goldenbook">
