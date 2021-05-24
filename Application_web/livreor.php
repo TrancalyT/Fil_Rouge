@@ -1,80 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="commondocs/commons.css">
-    <link rel="stylesheet" href="css/livreor.css">
-    <title>Livre d'or</title>
-</head>
-<body>
+<?php
 
-<!-- MENU HAMBURGER -->
+require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
+require_once(__DIR__.'/VIEW/view_footer.php'); 
+require_once(__DIR__.'/VIEW/view_goldbook.php');
 
-  <?php include('includes/Nav.php'); ?>
+// HEADER
+callHeader("Livre d'or", "css/livreor.css");
+callMainTitle("Livre d'or");
 
-<!-- HEADER -->
+// FORMULAIRE LIVRE D'OR
+// $_SESSION['user_id'] = 4;
+// $_SESSION['user_name'] = 'Marlon';
 
-  <div class="bg"></div>
-  <header>
-    <div class="content">
-      <h1><span>Livre d'Or</span></h1>
-    </div>
-  </header>
+$messageError = [
+  "messageErrSignature" => "",
+  "messageError" => ""];
 
-<!-- FORMULAIRE LIVRE D'OR -->
+$regSignature = "#[a-z]{1,20}#i"; // REGEX à préciser
 
-  <div class="form_livreor">
-    <form action="" method="post" class="col g-3 justify-content form-info">
-      <div class="container-lg">
-        <div class="mb-3">
-          <label for="Message" class="form-label">LAISSEZ NOUS VOTRE AVIS : </label>
-          <div class="input-group">
-            <textarea class="form-control" id="Message" rows="8"></textarea>
-          </div>
-          <div class="notif">
-            <p class="text">(*) Votre commentaire est soumis à modération avant diffusion</p>
-          </div>
-          <div class="rating">
-            <div class="stars">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-          </div>
-        </div>
-        <div class="mb-3">
-          <div class="row justify-content-end">
-            <label for="Signature" class="col-sm col-form-label">SIGNATURE : </label>
-              <div class="col-sm-8">
-                <input id="Signature" size="50" maxlength="100" type="mail" placeholder="Veuillez signer ici ..." name="signature" class="form-control" required>
-              </div>
-          </div>
-        </div>
-        <div class="mb-3 text-center">
-          <button type="submit" class="buttonmain">Envoyer</button>
-        </div>
-      </div>
-    </form>
-  </div>
+if (isset($_REQUEST['5stars'])){
+  @$stars = 5;
+} else if (isset($_REQUEST['4stars'])){
+  @$stars = 4;
+} else if (isset($_REQUEST['3stars'])){
+  @$stars = 3;
+} else if (isset($_REQUEST['2stars'])){
+  @$stars = 2;
+} else if (isset($_REQUEST['1stars'])){
+  @$stars = 1;
+}
+@$avis = $_REQUEST['avis'];
+@$signature = $_REQUEST['signature'];
+@$valider= $_REQUEST["valider"];
 
-<!-- FOOTER -->
+if (isset($valider)){
 
-  <?php include('includes/Footer.php') ?>
+  if(isset($avis) && !empty($avis) 
+  && isset($signature) && !empty($signature) 
+  && isset($stars) && !empty($stars) ){
+
+      if (!preg_match($regSignature, $signature)){
+          $messageError["messageErrSignature"] = "Signature incorrect";
+      }
+      if (preg_match($regSignature, $signature)){
+          header("Location:dbGoldbook.php?avis=$avis&signature=$signature&stars=$stars"); // CREER process écriture sur DB
+      }
+
+  } else {
+      $messageError["messageError"] = "Veuillez saisir et remplir les informations manquantes";
+  }
+}
+
+if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+
+callGoldBookConnected($_SESSION['user_name'], $avis, $messageError);
+
+} else {
+
+callGoldBookUnconnected();
+
+}
+
+// FOOTER 
+callFooter(); 
+
+?>
       
 <!-- SCRIPT -->
 
   <script type="text/javascript" src="js/script.js"></script>
-
-</body>
-</html>
