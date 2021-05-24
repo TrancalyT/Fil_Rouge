@@ -17,17 +17,28 @@ class VehiculeService
         return $vehiculeService;
     }
 
-    public function addNewVehicule($name, $description, $image, $content, $type)
-    {
-        $name = strtoupper($name);
-        $description = strtoupper($description);
-        $image = strtoupper($image);
-        $content = strtoupper($content);
-        $type = strtoupper($type);
+    // OLD ADD
+    // public function addNewVehicule2($name, $description, $image, $content, $type)
+    // {
+    //     $name = strtoupper($name);
+    //     $description = strtoupper($description);
+    //     $image = strtoupper($image);
+    //     $content = strtoupper($content);
+    //     $type = strtoupper($type);
 
-        $vehiculeDAO = new VehiculeDAO();
+    //     $vehiculeDAO = new VehiculeDAO();
+    //     try {
+    //         $vehiculeDAO->addNewVehicule($name, $description, $image, $content, $type);
+    //     } catch (VehiculeDAOException $error) {
+    //         throw new VehiculeServiceException($error->getMessage());
+    //     }
+    // }
+
+    public function addNewVehicule($vehicule)
+    {
         try {
-            $vehiculeDAO->addNewVehicule($name, $description, $image, $content, $type);
+            $vehiculeDAO = new VehiculeDAO();
+            $vehiculeDAO->addNewVehicule($vehicule);
         } catch (VehiculeDAOException $error) {
             throw new VehiculeServiceException($error->getMessage());
         }

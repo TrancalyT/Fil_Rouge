@@ -11,16 +11,66 @@
 <!-- CORPS -->
 
 <main class="grid-container">
-  <section class="expo">
-    <div class="vignette">
-      <?php
-      $vehicules = (new VehiculeService())->displayVehicule("terrestre");
-      foreach ($vehicules as $value) {
-        $title = $value->getNAME();
-        $content = $value->getCONTENT();
-        $image = $value->getIMAGE();
 
-      ?>
+
+  <?php
+
+  if (isset($_POST["submit"])) {
+
+    $expo_title = $_POST["expo_title"];
+    $expo_image = $_POST["expo_image"];
+    $expo_description = $_POST["expo_description"];
+    $expo_type = $_POST["expo_type"];
+  }
+
+  if (empty($expo_title) || empty($expo_image) || empty($expo_description) || empty($expo_type)) {
+    echo "empty";
+  } else {
+
+    $db = new mysqli("localhost", "root", "", "museum");
+
+    $query = ("INSERT INTO popvehicules (`NAME`, `IMAGE`, `CONTENT`, `TYPE`)
+                            VALUES ('$expo_title','$expo_image','$expo_description','$expo_type');");
+    $create_vehicule = mysqli_query($db, $query);
+
+    if (!$create_vehicule) {
+      die('QUERY FAILED' . mysqli_error($db));
+    }
+  }
+
+
+  ?>
+
+  <form action="" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="text" class="form-control" name="expo_title" placeholder="name">
+    </div>
+    <div class="form-group">
+      <input type="file" class="form-control" name="expo_image" accept="image/png, image/jpeg" placeholder="image">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="expo_description" placeholder="description">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name="expo_type" placeholder="type (terrestre volant autre)">
+    </div>
+    <button class="btn btn-primary" type="submit" name="submit">Add Vehicule</button>
+
+  </form>
+
+
+
+
+  <?php
+  $vehicules = (new VehiculeService())->displayVehicule("terrestre");
+  foreach ($vehicules as $value) {
+    $title = $value->getNAME();
+    $content = $value->getCONTENT();
+    $image = $value->getIMAGE();
+
+  ?>
+    <section class="expo">
+      <div class="vignette">
         <div class="image">
           <img src="<?= "data:image;base64," . base64_encode($image) ?>" alt="image">
         </div>
@@ -29,10 +79,11 @@
           <p><?= $content ?></p>
 
         </div>
-      <?php
-      }
-      ?>
-    </div>
+      </div>
+    <?php
+  }
+    ?>
+
 
     <!-- <div class="vignette">
       <div class="image">
@@ -63,7 +114,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa est minus, quas reiciendis iste eaque quod unde doloribus. Qui, alias. Impedit odit quisquam fuga deserunt fugit minima facere voluptates beatae.</p>
       </div>
     </div> -->
-  </section>
+    </section>
 </main>
 
 
