@@ -5,11 +5,11 @@ include_once(__DIR__ . "/../EXCEPTIONS/VehiculeServiceException.php");
 
 class VehiculeService
 {
-    public function displayVehicule()
+    public function displayVehicule(string $TYPE)
     {
         $vehiculeDAO = new VehiculeDAO();
         try {
-            $vehiculeService = $vehiculeDAO->displayVehicule();
+            $vehiculeService = $vehiculeDAO->displayVehicule($TYPE);
         } catch (VehiculeDAOException $error) {
             throw new VehiculeServiceException($error->getMessage());
         }

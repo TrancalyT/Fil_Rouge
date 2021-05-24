@@ -28,7 +28,7 @@ class VehiculeDAO extends Connection
         }
     }
 
-    function displayVehicule($TYPE)
+    function displayVehicule(string $TYPE)
     {
         try {
             $db = $this->connectionDB();

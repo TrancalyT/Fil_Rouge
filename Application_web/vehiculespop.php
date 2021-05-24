@@ -1,6 +1,8 @@
 <?php session_start(); ?>
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
+<?php require_once('Service/VehiculeService.php'); ?>
+
 <?php callHeader("Expo - vehicules of Pop Culture", "css/vehiculespop.css"); ?>
 
 <?php callNavExpoVehicule() ?>
@@ -9,35 +11,30 @@
 <!-- CORPS -->
 
 <main class="grid-container">
-  <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
   <section class="expo">
-
-    <?php
-
-    $db = new mysqli("localhost", "root", "", "museum");
-    $query = ("SELECT `NAME`, `IMAGE`, `CONTENT` FROM `popvehicules` WHERE TYPE = 'terrestre'");
-    $vehicules = mysqli_query($db, $query);
-    ?>
-
     <div class="vignette">
-      <div class="image">
-        <img src="" alt="">
-      </div>
-      <div class="corps">
-        <?php
-        while ($row = mysqli_fetch_array($vehicules)) {
-          $title = $row['NAME'];
-          $content = $row['CONTENT'];
-        ?>
+      <?php
+      $vehicules = (new VehiculeService())->displayVehicule("terrestre");
+      foreach ($vehicules as $value) {
+        $title = $value->getNAME();
+        $content = $value->getCONTENT();
+        $image = $value->getIMAGE();
+
+      ?>
+        <div class="image">
+          <img src="<?= "data:image;base64," . base64_encode($image) ?>" alt="image">
+        </div>
+        <div class="corps">
           <h3><?= $title ?></h3>
           <p><?= $content ?></p>
-        <?php
-        }
-        ?>
-      </div>
+
+        </div>
+      <?php
+      }
+      ?>
     </div>
 
-    <div class="vignette">
+    <!-- <div class="vignette">
       <div class="image">
         <img src="images/delorean.png" alt="delorean">
       </div>
@@ -65,7 +62,7 @@
         <h3>Ghostbusters</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa est minus, quas reiciendis iste eaque quod unde doloribus. Qui, alias. Impedit odit quisquam fuga deserunt fugit minima facere voluptates beatae.</p>
       </div>
-    </div>
+    </div> -->
   </section>
 </main>
 
