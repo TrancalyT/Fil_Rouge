@@ -3,6 +3,8 @@
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php callHeader("Accueil", "css/index.css"); ?>
 
+<?php callNav() ?>
+
 <!-- HEADER -->
 
 <?php callMainTitle("Pocket Museum of Pop Culture") ?>

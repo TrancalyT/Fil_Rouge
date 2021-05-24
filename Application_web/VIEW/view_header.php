@@ -23,16 +23,106 @@ function callHeader(string $title, string $css)
 
     <body>
 
-        <!-- MENU BURGER -->
-
     <?php
-    require_once(__DIR__ . '/../includes/Nav.php');
 }
+function callNav()
+{
     ?>
 
+        <!-- MENU BURGER -->
+        <nav role="navigation">
+            <div id="menuToggle">
+                <input class="input" type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="connexion.php" id="connexion">
+                        <li>Mon Compte</li>
+                    </a>
+                    <hr>
+                    <a href="accueil.php">
+                        <li>Accueil</li>
+                    </a>
+                    <a href="musee.php">
+                        <li>Musée</li>
+                    </a>
+                    <a href="vehiculespopbefore.php">
+                        <li>Expositions</li>
+                    </a>
+                    <a href="evenements.php">
+                        <li>Evènements</li>
+                    </a>
+                    <a href="forum.php">
+                        <li>Forum</li>
+                    </a>
+                    <a href="shop.php">
+                        <li>Boutique</li>
+                    </a>
+                    <hr>
+                    <form action="recherche.php" method="post">
+                        <div class="recherche">
+                            <input id="search" type="search" placeholder="Va chercher Lycos !" name="search">
+                            <a href=""><button id="srcbutton" title="GO !" type="submit"><i class="fas fa-search"></i></button></a>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Bouton scroll to top -->
+        <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
+
+
     <?php
-    function callMainTitle(string $title)
-    {
+}
+function callNavExpoVehicule()
+{
+    ?>
+
+        <!-- MENU EXPO -->
+
+        <div class="nav">
+            <a href="accueil.php">
+                <div class="salle">
+                    <p>Retour au musée</p>
+                </div>
+            </a>
+            <ul>
+                <hr>
+            </ul>
+            <a href="vehiculespopbefore.php">
+                <div class="salle">
+                    <p>Avant la visite</p>
+                </div>
+            </a>
+            <span class="vertical"></span>
+            <a href="vehiculespop.php">
+                <div class="salle">
+                    <p>Salle des véhicules terrestres</p>
+                </div>
+            </a>
+            <span class="vertical"></span>
+            <a href="#">
+                <div class="salle">
+                    <p>Salle des véhicules volants</p>
+                </div>
+            </a>
+            <span class="vertical"></span>
+            <a href="#">
+                <div class="salle">
+                    <p>Les machins bizarres</p>
+                </div>
+            </a>
+        </div>
+        <!-- Bouton scroll to top -->
+        <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
+
+
+    <?php
+}
+function callMainTitle(string $title)
+{
     ?>
 
         <div class="bg"></div>
@@ -42,4 +132,6 @@ function callHeader(string $title, string $css)
             </div>
         </header>
     <?php
-    }
+}
+
+    ?>

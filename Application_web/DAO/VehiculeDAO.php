@@ -28,11 +28,12 @@ class VehiculeDAO extends Connection
         }
     }
 
-    function displayVehicule()
+    function displayVehicule($TYPE)
     {
         try {
             $db = $this->connectionDB();
             $stmt = $db->prepare("SELECT * FROM popvehicules WHERE TYPE = ?;");
+            $stmt->bind_param('s', $TYPE);
             $stmt->execute();
             $result = $stmt->get_result();
             $data = $result->fetch_all(MYSQLI_ASSOC);
@@ -45,7 +46,8 @@ class VehiculeDAO extends Connection
 
         $vehicules = [];
         foreach ($data as $value) {
-            $vehicules[] = (new Vehicule())->setNAME($value["NAME"])
+            $vehicules[] = (new Vehicule())
+                ->setNAME($value["NAME"])
                 ->setDESCRIPTION($value["DESCRIPTION"])
                 ->setIMAGE($value["IMAGE"])
                 ->setCONTENT($value["CONTENT"])
