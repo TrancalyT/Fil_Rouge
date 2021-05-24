@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 23 mai 2021 à 19:01
+-- Généré le : lun. 24 mai 2021 à 08:39
 -- Version du serveur :  10.4.17-MariaDB
 -- Version de PHP : 8.0.2
 
@@ -128,6 +128,13 @@ CREATE TABLE `popvehicules` (
   `EVALUATION` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `popvehicules`
+--
+
+INSERT INTO `popvehicules` (`ID`, `NAME`, `DESCRIPTION`, `IMAGE`, `CONTENT`, `TYPE`, `EVALUATION`) VALUES
+(1, 'voiture_test', 'description', '', 'text-description', 'terrestre', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -136,13 +143,13 @@ CREATE TABLE `popvehicules` (
 
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL,
-  `NOM` varchar(40) NOT NULL,
-  `PRENOM` varchar(40) NOT NULL,
+  `NAME` varchar(40) NOT NULL,
+  `LASTNAME` varchar(40) NOT NULL,
   `NICKNAME` varchar(40) NOT NULL,
   `MAIL` varchar(50) NOT NULL,
   `PASSWORD` varchar(255) NOT NULL,
-  `ADRESSE` varchar(100) NOT NULL,
-  `VILLE` varchar(100) NOT NULL,
+  `ADRESS` varchar(100) NOT NULL,
+  `CITY` varchar(100) NOT NULL,
   `CP` int(5) NOT NULL,
   `TEL` int(10) NOT NULL,
   `MOVIE` varchar(200) DEFAULT NULL,
@@ -260,7 +267,7 @@ ALTER TABLE `goldbook`
 -- AUTO_INCREMENT pour la table `popvehicules`
 --
 ALTER TABLE `popvehicules`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `user`
