@@ -116,7 +116,7 @@ function callNavExpoVehicule()
             </a>
         </div>
         <!-- Bouton scroll to top -->
-        <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
+        <!-- <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button> -->
 
 
     <?php

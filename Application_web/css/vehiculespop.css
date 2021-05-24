@@ -81,10 +81,10 @@
 /* CORPS */
 
 .grid-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  gap: 0px 0px;
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  /* grid-template-rows: 1fr; */
+  /* gap: 0px 0px; */
   grid-template-areas: "expo";
   background-color: #232323;
   height: auto;
@@ -97,7 +97,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  padding: 10rem;
+  padding: 8rem;
 }
 
 .presentation p {
@@ -206,15 +206,18 @@
   .nav .salle {
     width: 50vw;
   }
-}
-
-@media (max-width: 375px) {
-  header h1 {
-    width: 90vw;
-    left: 90%;
+  .presentation {
+    padding: 2rem;
   }
-  .nav .vertical {
-    height: 50px;
+
+  @media (max-width: 375px) {
+    header h1 {
+      width: 90vw;
+      left: 90%;
+    }
+    .nav .vertical {
+      height: 50px;
+    }
   }
 }
 
