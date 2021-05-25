@@ -19,3 +19,9 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+$(function () {
+  $("#newsbutton").click(function () {
+    $("#displayNews").toggle(500);
+  });
+});

@@ -15,7 +15,7 @@
 <main class="grid-container">
   <section class="About">
     <section class="titleAbout">
-      <h2>C'est quoi ce musée ?!</h2>
+      <h2 class="effect-shine">C'est quoi ce musée ?!</h2>
     </section>
     <section class="bodyAbout">
       <p>Le Pocket Museum of POP Culture est avant tout un projet d'école collaboratif, visant à créer une application web responsive à partir de rien ou presque (on a quand même choisi le thème !).
@@ -34,7 +34,7 @@
 
   <section class="Expos">
     <section class="titleExpos">
-      <h2>Retrouvez nos expos en cours</h2>
+      <h2 class="effect-shine">Retrouvez nos expos en cours</h2>
     </section>
     <!-- Les photos doivent être redim au même format, idéalement 1300*1200 -->
     <section class="bodyExpos">
@@ -48,28 +48,32 @@
 
   <section class="News">
     <section class="titleNews">
-      <h2>Quoi de neuf doc ?</h2>
+      <h2 class="effect-shine">Quoi de neuf doc ?</h2>
     </section>
     <section class="Events">
 
-      <?php
+      <span class="button1" id="newsbutton">Dernières News</span>
+      <div id="displayNews">
+        <?php
 
-      $news = (new NewsService())->displayNews();
-      foreach ($news as $value) {
-        $id = $value->getID();
-        $title = $value->getTITLE();
-        $content = $value->getCONTENT();
-        $date = $value->getDATE();
+        $news = (new NewsService())->displayNews();
+        foreach ($news as $value) {
+          $id = $value->getID();
+          $title = $value->getTITLE();
+          $content = $value->getCONTENT();
+          $date = $value->getDATE();
 
-      ?>
+        ?>
 
-        <div class="postit">
-          <h3><?= $title ?></h3>
-          <p><?= $content ?></p>
-          <span class="date"><?= $date ?></span>
-        </div>
+          <div class="postit">
+            <h3><?= $title ?></h3>
+            <p><?= $content ?></p>
+            <span class="date"><?= $date ?></span>
+          </div>
 
-      <?php } ?>
+
+        <?php } ?>
+      </div>
 
     </section>
     <section class="support">
@@ -83,7 +87,7 @@
 
   <section class="goldenbook">
     <section class="titleGoldenbook">
-      <h2>DANS NOTRE LIVRE D'OR</h2>
+      <h2 class="effect-shine">Dans notre livre d'Or</h2>
     </section>
     <div class="carrousel">
       <p class="item-1">This is your last chance. After this, there is no turning back.

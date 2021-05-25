@@ -392,7 +392,7 @@ header span {
 
 .three p {
   color: #fff;
-  font-size: small;
+  font-size: smaller;
   margin: 0;
   padding: 0;
 }
@@ -424,6 +424,7 @@ header span {
 }
 .four form {
   border: medium none !important;
+  margin-top: 1em;
 }
 
 .four input {
@@ -432,6 +433,19 @@ header span {
   padding: 0.5em;
   width: auto;
   font-family: inherit;
+}
+.four h4 {
+  color: #fff;
+  text-shadow: black 2px 2px 0px, #9c9c9c 4px 4px 0px;
+  font-size: medium;
+  margin: 0;
+  padding: 0;
+}
+.four p {
+  color: #fff;
+  font-size: smaller;
+  margin: 0;
+  padding: 1em;
 }
 .five {
   grid-area: five;
@@ -447,6 +461,72 @@ footer .five h5 {
   letter-spacing: 0.2em;
   text-shadow: 3px 1px 3px rgba(255, 117, 175, 1),
     -3px -2px 3px rgba(0, 117, 175, 1);
+}
+
+/* ------------------------------------------------------SOCIAL ICONS------------------------------------------------------ */
+
+.button_about a {
+  color: #fff;
+}
+.button_about a .fa-twitter-square:hover {
+  color: #1da1f2;
+  transition: all 0.3s ease-in 0s;
+  transform: translate(0, -10%);
+}
+.button_about a .fa-linkedin:hover {
+  color: #0e76a8;
+  transition: all 0.3s ease-in 0s;
+  transform: translate(0, -10%);
+}
+.button_about a .fa-facebook-square:hover {
+  background: #2b4170;
+  background: linear-gradient(120deg, #3b5998, #2b4170);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in 0s;
+  transform: translate(0, -10%);
+}
+.button_about a .fa-instagram:hover {
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in 0s;
+  transform: translate(0, -10%);
+}
+.button_about a .fa-rss-square:hover {
+  color: #ee802f;
+  transition: all 0.3s ease-in 0s;
+  transform: translate(0, -10%);
+}
+
+/* ------------------------------------------------------SHINE EFFECT SPAN------------------------------------------------------ */
+.effect-shine:hover {
+  -webkit-mask-image: linear-gradient(
+    -75deg,
+    rgba(0, 0, 0, 0.6) 30%,
+    #000 50%,
+    rgba(0, 0, 0, 0.6) 70%
+  );
+  -webkit-mask-size: 200%;
+  animation: shine 2s infinite;
+}
+
+@-webkit-keyframes shine {
+  from {
+    -webkit-mask-position: 150%;
+  }
+
+  to {
+    -webkit-mask-position: -50%;
+  }
 }
 
 /* ------------------------------------------------------RESPONSIVE------------------------------------------------------ */

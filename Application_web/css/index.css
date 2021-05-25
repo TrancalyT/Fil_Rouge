@@ -192,6 +192,10 @@
   align-items: center;
 }
 
+.Events span {
+  margin-bottom: 2em;
+}
+
 .postit {
   line-height: 1;
   text-align: justify;

@@ -48,17 +48,27 @@ function callFooter()
             </a>
         </div>
         <div class="four">
+            <div class="button_about">
+                <a href="" target="blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="" target="blank"><i class="fab fa-twitter-square fa-2x"></i></a>
+                <a href="" target="blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="" target="blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+                <a href="" target="blank"><i class="fas fa-rss-square fa-2x"></i></a>
+            </div>
             <form action="" method="post">
                 <input id="E-Mail" size="40" maxlength="100" type="mail" placeholder="Inscrivez vous à la Newsletter" name="mail">
             </form>
             <a href="#" class="button1">Envoyer</a>
+
+            <p>La mission du Pocket Museum of POP Culture est de faire de l’expression créative une force qui change la vie en offrant des expériences qui inspirent et connectent nos communautés.</p>
         </div>
         <div class="five">
             <h5>© copyright - 2021 - Team Rocket !</h5>
         </div>
     </footer>
     <!-- SCRIPT -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
     </body>
 
     </html>
