@@ -9,14 +9,12 @@ callHeader("Livre d'or", "css/livreor.css");
 callMainTitle("Livre d'or");
 
 // FORMULAIRE LIVRE D'OR
-// $_SESSION['user_id'] = 4;
-// $_SESSION['user_name'] = 'Marlon';
+$_SESSION['user_id'] = 4;
+$_SESSION['user_name'] = 'Marlon';
+$_SESSION['user_lastname'] = "Brando";
 
 $messageError = [
-  "messageErrSignature" => "",
   "messageError" => ""];
-
-$regSignature = "#[a-z]{1,20}#i"; // REGEX à préciser
 
 if (isset($_REQUEST['5stars'])){
   @$stars = 5;
@@ -30,21 +28,14 @@ if (isset($_REQUEST['5stars'])){
   @$stars = 1;
 }
 @$avis = $_REQUEST['avis'];
-@$signature = $_REQUEST['signature'];
 @$valider= $_REQUEST["valider"];
 
 if (isset($valider)){
 
-  if(isset($avis) && !empty($avis) 
-  && isset($signature) && !empty($signature) 
+  if(isset($avis) && !empty($avis)  
   && isset($stars) && !empty($stars) ){
 
-      if (!preg_match($regSignature, $signature)){
-          $messageError["messageErrSignature"] = "Signature incorrect";
-      }
-      if (preg_match($regSignature, $signature)){
-          header("Location:dbGoldbook.php?avis=$avis&signature=$signature&stars=$stars"); // CREER process écriture sur DB
-      }
+    header("Location:CONTROLLER/goldbook_process.php?avis=$avis&stars=$stars"); // CREER process écriture sur DB
 
   } else {
       $messageError["messageError"] = "Veuillez saisir et remplir les informations manquantes";
@@ -53,7 +44,7 @@ if (isset($valider)){
 
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
-callGoldBookConnected($_SESSION['user_name'], $avis, $messageError);
+callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageError);
 
 } else {
 

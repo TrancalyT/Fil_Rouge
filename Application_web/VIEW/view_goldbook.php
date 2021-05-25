@@ -1,6 +1,6 @@
 <?php
 
-function callGoldBookConnected($id, $avis, $messageError)
+function callGoldBookConnected($name, $lastname, $avis, $messageError)
 {
 ?>
 
@@ -8,7 +8,8 @@ function callGoldBookConnected($id, $avis, $messageError)
     <form action="livreor.php" method="post" class="col g-3 justify-content form-info">
       <div class="container-lg">
       <span class="fs-6 fst-italic text-danger"><?php echo $messageError["messageError"] ?></span>
-      <span class="fs-6 fst-italic text-danger"><?php echo $messageError["messageErrSignature"] ?></span>
+      <span class="fs-6 fst-italic text-danger"><?php echo @$_GET['messageError'] ?></span>
+      <span class="fs-6 fst-italic text-success"><?php echo @$_GET['messageSuccess'] ?></span>
         <div class="mb-3">
           <label for="Message" class="form-label">LAISSEZ NOUS VOTRE AVIS : </label>
           <div class="input-group">
@@ -28,10 +29,9 @@ function callGoldBookConnected($id, $avis, $messageError)
           </div>
         </div>
         <div class="mb-3">
-          <div class="row justify-content-end">
-            <label for="Signature" class="col-sm col-form-label">SIGNATURE : </label>
+          <div class="row justify-content-start">
               <div class="col-sm-8">
-                <input id="Signature" size="50" maxlength="100" type="text" placeholder="Veuillez signer ici ..." name="signature" class="form-control" value="<?php echo $id ?>" required>
+                <p class="signature"> Signé, <?php echo $name. " " .$lastname ?> </p>
               </div>
           </div>
         </div>

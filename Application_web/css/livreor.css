@@ -110,13 +110,20 @@ html {
   border: 1px solid #fff;
 }
 
+.login {
+  text-transform: none;
+  font-style: italic;
+  font-size: medium;
+}
+
+.signature {
+  text-transform: none;
+  font-style: italic;
+  font-size:large;
+}
+
     /* NOTATION ETOILE */
 
-    .login {
-      text-transform: none;
-      font-style: italic;
-      font-size: medium;
-    }
     .rating {
       display: flex;
       flex-direction: column;
@@ -160,7 +167,7 @@ html {
     .rating2 a {
       float:none
     }
-    
+
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
 
 .four input {
