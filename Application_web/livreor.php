@@ -9,9 +9,9 @@ callHeader("Livre d'or", "css/livreor.css");
 callMainTitle("Livre d'or");
 
 // FORMULAIRE LIVRE D'OR
-$_SESSION['user_id'] = 4;
-$_SESSION['user_name'] = 'Marlon';
-$_SESSION['user_lastname'] = "Brando";
+// $_SESSION['user_id'] = 4;
+// $_SESSION['user_name'] = 'Marlon';
+// $_SESSION['user_lastname'] = "Brando";
 
 $messageError = [
   "messageError" => ""];

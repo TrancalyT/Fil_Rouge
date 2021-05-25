@@ -1,6 +1,6 @@
 <?php
-require_once(__DIR__ . "/../MODEL/User.php");
 require_once(__DIR__ . "/commonDAO.php");
+require_once(__DIR__ . "/../MODEL/User.php");
 require_once(__DIR__ . "/../EXCEPTIONS/UserDAOException.php");
 
 
@@ -9,7 +9,7 @@ class UserDAO extends Connection
     public function login($MAIL): User
     {
         try {
-            $db = $this->connectionDB();
+            $db = parent::connectionDB();
             $stmt = $db->prepare("SELECT * FROM user WHERE MAIL = ?;");
             $stmt->bind_param('s', $MAIL);
             $stmt->execute();
@@ -26,9 +26,13 @@ class UserDAO extends Connection
         foreach ($data as $value) {
             $user = (new User)
                 ->setID($value['ID'])
-                ->setMail($value['MAIL'])
+                ->setMAIL($value['MAIL'])
                 ->setNICKNAME($value['NICKNAME'])
-                ->setPassword($value['PASSWORD']);
+                ->setPASSWORD($value['PASSWORD'])
+                ->setNAME($value['NAME'])
+                ->setLASTNAME($value['LASTNAME'])
+                ->setAVATAR($value['AVATAR']);
+                // Ajouter Tous les setters quand fonction Ok
         }
         if (empty($user)) {
             return null;
@@ -37,28 +41,33 @@ class UserDAO extends Connection
         }
     }
 
-    function register($user): void
+    function register($name, $lastname, $nickname, $mail, $password, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar)
     {
         try {
-            $db = $this->connectionDB();
-            $stmt = $db->prepare("INSERT INTO user VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'User');");
+            $db = parent::connectionDB();
+
+            $query = "INSERT INTO user (ID, NAME, LASTNAME, NICKNAME, MAIL, PASSWORD, ADRESS, CITY, CP, TEL, MOVIE, BOOK, SPORT, MUSIC, VG, BIO, AVATAR, ROLE)
+            VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'User');";
+
+            $stmt = $db->prepare($query);
             $stmt->bind_param(
-                "ssssssiissssss",
-                $user->getNAME(),
-                $user->getLASTNAME(),
-                $user->getNICKNAME(),
-                $user->getPASSWORD(),
-                $user->getADRESS(),
-                $user->getCITY(),
-                $user->getCP(),
-                $user->getTEL(),
-                $user->getMOVIE(),
-                $user->getBOOK(),
-                $user->getMUSIC(),
-                $user->getSPORT(),
-                $user->getVG(),
-                $user->getBIO(),
-                $user->getAVATAR()
+                "sssssssiissssssb",
+                $name,
+                $lastname,
+                $nickname,
+                $mail,
+                $password,
+                $adress,
+                $city,
+                $cp,
+                $tel,
+                $movie,
+                $book,
+                $sport,
+                $music,
+                $vg,
+                $bio,
+                $avatar
             );
             $stmt->execute();
             $db->close();
@@ -68,10 +77,10 @@ class UserDAO extends Connection
         }
     }
 
-    public function ifAlreadyExist()
+    public function ifAlreadyExist() : array
     {
         try {
-            $db = $this->connectionDB();
+            $db = parent::connectionDB();
             $stmt = $db->prepare("SELECT MAIL, NAME FROM user;");
             $stmt->execute();
             $result = $stmt->get_result();
@@ -86,10 +95,8 @@ class UserDAO extends Connection
 
         $users = [];
         foreach ($data as $value) {
-            $user = (new User)
-                ->setNICKNAME($value['NICKNAME'])
-                ->setMail($value['MAIL']);
-            $users[] = $user;
+            $users[] = (new User()) ->setNICKNAME($value['NICKNAME'])
+                                    ->setMAIL($value['MAIL']);
         }
 
         return $users;

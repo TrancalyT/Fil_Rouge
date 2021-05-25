@@ -1,38 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="commondocs/commons.css">
-    <link rel="stylesheet" href="css/connexion.css">
-    <title>Connexion / Inscription</title>
-</head>
+require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
+require_once(__DIR__.'/VIEW/view_footer.php'); 
+// require_once(__DIR__.'/VIEW/view_connexion.php');
 
-<body>
-
-    <!-- MENU HAMBURGER -->
-
-    <?php include('includes/Nav.php'); ?>
-
-    <!-- HEADER -->
-
-    <div class="bg"></div>
-    <header>
-        <div class="content">
-            <h1><span>Connexion</span></h1>
-        </div>
-    </header>
+// HEADER
+callHeader("Connexion / Inscription", "css/connexion.css");
+callMainTitle("Connexion");
+?>
 
     <!-- INSCRIPTION ET CONNEXION -->
     <!-- CONNEXION -->
@@ -211,14 +186,12 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
-
-    <?php include('includes/Footer.php') ?>
+    <?php
+    // FOOTER
+    callFooter();
+    
+    ?>
 
     <!-- SCRIPT -->
-
+    
     <script type="text/javascript" src="js/script.js"></script>
-
-</body>
-
-</html>
