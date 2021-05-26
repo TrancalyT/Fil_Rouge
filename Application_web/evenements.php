@@ -1,4 +1,3 @@
-<?php session_start(); ?>
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php callHeader("Evènements", "css/evenements.css"); ?>
