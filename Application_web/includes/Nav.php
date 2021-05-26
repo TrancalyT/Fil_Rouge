@@ -5,9 +5,23 @@
         <span></span>
         <span></span>
         <ul id="menu">
-            <a href="connexion.php" id="connexion">
+<?php
+    if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+?>
+            <a href="profil.php" id="connexion">
                 <li>Mon Compte</li>
             </a>
+<?php
+    } else {
+?>
+            <a href="connexion.php" id="connexion">
+                <li>Connexion</li>
+            </a>
+
+<?php
+    }
+?>
+
             <hr>
             <a href="accueil.php">
                 <li>Accueil</li>

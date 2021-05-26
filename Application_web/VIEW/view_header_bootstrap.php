@@ -2,7 +2,7 @@
 
 function callHeader(string $title, string $css)
 {
-
+    session_start();
 ?>
     <!DOCTYPE html>
     <html lang="en">
