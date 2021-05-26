@@ -1,10 +1,10 @@
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
-<?php callHeader("Accueil", "css/index.css"); ?>
 <?php require_once('Service/NewsService.php'); ?>
 <?php require_once('Service/VehiculeService.php'); ?>
+<?php callHeader("Accueil", "css/index.css"); ?>
 
-<?php callNav() ?>
+<?php callNav(); ?>
 
 <!-- HEADER -->
 

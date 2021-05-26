@@ -1,30 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require_once('VIEW/view_header.php'); ?>
+<?php require_once('VIEW/view_footer.php'); ?>
+<?php callHeader("Mon Profil", "css/profil.css"); ?>
 
-<head>
-    <title>Mon profil</title>
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link rel="stylesheet" href="commondocs/commons.css">
-    <link rel="stylesheet" href="css/profil.css">
-</head>
+<?php callNav(); ?>
 
-<body>
-    <!--------------- MENU BURGER ------------------------------------->
-    <?php include('includes/Nav.php'); ?>
+<!-- HEADER -->
 
-    <!-- -------------------------HEADER--------------------------------- -->
+<?php callMainTitle("Profil") ?>
 
-    <div class="bg"></div>
-    <header>
-        <div class="content">
-            <h1><span>PROFIL</span></h1>
-        </div>
-    </header>
     <!-------------------------------------CORP--------------------------------------------->
     <div class="contenant">
     <p><a href="">Profil de Liyahhhhhh</a></p> 
@@ -66,12 +49,9 @@
             </div>
         </div>
     </div>
-    <!---------------------------------------- FOOTER -------------------------------------->
-    <?php include('includes/Footer.php') ?>
+
+ <!-- FOOTER -->
+ <?php callFooter(); ?>
 
     <!---------------------------------------- SCRIPT -------------------------------------->
     <script type="text/javascript" src="js/script.js"></script>
-
-</body>
-
-</html>
