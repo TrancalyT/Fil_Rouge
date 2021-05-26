@@ -3,6 +3,7 @@
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php callHeader("Accueil", "css/index.css"); ?>
 <?php require_once('Service/NewsService.php'); ?>
+<?php require_once('Service/VehiculeService.php'); ?>
 
 <?php callNav() ?>
 
@@ -37,12 +38,21 @@
       <h2 class="effect-shine">Retrouvez nos expos en cours</h2>
     </section>
     <!-- Les photos doivent être redim au même format, idéalement 1300*1200 -->
+
     <section class="bodyExpos">
-      <div class="gallery">
-        <a href="vehiculespop.php"><img src="images/vehiculesBG2.jpg">Les véhicules à travers la Pop Culture</a>
-        <a href="#"><img src="https://source.unsplash.com/1300x1200/?lebanon"></a>
-        <a href="#"><img src="https://source.unsplash.com/1300x1200/?qatar"></a>
-      </div>
+      <?php
+      $vehicules = (new VehiculeService())->displayVehicule("expo");
+      foreach ($vehicules as $value) {
+        $title = $value->getNAME();
+        $image = $value->getIMAGE();
+      ?>
+        <div class="gallery">
+          <a href="vehiculespop.php"><img src="<?= "data:image;base64," . base64_encode($image) ?>"><?= $title ?></a>
+          <!-- <a href="vehiculespop.php"><img src="images/vehiculesBG2.jpg">Les véhicules à travers la Pop Culture</a> -->
+          <a href="#"><img src="https://source.unsplash.com/1300x1200/?lebanon"></a>
+          <a href="#"><img src="https://source.unsplash.com/1300x1200/?qatar"></a>
+        </div>
+      <?php } ?>
     </section>
   </section>
 
