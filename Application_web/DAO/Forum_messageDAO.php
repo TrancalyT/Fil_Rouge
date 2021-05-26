@@ -20,7 +20,7 @@ class Forum_messageDAO extends Connection{
         }
         catch(mysqli_sql_exception $error){
             $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode();
-            throw new GoldbookDAOException($message);
+            throw new ForumDAOException($message);
         }
     }
 }
