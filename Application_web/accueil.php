@@ -1,10 +1,11 @@
+<?php session_start(); ?>
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
+<?php callHeader("Accueil", "css/index.css"); ?>
 <?php require_once('Service/NewsService.php'); ?>
 <?php require_once('Service/VehiculeService.php'); ?>
-<?php callHeader("Accueil", "css/index.css"); ?>
 
-<?php callNav(); ?>
+<?php callNav() ?>
 
 <!-- HEADER -->
 
@@ -19,7 +20,7 @@
     </section>
     <section class="bodyAbout">
       <p>Le Pocket Museum of POP Culture est avant tout un projet d'école collaboratif, visant à créer une application web responsive à partir de rien ou presque (on a quand même choisi le thème !).
-        Cette application est un hommage à, vous vous en doutez, la POP Culture sous toutes ses formes. </br>
+        Cette application est un hommage à, vous vous endoutez, la POP Culture sous toutes ses formes. </br>
         Vous retrouverez ici diverses expos accessibles à tout moment, puisque le Pocket Museum se trouve... dans votre poche !</br></br>
         Musique, cinéma, items cultes, acteurs, références mais aussi espaces de discussion, boutique et évènements LIVE seront au rendez-vous. Alors n'attendez-plus et partez à la poursuite d'Octobre Rouge !
       </p>
@@ -46,7 +47,7 @@
         $image = $value->getIMAGE();
       ?>
         <div class="gallery">
-          <a href="vehiculespop.php"><img src="<?= "data:image;base64," . base64_encode($image) ?>"><?= $title ?></a>
+          <a href="vehiculespop.php"><img src="<?= "data:image;base64," . base64_encode($image) ?>"></br><?= $title ?></a>
           <!-- <a href="vehiculespop.php"><img src="images/vehiculesBG2.jpg">Les véhicules à travers la Pop Culture</a> -->
           <a href="#"><img src="https://source.unsplash.com/1300x1200/?lebanon"></a>
           <a href="#"><img src="https://source.unsplash.com/1300x1200/?qatar"></a>
