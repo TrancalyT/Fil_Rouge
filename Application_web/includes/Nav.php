@@ -8,9 +8,14 @@
 <?php
     if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 ?>
+            <div class="recherche">
             <a href="profil.php" id="connexion">
                 <li>Mon Compte</li>
             </a>
+            <a href="CONTROLLER/unlog_process.php" id="connexion">
+                <button title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button> 
+            </a>
+            </div>
 <?php
     } else {
 ?>

@@ -239,6 +239,24 @@ input::placeholder {
   transition: all 0.3s ease-in 0s;
 }
 
+#menu #srcbutton2 {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+  padding-left: 0em;
+  padding-right: 0em;
+  background: #232323;
+  color: #ededed;
+}
+
+#menu #srcbutton2:hover {
+  background : tomato;
+  color: #232323;
+  transition: all 0.3s ease-in 0s;
+}
+
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
 header {
   height: 100vh;
