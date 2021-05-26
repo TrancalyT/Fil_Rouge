@@ -13,7 +13,7 @@
                 <li>Mon Compte</li>
             </a>
             <a href="CONTROLLER/unlog_process.php" id="connexion">
-                <button title="Déconnexion" id="srcbutton"><i class="fas fa-sign-out-alt"></i></button> 
+                <button title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button> 
             </a>
             </div>
 <?php
