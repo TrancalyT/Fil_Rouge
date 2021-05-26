@@ -1,8 +1,12 @@
 <?php
+if (isset($_REQUEST['deco'])){
+    session_destroy();
+    header("Location:accueil.php");
+  }
+  session_start();
 
 function callHeader(string $title, string $css)
 {
-    session_start();
 ?>
     <!DOCTYPE html>
     <html lang="en">

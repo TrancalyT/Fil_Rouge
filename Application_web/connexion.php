@@ -84,7 +84,7 @@ $messageInscription = [
       }
   }
 
-// CONNEXION
+// CONTROLLER CONNEXION
 
 $messageConnexion = [
     "messageErrCo" => "",
@@ -116,7 +116,7 @@ $messageConnexion = [
             $userProfil = $setConnexion->getROLE();
     
               if (password_verify($mdpCo, $checkMdp)){
-                $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userName. " !";
+                $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userNickname. " !";
                 $_SESSION['user_name'] = $userName;
                 $_SESSION['user_lastname'] = $userLastname;
                 $_SESSION['user_nickname'] = $userNickname;
