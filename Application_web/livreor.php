@@ -8,7 +8,7 @@ require_once(__DIR__.'/VIEW/view_goldbook.php');
 callHeader("Livre d'or", "css/livreor.css");
 callMainTitle("Livre d'or");
 
-// FORMULAIRE LIVRE D'OR
+// CONTROLLER FORMULAIRE LIVRE D'OR
 // $_SESSION['user_id'] = 4;
 // $_SESSION['user_name'] = 'Marlon';
 // $_SESSION['user_lastname'] = "Brando";
@@ -42,6 +42,7 @@ if (isset($valider)){
   }
 }
 
+// AFFICHAGE FORMULAIRE LIVRE D'OR
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
 callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageError);

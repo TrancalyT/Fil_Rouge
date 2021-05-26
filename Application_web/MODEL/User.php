@@ -24,6 +24,8 @@ class User
     private ?string $BIO;
     private $AVATAR;
 
+    private $ROLE;
+
     //////////////////////////////////////////////////////
     public function getID()
     {
@@ -240,4 +242,17 @@ class User
         return $this;
     }
     //////////////////////////////////////////////////////
+
+    public function getROLE()
+    {
+        return $this->ROLE;
+    }
+
+
+    public function setROLE($ROLE)
+    {
+        $this->ROLE = $ROLE;
+
+        return $this;
+    }
 }

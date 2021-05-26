@@ -6,7 +6,7 @@ require_once(__DIR__ . "/../EXCEPTIONS/UserDAOException.php");
 
 class UserDAO extends Connection
 {
-    public function login($MAIL): User
+    public function login($MAIL): ?User
     {
         try {
             $db = parent::connectionDB();
@@ -81,7 +81,7 @@ class UserDAO extends Connection
     {
         try {
             $db = parent::connectionDB();
-            $stmt = $db->prepare("SELECT MAIL, NAME FROM user;");
+            $stmt = $db->prepare("SELECT MAIL, NICKNAME FROM user;");
             $stmt->execute();
             $result = $stmt->get_result();
 

@@ -3,18 +3,14 @@
 function callConnexion()
 {
 ?>
-
-    <!-- INSCRIPTION ET CONNEXION -->
-    <!-- CONNEXION -->
-
     <div class="form_connexion">
-        <form action="" method="get" class="col g-3 justify-content form-info">
+        <form action="connexion.php" method="get" class="col g-3 justify-content form-info">
             <div class="container-lg">
                 <div class="mb-3">
                     <div class="row justify-content-end">
                         <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>
                         <div class="col-sm-8">
-                            <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailconnexion" class="form-control" required>
+                            <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailco" class="form-control" required>
                         </div>
                     </div>
                 </div>
@@ -22,12 +18,12 @@ function callConnexion()
                     <div class="row justify-content-end">
                         <label for="MDPco" class="col-sm col-form-label">Mot de passe : </label>
                         <div class="col-sm-8">
-                            <input id="MDPco" size="50" maxlength="100" type="password" placeholder="" name="mdpco" class="form-control" required>
+                            <input id="MDPco" size="50" maxlength="100" type="password" placeholder="" name="passwordco" class="form-control" required>
                         </div>
                     </div>
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" class="buttonmain">Connexion</button>
+                    <button type="submit" class="buttonmain" name="validerconnexion" value="validerconnexion">Connexion</button>
                 </div>
                 <div class="mb-3 text-center">
                     <button type="button" class="buttonmain2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Besoin d'un compte ?</button>
@@ -35,9 +31,15 @@ function callConnexion()
             </div>
         </form>
     </div>
+<?php    
+}
+?>
 
-    <!-- INSCRIPTION -->
+<?php
 
+function callInscription()
+{
+?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -47,7 +49,7 @@ function callConnexion()
                 <div class="modal-body">
                     <div class="form_inscription">
                         <h2 class="text-center">INSCRIPTION</h2>
-                        <form action="" method="post" class="col g-3 justify-content form-info">
+                        <form action="connexion.php" method="post" class="col g-3 justify-content form-info">
                             <div class="container-lg">
                                 <div class="information">
                                     <h5>Informations :</h5>
@@ -168,7 +170,7 @@ function callConnexion()
                                     <div class="g-recaptcha row justify-content-center" data-sitekey="your_site_key"></div>
                                 </div>
                                 <div class="mb-3 text-center">
-                                    <button type="submit" class="buttonmain">Envoyer</button>
+                                    <button type="submit" class="buttonmain" name="validerinscription" value="validerinscription">Envoyer</button>
                                 </div>
                             </div>
                         </form>
