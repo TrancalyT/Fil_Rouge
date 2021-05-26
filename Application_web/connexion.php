@@ -3,6 +3,7 @@
 require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
 require_once(__DIR__.'/VIEW/view_footer.php'); 
 require_once(__DIR__.'/VIEW/view_connexion.php');
+require_once(__DIR__.'/SERVICE/UserService.php');
 
 // HEADER
 callHeader("Connexion / Inscription", "css/connexion.css");
@@ -72,7 +73,7 @@ $messageInscription = [
             }
             if (preg_match($regMailInscr, $mail) && ($password === $repassword) && (!$messageInscription["doublonPseudo"]) && (!$messageInscription["doublonMail"])){
               $messageInscription["messageInscriOk"] = "Votre inscription est bien enregistrée " .$nickname. ", vous pouvez dès à présent vous connecter :)";
-                header("Location:suscribe_process.php?name=$name&lastname=$lastname&nickname=$nickname&mail=$mail&password=$password&adress=$adress&city=$city&cp=$cp&tel=$tel&movie=$movie&book=$book&music=$music&sport=$sport&vg=$vg");
+                header("Location:CONTROLLER/suscribe_process.php?name=$name&lastname=$lastname&nickname=$nickname&mail=$mail&password=$password&adress=$adress&city=$city&cp=$cp&tel=$tel&movie=$movie&book=$book&music=$music&sport=$sport&vg=$vg");
             }
           } catch (UserServiceException $error) {
             $messageError = $error->getMessage();
