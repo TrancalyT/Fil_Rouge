@@ -122,8 +122,9 @@
     "titleExpos"
     "bodyExpos";
   grid-area: Expos;
-  background-color: #fff;
+  /* background-color: #fff; */
   padding: 1rem;
+  background: url("../images/BGwhite.jpg") center;
 }
 
 .titleExpos {

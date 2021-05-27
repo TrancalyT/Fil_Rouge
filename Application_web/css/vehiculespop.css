@@ -86,7 +86,9 @@
   /* grid-template-rows: 1fr; */
   /* gap: 0px 0px; */
   grid-template-areas: "expo";
-  background-color: #232323;
+  /* background-color: #232323; */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/BGmovie.jpg") center;
   height: auto;
   box-sizing: border-box;
 }
