@@ -17,16 +17,16 @@
   // if (isset($_POST["submit"])) {
 
   //   $expo_title = $_POST["expo_title"];
-  //   // $expo_image = $_POST["expo_image"];
-  //   $expo_image = ($_FILES["expo_image"]["name"]);
+  //   $file = $_FILES['expo_image']['tmp_name'];
+  //   $expo_image = addslashes(file_get_contents($file));
   //   $expo_description = $_POST["expo_description"];
   //   $expo_type = $_POST["expo_type"];
   // }
-  // if (!empty($expo_title) && !empty($expo_image) && !empty($expo_description) && !empty($expo_type)) {
+  // if (!empty($expo_title) /*&& !empty($expo_image)*/ && !empty($expo_description) && !empty($expo_type)) {
 
 
 
-  //   $db = new mysqli("localhost", "root", "", "museum");
+  //   $db = new mysqli("localhost", "root", "", "pocket_museumv2");
   //   $query = ("INSERT INTO popvehicules (`NAME`, `IMAGE`, `CONTENT`, `TYPE`)
   //                           VALUES ('$expo_title','$expo_image','$expo_description','$expo_type');");
   //   $create_vehicule = mysqli_query($db, $query);
@@ -40,8 +40,8 @@
 
 
   ?>
-
-  <!-- <form action="" method="POST" enctype="multipart/form-data">
+  <!-- 
+  <form action="" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <input type="text" class="form-control" name="expo_title" placeholder="name">
     </div>

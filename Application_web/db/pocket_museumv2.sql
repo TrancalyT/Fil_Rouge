@@ -206,8 +206,8 @@ CREATE TABLE `user` (
   `PASSWORD` varchar(255) NOT NULL,
   `ADRESS` varchar(100) NOT NULL,
   `CITY` varchar(100) NOT NULL,
-  `CP` int(6) NOT NULL,
-  `TEL` int(11) NOT NULL,
+  `CP` int(5) NOT NULL,
+  `TEL` int(10) NOT NULL,
   `MOVIE` varchar(200) DEFAULT NULL,
   `BOOK` varchar(200) DEFAULT NULL,
   `SPORT` varchar(200) DEFAULT NULL,
@@ -215,7 +215,8 @@ CREATE TABLE `user` (
   `VG` varchar(200) DEFAULT NULL,
   `BIO` text DEFAULT NULL,
   `AVATAR` blob DEFAULT NULL,
-  `ROLE` varchar(11) NOT NULL
+  `ROLE` varchar(11) NOT NULL,
+  `GOLDBOOK_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -293,7 +294,8 @@ ALTER TABLE `popvehicules`
 -- Index pour la table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `GOLDBOOK_ID` (`GOLDBOOK_ID`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -383,6 +385,12 @@ ALTER TABLE `donation`
 ALTER TABLE `forum_message`
   ADD CONSTRAINT `forum_message_ibfk_1` FOREIGN KEY (`ID_TOPIC`) REFERENCES `forum_topic` (`ID`),
   ADD CONSTRAINT `forum_message_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
+
+--
+-- Contraintes pour la table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`GOLDBOOK_ID`) REFERENCES `goldbook` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
