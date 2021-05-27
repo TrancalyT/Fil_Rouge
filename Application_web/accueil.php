@@ -97,14 +97,16 @@
   </section>
 
   <?php
-
+  // RECUPERATION DES 3 ELEMENTS A AFFICHER SUR LE GOLDBOOK : reste à gérer l'affichage des étoiles, et voir comment stocké les 3 user dans chaque item du carrousel
   $goldbook = (new GoldbookService())->displayGoldbook();
   foreach ($goldbook as $value) {
-    $gbID = $value->getID();
     $gbText = $value->getTEXT();
     $gbStars = $value->getSTARS();
-    $gbUserID = $value->getUSER_ID();
+    $gbUserName = $value->getUSER_ID()->getNAME();
+    $gbUserLastName = $value->getUSER_ID()->getLASTNAME();
+    $gbUserAvatar = $value->getUSER_ID()->getAVATAR();
   }
+
   ?>
 
   <section class="goldenbook">
@@ -112,7 +114,7 @@
       <h2 class="effect-shine">Dans notre livre d'Or</h2>
     </section>
     <div class="carrousel">
-      <p class="item-1">
+      <p class="item-1"> Hello baby <?php echo $gbText ?>
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
           The octocat

@@ -39,13 +39,13 @@ class User
         return $this;
     }
     //////////////////////////////////////////////////////
-    public function getNAME()
+    public function getNAME() : string
     {
         return $this->NAME;
     }
 
 
-    public function setNAME($NAME)
+    public function setNAME(string $NAME)
     {
         $this->NAME = $NAME;
 

@@ -1,5 +1,7 @@
 <?php
 
+include_once(__DIR__ ."/User.php");
+
 class Goldbook
 {
 
@@ -7,7 +9,7 @@ class Goldbook
     private string $TEXT;
     private int $STARS;
     private string $VALIDATION;
-    private int $USER_ID;
+    private User $USER_ID;
 
 
     //////////////////////////////////////////////////////
@@ -63,12 +65,12 @@ class Goldbook
     }
 
     //////////////////////////////////////////////////////
-    public function getUSER_ID()
+    public function getUSER_ID() : User
     {
         return $this->USER_ID;
     }
 
-    public function setUSER_ID($USER_ID)
+    public function setUSER_ID(User $USER_ID)
     {
         $this->USER_ID = $USER_ID;
 

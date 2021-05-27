@@ -28,7 +28,8 @@ class GoldbookDAO extends Connection
     {
         try {
             $db = $this->connectionDB();
-            $stmt = $db->prepare("SELECT * FROM goldbook WHERE VALIDATION = 'YES' ORDER BY ID desc LIMIT 3;");
+            $stmt = $db->prepare("SELECT G.TEXT AS TEXT, G.STARS AS STARS, U.NAME AS NAME, U.LASTNAME AS LASTNAME, U.AVATAR AS AVATAR 
+                                FROM goldbook AS G INNER JOIN user AS U ON G.USER_ID = U.ID WHERE VALIDATION = 'YES' LIMIT 3");
             $stmt->execute();
             $result = $stmt->get_result();
             $data = $result->fetch_all(MYSQLI_ASSOC);
@@ -39,14 +40,15 @@ class GoldbookDAO extends Connection
             throw new GoldbookDAOException($message);
         }
 
-        $goldbook = [];
         foreach ($data as $value) {
-            $goldbook[] = (new Goldbook())
-                ->setID($value["ID"])
-                ->setTEXT($value["TEXT"])
-                ->setSTARS($value["STARS"])
-                ->setUSER_ID($value["USER_ID"]);
+            $user = (new User()) ->setNAME($value["NAME"])
+                                 ->setLASTNAME($value["LASTNAME"])
+                                 ->setAVATAR($value["AVATAR"]);
+            $goldbook = (new Goldbook()) ->setTEXT($value["TEXT"])
+                                         ->setSTARS($value["STARS"])
+                                         ->setUSER_ID($user);
         }
+        
         return $goldbook;
     }
 
@@ -70,7 +72,11 @@ class GoldbookDAO extends Connection
             $goldbook = $value['USER_ID'];
         }
         
-        return $goldbook;
+        if (empty($goldbook)){
+            return null;
+        } else {
+            return $goldbook;
+        }
     }
 }
 ?>
