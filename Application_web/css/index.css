@@ -75,7 +75,9 @@
     "titleAbout"
     "bodyAbout";
   grid-area: About;
-  background-color: #232323;
+  /* background-color: #232323; */
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/BGmovie.jpg") center;
   padding: 10rem;
   /* border-top: solid 10px #fff; */
   border-bottom: solid 10px #fff;
