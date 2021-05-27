@@ -109,21 +109,43 @@ $messageConnexion = [
           if ($setConnexion){
   
             $checkMdp = $setConnexion->getPASSWORD();
+            $userID = $setConnexion->getID();
             $userName = $setConnexion->getNAME();
             $userLastname = $setConnexion->getLASTNAME();
             $userNickname = $setConnexion->getNICKNAME();
             $userMail = $setConnexion->getMAIL();
-            $userID = $setConnexion->getID();;
-            $userProfil = $setConnexion->getROLE();
+            $userAdress = $setConnexion->getADRESS();
+            $userCity = $setConnexion->getCITY();
+            $userCP = $setConnexion->getCP();
+            $userTel = $setConnexion->getTEL();
+            $userMovie = $setConnexion->getMOVIE();
+            $userBook = $setConnexion->getBOOK();
+            $userSport = $setConnexion->getSPORT();
+            $userMusic = $setConnexion->getMUSIC();
+            $userVG = $setConnexion->getVG();
+            $userBio = $setConnexion->getBIO();
+            $userAvatar = $setConnexion->getAVATAR();
+            $userRole = $setConnexion->getROLE();
     
               if (password_verify($passwordCo, $checkMdp)){
                 $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userNickname. " !";
+                $_SESSION['user_id'] = $userID;
                 $_SESSION['user_name'] = $userName;
                 $_SESSION['user_lastname'] = $userLastname;
                 $_SESSION['user_nickname'] = $userNickname;
                 $_SESSION['user_mail'] = $userMail;
-                $_SESSION['user_id'] = $userID;
-                $_SESSION['user_profil'] = $userProfil;
+                $_SESSION['user_adress'] = $userAdress;
+                $_SESSION['user_city'] = $userCity;
+                $_SESSION['user_cp'] = $userCP;
+                $_SESSION['user_tel'] = $userTel;
+                $_SESSION['user_movie'] = $userMovie;
+                $_SESSION['user_book'] = $userBook;
+                $_SESSION['user_sport'] = $userSport;
+                $_SESSION['user_music'] = $userMusic;
+                $_SESSION['user_vg'] = $userVG;
+                $_SESSION['user_bio'] = $userBio;
+                $_SESSION['user_avatar'] = $userAvatar;
+                $_SESSION['user_role'] = $userRole;
                 header("Refresh: 3; URL=accueil.php");
               } else {
                 $messageConnexion["messageErrCo"] = "Mot de passe incorrect, veuillez réessayer";
@@ -151,7 +173,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 } else {
 
     callConnexion($messageConnexion, @$messageError);
-    callInscription();
+    callInscription($messageInscription);
 }
 
 

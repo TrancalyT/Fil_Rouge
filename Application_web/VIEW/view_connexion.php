@@ -41,13 +41,19 @@ function callConnexion($messageConnexion, $messageError)
 
 <?php
 
-function callInscription()
+function callInscription($messageInscription)
 {
 ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
+                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrDoublonPseudo"] ?></span>
+                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrDoublonMail"] ?></span>
+                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMailInscr"] ?></span>
+                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMDPInscr"] ?></span>
+                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrorInscri"] ?></span>
+                    <span class="fs-6 fst-italic text-success"><?php echo $messageInscription["messageInscriOk"] ?></span>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
