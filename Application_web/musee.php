@@ -1,48 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="images/icon-index.png">
-    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" > -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="commondocs/commons.css">
-    <link rel="stylesheet" href="css/musee.css">
-    <title>Musée</title>
-</head>
-<body>
+<?php require_once('VIEW/view_header.php'); ?>
+<?php require_once('VIEW/view_footer.php'); ?>
 
-<!-- MENU HAMBURGER -->
-
-  <?php include('includes/Nav.php'); ?>
+<?php callHeader("Musée", "css/musee.css"); ?>
+<?php callNav() ?>
 
 <!-- HEADER -->
 
-  <div class="bg"></div>
-  <header>
-    <div class="content">
-      <h1><span>Musée</span></h1>
-    </div>
-  </header>
+<?php callMainTitle("Museum"); ?>
 
 <!-- MUSEE -->
 
-  <section class="construction">
-    <h2>UNDER CONSTRUCTION</h2>
-  </section>
+<div class="grid-container">
+  <!-- <div class="mission">La mission du Pocket Museum of POP Culture est de faire de l’expression créative une force qui change la vie en offrant des expériences qui inspirent et connectent nos communautés.</div>
+  <div class="values">
+    <h2>Valeurs fondamentales</h2>
+    <ul>
+      Principes directeurs du MoPOP:
+      <li> Bras ouverts: Nous pratiquons une hospitalité radicale et un accès équitable.</li>
+      <li> Échanges créatifs: nous créons un espace pour les voix de la communauté et les collaborations.</li>
+      <li> Moments lumineux: nous utilisons la culture pop comme catalyseur pour apprendre, se connecter et créer.</li>
+      <li> Poursuivre l'excellence: nous croyons que l'intégrité, l'innovation et le travail acharné mènent à des choses incroyables.</li>
+      <li> Excitation: nous apprécions le frisson qui vient de l'expérience de la créativité ensemble.</li>
+    </ul>
+  </div>
+  <div class="giving"></div>
+  <div class="forum">
+    <h2>forum</h2>
+    <p>rejoignez la communauté</p>
+    <button>bouton</button>
+  </div>
+  <div class="getinvolved">
+    <h2>Restez en contact</h2>
+    <button>bouton</button>
+    <button>bouton</button>
+    <button>bouton</button>
+    <button>bouton</button>
+    <button>bouton</button>
+  </div>
+  <div class="staff">
+    <div class="one">one</div>
+    <div class="two">two</div>
+    <div class="three">three</div>
+
+
+  </div> -->
+
+</div>
 
 <!-- FOOTER -->
-
-  <?php include('includes/Footer.php') ?>
-
-<!-- SCRIPT -->
-
-  <script type="text/javascript" src="js/script.js"></script>
-
-</body>
-</html>
+<?php callFooter(); ?>

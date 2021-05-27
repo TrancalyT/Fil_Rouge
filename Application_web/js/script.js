@@ -21,7 +21,10 @@ function topFunction() {
 }
 
 $(function () {
-  $("#newsbutton").click(function () {
-    $("#displayNews").toggle(500);
+  $("#displayNews").hide();
+  $(function () {
+    $("#newsbutton").click(function () {
+      $("#displayNews").toggle(500);
+    });
   });
 });

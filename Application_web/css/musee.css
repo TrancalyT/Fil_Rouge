@@ -7,13 +7,77 @@
 
 /* CORPS */
 
-.construction {
+/* .construction {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #fff;
   color: #090a0f;
   height: 100vh;
+} */
+
+.grid-container {
+  /* display: grid; */
+  background-color: #232323;
+  /* grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em 1em;
+  grid-template-areas:
+    "mission values"
+    "giving giving"
+    "forum getinvolved"
+    "staff staff"
+    "Footer";
+  position: relative; */
+  /* height: 100vh; */
+  box-sizing: border-box;
+}
+
+.giving {
+  /* grid-area: giving; */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/donation.jpg") center; */
+}
+
+.mission {
+  /* grid-area: mission; */
+  /* display: flex; */
+  padding: 1em;
+}
+
+.values {
+  /* grid-area: values; */
+  padding: 1em;
+}
+
+.getinvolved {
+  /* grid-area: getinvolved; */
+  padding: 1em;
+}
+
+.staff {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1em 1em;
+  grid-template-areas: "one two three";
+  grid-area: staff;
+}
+
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+
+.forum {
+  /* grid-area: forum; */
+  padding: 1em;
 }
 
 /* RESPONSIVE */

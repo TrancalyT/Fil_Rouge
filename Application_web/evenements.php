@@ -51,8 +51,6 @@
         $description = $value->getDESCRIPTION();
 
       ?>
-
-
         <div class="cassetteDisplay">
           <div class="imageCassette">
             <img src="<?= "data:image;base64," . base64_encode($image) ?>" alt="image">
@@ -75,8 +73,8 @@
           </div>
         </div>
 
-
       <?php } ?>
+
     </article>
   </section>
 </section>
