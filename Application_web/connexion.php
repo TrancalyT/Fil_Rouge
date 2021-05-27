@@ -55,7 +55,7 @@ $messageInscription = [
             $doublonUser = (new UserService())->ifAlreadyExist();
   
             foreach ($doublonUser as $value){
-              if ($value->getNAME() == $nickname){
+              if ($value->getNICKNAME() == $nickname){
                 $messageInscription["messageErrDoublonPseudo"] = "Ce pseudo est déjà pris veuillez en saisir un nouveau";
                 $messageInscription["doublonPseudo"] = true;
               }
@@ -114,16 +114,16 @@ $messageConnexion = [
             $userLastname = $setConnexion->getLASTNAME();
             $userNickname = $setConnexion->getNICKNAME();
             $userMail = $setConnexion->getMAIL();
-            $userAdress = $setConnexion->getADRESS();
-            $userCity = $setConnexion->getCITY();
-            $userCP = $setConnexion->getCP();
-            $userTel = $setConnexion->getTEL();
-            $userMovie = $setConnexion->getMOVIE();
-            $userBook = $setConnexion->getBOOK();
-            $userSport = $setConnexion->getSPORT();
-            $userMusic = $setConnexion->getMUSIC();
-            $userVG = $setConnexion->getVG();
-            $userBio = $setConnexion->getBIO();
+            // $userAdress = $setConnexion->getADRESS();
+            // $userCity = $setConnexion->getCITY();
+            // $userCP = $setConnexion->getCP();
+            // $userTel = $setConnexion->getTEL();
+            // $userMovie = $setConnexion->getMOVIE();
+            // $userBook = $setConnexion->getBOOK();
+            // $userSport = $setConnexion->getSPORT();
+            // $userMusic = $setConnexion->getMUSIC();
+            // $userVG = $setConnexion->getVG();
+            // $userBio = $setConnexion->getBIO();
             $userAvatar = $setConnexion->getAVATAR();
             $userRole = $setConnexion->getROLE();
     
@@ -134,16 +134,16 @@ $messageConnexion = [
                 $_SESSION['user_lastname'] = $userLastname;
                 $_SESSION['user_nickname'] = $userNickname;
                 $_SESSION['user_mail'] = $userMail;
-                $_SESSION['user_adress'] = $userAdress;
-                $_SESSION['user_city'] = $userCity;
-                $_SESSION['user_cp'] = $userCP;
-                $_SESSION['user_tel'] = $userTel;
-                $_SESSION['user_movie'] = $userMovie;
-                $_SESSION['user_book'] = $userBook;
-                $_SESSION['user_sport'] = $userSport;
-                $_SESSION['user_music'] = $userMusic;
-                $_SESSION['user_vg'] = $userVG;
-                $_SESSION['user_bio'] = $userBio;
+                // $_SESSION['user_adress'] = $userAdress;
+                // $_SESSION['user_city'] = $userCity;
+                // $_SESSION['user_cp'] = $userCP;
+                // $_SESSION['user_tel'] = $userTel;
+                // $_SESSION['user_movie'] = $userMovie;
+                // $_SESSION['user_book'] = $userBook;
+                // $_SESSION['user_sport'] = $userSport;
+                // $_SESSION['user_music'] = $userMusic;
+                // $_SESSION['user_vg'] = $userVG;
+                // $_SESSION['user_bio'] = $userBio;
                 $_SESSION['user_avatar'] = $userAvatar;
                 $_SESSION['user_role'] = $userRole;
                 header("Refresh: 3; URL=accueil.php");
