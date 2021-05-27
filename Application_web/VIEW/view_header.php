@@ -1,9 +1,4 @@
 <?php
-//DECO
-if (isset($_REQUEST['deco'])) {
-    session_destroy();
-    header("Location:accueil.php");
-}
 session_start();
 
 function callHeader(string $title, string $css)
@@ -51,9 +46,9 @@ function callNav()
                             <a href="profil.php" id="connexion">
                                 <li>Mon Compte</li>
                             </a>
-                            <form action="accueil.php" method="post">
-                                <button type="submit" name="deco" value="deco" title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button>
-                            </form>
+                            <a href="CONTROLLER/logout_process.php">
+                                <button title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button>
+                            </a>
                         </div>
 
                     <?php
