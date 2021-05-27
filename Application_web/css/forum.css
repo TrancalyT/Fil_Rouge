@@ -32,62 +32,40 @@
 
 /* ---------------------CORP----------------------------------- */
 .contenant{
-  background-color: white;
-  border-top: #555 10px solid;
-  border-bottom: #555 10px solid;
+  background-color: aliceblue;
+  border-top: 10px #203a43 solid;
+  border-bottom: 10px #203a43 solid;
 }
-.contenant p{
+h1{
+  font-family: "phosphate",sans-serif;
   text-align: center;
-  letter-spacing: 0.4rem;
-  color: #392d3b;
-  font-family: Phosphate;
 }
-.grid-container li{
-  font-family: Lato;
-  font-size: smaller;
+h3
+{
+  text-align:center;
+  font-family: "Lato",sans-serif;
+  background-color:black;
+  border-radius: 5px 5px 0px 0px;
+  color:white;
+  font-size:0.9em;
+  margin-bottom:0px;
 }
-.grid-container a{
+.news p
+{
+  background-color:#CCCCCC;
+  border-radius: 0px 0px 5px 5px ;
+  margin-top:0px;
+  font-family: "lato",sans-serif;
+}
+.news
+{
+  width:70%;
+  margin:auto;
+}
+a
+{
   text-decoration: none;
-  color: #392d3b;
-  letter-spacing: 0.2rem;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    transition: all 0.5s;
-}
-.grid-container a:hover{
   color: tomato;
-}
-#message{
-  border: #392d3b 2px solid;
-  border-radius: 10px;
-  max-width:1000px;
-  text-align: center;
-  font-family: Lato;
-  font-size: smaller;
-  margin:20px auto 50px auto;
-  
-}
-.buttonLike{
-  margin-bottom: 20px;
-  margin-top:30px;
-  display: inline;
-  margin: auto;
-}
-/* On masque le texte verrouille */
-.text-ver {
-  display: none;
-}
-/* Quand l image verrouillee est la, on affiche le texte verrouille */
-div.boutons_sujet_right img[src="http://www.allo-image.net/stockimg/upload/1645/464767094540f280b83ffdbuton_bg.gif"]+a.new_sujett .text-ver {
- display: block;
-}       
-/* Quand l image verrouillee est la, on masque le texte normal */
-div.boutons_sujet_right img[src="http://www.allo-image.net/stockimg/upload/1645/464767094540f280b83ffdbuton_bg.gif"]+a.new_sujett .text-rep {
- display: none;
-}
-/* Pour ne pas que l'image verouille gène */
-div.boutons_sujet_right img {
-  float: left;
 }
 /* --------------------RESPONSIVE -----------------------------------*/
 @media (max-width: 768px) {
