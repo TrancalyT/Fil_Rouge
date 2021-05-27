@@ -1,11 +1,15 @@
 <?php
 
-function callConnexion()
+function callConnexion($messageConnexion, $messageError)
 {
 ?>
     <div class="form_connexion">
         <form action="connexion.php" method="get" class="col g-3 justify-content form-info">
             <div class="container-lg">
+            <span class="fs-6 fst-italic text-danger"><?php echo $messageConnexion["messageNoMail"] ?></span>
+            <span class="fs-6 fst-italic text-danger"><?php echo $messageConnexion["messageErrCo"] ?></span>
+            <span class="fs-6 fst-italic text-success"><?php echo $messageConnexion["messageSuccessCo"] ?></span>
+            <span class="fs-6 fst-italic text-danger"><?php echo $messageError ?></span>
                 <div class="mb-3">
                     <div class="row justify-content-end">
                         <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>

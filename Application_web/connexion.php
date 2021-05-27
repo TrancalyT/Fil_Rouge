@@ -101,8 +101,8 @@ $messageConnexion = [
   if (isset($validerCo)){
   
       if(isset($mailCo) && !empty($mailCo) 
-      && isset($mdpCo) && !empty($mdpCo) ){
-  
+      && isset($passwordCo) && !empty($passwordCo) ){
+        
         try {
           $setConnexion = (new UserService())->login($mailCo);
   
@@ -116,7 +116,7 @@ $messageConnexion = [
             $userID = $setConnexion->getID();;
             $userProfil = $setConnexion->getROLE();
     
-              if (password_verify($mdpCo, $checkMdp)){
+              if (password_verify($passwordCo, $checkMdp)){
                 $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userNickname. " !";
                 $_SESSION['user_name'] = $userName;
                 $_SESSION['user_lastname'] = $userLastname;
@@ -124,7 +124,7 @@ $messageConnexion = [
                 $_SESSION['user_mail'] = $userMail;
                 $_SESSION['user_id'] = $userID;
                 $_SESSION['user_profil'] = $userProfil;
-                header("Location:accueil.php");
+                header("Refresh: 3; URL=accueil.php");
               } else {
                 $messageConnexion["messageErrCo"] = "Mot de passe incorrect, veuillez réessayer";
                 $goodMail = $userMail;
@@ -150,7 +150,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
 } else {
 
-    callConnexion();
+    callConnexion($messageConnexion, @$messageError);
     callInscription();
 }
 

@@ -10,7 +10,7 @@
 
     <!-------------------------------------CORP--------------------------------------------->
     <div class="contenant">
-    <p><a href="">Profil de Liyahhhhhh</a></p> 
+    <p><a href="">Profil de <?php echo $_SESSION['user_nickname'] ?></a></p> 
         <div class="grid-container">
         
             <div class="infos">
