@@ -25,14 +25,14 @@ html {
 
 #menu #srcbutton {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #menu #srcbutton2 {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
@@ -50,7 +50,7 @@ html {
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
   color: #392d3b;
-  background-color: #fff;
+  background: url("../images/BGwhite.jpg") center;
   box-sizing: border-box;
 }
 
@@ -100,7 +100,7 @@ html {
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.5fr 0.1fr;
     gap: 1rem 1rem;
     grid-template-areas:
       "one"

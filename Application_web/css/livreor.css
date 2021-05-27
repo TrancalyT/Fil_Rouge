@@ -25,14 +25,14 @@ html {
 
 #menu #srcbutton {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #menu #srcbutton2 {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
@@ -51,7 +51,7 @@ html {
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
   color: #392d3b;
-  background-color: #fff;
+  background: url("../images/BGwhite.jpg") center;
   box-sizing: border-box;
 }
 
@@ -125,54 +125,54 @@ html {
 .signature {
   text-transform: none;
   font-style: italic;
-  font-size:large;
+  font-size: large;
 }
 
-    /* NOTATION ETOILE */
+/* NOTATION ETOILE */
 
-    .rating {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      overflow:hidden;
-      font-size: 1.5em;
-    }
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  overflow: hidden;
+  font-size: 1.5em;
+}
 
-    .rating input {
-      float: right;
-      opacity: 0;
-      position: absolute;
-    }
-    
-    .rating a,
-    .rating label {
-      float:right;
-      color: #aaa;
-      text-decoration: none;
-      -webkit-transition: color .4s;
-      -moz-transition: color .4s;
-      -o-transition: color .4s;
-      transition: color .4s;
-    }
+.rating input {
+  float: right;
+  opacity: 0;
+  position: absolute;
+}
 
-    .rating label:hover ~ label,
-    .rating input:focus ~ label,
-    .rating label:hover,
-    .rating a:hover,
-    .rating a:hover ~ a,
-    .rating a:focus,
-    .rating a:focus ~ a		{
-      color: tomato;
-      cursor: pointer;
-    }
+.rating a,
+.rating label {
+  float: right;
+  color: #aaa;
+  text-decoration: none;
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
+}
 
-    .rating2 {
-      direction: rtl;
-    }
+.rating label:hover ~ label,
+.rating input:focus ~ label,
+.rating label:hover,
+.rating a:hover,
+.rating a:hover ~ a,
+.rating a:focus,
+.rating a:focus ~ a {
+  color: tomato;
+  cursor: pointer;
+}
 
-    .rating2 a {
-      float:none
-    }
+.rating2 {
+  direction: rtl;
+}
+
+.rating2 a {
+  float: none;
+}
 
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
 
@@ -190,7 +190,7 @@ html {
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.5fr 0.1fr;
     gap: 1rem 1rem;
     grid-template-areas:
       "one"
@@ -224,7 +224,6 @@ html {
     font-size: medium;
   }
 }
-
 
 @media (max-width: 320px) {
   .four input {

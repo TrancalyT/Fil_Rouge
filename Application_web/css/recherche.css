@@ -25,14 +25,14 @@ html {
 
 #menu #srcbutton {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #menu #srcbutton2 {
   font-size: 0.83rem;
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
@@ -48,7 +48,7 @@ html {
   padding-bottom: 3%;
   border-radius: 5px 5px 5px 5px;
   color: #392d3b;
-  background-color: #fff;
+  background: url("../images/BGwhite.jpg") center;
   box-sizing: border-box;
 }
 
@@ -162,35 +162,35 @@ html {
 
 /* --- FILTRES ---*/
 
-.mainlabel{
-  color : tomato;
+.mainlabel {
+  color: tomato;
 }
 
 .dropdown-menu.show {
-    text-align: center;
+  text-align: center;
 }
 
 .form-check .form-check-input {
   float: unset;
 }
 
-.form-check-input[type=checkbox]:checked {
+.form-check-input[type="checkbox"]:checked {
   background-color: tomato;
   border-color: #392d3b;
 }
 
 .form-range {
-    width: 95%;
+  width: 95%;
 }
 
-.range_css::-webkit-slider-thumb{
-  -webkit-appearance:none;  
-  border:1px solid #392d3b;
-  width:1rem;
-  height:1rem;
-  border-radius:40%;
-  background:tomato;
-  box-shadow:0 0 .125rem #aaa;
+.range_css::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #392d3b;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 40%;
+  background: tomato;
+  box-shadow: 0 0 0.125rem #aaa;
 }
 
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
@@ -209,7 +209,7 @@ html {
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.5fr 0.1fr;
     gap: 1rem 1rem;
     grid-template-areas:
       "one"
