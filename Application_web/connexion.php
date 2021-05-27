@@ -126,9 +126,13 @@ $messageConnexion = [
             // $userBio = $setConnexion->getBIO();
             $userAvatar = $setConnexion->getAVATAR();
             $userRole = $setConnexion->getROLE();
+            
+            if ($userAvatar == NULL){
+                $userAvatar = "images/default_avatar.jpg";
+            }
     
               if (password_verify($passwordCo, $checkMdp)){
-                $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userNickname. " !";
+                // $messageConnexion["messageSuccessCo"] = "Bienvenue " . $userNickname. " !";
                 $_SESSION['user_id'] = $userID;
                 $_SESSION['user_name'] = $userName;
                 $_SESSION['user_lastname'] = $userLastname;
@@ -146,7 +150,6 @@ $messageConnexion = [
                 // $_SESSION['user_bio'] = $userBio;
                 $_SESSION['user_avatar'] = $userAvatar;
                 $_SESSION['user_role'] = $userRole;
-                header("Refresh: 3; URL=accueil.php");
               } else {
                 $messageConnexion["messageErrCo"] = "Mot de passe incorrect, veuillez réessayer";
                 $goodMail = $userMail;

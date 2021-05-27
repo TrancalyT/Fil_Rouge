@@ -3,6 +3,7 @@
 require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
 require_once(__DIR__.'/VIEW/view_footer.php'); 
 require_once(__DIR__.'/VIEW/view_goldbook.php');
+require_once(__DIR__.'/Service/GoldbookService.php');
 
 // HEADER
 callHeader("Livre d'or", "css/livreor.css");
@@ -45,7 +46,15 @@ if (isset($valider)){
 // AFFICHAGE FORMULAIRE LIVRE D'OR
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
-callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageError);
+  $alreadyRated = new GoldbookService();
+
+  if ($alreadyRated->alreadyRated($_SESSION['user_id']) != $_SESSION['user_id']){
+
+    callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageError);
+
+  } else {
+    callGoldBookRated();
+  }
 
 } else {
 

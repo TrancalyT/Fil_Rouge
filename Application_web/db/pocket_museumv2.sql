@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 26 mai 2021 à 15:08
+-- Généré le : jeu. 27 mai 2021 à 19:27
 -- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 8.0.2
+-- Version de PHP : 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -109,8 +109,16 @@ CREATE TABLE `goldbook` (
   `ID` int(11) NOT NULL,
   `TEXT` text NOT NULL,
   `STARS` int(1) NOT NULL,
-  `VALIDATION` varchar(3) NOT NULL
+  `VALIDATION` varchar(3) NOT NULL,
+  `USER_ID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `goldbook`
+--
+
+INSERT INTO `goldbook` (`ID`, `TEXT`, `STARS`, `VALIDATION`, `USER_ID`) VALUES
+(2, 'aaaa', 3, 'TOC', 1);
 
 -- --------------------------------------------------------
 
@@ -219,6 +227,14 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`ID`, `NAME`, `LASTNAME`, `NICKNAME`, `MAIL`, `PASSWORD`, `ADRESS`, `CITY`, `CP`, `TEL`, `MOVIE`, `BOOK`, `SPORT`, `MUSIC`, `VG`, `BIO`, `AVATAR`, `ROLE`) VALUES
+(1, 'Reina', 'Anthony', 'Toodle', 'anthorosie@gmail.com', '$2y$10$ylPkTm3kMTKA2OGRT2Lj1e7y7B8U1P1LMO1amclGavPS9pjSHcfdC', '149 Chemin De L\'ancienne Carraire', 'Auribeau-sur-Siagne', 6810, 664510347, '', '', '', '', '', NULL, NULL, 'User'),
+(2, 'Toto', 'Toto', 'TotoToodle', 'aa@aa.fr', '$2y$10$bX0.Szuk//zvkx1cL03UlevQTNYW5Nt0aUYsGxhfpIYI3Tw3mbTo2', '149 Chemin De L\'ancienne Carraire', 'Auribeau-sur-Siagne', 6810, 664510347, '', '', '', '', '', NULL, NULL, 'User');
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -269,7 +285,8 @@ ALTER TABLE `forum_topic`
 -- Index pour la table `goldbook`
 --
 ALTER TABLE `goldbook`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `USER_ID` (`USER_ID`);
 
 --
 -- Index pour la table `movies`
@@ -327,7 +344,7 @@ ALTER TABLE `forum_topic`
 -- AUTO_INCREMENT pour la table `goldbook`
 --
 ALTER TABLE `goldbook`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `movies`
@@ -351,7 +368,7 @@ ALTER TABLE `popvehicules`
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées
@@ -383,6 +400,12 @@ ALTER TABLE `donation`
 ALTER TABLE `forum_message`
   ADD CONSTRAINT `forum_message_ibfk_1` FOREIGN KEY (`ID_TOPIC`) REFERENCES `forum_topic` (`ID`),
   ADD CONSTRAINT `forum_message_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
+
+--
+-- Contraintes pour la table `goldbook`
+--
+ALTER TABLE `goldbook`
+  ADD CONSTRAINT `goldbook_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

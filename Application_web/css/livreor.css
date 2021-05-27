@@ -29,6 +29,12 @@ html {
 	align-items: center;
 }
 
+#menu #srcbutton2 {
+  font-size: 0.83rem;
+	display: flex;
+	align-items: center;
+}
+
 /* ------------------------------------------------------HEADER------------------------------------------------------ */
 
 .bg {

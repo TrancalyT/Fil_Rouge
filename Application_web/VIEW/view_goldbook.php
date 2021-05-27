@@ -60,4 +60,19 @@ function callGoldBookUnconnected()
 <?php
 }
 
+function callGoldBookRated()
+{
+?>
+
+<div class="form_livreor">
+    <p class="text-center login">Merci pour votre message <?php echo $_SESSION['user_nickname'] ?>, nous éspérons vous satisfaire au maximum ! Si vous souhaitez nous faire part d'autres choses n'hésitez pas à nous contacter. Pour ce faire, rien de plus simple, cliquez sur le petit bouton juste sous ce petit bonhomme souriant !</p> 
+    <p class ="text-center"><i style="font-size: 1em; color: tomato;"class="fas fa-smile"></i> </p>
+    <div class="mb-3 text-center">
+      <a href="contact.php"><button type="button" class="buttonmain">Oui, ici !</button></a>
+    </div>
+</div>
+
+<?php
+}
+
 ?>

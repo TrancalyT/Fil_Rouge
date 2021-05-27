@@ -2,6 +2,7 @@
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php require_once('Service/NewsService.php'); ?>
 <?php require_once('Service/VehiculeService.php'); ?>
+<?php require_once('Service/GoldbookService.php'); ?>
 
 <?php callHeader("Accueil", "css/index.css"); ?>
 <?php callNav() ?>
@@ -95,12 +96,23 @@
 
   </section>
 
+  <?php
+
+  $goldbook = (new GoldbookService())->displayGoldbook();
+  foreach ($goldbook as $value) {
+    $gbID = $value->getID();
+    $gbText = $value->getTEXT();
+    $gbStars = $value->getSTARS();
+    $gbUserID = $value->getUSER_ID();
+  }
+  ?>
+
   <section class="goldenbook">
     <section class="titleGoldenbook">
       <h2 class="effect-shine">Dans notre livre d'Or</h2>
     </section>
     <div class="carrousel">
-      <p class="item-1">This is your last chance. After this, there is no turning back.
+      <p class="item-1">
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
           The octocat
@@ -114,7 +126,7 @@
       </p>
       <p class="item-3">You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.
         <span class="author">
-          <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
+          <img src="images/default_avatar.jpg">
           The octocat
         </span>
       </p>

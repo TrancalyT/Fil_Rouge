@@ -7,6 +7,7 @@ class Goldbook
     private string $TEXT;
     private int $STARS;
     private string $VALIDATION;
+    private int $USER_ID;
 
 
     //////////////////////////////////////////////////////
@@ -57,6 +58,19 @@ class Goldbook
     public function setVALIDATION($VALIDATION)
     {
         $this->VALIDATION = $VALIDATION;
+
+        return $this;
+    }
+
+    //////////////////////////////////////////////////////
+    public function getUSER_ID()
+    {
+        return $this->USER_ID;
+    }
+
+    public function setUSER_ID($USER_ID)
+    {
+        $this->USER_ID = $USER_ID;
 
         return $this;
     }
