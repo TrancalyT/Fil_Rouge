@@ -8,7 +8,7 @@
 
 <!-- HEADER -->
 
-<?php callMainTitle("Pocket Museum of Pop Culture");?>
+<?php callMainTitle("Pocket Museum of Pop Culture"); ?>
 
 
 <!-- CORPS -->
@@ -28,7 +28,7 @@
   </section>
 
   <section class="Evenements">
-    <a href="evenements.php" class="button2">évenements à venir</a>
+    <a href="evenements.php" class="button2" data-aos="fade-up">évenements à venir</a>
 
 
   </section>
@@ -120,6 +120,7 @@
       </p>
     </div>
   </section>
+  <!-- </main> -->
 
   <!-- FOOTER -->
   <?php callFooter(); ?>

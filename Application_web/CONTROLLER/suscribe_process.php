@@ -28,5 +28,3 @@ try {
     $messageError = $error->getMessage();
     header("Location:/../connexion.php?messageError=$messageError");
 }
-
-?>

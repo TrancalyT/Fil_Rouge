@@ -118,7 +118,7 @@
   justify-content: space-around;
   border: solid black 1px;
   border-radius: 20px;
-  width: 70vw;
+  max-width: 70vw;
   height: auto;
   background-color: #fff;
   opacity: 0.9;
@@ -156,7 +156,7 @@
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.5fr 0.3fr 0.5fr 1fr;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.5fr 0.1fr;
     gap: 1rem 1rem;
     grid-template-areas:
       "one"

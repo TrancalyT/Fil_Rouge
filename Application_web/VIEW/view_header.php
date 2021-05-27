@@ -1,11 +1,11 @@
 <?php
 //DECO
-if (isset($_REQUEST['deco'])){
+if (isset($_REQUEST['deco'])) {
     session_destroy();
     header("Location:accueil.php");
-  }
-  session_start();
-  
+}
+session_start();
+
 function callHeader(string $title, string $css)
 {
 ?>
@@ -23,6 +23,7 @@ function callHeader(string $title, string $css)
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
         <link rel="stylesheet" href="commondocs/commons.css">
         <link rel="stylesheet" href=<?= $css ?>>
+
 
     </head>
 
@@ -43,28 +44,28 @@ function callNav()
                 <span></span>
                 <ul id="menu">
 
-<?php
-    if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
-?>
-            <div class="recherche">
-            <a href="profil.php" id="connexion">
-                <li>Mon Compte</li>
-            </a>
-            <form action="accueil.php" method="post">
-                <button type="submit" name="deco" value="deco" title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button> 
-            </form>
-            </div>
+                    <?php
+                    if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
+                    ?>
+                        <div class="recherche">
+                            <a href="profil.php" id="connexion">
+                                <li>Mon Compte</li>
+                            </a>
+                            <form action="accueil.php" method="post">
+                                <button type="submit" name="deco" value="deco" title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button>
+                            </form>
+                        </div>
 
-<?php
-    } else {
-?>
-            <a href="connexion.php" id="connexion">
-                <li>Connexion</li>
-            </a>
+                    <?php
+                    } else {
+                    ?>
+                        <a href="connexion.php" id="connexion">
+                            <li>Connexion</li>
+                        </a>
 
-<?php
-    }
-?>
+                    <?php
+                    }
+                    ?>
 
                     <hr>
                     <a href="accueil.php">
@@ -142,7 +143,7 @@ function callNavExpoVehicule()
             </a>
         </div>
         <!-- Bouton scroll to top -->
-        <!-- <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button> -->
+        <button onclick="topFunction()" id="myBtn" title="Retour en Haut"></button>
 
 
     <?php

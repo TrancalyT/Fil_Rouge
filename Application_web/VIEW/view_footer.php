@@ -66,7 +66,9 @@ function callFooter()
             <h5>© copyright - 2021 - Team Rocket !</h5>
         </div>
     </footer>
+    </main>
     <!-- SCRIPT -->
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/script.js"></script>
     </body>

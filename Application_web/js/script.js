@@ -28,3 +28,12 @@ $(function () {
     });
   });
 });
+
+$(function () {
+  $(".corps").hide();
+  $(function () {
+    $(".image").click(function () {
+      $(".corps").toggle(500);
+    });
+  });
+});
