@@ -1,57 +1,58 @@
-<?php require_once('VIEW/view_header.php'); ?>
-<?php require_once('VIEW/view_footer.php'); ?>
-<?php callHeader("Mon Profil", "css/profil.css"); ?>
+<?php
+require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
+require_once(__DIR__.'/VIEW/view_footer.php'); 
 
-<?php callNav(); ?>
 
-<!-- HEADER -->
+// HEADER
+callHeader($_SESSION['user_nickname'], "css/profil.css"); 
+callMainTitle($_SESSION['user_nickname']) ?>
 
-<?php callMainTitle("Profil") ?>
-
-    <!-------------------------------------CORP--------------------------------------------->
     <div class="contenant">
-    <p><a href="">Profil de <?php echo $_SESSION['user_nickname'] ?></a></p> 
-        <div class="grid-container">
-        
-            <div class="infos">
-                <form class="formulaire" method="POST" action="">
-                    <div>
-                        <h6 style="text-align: center;font-family:'lato','sans-serif';">Modifier mes infos</h6>
-                        <input type="text" name="newpseudo" placeholder=" pseudo" /><br /><br />
-                        <input type="email" name="newmail" placeholder=" mail" /><br /><br />
-                        <input type="password" name="newmdp1" placeholder=" Mot de passe" /><br /><br />
-                        <input type="password" name="newmdp2" placeholder=" Confirmer le mot de passe" /><br /><br />
-                        <input style="font-family:'lato','sans-serif';" type="button" class="button4" value="Mettre à jour mon profil !" ; />
-                    </div>
-                </form>
-            </div>
-            <div class="photo">
-            </div>
-            <div class="coordonnees">
-                <form class="formulaire" method="POST" action="">
-                    <div>
-                        <h6 style="text-align: center;font-family:'lato','sans-serif';">Modifier mes coordonnées</h6>
-                        <input type="text" size="35" maxlength="100" name="newAdresse" placeholder=" Adresse" /><br /><br />
-                        <input type="text" name="newville" placeholder=" Ville" /><br /><br />
-                        <input type="number" name="newCP" placeholder=" Code Postal" /><br /><br />
-                        <input type="phone" name="newTelephone" placeholder=" Téléphone" /><br /><br />
-                        <input style="font-family:'lato','sans-serif';" type="button" class="button4" value="Mettre à jour mes coordonnées !" ; />
-                    </div>
-                </form>
-            </div>
-            <div class="divers">
-                <form class="formulaire" method="POST" action="">
-                    <div>
-                        <h6 style="text-align: center;font-family:'lato','sans-serif';">Mes favoris</h6>
-
-                    </div>
-                </form>
+        <section class="info">
+        <h4>Infos</h4>
+        <div class="col-12">
+            <div class="clearfix border bg-light">
+            <img class="img-thumbnail rounded float-start w-25 h-25" src="<?= ($_SESSION['user_avatar']) ?>">
+                <p>Pseudonyme : <?= ($_SESSION['user_nickname']) ?></p>
+                <p>Nom : <?= ($_SESSION['user_name']) ?></p>
+                <p>Prénom : <?= ($_SESSION['user_lastname']) ?></p>
+                <p>E-Mail : <?= ($_SESSION['user_mail']) ?></p>
+                Changer mon mot de passe ...
             </div>
         </div>
+        </section>
+        <section class="bio">
+        <h4>Bio</h4>
+        <div class="col-12">
+            <div class="clearfix border bg-light">
+                <p><?= ($_SESSION['user_bio']) ?></p>
+            </div>
+        </div>
+        </section>
+        <section class="adress">
+        <h4>Coordoonées</h4>
+        <div class="col-12">
+            <div class="clearfix border bg-light">
+                <p>Adresse :<?= ($_SESSION['user_adress']) ?> </p>
+                <p>Ville :<?= ($_SESSION['user_city']) ?> </p>
+                <p>Code Postale :<?= ($_SESSION['user_cp']) ?> </p>
+                <p>Téléphone :<?= ($_SESSION['user_tel']) ?> </p>
+            </div>
+        </div>
+        </section>
+        <section class="hobbies">
+        <h4>Hobbies</h4>
+        <div class="col-12">
+            <div class="clearfix border bg-light">
+                <p>Mon sport favori :<?= ($_SESSION['user_sport']) ?> </p> 
+                <p>Mon film favori :<?= ($_SESSION['user_movie']) ?> </p> 
+                <p>Mon JV favori :<?= ($_SESSION['user_vg']) ?> </p> 
+                <p>Mon groupe/artiste favori :<?= ($_SESSION['user_music']) ?> </p> 
+                <p>Mon livre favori :<?= ($_SESSION['user_book']) ?> </p> 
+            </div>
+        </div>
+        </section>
     </div>
 
  <!-- FOOTER -->
  <?php callFooter(); ?>
-
-    <!---------------------------------------- SCRIPT -------------------------------------->
-    <script type="text/javascript" src="js/script.js"></script>

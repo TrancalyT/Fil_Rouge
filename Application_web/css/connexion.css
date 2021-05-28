@@ -87,7 +87,9 @@ html {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
+  margin-bottom: 20px;
 }
+
 .buttonmain:hover {
   color: #fff;
   text-decoration: none;
@@ -111,6 +113,25 @@ html {
   color: #fff;
   text-decoration: none;
   background: #392d3b;
+  border: 1px solid #fff;
+}
+
+.buttonmain3 {
+  color: #392d3b;
+  border: 1px solid #ced4da;
+  background: #fff;
+  display: inline-block;
+  padding: 9px 25px;
+  transition: all 0.2s ease-out;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.buttonmain3:hover {
+  color: #fff;
+  text-decoration: none;
+  background: tomato;
   border: 1px solid #fff;
 }
 

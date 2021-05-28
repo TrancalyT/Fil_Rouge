@@ -10,9 +10,6 @@ callHeader("Livre d'or", "css/livreor.css");
 callMainTitle("Livre d'or");
 
 // CONTROLLER FORMULAIRE LIVRE D'OR
-// $_SESSION['user_id'] = 4;
-// $_SESSION['user_name'] = 'Marlon';
-// $_SESSION['user_lastname'] = "Brando";
 
 $messageError = [
   "messageError" => ""];
@@ -68,5 +65,4 @@ callFooter();
 ?>
       
 <!-- SCRIPT -->
-
-  <script type="text/javascript" src="js/script.js"></script>
+  <script src="js/goldbook.js"></script>

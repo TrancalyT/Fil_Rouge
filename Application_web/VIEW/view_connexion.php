@@ -27,7 +27,7 @@ function callConnexion($messageConnexion, $messageError)
                     </div>
                 </div>
                 <div class="mb-3 text-center">
-                    <button type="submit" class="buttonmain" name="validerconnexion" value="validerconnexion">Connexion</button>
+                    <button type="submit" class="buttonmain3" name="validerconnexion" value="validerconnexion">Connexion</button>
                 </div>
                 <div class="mb-3 text-center">
                     <button type="button" class="buttonmain2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Besoin d'un compte ?</button>

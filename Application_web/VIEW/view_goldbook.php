@@ -20,11 +20,11 @@ function callGoldBookConnected($name, $lastname, $avis, $messageError)
           </div>
           <div class="rating">
             <div class="stars">
-                <input name="5stars" id="5star" type="radio"></a><label for="5star">★</label>
-                <input name="4stars" id="4star" type="radio"></a><label for="4star">★</label>
-                <input name="3stars" id="3star" type="radio"></a><label for="3star">★</label>
-                <input name="2stars" id="2star" type="radio"></a><label for="2star">★</label>
-                <input name="1stars" id="1star" type="radio"></a><label for="1star">★</label>
+                <input name="5stars" id="5star" class = "star" type="radio"></a><label for="5star">★</label>
+                <input name="4stars" id="4star" class = "star" type="radio"></a><label for="4star">★</label>
+                <input name="3stars" id="3star" class = "star" type="radio"></a><label for="3star">★</label>
+                <input name="2stars" id="2star" class = "star" type="radio"></a><label for="2star">★</label>
+                <input name="1stars" id="1star" class = "star" type="radio"></a><label for="1star">★</label>
             </div>
           </div>
         </div>

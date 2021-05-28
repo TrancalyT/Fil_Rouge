@@ -26,13 +26,23 @@ class UserDAO extends Connection
         foreach ($data as $value) {
             $user = (new User)
                 ->setID($value['ID'])
-                ->setMAIL($value['MAIL'])
-                ->setNICKNAME($value['NICKNAME'])
                 ->setPASSWORD($value['PASSWORD'])
+                ->setNICKNAME($value['NICKNAME'])
                 ->setNAME($value['NAME'])
                 ->setLASTNAME($value['LASTNAME'])
-                ->setAVATAR($value['AVATAR']);
-                // Ajouter Tous les setters quand fonction Ok
+                ->setMAIL($value['MAIL'])
+                ->setADRESS($value['ADRESS'])
+                ->setCITY($value['CITY'])
+                ->setCP($value['CP'])
+                ->setTEL($value['TEL'])
+                ->setSPORT($value['SPORT'])
+                ->setVG($value['VG'])
+                ->setBOOK($value['BOOK'])
+                ->setMOVIE($value['MOVIE'])
+                ->setMUSIC($value['MUSIC'])
+                ->setBIO($value['BIO'])
+                ->setAVATAR($value['AVATAR'])
+                ->setROLE($value['ROLE']);
         }
         if (empty($user)) {
             return null;
