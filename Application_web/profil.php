@@ -25,7 +25,8 @@ callMainTitle($_SESSION['user_nickname']) ?>
         <h4>Bio</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
-                <p><?= ($_SESSION['user_bio']) ?></p>
+                <p>A propose de moi : <?= ($_SESSION['user_bio']) ?></p>
+                <p>Mon commentaire dans le livre d'or : </p>
             </div>
         </div>
         </section>
@@ -33,10 +34,10 @@ callMainTitle($_SESSION['user_nickname']) ?>
         <h4>Coordoonées</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
-                <p>Adresse :<?= ($_SESSION['user_adress']) ?> </p>
-                <p>Ville :<?= ($_SESSION['user_city']) ?> </p>
-                <p>Code Postale :<?= ($_SESSION['user_cp']) ?> </p>
-                <p>Téléphone :<?= ($_SESSION['user_tel']) ?> </p>
+                <p>Adresse : <?= ($_SESSION['user_adress']) ?> </p>
+                <p>Ville : <?= ($_SESSION['user_city']) ?> </p>
+                <p>Code Postale : <?= ($_SESSION['user_cp']) ?> </p>
+                <p>Téléphone : <?= ($_SESSION['user_tel']) ?> </p>
             </div>
         </div>
         </section>
@@ -44,11 +45,11 @@ callMainTitle($_SESSION['user_nickname']) ?>
         <h4>Hobbies</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
-                <p>Mon sport favori :<?= ($_SESSION['user_sport']) ?> </p> 
-                <p>Mon film favori :<?= ($_SESSION['user_movie']) ?> </p> 
-                <p>Mon JV favori :<?= ($_SESSION['user_vg']) ?> </p> 
-                <p>Mon groupe/artiste favori :<?= ($_SESSION['user_music']) ?> </p> 
-                <p>Mon livre favori :<?= ($_SESSION['user_book']) ?> </p> 
+                <p>Mon sport favori : <?= ($_SESSION['user_sport']) ?> </p> 
+                <p>Mon film favori : <?= ($_SESSION['user_movie']) ?> </p> 
+                <p>Mon JV favori : <?= ($_SESSION['user_vg']) ?> </p> 
+                <p>Mon groupe/artiste favori : <?= ($_SESSION['user_music']) ?> </p> 
+                <p>Mon livre favori : <?= ($_SESSION['user_book']) ?> </p> 
             </div>
         </div>
         </section>
