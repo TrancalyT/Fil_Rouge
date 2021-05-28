@@ -1,5 +1,6 @@
 <?php require_once('VIEW/view_header.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
+<?php require_once('VIEW/view_accueil.php'); ?>
 <?php require_once('Service/NewsService.php'); ?>
 <?php require_once('Service/VehiculeService.php'); ?>
 <?php require_once('Service/GoldbookService.php'); ?>
@@ -97,69 +98,44 @@
   </section>
 
   <?php
-  // RECUPERATION DES 3 ELEMENTS A AFFICHER SUR LE GOLDBOOK : reste à gérer l'affichage des avatar
+  // CONTROLLER GOLDBOOK
   $goldbook = (new GoldbookService())->displayGoldbook();
   $gbDisplay = [];
-  $text = 1;
-  $stars = 1;
-  $name = 1;
-  $lastname = 1;
-  $avatar = 1;
-  
+
+  $iteration = 1;
+
   foreach ($goldbook as $value) {
 
-    $gbDisplay["TEXT".$text] = $value->getTEXT();
-    $gbDisplay["STARS".$stars] = $value->getSTARS();
-    $gbDisplay["NAME".$name] = $value->getUSER_ID()->getNAME();
-    $gbDisplay["LASTNAME".$lastname] = $value->getUSER_ID()->getLASTNAME();
-    $gbDisplay["AVATAR".$avatar] = $value->getUSER_ID()->getAVATAR();
+    $gbDisplay["TEXT".$iteration] = $value->getTEXT();
+    $gbDisplay["STARS".$iteration] = $value->getSTARS();
+    $gbDisplay["NAME".$iteration] = $value->getUSER_ID()->getNAME();
+    $gbDisplay["LASTNAME".$iteration] = $value->getUSER_ID()->getLASTNAME();
+    $gbDisplay["AVATAR".$iteration] = $value->getUSER_ID()->getAVATAR();
 
-    if ($gbDisplay["STARS".$stars] == 1){
-      $gbDisplay["STARS".$stars] = "★";
-    } else if ($gbDisplay["STARS".$stars] == 2){
-      $gbDisplay["STARS".$stars] = "★★";
-    } else if ($gbDisplay["STARS".$stars] == 3){
-      $gbDisplay["STARS".$stars] = "★★★";
-    } else if ($gbDisplay["STARS".$stars] == 4){
-      $gbDisplay["STARS".$stars] = "★★★★";
-    } else if ($gbDisplay["STARS".$stars] == 5){
-      $gbDisplay["STARS".$stars] = "★★★★★";
+    if ($gbDisplay["STARS".$iteration] == 1){
+      $gbDisplay["STARS".$iteration] = "★";
+    } else if ($gbDisplay["STARS".$iteration] == 2){
+      $gbDisplay["STARS".$iteration] = "★★";
+    } else if ($gbDisplay["STARS".$iteration] == 3){
+      $gbDisplay["STARS".$iteration] = "★★★";
+    } else if ($gbDisplay["STARS".$iteration] == 4){
+      $gbDisplay["STARS".$iteration] = "★★★★";
+    } else if ($gbDisplay["STARS".$iteration] == 5){
+      $gbDisplay["STARS".$iteration] = "★★★★★";
     }
 
-    $text++;
-    $stars++;
-    $name++;
-    $lastname++;
-    $avatar++;
+    if ($gbDisplay["AVATAR".$iteration] == NULL){
+      $gbDisplay["AVATAR".$iteration] = "images/default_avatar.jpg";
+    } else {
+      $gbDisplay["AVATAR".$iteration] = "data:image;base64," . base64_encode($gbDisplay["AVATAR".$iteration]);
+    }
+    
+    $iteration++;
   }
+
+  //GOLDBOOK
+  callGoldbook($gbDisplay);
+
+  //FOOTER
+  callFooter();
   ?>
-
-  <section class="goldenbook">
-    <section class="titleGoldenbook">
-      <h2 class="effect-shine">Dans notre livre d'Or</h2>
-    </section>
-    <div class="carrousel">
-      <p class="item-1"> <?php echo $gbDisplay["TEXT1"]?>
-        <span class="author">
-          <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          <?php echo $gbDisplay["LASTNAME1"]. " " .$gbDisplay["NAME1"] ?> </br> <?php echo $gbDisplay["STARS1"]?>
-        </span>
-      </p>
-      <p class="item-2"><?php echo $gbDisplay["TEXT2"] ?>
-        <span class="author">
-          <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          <?php echo $gbDisplay["LASTNAME2"]. " " .$gbDisplay["NAME2"] ?> </br> <?php echo $gbDisplay["STARS2"]?>
-        </span>
-      </p>
-      <p class="item-3"><?php echo $gbDisplay["TEXT3"] ?>
-        <span class="author">
-          <img src="images/default_avatar.jpg">
-          <?php echo $gbDisplay["LASTNAME3"]. " " .$gbDisplay["NAME3"] ?> </br> <?php echo $gbDisplay["STARS3"]?>
-        </span>
-      </p>
-    </div>
-  </section>
-  <!-- </main> -->
-
-  <!-- FOOTER -->
-  <?php callFooter(); ?>
