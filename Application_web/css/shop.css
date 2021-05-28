@@ -135,6 +135,19 @@ body {
   margin-top: 0.5rem;
 }
 
+.achat {
+  padding: 1em;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease-in 0s;
+}
+
+.achat:hover {
+  background: #fff;
+  color: #392d3b;
+  text-decoration: none;
+}
+
 .image:hover {
   transform: scale(1.3);
   transition: transform 1s;

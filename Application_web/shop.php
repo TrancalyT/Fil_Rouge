@@ -57,7 +57,7 @@
               <p><?= $title ?></p></br>
               <p><?= $price ?> €</p>
               <p><?= $content ?></p></br>
-              <a href=""><i class="fas fa-shopping-cart"></i></a>
+              <a href=""><button class="achat" title="Ajouter au panier"><i class="fas fa-shopping-cart"></i></button></a>
             </figcaption>
           </figure>
         </li>
