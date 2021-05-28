@@ -252,7 +252,7 @@ input::placeholder {
 }
 
 #menu #srcbutton2:hover {
-  background : tomato;
+  background: tomato;
   color: #232323;
   transition: all 0.3s ease-in 0s;
 }
@@ -320,6 +320,20 @@ header span {
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+h1 {
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
