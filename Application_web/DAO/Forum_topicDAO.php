@@ -11,9 +11,9 @@ class Forum_topicDAO extends Connection
 
         try {
             $query = "INSERT INTO forum_topic(ID,SUJET,TEXT)
-                    VALUES(NULL,?,?);";
+                    VALUES(?,?,?);";
 
-            $db = parent::connectionDB();
+            $db =$this->connectionDB();
             $stmt = $db->prepare($query);
             $stmt->bind_param('s', $sujet);
             $stmt->execute();
