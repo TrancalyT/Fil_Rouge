@@ -32,9 +32,10 @@
 
 /* ---------------------CORP----------------------------------- */
 .contenant{
-  background-color: aliceblue;
-  border-top: 10px #203a43 solid;
-  border-bottom: 10px #203a43 solid;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+   url("../images/BGwhite.jpg") center;
+   border-top: 10px grey solid;
+   border-bottom:  10px grey solid;
 }
 h1{
   font-family: "phosphate",sans-serif;
