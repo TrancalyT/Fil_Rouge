@@ -40,16 +40,17 @@ class GoldbookDAO extends Connection
             throw new GoldbookDAOException($message);
         }
 
+        $goldbookRated = [];
         foreach ($data as $value) {
             $user = (new User()) ->setNAME($value["NAME"])
                                  ->setLASTNAME($value["LASTNAME"])
                                  ->setAVATAR($value["AVATAR"]);
-            $goldbook = (new Goldbook()) ->setTEXT($value["TEXT"])
-                                         ->setSTARS($value["STARS"])
-                                         ->setUSER_ID($user);
+            $goldbookRated[] = (new Goldbook()) ->setTEXT($value["TEXT"])
+                                                ->setSTARS($value["STARS"])
+                                                ->setUSER_ID($user);
         }
         
-        return $goldbook;
+        return $goldbookRated;
     }
 
     function alreadyRated($id)

@@ -97,16 +97,41 @@
   </section>
 
   <?php
-  // RECUPERATION DES 3 ELEMENTS A AFFICHER SUR LE GOLDBOOK : reste à gérer l'affichage des étoiles, et voir comment stocké les 3 user dans chaque item du carrousel
+  // RECUPERATION DES 3 ELEMENTS A AFFICHER SUR LE GOLDBOOK : reste à gérer l'affichage des avatar
   $goldbook = (new GoldbookService())->displayGoldbook();
+  $gbDisplay = [];
+  $text = 1;
+  $stars = 1;
+  $name = 1;
+  $lastname = 1;
+  $avatar = 1;
+  
   foreach ($goldbook as $value) {
-    $gbText = $value->getTEXT();
-    $gbStars = $value->getSTARS();
-    $gbUserName = $value->getUSER_ID()->getNAME();
-    $gbUserLastName = $value->getUSER_ID()->getLASTNAME();
-    $gbUserAvatar = $value->getUSER_ID()->getAVATAR();
-  }
 
+    $gbDisplay["TEXT".$text] = $value->getTEXT();
+    $gbDisplay["STARS".$stars] = $value->getSTARS();
+    $gbDisplay["NAME".$name] = $value->getUSER_ID()->getNAME();
+    $gbDisplay["LASTNAME".$lastname] = $value->getUSER_ID()->getLASTNAME();
+    $gbDisplay["AVATAR".$avatar] = $value->getUSER_ID()->getAVATAR();
+
+    if ($gbDisplay["STARS".$stars] == 1){
+      $gbDisplay["STARS".$stars] = "★";
+    } else if ($gbDisplay["STARS".$stars] == 2){
+      $gbDisplay["STARS".$stars] = "★★";
+    } else if ($gbDisplay["STARS".$stars] == 3){
+      $gbDisplay["STARS".$stars] = "★★★";
+    } else if ($gbDisplay["STARS".$stars] == 4){
+      $gbDisplay["STARS".$stars] = "★★★★";
+    } else if ($gbDisplay["STARS".$stars] == 5){
+      $gbDisplay["STARS".$stars] = "★★★★★";
+    }
+
+    $text++;
+    $stars++;
+    $name++;
+    $lastname++;
+    $avatar++;
+  }
   ?>
 
   <section class="goldenbook">
@@ -114,22 +139,22 @@
       <h2 class="effect-shine">Dans notre livre d'Or</h2>
     </section>
     <div class="carrousel">
-      <p class="item-1"> Hello baby <?php echo $gbText ?>
+      <p class="item-1"> <?php echo $gbDisplay["TEXT1"]?>
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          The octocat
+          <?php echo $gbDisplay["NAME1"]. " " . $gbDisplay["LASTNAME1"]?> </br> <?php echo $gbDisplay["STARS1"]?>
         </span>
       </p>
-      <p class="item-2">You take the blue pill - the story ends, you wake up in your bed and believe whatever you want to believe.
+      <p class="item-2"><?php echo $gbDisplay["TEXT2"] ?>
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          The octocat
+          <?php echo $gbDisplay["NAME2"]. " " . $gbDisplay["LASTNAME2"]?> </br> <?php echo $gbDisplay["STARS2"]?>
         </span>
       </p>
-      <p class="item-3">You take the red pill - you stay in Wonderland and I show you how deep the rabbit-hole goes.
+      <p class="item-3"><?php echo $gbDisplay["TEXT3"] ?>
         <span class="author">
           <img src="images/default_avatar.jpg">
-          The octocat
+          <?php echo $gbDisplay["NAME3"]. " " . $gbDisplay["LASTNAME3"]?> </br> <?php echo $gbDisplay["STARS3"]?>
         </span>
       </p>
     </div>
