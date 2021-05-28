@@ -142,19 +142,19 @@
       <p class="item-1"> <?php echo $gbDisplay["TEXT1"]?>
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          <?php echo $gbDisplay["NAME1"]. " " . $gbDisplay["LASTNAME1"]?> </br> <?php echo $gbDisplay["STARS1"]?>
+          <?php echo $gbDisplay["LASTNAME1"]. " " .$gbDisplay["NAME1"] ?> </br> <?php echo $gbDisplay["STARS1"]?>
         </span>
       </p>
       <p class="item-2"><?php echo $gbDisplay["TEXT2"] ?>
         <span class="author">
           <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2014/03/github_octocat-300x300.jpg">
-          <?php echo $gbDisplay["NAME2"]. " " . $gbDisplay["LASTNAME2"]?> </br> <?php echo $gbDisplay["STARS2"]?>
+          <?php echo $gbDisplay["LASTNAME2"]. " " .$gbDisplay["NAME2"] ?> </br> <?php echo $gbDisplay["STARS2"]?>
         </span>
       </p>
       <p class="item-3"><?php echo $gbDisplay["TEXT3"] ?>
         <span class="author">
           <img src="images/default_avatar.jpg">
-          <?php echo $gbDisplay["NAME3"]. " " . $gbDisplay["LASTNAME3"]?> </br> <?php echo $gbDisplay["STARS3"]?>
+          <?php echo $gbDisplay["LASTNAME3"]. " " .$gbDisplay["NAME3"] ?> </br> <?php echo $gbDisplay["STARS3"]?>
         </span>
       </p>
     </div>

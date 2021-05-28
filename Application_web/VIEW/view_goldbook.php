@@ -31,7 +31,7 @@ function callGoldBookConnected($name, $lastname, $avis, $messageError)
         <div class="mb-3">
           <div class="row justify-content-start">
               <div class="col-sm-8">
-                <p class="signature"> Signé, <?php echo $name. " " .$lastname ?> </p>
+                <p class="signature"> Signé, <?php echo $lastname. " " .$name ?> </p>
               </div>
           </div>
         </div>
