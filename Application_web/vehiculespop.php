@@ -40,7 +40,7 @@
 
 
   ?>
-  <!-- 
+  <!--   
   <form action="" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <input type="text" class="form-control" name="expo_title" placeholder="name">

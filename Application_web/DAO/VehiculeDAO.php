@@ -18,7 +18,7 @@ class VehiculeDAO extends Connection
                 $vehicule->getDESCRIPTION(),
                 $vehicule->getIMAGE(),
                 $vehicule->getCONTENT(),
-                $vehicule->TYPE()
+                $vehicule->getTYPE()
             );
             $stmt->execute();
             $db->close();

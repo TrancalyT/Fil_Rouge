@@ -98,9 +98,7 @@ function callSidenavAdmin()
                                 </a>
                                 <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="#">Listing</a>
                                     </nav>
                                 </div>
 
@@ -110,9 +108,8 @@ function callSidenavAdmin()
                                 </a>
                                 <div class="collapse" id="pagesCollapseForum" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="login.html">Categories</a>
+                                        <a class="nav-link" href="register.html">Messages</a>
                                     </nav>
                                 </div>
 
@@ -122,9 +119,7 @@ function callSidenavAdmin()
                                 </a>
                                 <div class="collapse" id="pagesCollapseShop" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="#">Articles</a>
                                     </nav>
                                 </div>
 
@@ -134,9 +129,7 @@ function callSidenavAdmin()
                                 </a>
                                 <div class="collapse" id="pagesCollapseEvent" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Login</a>
-                                        <a class="nav-link" href="register.html">Register</a>
-                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                        <a class="nav-link" href="#">Movies at the Museum</a>
                                     </nav>
                                 </div>
 
@@ -146,11 +139,21 @@ function callSidenavAdmin()
                                 </a>
                                 <div class="collapse" id="pagesCollapseExpo" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="401.html">401 Page</a>
-                                        <a class="nav-link" href="404.html">404 Page</a>
-                                        <a class="nav-link" href="500.html">500 Page</a>
+                                        <a class="nav-link" href="expo_vehicules.php">Vehicules POP</a>
                                     </nav>
                                 </div>
+
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseDivers" aria-expanded="false" aria-controls="pagesCollapseDivers">
+                                    Divers
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseDivers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="#">News</a>
+                                        <a class="nav-link" href="#">GoldBook</a>
+                                    </nav>
+                                </div>
+
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Addons</div>
