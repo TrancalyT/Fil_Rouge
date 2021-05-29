@@ -11,7 +11,5 @@ try {
     header("Location:/../livreor.php?messageSuccess=$messageSuccess");
 } catch (UserServiceException $error) {
     $messageError = $error->getMessage();
-    header("Location:/../livreor.php?messageError=$messageError");
+    header("Location: ../livreor.php?messageError=$messageError");
 }
-
-?>

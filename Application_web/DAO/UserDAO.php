@@ -87,7 +87,7 @@ class UserDAO extends Connection
         }
     }
 
-    public function ifAlreadyExist() : array
+    public function ifAlreadyExist(): array
     {
         try {
             $db = parent::connectionDB();
@@ -105,8 +105,8 @@ class UserDAO extends Connection
 
         $users = [];
         foreach ($data as $value) {
-            $users[] = (new User()) ->setNICKNAME($value['NICKNAME'])
-                                    ->setMAIL($value['MAIL']);
+            $users[] = (new User())->setNICKNAME($value['NICKNAME'])
+                ->setMAIL($value['MAIL']);
         }
 
         return $users;

@@ -50,7 +50,13 @@ function callNav()
                                 <button title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button>
                             </a>
                         </div>
-
+                        <div>
+                            <?php if ($_SESSION['user_role'] === "Admin") : ?>
+                                <a href="admin" id="admin">
+                                    <li>Panneau admin</li>
+                                </a>
+                            <?php endif ?>
+                        </div>
                     <?php
                     } else {
                     ?>

@@ -1,18 +1,18 @@
 <?php
-require_once(__DIR__.'/VIEW/view_header_bootstrap.php'); 
-require_once(__DIR__.'/VIEW/view_footer.php'); 
+require_once(__DIR__ . '/VIEW/view_header_bootstrap.php');
+require_once(__DIR__ . '/VIEW/view_footer.php');
 
 
 // HEADER
-callHeader($_SESSION['user_nickname'], "css/profil.css"); 
+callHeader($_SESSION['user_nickname'], "css/profil.css");
 callMainTitle($_SESSION['user_nickname']) ?>
 
-    <div class="contenant">
-        <section class="info">
+<div class="contenant">
+    <section class="info">
         <h4>Infos</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
-            <img class="img-thumbnail rounded float-start w-25 h-25" src="<?= ($_SESSION['user_avatar']) ?>">
+                <img class="img-thumbnail rounded float-start w-25 h-25" src="<?= ($_SESSION['user_avatar']) ?>">
                 <p>Pseudonyme : <?= ($_SESSION['user_nickname']) ?></p>
                 <p>Nom : <?= ($_SESSION['user_name']) ?></p>
                 <p>Prénom : <?= ($_SESSION['user_lastname']) ?></p>
@@ -20,8 +20,8 @@ callMainTitle($_SESSION['user_nickname']) ?>
                 Changer mon mot de passe ...
             </div>
         </div>
-        </section>
-        <section class="bio">
+    </section>
+    <section class="bio">
         <h4>Bio</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
@@ -29,8 +29,8 @@ callMainTitle($_SESSION['user_nickname']) ?>
                 <p>Mon commentaire dans le livre d'or : </p>
             </div>
         </div>
-        </section>
-        <section class="adress">
+    </section>
+    <section class="adress">
         <h4>Coordoonées</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
@@ -40,20 +40,20 @@ callMainTitle($_SESSION['user_nickname']) ?>
                 <p>Téléphone : <?= ($_SESSION['user_tel']) ?> </p>
             </div>
         </div>
-        </section>
-        <section class="hobbies">
+    </section>
+    <section class="hobbies">
         <h4>Hobbies</h4>
         <div class="col-12">
             <div class="clearfix border bg-light">
-                <p>Mon sport favori : <?= ($_SESSION['user_sport']) ?> </p> 
-                <p>Mon film favori : <?= ($_SESSION['user_movie']) ?> </p> 
-                <p>Mon JV favori : <?= ($_SESSION['user_vg']) ?> </p> 
-                <p>Mon groupe/artiste favori : <?= ($_SESSION['user_music']) ?> </p> 
-                <p>Mon livre favori : <?= ($_SESSION['user_book']) ?> </p> 
+                <p>Mon sport favori : <?= ($_SESSION['user_sport']) ?> </p>
+                <p>Mon film favori : <?= ($_SESSION['user_movie']) ?> </p>
+                <p>Mon JV favori : <?= ($_SESSION['user_vg']) ?> </p>
+                <p>Mon groupe/artiste favori : <?= ($_SESSION['user_music']) ?> </p>
+                <p>Mon livre favori : <?= ($_SESSION['user_book']) ?> </p>
             </div>
         </div>
-        </section>
-    </div>
+    </section>
+</div>
 
- <!-- FOOTER -->
- <?php callFooter(); ?>
+<!-- FOOTER -->
+<?php callFooter(); ?>
