@@ -41,6 +41,17 @@ class GoldbookService
         return $goldbookService;
     }
 
+    function userMessage($id)
+    {
+        $goldbookDAO = new GoldbookDAO();
+        try {
+            $goldbookService = $goldbookDAO->userMessage($id);
+        } catch (GoldbookDAOException $error) {
+            throw new GoldbookServiceException($error->getMessage());
+        }
+        
+        return $goldbookService;
+    }
 }
 
 ?>

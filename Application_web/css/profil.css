@@ -50,12 +50,31 @@ html {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 1em 1em;
-  grid-template-areas:
-    "info adress"
-    "bio hobbies";
-  grid-area: contenant;
   padding: 1rem;
   background-size: cover;
+}
+
+.contenant h4{
+  color:tomato;
+}
+
+.contenant img{
+  background-color: inherit;
+  border: none;
+  border-radius: 25px;
+}
+
+.contenant span{
+  margin-left: 5px;
+  margin-bottom: .35em;
+}
+
+.contenant p{
+  margin-bottom: 5px;
+}
+
+.col-12 {
+  margin : .35em;
 }
 
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */

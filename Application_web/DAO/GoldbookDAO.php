@@ -79,5 +79,32 @@ class GoldbookDAO extends Connection
             return $goldbook;
         }
     }
+
+    function userMessage($id)
+    {
+        try {
+            $db = $this->connectionDB();
+            $stmt = $db->prepare("SELECT TEXT FROM goldbook WHERE USER_ID = ?;");
+            $stmt->bind_param('i', $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+            $result->free();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            throw new GoldbookDAOException($message);
+        }
+
+        foreach ($data as $value){
+            $goldbook = $value['TEXT'];
+        }
+        
+        if (empty($goldbook)){
+            return null;
+        } else {
+            return $goldbook;
+        }
+    }
 }
 ?>
