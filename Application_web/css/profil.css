@@ -48,10 +48,26 @@ html {
   display:grid;
   background: url("../images/BGwhite.jpg") center;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 100px;
   gap: 1em 1em;
   padding: 1rem;
   background-size: cover;
+  grid-template-areas:
+  "info bio"
+  "adress hobbies"
+  "modif modif";
+}
+
+.info { grid-area: info; }
+.bio { grid-area: bio; }
+.adress { grid-area: adress; }
+.hobbies { grid-area: hobbies; }
+.modif { grid-area: modif; }
+
+.modif{
+  justify-content: center;
+  display: flex;
+  align-items: center;
 }
 
 .contenant h4{
@@ -62,6 +78,8 @@ html {
   background-color: inherit;
   border: none;
   border-radius: 25px;
+  width: 300px;
+  height: 200px;
 }
 
 .contenant span{
@@ -73,8 +91,64 @@ html {
   margin-bottom: 5px;
 }
 
+.contenant input{
+  margin-left : 10px;
+  margin-right : 10px;
+}
+
 .col-12 {
   margin : .35em;
+}
+
+.badge{
+  margin-top : 15px;
+}
+
+.label-file {
+  cursor: pointer;
+  border: 1px solid #ced4da;
+  border-radius : 20px;
+}
+
+.input-file {
+  display: none;
+}
+
+.buttonmain {
+  color: #392d3b;
+  border: 1px solid #ced4da;
+  background: #fff;
+  display: inline-block;
+  padding: 9px 25px;
+  transition: all 0.2s ease-out;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left : 10px;
+  margin-right : 10px;
+}
+
+.buttonmain:hover {
+  color: #fff;
+  text-decoration: none;
+  background: tomato;
+  border: 1px solid #fff;
+}
+
+.buttonmain2 {
+  color: #fff;
+  border: 1px solid #ced4da;
+  background: #392d3b;
+  display: inline-block;
+  padding: 9px 25px;
+  transition: all 0.2s ease-out;
+  border-radius: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-left : 10px;
+  margin-right : 10px;
 }
 
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
@@ -89,6 +163,13 @@ html {
 
 /* ------------------------------------------------------RESPONSIVE------------------------------------------------------ */
 
+@media (max-width: 1024px){
+  .contenant img{
+    width: 225px;
+    height: 125px;
+  }
+}
+
 @media (max-width: 768px) {
   .contenant {
     grid-template-columns: 1fr;
@@ -97,7 +178,8 @@ html {
       "info"
       "adress"
       "bio"
-      "hobbies";
+      "hobbies"
+      "modif";
   }
 
   .Footer {
@@ -116,6 +198,11 @@ html {
   }
   .Footer {
     padding: 0;
+  }
+
+  .contenant img{
+    width: 200px;
+    height: 150px;
   }
 }
 
@@ -136,11 +223,21 @@ html {
   header h1 {
     font-size: medium;
   }
+
+  .contenant img{
+    width: 150px;
+    height: 95px;
+  }
 }
 
 @media (max-width: 375px){
   header h1 {
     font-size: x-small;
+  }
+
+  .contenant img{
+    width: 125px;
+    height: 85px;
   }
 }
 
@@ -150,5 +247,9 @@ html {
   }
   footer .five h5 {
     font-size: x-small;
+  }
+  .contenant img{
+    width: 100px;
+    height: 65px;
   }
 }
