@@ -7,16 +7,23 @@
         <ul id="menu">
 <?php
     if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
-?>
-            <div class="recherche">
+        ?>
+        <div class="recherche">
             <a href="profil.php" id="connexion">
                 <li>Mon Compte</li>
             </a>
             <a href="CONTROLLER/logout_process.php">
                 <button title="Déconnexion" id="srcbutton2"><i class="fas fa-sign-out-alt"></i></button>
             </a>
-            </div>
-<?php
+        </div>
+        <div>
+            <?php if ($_SESSION['user_role'] === "Admin") : ?>
+                <a href="admin" id="admin">
+                    <li>Panneau admin</li>
+                </a>
+            <?php endif ?>
+        </div>
+    <?php
     } else {
 ?>
             <a href="connexion.php" id="connexion">
