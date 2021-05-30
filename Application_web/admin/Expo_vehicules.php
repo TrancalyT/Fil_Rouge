@@ -58,6 +58,7 @@
                                     <th>ID</th>
                                     <th>NOM</th>
                                     <th>RESUME</th>
+                                    <th>TYPE</th>
                                 </tr>
                             </thead>
                             <tfoot>
@@ -65,22 +66,25 @@
                                     <th>ID</th>
                                     <th>NOM</th>
                                     <th>RESUME</th>
+                                    <th>TYPE</th>
                                 </tr>
                             </tfoot>
                             <tbody>
                                 <?php
 
-                                $vehicules = (new VehiculeService())->displayVehicule("terrestre");
+                                $vehicules = (new VehiculeService())->displayAllVehicule();
                                 foreach ($vehicules as $value) {
                                     $id = $value->getID();
                                     $title = $value->getNAME();
                                     $content = $value->getDESCRIPTION();
+                                    $type = $value->getTYPE();
 
                                 ?>
                                     <tr>
                                         <td><?= $id ?></td>
                                         <td><?= $title ?></td>
                                         <td><?= $content ?></td>
+                                        <td><?= $type ?></td>
                                         <td><a class='btn btn-danger btn-sm' href='controller/delete_vehicule.php?id=<?= $id ?>'>Supprimer</a></td>
                                         <td><a class='btn btn-primary btn-sm' href='controller/delete_vehicule.php?id=<?= $id ?>'>Editer</a></td>
                                     </tr>

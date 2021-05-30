@@ -17,6 +17,19 @@ class VehiculeService
         return $vehiculeService;
     }
 
+
+    public function displayAllVehicule()
+    {
+        $vehiculeDAO = new VehiculeDAO();
+        try {
+            $vehiculeService = $vehiculeDAO->displayAllVehicule();
+        } catch (VehiculeDAOException $error) {
+            throw new VehiculeServiceException($error->getMessage());
+        }
+
+        return $vehiculeService;
+    }
+
     public function addNewVehicule($vehicule)
     {
         try {
