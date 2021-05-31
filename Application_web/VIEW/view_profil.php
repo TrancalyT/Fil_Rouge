@@ -1,6 +1,6 @@
 <?php
 
-function callProfil($goldbook)
+function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
 <form action="profil.php" method="get">
@@ -10,13 +10,13 @@ function callProfil($goldbook)
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <div class="col-3">
-                        <img class="img-thumbnail" src="<?= ($_SESSION['user_avatar']) ?>">
+                        <img class="img-thumbnail" src="<?= $avatar ?>">
                     </div>
                     <div class="col-9">
-                        <p class="fw-bold fst-italic">Pseudonyme : <span class="fw-normal fst-normal nickname"><?= ($_SESSION['user_nickname']) ?></span></p>
-                        <p class="fw-bold fst-italic">Nom : <span class="fw-normal fst-normal name"><?= ($_SESSION['user_name']) ?></span></p>
-                        <p class="fw-bold fst-italic">Prénom : <span class="fw-normal fst-normal lastname"><?= ($_SESSION['user_lastname']) ?></span></p>
-                        <p class="fw-bold fst-italic">E-Mail : <span class="fw-normal fst-normal mail"><?= ($_SESSION['user_mail']) ?></span></p>      
+                        <p class="fw-bold fst-italic">Pseudonyme : <span class="fw-normal fst-normal nickname"><?= $nickname ?></span></p>
+                        <p class="fw-bold fst-italic">Nom : <span class="fw-normal fst-normal name"><?= $name ?></span></p>
+                        <p class="fw-bold fst-italic">Prénom : <span class="fw-normal fst-normal lastname"><?= $lastname ?></span></p>
+                        <p class="fw-bold fst-italic">E-Mail : <span class="fw-normal fst-normal mail"><?= $mail ?></span></p>      
                     </div>
                     <span class="badge bg-dark text-wrap text-uppercase w-50 password"><a href="contact.php" class="text-decoration-none" style="color:white">Un problème avec votre mot de passe ?</a></span>
                 </div>
@@ -27,7 +27,7 @@ function callProfil($goldbook)
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <p class="fw-bold fst-italic">A propos de moi ...</p>
-                    <span class="fst-italic bio">" <?= ($_SESSION['user_bio']) ?> "</span>
+                    <span class="fst-italic bio">" <?= $bio ?> "</span>
                     <?php
                     if ($goldbook == NULL){
                     ?>
@@ -48,10 +48,10 @@ function callProfil($goldbook)
             <h4>Coordonnées</h4>
             <div class="col-12">
                 <div class="clearfix">
-                    <p class="fw-bold fst-italic">Adresse : <span class="fw-normal fst-normal adress"><?= ($_SESSION['user_adress']) ?></span></p>
-                    <p class="fw-bold fst-italic">Ville : <span class="fw-normal fst-normal city"><?= ($_SESSION['user_city']) ?></span></p>
-                    <p class="fw-bold fst-italic">Code postale : <span class="fw-normal fst-normal cp"><?= ($_SESSION['user_cp']) ?></span></p>
-                    <p class="fw-bold fst-italic">Téléphone : <span class="fw-normal fst-normal tel"><?= ($_SESSION['user_tel']) ?></span></p>
+                    <p class="fw-bold fst-italic">Adresse : <span class="fw-normal fst-normal adress"><?= $adress ?></span></p>
+                    <p class="fw-bold fst-italic">Ville : <span class="fw-normal fst-normal city"><?= $city ?></span></p>
+                    <p class="fw-bold fst-italic">Code postale : <span class="fw-normal fst-normal cp"><?= $cp ?></span></p>
+                    <p class="fw-bold fst-italic">Téléphone : <span class="fw-normal fst-normal tel"><?= $tel ?></span></p>
                 </div>
                 </br>
                 <p class="fs-6 fw-light fst-italic notif">Tes informations sont en sécurité ici, aucune d'entre elles ne sera partagées à des fins commerciales ou scrupuleuses. Personne d'autres que toi peut y avoir accès. Elles sont ici pour faciliter la navigation dans l'espace <a href="boutique.php" class="text-decoration-none" style="color:tomato">boutique</a> et <a href="donation.php" class="text-decoration-none" style="color:tomato">donation</a>, ni plus ni moins.</p>
@@ -61,33 +61,33 @@ function callProfil($goldbook)
             <h4>Hobbies</h4>
             <div class="col-12">
                 <div class="clearfix">
-                    <p class="fw-bold fst-italic">Mon film favori : <span class="fw-normal fst-normal movie"><?= ($_SESSION['user_movie']) ?> </span></p> 
-                    <p class="fw-bold fst-italic">Mon livre favori : <span class="fw-normal fst-normal book"><?= ($_SESSION['user_book']) ?> </span></p> 
-                    <p class="fw-bold fst-italic">Mon groupe/artiste favori : <span class="fw-normal fst-normal music"><?= ($_SESSION['user_music']) ?> </span></p> 
-                    <p class="fw-bold fst-italic">Mon sport favori : <span class="fw-normal fst-normal sport"><?= ($_SESSION['user_sport']) ?> </span></p> 
-                    <p class="fw-bold fst-italic">Mon JV favori : <span class="fw-normal fst-normal vg"><?= ($_SESSION['user_vg']) ?> </span></p> 
+                    <p class="fw-bold fst-italic">Mon film favori : <span class="fw-normal fst-normal movie"><?= $movie ?> </span></p> 
+                    <p class="fw-bold fst-italic">Mon livre favori : <span class="fw-normal fst-normal book"><?= $book ?> </span></p> 
+                    <p class="fw-bold fst-italic">Mon groupe/artiste favori : <span class="fw-normal fst-normal music"><?= $music ?> </span></p> 
+                    <p class="fw-bold fst-italic">Mon sport favori : <span class="fw-normal fst-normal sport"><?= $sport ?> </span></p> 
+                    <p class="fw-bold fst-italic">Mon JV favori : <span class="fw-normal fst-normal vg"><?= $vg ?> </span></p> 
                 </div>
             </div>
             </section>
             <section class="modif">
-                <button type="submit" class="buttonmain" name="modifprofil" value="modifprofil">Modifier mon profil</button>
+                <button type="submit" class="buttonmain" name="modifprofil" value="modifprofil" id="Modif">Modifier mon profil</button>
             </section>  
     </div>
 </form> 
 <?php
 }
 
-function callProfilModif($goldbook)
+function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form action="connexion.php" method="get" enctype="multipart/form-data">
+<form action="profil.php" method="get" enctype="multipart/form-data">
     <div class="contenant">
-        <section class="info border bg-light">
+        <section class="info border bg-light" id="Focus">
             <h4>Infos</h4>
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <div class="col-3">
-                        <img class="img-thumbnail" id="preview" src="<?= ($_SESSION['user_avatar']) ?>">
+                        <img class="img-thumbnail" id="preview" src="<?= $avatar ?>">
                         <label for="file" class="label-file badge bg-dark text-wrap text-uppercase">Changer votre avatar</label>
                         <input type="file" class="input-file" name="avatar" id="file" accept=".png, .jpg, .jpeg">
                     </div>
@@ -96,7 +96,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Pseudonyme : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="nickname" value="<?php echo $_SESSION['user_nickname'] ?>">
+                            <input size="30" maxlength="100" type="text" name="nickname" value="<?php echo $nickname ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -104,7 +104,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Nom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="name" value="<?php echo $_SESSION['user_name'] ?>">
+                            <input size="30" maxlength="100" type="text" name="name" value="<?php echo $name ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -112,7 +112,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Prénom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="lastname" value="<?php echo $_SESSION['user_lastname'] ?>">
+                            <input size="30" maxlength="100" type="text" name="lastname" value="<?php echo $lastname ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -120,7 +120,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">E-Mail : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="mail" name="mail" value="<?php echo $_SESSION['user_mail'] ?>">
+                            <input size="30" maxlength="100" type="mail" name="mail" value="<?php echo $mail ?>">
                         </div>
                     </div>         
                 </div>
@@ -131,7 +131,7 @@ function callProfilModif($goldbook)
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <p class="fw-bold fst-italic">A propos de moi ...</p>
-                    <textarea name="bio" rows="10"><?= ($_SESSION['user_bio']) ?></textarea>
+                    <textarea name="bio" rows="10"><?= $bio ?></textarea>
                 </div>
             </div>
             </section>
@@ -144,7 +144,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Adresse : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="adress" value="<?php echo $_SESSION['user_adress'] ?>">
+                            <input size="40" maxlength="100" type="text" name="adress" value="<?php echo $adress?>">
                         </div>
                     </div>
                     <div class="row">
@@ -152,7 +152,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Ville : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="city" value="<?php echo $_SESSION['user_city']?>">
+                            <input size="40" maxlength="100" type="text" name="city" value="<?php echo $city?>">
                         </div>
                     </div>
                     <div class="row">
@@ -160,7 +160,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Code postale : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="cp" value="<?php echo $_SESSION['user_cp'] ?>">
+                            <input size="40" maxlength="100" type="text" name="cp" value="<?php echo $cp ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -168,7 +168,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Téléphone : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="tel" value="<?php echo $_SESSION['user_tel'] ?>">
+                            <input size="40" maxlength="100" type="mail" name="tel" value="<?php echo $tel ?>">
                         </div>
                     </div>
                 </div>
@@ -185,7 +185,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Mon film favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="movie" value="<?php echo $_SESSION['user_movie'] ?>">
+                            <input size="40" maxlength="100" type="text" name="movie" value="<?php echo $movie ?>">
                         </div>
                     </div>  
                     <div class="row">
@@ -193,7 +193,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Mon livre favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="book" value="<?php echo $_SESSION['user_book']?>">
+                            <input size="40" maxlength="100" type="text" name="book" value="<?php echo $book ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -201,7 +201,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Mon groupe/artiste favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="music" value="<?php echo $_SESSION['user_music'] ?>">
+                            <input size="40" maxlength="100" type="text" name="music" value="<?php echo $music ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -209,7 +209,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Mon sport favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="sport" value="<?php echo $_SESSION['user_sport'] ?>"> 
+                            <input size="40" maxlength="100" type="mail" name="sport" value="<?php echo $sport ?>"> 
                         </div>
                     </div>
                     <div class="row">
@@ -217,7 +217,7 @@ function callProfilModif($goldbook)
                             <p class="fw-bold fst-italic">Mon JV favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="vg" value="<?php echo $_SESSION['user_vg'] ?>">
+                            <input size="40" maxlength="100" type="mail" name="vg" value="<?php echo $vg ?>">
                         </div>
                     </div>
                 </div>

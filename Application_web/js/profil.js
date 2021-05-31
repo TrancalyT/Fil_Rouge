@@ -13,3 +13,10 @@ $(document).ready(function (e) {
         }
     })
 });
+
+// FOCUS SUR BOUTON
+$('#Modif').click(function (e) {
+
+        document.getElementById(Focus).focus();
+
+});
