@@ -173,7 +173,7 @@ $messageConnexion = [
 // AFFICHAGE CONNEXION & INSCRIPTION
 if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
-    header("Location:profil.php");
+    header("Location:profil.php?id={$_SESSION['user_id']}");
 
 } else {
 

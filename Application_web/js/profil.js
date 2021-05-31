@@ -1,21 +1,3 @@
-// const spanQuery = document.querySelectorAll('span');
-
-// spanQuery.forEach((cells)=> {
-//     cells.addEventListener('click', function(e) {
-//         if(e.target.firstChild != null && e.target.firstChild.nodeType === 3){
-//             input.value = actualText;
-//             e.target.innerHTML = "";
-//             e.target.appendChild(input);
-//             input.focus();
-//             input.setSelectionRange(input.value.length, input.value.length);
-
-//             input.addEventListener('focusout', function(e){
-//                 e.target.parentElement.innerHTML = e.target.value;
-//             })
-//         }
-//     })
-// })
-
 //PREVISUALISER IMG
 
 $(document).ready(function (e) {

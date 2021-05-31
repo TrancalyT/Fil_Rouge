@@ -33,7 +33,7 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
         $_SESSION['user_movie'] = NULL;
     }
 
-    callProfilModif();
+    callProfilModif($userMessage);
 
 } else if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) || isset($_REQUEST['backprofil'])){
     

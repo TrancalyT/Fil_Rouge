@@ -43,7 +43,7 @@ function callNav()
                     if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) {
                     ?>
                         <div class="recherche">
-                            <a href="profil.php" id="connexion">
+                            <a href="profil.php?id=<?= $_SESSION['user_id'] ?>" id="connexion">
                                 <li>Mon Compte</li>
                             </a>
                             <a href="CONTROLLER/logout_process.php">
