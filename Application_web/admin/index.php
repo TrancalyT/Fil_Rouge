@@ -567,6 +567,6 @@ Page uniquement visible aux admins. Renvoi de page dans le else
             </main>
             <?php callFooterAdmin() ?>
         <?php } else {
-        header("location: ../connexion.php");
+        header("location: 404.html");
         exit();
     } ?>
