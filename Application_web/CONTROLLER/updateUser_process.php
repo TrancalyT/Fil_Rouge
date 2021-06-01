@@ -19,6 +19,7 @@ $vg = $_GET['vg'];
 $bio = $_GET['bio'];
 $avatar = $_GET['avatar'];
 
+var_dump($avatar);
 $updateUser = new UserService();
 
 try {

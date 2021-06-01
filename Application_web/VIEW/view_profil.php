@@ -80,7 +80,7 @@ function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $cit
 function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form action="profil.php" method="get" enctype="multipart/form-data">
+<form action="profil.php" method="post" enctype="multipart/form-data">
     <div class="contenant">
         <section class="info border bg-light" id="Focus">
             <h4>Infos</h4>

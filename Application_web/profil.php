@@ -11,17 +11,19 @@ $userGoldbook = $userMessage->userMessage($_SESSION['user_id']);
 $userService = new UserService();
 $userInfo = $userService->displayUser($_SESSION['user_id']);
 
+
+// AFFICHAGE AVATAR SI PAS D'AVATAR
 if ($userInfo->getAVATAR() == NULL){
     $userInfo->setAVATAR("images/default_avatar.jpg");
 } else {
     $userInfo->setAVATAR("data:image;base64," . base64_encode($userInfo->getAVATAR()));
 }
 
-// UPDATE INFO
+// UPDATE CONTROLLER
 
 // REGEX (A RENFORCER)
 $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.com$|fr$#i";
-  
+
 @$name = $_REQUEST['name'];
 @$lastname = $_REQUEST['lastname'];
 @$nickname = $_REQUEST['nickname'];
@@ -36,7 +38,7 @@ $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.com$|fr$#i";
 @$sport = $_REQUEST["sport"];
 @$vg = $_REQUEST["vg"];
 @$bio = $_REQUEST["bio"];
-if ($_REQUEST["avatar"] == "images/default_avatar.jpg"){
+if (@$_REQUEST["avatar"] == "images/default_avatar.jpg"){
     @$avatar = NULL;
 } else {
     @$avatar = $_REQUEST["avatar"];
@@ -91,6 +93,7 @@ if ($_REQUEST["avatar"] == "images/default_avatar.jpg"){
       }
   }
 
+// SI MODIF
 if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
     
     // HEADER
@@ -122,6 +125,7 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
                     $userInfo->getADRESS(), $userInfo->getCITY(), $userInfo->getCP(), $userInfo->getTEL(), $userInfo->getBIO(),
                     $userInfo->getAVATAR(), $userInfo->getMOVIE(), $userInfo->getBOOK(), $userInfo->getMUSIC(), $userInfo->getSPORT(), $userInfo->getVG());
 
+// SI PAS DE MODIF OU RETOUR MODIF
 } else if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) || isset($_REQUEST['backprofil'])){
     
     // HEADER

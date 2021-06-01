@@ -175,12 +175,12 @@ class UserDAO extends Connection
                                       MUSIC = ?, 
                                       VG = ?, 
                                       BIO = ?, 
-                                      AVATAR = ?, 
+                                      AVATAR = ? 
                       WHERE ID = ?;";
 
             $stmt = $db->prepare($query);
             $stmt->bind_param(
-                "ssssssiissssssbi",
+                "ssssssiisssssssi",
                 $name,
                 $lastname,
                 $nickname,
