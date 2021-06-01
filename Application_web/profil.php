@@ -16,9 +16,8 @@ $userInfo = $userService->displayUser($_SESSION['user_id']);
 if ($userInfo->getAVATAR() == NULL){
     $userInfo->setAVATAR("images/default_avatar.jpg");
 } else {
-    $userInfo->setAVATAR("data:image/jpeg;base64," . base64_encode($userInfo->getAVATAR()));
+    $userInfo->setAVATAR("data:image;base64," . base64_encode($userInfo->getAVATAR()));
 }
-
 
 // SI MODIF
 if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){

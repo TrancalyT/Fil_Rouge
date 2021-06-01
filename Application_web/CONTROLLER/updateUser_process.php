@@ -24,7 +24,13 @@ $vg = $_REQUEST["vg"];
 $bio = $_REQUEST["bio"];
 
 $file = $_FILES['avatar']['tmp_name'];
-$avatar = addslashes(file_get_contents($file));
+
+if (isset($file) && !empty($file)){
+    $avatar = addslashes(file_get_contents($file));
+} else {
+    $avatar = null;
+}
+
 
 $sendModif = $_REQUEST["sendmodif"];
     

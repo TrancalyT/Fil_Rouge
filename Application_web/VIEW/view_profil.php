@@ -10,7 +10,7 @@ function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $cit
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <div class="col-3">
-                        <img class="img-thumbnail" src="<?= $avatar ?>">
+                        <img class="img-thumbnail" src="<?= $avatar ?>" alt="Hmmm, il semblerait qu'il y ai un facheux problème !">
                     </div>
                     <div class="col-9">
                         <p class="fw-bold fst-italic">Pseudonyme : <span class="fw-normal fst-normal nickname"><?= $nickname ?></span></p>
@@ -87,7 +87,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <div class="col-3">
-                        <img class="img-thumbnail" id="preview" src="<?= $avatar ?>">
+                        <img class="img-thumbnail" id="preview" src="<?= $avatar ?>" alt="Hmmm, il semblerait qu'il y ai un facheux problème !">
                         <label for="file" class="label-file badge bg-dark text-wrap text-uppercase">Changer votre avatar</label>
                         <input type="file" class="input-file" name="avatar" id="file" accept=".png, .jpg, .jpeg">
                     </div>
