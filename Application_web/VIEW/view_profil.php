@@ -70,7 +70,7 @@ function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $cit
             </div>
             </section>
             <section class="modif">
-                <button type="submit" class="buttonmain" name="modifprofil" value="modifprofil" id="Modif">Modifier mon profil</button>
+                <button type="submit" class="buttonmain" name="modifprofil" value="<?= $_SESSION['user_id'] ?>" id="Modif">Modifier mon profil</button>
             </section>  
     </div>
 </form> 
@@ -80,7 +80,7 @@ function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $cit
 function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form action="profil.php" method="post" enctype="multipart/form-data">
+<form action="CONTROLLER/updateUser_process.php" method="post" enctype="multipart/form-data">
     <div class="contenant">
         <section class="info border bg-light" id="Focus">
             <h4>Infos</h4>
@@ -225,7 +225,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
             </section>
                 <section class="modif">
                     <button type="submit" class="buttonmain" name="sendmodif" value="sendmodif">Envoyer</button>
-                    <button type="submit" class="buttonmain2" name="backprofil" value="backprofil">Retour</button>
+                    <a href="profil.php?id=<?= $_SESSION['user_id'] ?>"><button type ="button" class="buttonmain2" name="backprofil" value="backprofil">Retour</button></a>
                 </section> 
     </div>
 </form>

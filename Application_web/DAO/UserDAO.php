@@ -204,4 +204,28 @@ class UserDAO extends Connection
             throw new UserDAOException($message);
         }
     }
+
+    public function displayAvatar($id) : User
+    {
+        try {
+            $db = parent::connectionDB();
+            $stmt = $db->prepare("SELECT AVATAR FROM user WHERE ID = ?;");
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+            $result->free();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative de vérification a échoué\"";
+            throw new UserDAOException($message);
+        }
+
+        foreach ($data as $value) {
+            $users = (new User())->setAVATAR($value['AVATAR']);
+        }
+
+        return $users;
+    }
 }

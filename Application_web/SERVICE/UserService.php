@@ -64,4 +64,15 @@ class UserService
             throw new UserServiceException($e->getMessage(), $e->getCode());
         }
     }
+
+    public function displayAvatar($id) : User
+    {
+        $userDAO = new UserDAO;
+        try {
+            $userService = $userDAO->displayAvatar($id);
+        } catch (UserDAOException $e) {
+            throw new UserServiceException($e->getMessage(), $e->getCode());
+        }
+        return $userService;
+    }
 }
