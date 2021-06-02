@@ -52,6 +52,30 @@ class GoldbookService
         
         return $goldbookService;
     }
+
+    function messageToCheck()
+    {
+        $goldbookDAO = new GoldbookDAO();
+        try {
+            $goldbookService = $goldbookDAO->messageToCheck();
+        } catch (GoldbookDAOException $error) {
+            throw new GoldbookServiceException($error->getMessage());
+        }
+        
+        return $goldbookService;
+    }
+
+    function validation($validation, $id)
+    {
+        $goldbookDAO = new GoldbookDAO();
+        try {
+            $goldbookService = $goldbookDAO->validation($validation, $id);
+        } catch (GoldbookDAOException $error) {
+            throw new GoldbookServiceException($error->getMessage());
+        }
+        
+        return $goldbookService;
+    }
 }
 
 ?>
