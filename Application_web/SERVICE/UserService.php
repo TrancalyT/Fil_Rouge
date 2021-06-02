@@ -51,7 +51,7 @@ class UserService
         return $userService;
     }
 
-    public function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar, $id)
+    public function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id)
     {
         $cp = intval($cp);
         $tel = intval($tel);
@@ -59,7 +59,18 @@ class UserService
         $userDAO = new UserDAO;
 
         try {
-            $userDAO->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar, $id);
+            $userDAO->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id);
+        } catch (UserDAOException $e){
+            throw new UserServiceException($e->getMessage(), $e->getCode());
+        }
+    }
+
+    public function updateAvatar($avatar, $id)
+    {
+        $userDAO = new UserDAO;
+
+        try {
+            $userDAO->updateAvatar($avatar, $id);
         } catch (UserDAOException $e){
             throw new UserServiceException($e->getMessage(), $e->getCode());
         }

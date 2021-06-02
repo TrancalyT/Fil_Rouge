@@ -8,6 +8,10 @@ session_start();
 // REGEX (A RENFORCER)
 $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.com$|fr$#i";
 
+$messageUpdate["doublonPseudo"] = false;
+$messageUpdate["doublonMail"] = false;
+$avatarAlreadyExist = false;
+
 $name = $_REQUEST['name'];
 $lastname = $_REQUEST['lastname'];
 $nickname = $_REQUEST['nickname'];
@@ -26,16 +30,17 @@ $bio = $_REQUEST["bio"];
 $file = $_FILES['avatar']['tmp_name'];
 
 if (isset($file) && !empty($file)){
-    $avatar = addslashes(file_get_contents($file));
+  $avatar = file_get_contents($file);
+} else if (empty($file) && $_SESSION['user_avatar'] != NULL) {
+  $avatarAlreadyExist = true;
 } else {
-    $avatar = null;
+  $avatar = null;
 }
-
 
 $sendModif = $_REQUEST["sendmodif"];
     
   if (isset($sendModif)){
-        
+    
       if(isset($name) && !empty($name) 
       && isset($lastname) && !empty($lastname) 
       && isset($nickname) && !empty($nickname)
@@ -44,10 +49,10 @@ $sendModif = $_REQUEST["sendmodif"];
       && isset($city) && !empty($city)
       && isset($cp) && !empty($cp)
       && isset($tel) && !empty($tel)){
-
+        
           try{
             $doublonUser = (new UserService())->ifAlreadyExist();
-  
+            
             foreach ($doublonUser as $value){
                 if ($_SESSION['user_nickname'] != $nickname){
                     if ($value->getNICKNAME() == $nickname){
@@ -69,20 +74,34 @@ $sendModif = $_REQUEST["sendmodif"];
             }
 
             if (preg_match($regMail, $mail) && (!$messageUpdate["doublonPseudo"]) && (!$messageUpdate["doublonMail"])){
-                $updateUser = new UserService();
+                
+              $updateUser = new UserService();
 
-                try {
-                    $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar, $_SESSION['user_id']);
+                if (!$avatarAlreadyExist){
+                                  
+                  try {
+                    $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
+                    $updateUser->updateAvatar($avatar, $_SESSION['user_id']);
                     $messageUpdate["messageOk"] = "Vos infos sont mises à jour !";
                     header("Location:../profil.php?id={$_SESSION['user_id']}&successUpdate=true&sucess={$messageUpdate['messageOk']}");
-                } catch (UserServiceException $error) {
-                    $messageError = $error->getMessage();
-                    header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+                    } catch (UserServiceException $error) {
+                        $messageError = $error->getMessage();
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+                    }
+
+                } else {
+                  
+                  try {
+                    $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
+                    $messageUpdate["messageOk"] = "Vos infos sont mises à jour !";
+                    header("Location:../profil.php?id={$_SESSION['user_id']}&successUpdate=true&sucess={$messageUpdate['messageOk']}");
+                    } catch (UserServiceException $error) {
+                        $messageError = $error->getMessage();
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+                    }
+
                 }
-                
-              
-                
-                // header("Location:CONTROLLER/updateUser_process.php?name=$name&lastname=$lastname&nickname=$nickname&mail=$mail&adress=$adress&city=$city&cp=$cp&tel=$tel&movie=$movie&book=$book&music=$music&sport=$sport&vg=$vg&bio=$bio&avatar=$avatar");
+
             }
           } catch (UserServiceException $error) {
             $messageError = $error->getMessage();

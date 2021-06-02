@@ -11,7 +11,6 @@ $userGoldbook = $userMessage->userMessage($_SESSION['user_id']);
 $userService = new UserService();
 $userInfo = $userService->displayUser($_SESSION['user_id']);
 
-
 // AFFICHAGE AVATAR SI PAS D'AVATAR
 if ($userInfo->getAVATAR() == NULL){
     $userInfo->setAVATAR("images/default_avatar.jpg");
@@ -23,8 +22,8 @@ if ($userInfo->getAVATAR() == NULL){
 if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
     
     // HEADER
-    callHeader($_SESSION['user_nickname'], "css/profil.css"); 
-    callMainTitle($_SESSION['user_nickname']);
+    callHeader($userInfo->getNICKNAME(), "css/profil.css"); 
+    callMainTitle($userInfo->getNICKNAME());
 
     // FORMULAIRE MODIF PROFIL
     if ($userInfo->getBIO() == "Dites nous en plus à votre sujet. Qui êtes vous ? Quels sont vos centres d'intêrets ? Comment avez-vous franchi les portes du Pocket Museum ?"){
@@ -55,8 +54,12 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
 } else if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) || isset($_REQUEST['backprofil'])){
     
     // HEADER
-    callHeader($_SESSION['user_nickname'], "css/profil.css"); 
-    callMainTitle($_SESSION['user_nickname']);
+    callHeader($userInfo->getNICKNAME(), "css/profil.css"); 
+    callMainTitle($userInfo->getNICKNAME());
+
+    $_SESSION['user_nickname'] = $userInfo->getNICKNAME();
+    $_SESSION['user_mail'] = $userInfo->getMAIL();
+    $_SESSION['user_avatar'] = $userInfo->getAVATAR();
 
     // CONTROLLER PROFIL
     if ($userInfo->getBIO() == NULL){

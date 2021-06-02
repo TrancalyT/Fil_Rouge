@@ -156,7 +156,7 @@ class UserDAO extends Connection
         }
     }
 
-    function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar, $id)
+    function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id)
     {
         try {
             $db = parent::connectionDB();
@@ -174,13 +174,12 @@ class UserDAO extends Connection
                                       SPORT = ?, 
                                       MUSIC = ?, 
                                       VG = ?, 
-                                      BIO = ?, 
-                                      AVATAR = ? 
-                      WHERE ID = ?;";
+                                      BIO = ? 
+                                WHERE ID = ?;";
 
             $stmt = $db->prepare($query);
             $stmt->bind_param(
-                "ssssssiisssssssi",
+                "ssssssiissssssi",
                 $name,
                 $lastname,
                 $nickname,
@@ -195,6 +194,25 @@ class UserDAO extends Connection
                 $music,
                 $vg,
                 $bio,
+                $id);
+            $stmt->execute();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            throw new UserDAOException($message);
+        }
+    }
+
+    public function updateAvatar($avatar, $id)
+    {
+        try {
+            $db = parent::connectionDB();
+
+            $query = "UPDATE user SET AVATAR = ? WHERE ID = ?;";
+
+            $stmt = $db->prepare($query);
+            $stmt->bind_param(
+                "si",
                 $avatar,
                 $id);
             $stmt->execute();
