@@ -1,6 +1,6 @@
 <?php
 
-function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
+function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
 <form action="profil.php" method="get">
@@ -37,7 +37,8 @@ function callProfil($goldbook, $nickname, $name, $lastname, $mail, $adress, $cit
                     } else {
                     ?>
                         <p class="fw-bold fst-italic">Mon commentaire dans le livre d'or ...</p>
-                        <span class="fst-italic gb">" <?php echo $goldbook ?> "</span>
+                        <span class="fst-italic">" <?php echo $goldbook ?> "</span>
+                        <span class="gb text-end fs-2" style= "color:tomato"> <?php echo $noteGb ?></span>
                     <?php
                     }
                     ?>
@@ -160,7 +161,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Code postale : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="cp" value="<?php echo $cp ?>">
+                            <input size="40" maxlength="5" type="text" name="cp" value="<?php echo $cp ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -168,7 +169,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Téléphone : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="tel" value="<?php echo $tel ?>">
+                            <input size="40" maxlength="10" type="text" name="tel" value="<?php echo $tel ?>">
                         </div>
                     </div>
                 </div>

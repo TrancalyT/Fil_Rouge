@@ -5,8 +5,28 @@ require_once(__DIR__.'/VIEW/view_profil.php');
 require_once(__DIR__.'/SERVICE/GoldbookService.php');
 require_once(__DIR__.'/SERVICE/UserService.php');
 
+// RECUPERATION DES INFOS DU GOLDBOOK
 $userMessage = new GoldbookService();
-$userGoldbook = $userMessage->userMessage($_SESSION['user_id']);
+$userGoldbook = $userMessage->userRated($_SESSION['user_id']);
+
+foreach ($userGoldbook as $value) {
+
+    $messageGb = $value->getTEXT();
+    $rateGb= $value->getSTARS();
+
+
+    if ($rateGb == 1){
+      $rateGb = "★";
+    } else if ($rateGb == 2){
+      $rateGb = "★★";
+    } else if ($rateGb == 3){
+      $rateGb = "★★★";
+    } else if ($rateGb == 4){
+      $rateGb = "★★★★";
+    } else if ($rateGb == 5){
+      $grateGb = "★★★★★";
+    }
+}
 
 $userService = new UserService();
 $userInfo = $userService->displayUser($_SESSION['user_id']);
@@ -61,6 +81,8 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
     $_SESSION['user_mail'] = $userInfo->getMAIL();
     $_SESSION['user_avatar'] = $userInfo->getAVATAR();
 
+    $telClear = preg_replace('#(\d{2})#', '$1 ', $userInfo->getTEL());
+
     // CONTROLLER PROFIL
     if ($userInfo->getBIO() == NULL){
         $userInfo->setBIO("Dites nous en plus à votre sujet. Qui êtes vous ? Quels sont vos centres d'intêrets ? Comment avez-vous franchi les portes du Pocket Museum ?");
@@ -82,8 +104,8 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
     }
 
     // AFFICHAGE PROFIL
-    callProfil($userGoldbook, $userInfo->getNICKNAME(), $userInfo->getNAME(), $userInfo->getLASTNAME(), $userInfo->getMAIL(),
-               $userInfo->getADRESS(), $userInfo->getCITY(), $userInfo->getCP(), $userInfo->getTEL(), $userInfo->getBIO(),
+    callProfil($messageGb, $rateGb, $userInfo->getNICKNAME(), $userInfo->getNAME(), $userInfo->getLASTNAME(), $userInfo->getMAIL(),
+               $userInfo->getADRESS(), $userInfo->getCITY(), $userInfo->getCP(), $telClear, $userInfo->getBIO(),
                $userInfo->getAVATAR(), $userInfo->getMOVIE(), $userInfo->getBOOK(), $userInfo->getMUSIC(), $userInfo->getSPORT(), $userInfo->getVG());
 
 } else {

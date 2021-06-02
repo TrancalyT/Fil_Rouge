@@ -74,6 +74,10 @@ html {
   padding : 5px;
 }
 
+.gb {
+  padding-right: 45px;
+}
+
 .contenant h4{
   color:tomato;
 }

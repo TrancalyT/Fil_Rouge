@@ -6,12 +6,12 @@ require_once(__DIR__ . "/../EXCEPTIONS/UserDAOException.php");
 
 class UserDAO extends Connection
 {
-    public function login($MAIL): ?User
+    public function login($mail): ?User
     {
         try {
             $db = parent::connectionDB();
             $stmt = $db->prepare("SELECT * FROM user WHERE MAIL = ?;");
-            $stmt->bind_param('s', $MAIL);
+            $stmt->bind_param('s', $mail);
             $stmt->execute();
             $result = $stmt->get_result();
 
@@ -34,7 +34,7 @@ class UserDAO extends Connection
                 ->setADRESS($value['ADRESS'])
                 ->setCITY($value['CITY'])
                 ->setCP($value['CP'])
-                ->setTEL($value['TEL'])
+                ->setTEL(($value['TEL']))
                 ->setSPORT($value['SPORT'])
                 ->setVG($value['VG'])
                 ->setBOOK($value['BOOK'])
@@ -61,7 +61,7 @@ class UserDAO extends Connection
 
             $stmt = $db->prepare($query);
             $stmt->bind_param(
-                "sssssssiissssssb",
+                "sssssssssssssssb",
                 $name,
                 $lastname,
                 $nickname,
@@ -139,7 +139,7 @@ class UserDAO extends Connection
                 ->setADRESS($value['ADRESS'])
                 ->setCITY($value['CITY'])
                 ->setCP($value['CP'])
-                ->setTEL($value['TEL'])
+                ->setTEL(strval($value['TEL']))
                 ->setSPORT($value['SPORT'])
                 ->setVG($value['VG'])
                 ->setBOOK($value['BOOK'])
@@ -179,7 +179,7 @@ class UserDAO extends Connection
 
             $stmt = $db->prepare($query);
             $stmt->bind_param(
-                "ssssssiissssssi",
+                "ssssssssssssssi",
                 $name,
                 $lastname,
                 $nickname,

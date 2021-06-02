@@ -10,10 +10,10 @@ class User
     private string $MAIL;
     private string $PASSWORD;
 
-    private ?string $ADRESS;
-    private ?string $CITY;
-    private ?int $CP;
-    private ?int $TEL;
+    private string $ADRESS;
+    private string $CITY;
+    private string $CP;
+    private string $TEL;
 
     private ?string $MOVIE;
     private ?string $BOOK;
@@ -24,7 +24,7 @@ class User
     private ?string $BIO;
     private $AVATAR;
 
-    private $ROLE;
+    private string $ROLE;
 
     //////////////////////////////////////////////////////
     public function getID()

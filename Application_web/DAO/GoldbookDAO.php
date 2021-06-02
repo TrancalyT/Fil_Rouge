@@ -80,11 +80,11 @@ class GoldbookDAO extends Connection
         }
     }
 
-    function userMessage($id)
+    function userRated($id)
     {
         try {
             $db = $this->connectionDB();
-            $stmt = $db->prepare("SELECT TEXT FROM goldbook WHERE USER_ID = ?;");
+            $stmt = $db->prepare("SELECT TEXT, STARS FROM goldbook WHERE USER_ID = ?;");
             $stmt->bind_param('i', $id);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -96,14 +96,16 @@ class GoldbookDAO extends Connection
             throw new GoldbookDAOException($message);
         }
 
+        $goldbookRated = [];
         foreach ($data as $value){
-            $goldbook = $value['TEXT'];
+            $goldbookRated[] = (new Goldbook()) ->setTEXT($value["TEXT"])
+                                                ->setSTARS($value["STARS"]);
         }
         
-        if (empty($goldbook)){
+        if (empty($goldbookRated)){
             return null;
         } else {
-            return $goldbook;
+            return $goldbookRated;
         }
     }
 }

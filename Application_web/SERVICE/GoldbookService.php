@@ -41,11 +41,11 @@ class GoldbookService
         return $goldbookService;
     }
 
-    function userMessage($id)
+    function userRated($id)
     {
         $goldbookDAO = new GoldbookDAO();
         try {
-            $goldbookService = $goldbookDAO->userMessage($id);
+            $goldbookService = $goldbookDAO->userRated($id);
         } catch (GoldbookDAOException $error) {
             throw new GoldbookServiceException($error->getMessage());
         }

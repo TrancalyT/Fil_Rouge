@@ -126,13 +126,13 @@ function callInscription($messageInscription)
                                         <div class="row justify-content-end">
                                             <label for="CP-Inscription" class="col-sm col-form-label">*Code Postal : </label>
                                             <div class="col-sm-8">
-                                                <input id="CP-Inscription" size="50" maxlength="5" type="tel" placeholder="Veuillez entrer votre code postal ici" name="cpinscription" class="form-control" required>
+                                                <input id="CP-Inscription" size="50" maxlength="5" type="text" placeholder="Veuillez entrer votre code postal ici" name="cpinscription" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Tel-Inscription" class="col-sm col-form-label">*Téléphone : </label>
                                             <div class="col-sm-8">
-                                                <input id="Tel-Inscription" size="50" maxlength="10" type="tel" placeholder="Veuillez entrer votre code postal ici" name="telinscription" class="form-control" required>
+                                                <input id="Tel-Inscription" size="50" maxlength="10" type="text" placeholder="Veuillez entrer votre code postal ici" name="telinscription" class="form-control" required>
                                             </div>
                                         </div>
                                     </div>

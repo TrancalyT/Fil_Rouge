@@ -4,11 +4,11 @@ include_once(__DIR__ . "/../EXCEPTIONS/UserServiceException.php");
 
 class UserService
 {
-    public function login($MAIL) : ?User
+    public function login($mail) : ?User
     {
         $userDAO = new UserDAO;
         try {
-            $userService = $userDAO->login($MAIL);
+            $userService = $userDAO->login($mail);
         } catch (UserDAOException $e) {
             throw new UserServiceException($e->getMessage(), $e->getCode());
         }
@@ -17,6 +17,7 @@ class UserService
 
     public function register($name, $lastname, $nickname, $mail, $password, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar)
     {
+        $name = strtoupper($name);
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
         $userDAO = new UserDAO;
 
@@ -53,8 +54,7 @@ class UserService
 
     public function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id)
     {
-        $cp = intval($cp);
-        $tel = intval($tel);
+        $name = strtoupper($name);
         $id = intval($id);
         $userDAO = new UserDAO;
 
