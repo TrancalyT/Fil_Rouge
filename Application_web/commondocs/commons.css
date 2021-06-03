@@ -71,16 +71,23 @@ input::placeholder {
 	z-index: 300;
 	padding: 20px 40px;
 	color: #333;
+  text-transform: none;
+  margin-bottom: 15px;
+  margin-top: 15px;
+
 }
 
 .alert-success ::before{
-  content: "Done : "
+  content: "Done : \a";
+  font-size: 25px;
+  white-space: pre-line;
 }
 
 .alert-success h2 {
 	font-size: 22px;
 	color: #232323;
 	margin-top: 0;
+  font-family: inherit;
 }
 
 .alert-success p {
@@ -103,10 +110,16 @@ input::placeholder {
 	z-index: 300;
 	padding: 20px 40px;
 	color: #333;
+  text-transform: none;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  
 }
 
 .alert-error ::before{
-  content: "Erreur : "
+  content: "Erreur : \a";
+  font-size: 25px;
+  white-space: pre-line;
 }
 
 .alert-error h2 {

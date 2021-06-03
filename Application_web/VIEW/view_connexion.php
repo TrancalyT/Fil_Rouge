@@ -1,15 +1,29 @@
 <?php
 
-function callConnexion($messageConnexion, $messageError)
+function callConnexion($messageConnexion, $messageInscription, $messageError, $error, $success)
 {
 ?>
     <div class="form_connexion">
         <form action="connexion.php" method="get" class="col g-3 justify-content form-info">
             <div class="container-lg">
-            <span class="fs-6 fst-italic text-danger"><?php echo $messageConnexion["messageNoMail"] ?></span>
-            <span class="fs-6 fst-italic text-danger"><?php echo $messageConnexion["messageErrCo"] ?></span>
-            <span class="fs-6 fst-italic text-success"><?php echo $messageConnexion["messageSuccessCo"] ?></span>
-            <span class="fs-6 fst-italic text-danger"><?php echo $messageError ?></span>
+            <div class="<?=$error?>">
+                        <p>
+                        <?php echo $messageConnexion["messageNoMail"] ?>
+                        <?php echo $messageConnexion["messageErrCo"] ?>
+                        <?php echo $messageInscription["messageErrDoublonPseudo"] ?>
+                        <?php echo $messageInscription["messageErrDoublonMail"] ?>
+                        <?php echo $messageInscription["messageErrMailInscr"] ?>
+                        <?php echo $messageInscription["messageErrMDPInscr"] ?>
+                        <?php echo $messageInscription["messageErrorInscri"] ?>
+                        <?php echo $messageError ?>
+                        </p>
+                    </div>
+                    <div class="<?=$success?>">
+                        <p>
+                        <?php echo $messageConnexion["messageSuccessCo"] ?>
+                        <?php echo $messageInscription["messageInscriOk"] ?>
+                        </p>
+                    </div>
                 <div class="mb-3">
                     <div class="row justify-content-end">
                         <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>
@@ -41,19 +55,27 @@ function callConnexion($messageConnexion, $messageError)
 
 <?php
 
-function callInscription($messageInscription)
+function callInscription($messageInscription, $error, $success)
 {
 ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <div class="alert-error"><h2></h2><?php echo $messageInscription["messageErrDoublonPseudo"] ?></div>
-                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrDoublonMail"] ?></span>
-                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMailInscr"] ?></span>
-                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMDPInscr"] ?></span>
-                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrorInscri"] ?></span>
-                    <span class="fs-6 fst-italic text-success"><?php echo $messageInscription["messageInscriOk"] ?></span>
+                    <div class="<?=$error?>">
+                        <p>
+                        <?php echo $messageInscription["messageErrDoublonPseudo"] ?>
+                        <?php echo $messageInscription["messageErrDoublonMail"] ?>
+                        <?php echo $messageInscription["messageErrMailInscr"] ?>
+                        <?php echo $messageInscription["messageErrMDPInscr"] ?>
+                        <?php echo $messageInscription["messageErrorInscri"] ?>
+                        </p>
+                    </div>
+                    <div class="<?=$success?>">
+                        <p>
+                        <?php echo $messageInscription["messageInscriOk"] ?>
+                        </p>
+                    </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
