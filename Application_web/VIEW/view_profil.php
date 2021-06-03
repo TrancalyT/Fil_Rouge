@@ -55,7 +55,7 @@ function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adr
                     <p class="fw-bold fst-italic">Téléphone : <span class="fw-normal fst-normal tel"><?= $tel ?></span></p>
                 </div>
                 </br>
-                <p class="fs-6 fw-light fst-italic notif">Tes informations sont en sécurité ici, aucune d'entre elles ne sera partagées à des fins commerciales ou scrupuleuses. Personne d'autres que toi peut y avoir accès. Elles sont ici pour faciliter la navigation dans l'espace <a href="boutique.php" class="text-decoration-none" style="color:tomato">boutique</a> et <a href="donation.php" class="text-decoration-none" style="color:tomato">donation</a>, ni plus ni moins.</p>
+                <p class="fs-6 fw-light fst-italic notif">Tes informations sont en sécurité ici, aucune d'entre elles ne sera partagées à des fins commerciales ou scrupuleuses. Personne d'autres que toi peut y avoir accès. Elles sont ici pour faciliter la navigation dans l'espace <a href="shop.php" class="text-decoration-none" style="color:tomato">boutique</a> et <a href="donation.php" class="text-decoration-none" style="color:tomato">donation</a>, ni plus ni moins.</p>
             </div>
             </section>
             <section class="hobbies border bg-light">
@@ -174,7 +174,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                     </div>
                 </div>
                 </br>
-                <p class="fs-6 fw-light fst-italic notif">Tes informations sont en sécurité ici, aucune d'entre elles ne sera partagées à des fins commerciales ou scrupuleuses. Personne d'autres que toi peut y avoir accès. Elles sont ici pour faciliter la navigation dans l'espace <a href="boutique.php" class="text-decoration-none" style="color:tomato">boutique</a> et <a href="donation.php" class="text-decoration-none" style="color:tomato">donation</a>, ni plus ni moins.</p>
+                <p class="fs-6 fw-light fst-italic notif">Tes informations sont en sécurité ici, aucune d'entre elles ne sera partagées à des fins commerciales ou scrupuleuses. Personne d'autres que toi peut y avoir accès. Elles sont ici pour faciliter la navigation dans l'espace <a href="shop.php" class="text-decoration-none" style="color:tomato">boutique</a> et <a href="donation.php" class="text-decoration-none" style="color:tomato">donation</a>, ni plus ni moins.</p>
             </div>
             </section>
             <section class="hobbies border bg-light">

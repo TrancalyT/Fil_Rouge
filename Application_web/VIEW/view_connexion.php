@@ -48,7 +48,7 @@ function callInscription($messageInscription)
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrDoublonPseudo"] ?></span>
+                    <div class="alert-error"><h2></h2><?php echo $messageInscription["messageErrDoublonPseudo"] ?></div>
                     <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrDoublonMail"] ?></span>
                     <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMailInscr"] ?></span>
                     <span class="fs-6 fst-italic text-danger"><?php echo $messageInscription["messageErrMDPInscr"] ?></span>

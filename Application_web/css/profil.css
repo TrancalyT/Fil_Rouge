@@ -81,6 +81,10 @@ html {
 .contenant h4{
   color:tomato;
   margin-bottom: 15px;
+  text-align: end;
+  border-bottom: 0.1rem dotted #ced4da;
+  border-bottom-left-radius: 100%;
+  padding-bottom: 20px;
 }
 
 .contenant img{

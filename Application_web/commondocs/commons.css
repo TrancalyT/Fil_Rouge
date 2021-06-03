@@ -61,6 +61,72 @@ input::placeholder {
   text-decoration: none;
 }
 
+.alert-success {
+	box-sizing: border-box;
+	background-color: #BDFFE1;
+	width: 100%;
+	position: relative; 
+	top: 0;
+	left: 0;
+	z-index: 300;
+	padding: 20px 40px;
+	color: #333;
+}
+
+.alert-success ::before{
+  content: "Done : "
+}
+
+.alert-success h2 {
+	font-size: 22px;
+	color: #232323;
+	margin-top: 0;
+}
+
+.alert-success p {
+	line-height: 1.6em;
+	font-size:18px;
+}
+
+.alert-success a {
+	color: #232323;
+	font-weight: bold;
+}
+
+.alert-error {
+	box-sizing: border-box;
+	background-color: #ffcabd;
+	width: 100%;
+	position: relative; 
+	top: 0;
+	left: 0;
+	z-index: 300;
+	padding: 20px 40px;
+	color: #333;
+}
+
+.alert-error ::before{
+  content: "Erreur : "
+}
+
+.alert-error h2 {
+	font-size: 22px;
+	color: #232323;
+	margin-top: 0;
+  font-family: inherit;
+  content : "Erreur : "
+}
+
+.alert-error p {
+	line-height: 1.6em;
+	font-size:18px;
+}
+
+.alert-error a {
+	color: #232323;
+	font-weight: bold;
+}
+
 /* ------------------------------------------------------BOUTON TO TOP------------------------------------------------------ */
 #myBtn {
   display: none;
