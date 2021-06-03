@@ -1,7 +1,7 @@
 <?php require_once "views/view_header_admin.php" ?>
 <?php require_once "views/view_footer_admin.php" ?>
 
-Page uniquement visible aux admins. Renvoi de page dans le else
+<!-- Page uniquement visible aux admins. Renvoi de page dans le else -->
 <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === "Admin") { ?>
     <?php callHeaderAdmin("Admin panel") ?>
     <?php callNavAdmin() ?>

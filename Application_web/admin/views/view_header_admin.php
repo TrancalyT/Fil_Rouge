@@ -150,7 +150,7 @@ function callSidenavAdmin()
                                 <div class="collapse" id="pagesCollapseDivers" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
                                         <a class="nav-link" href="#">News</a>
-                                        <a class="nav-link" href="goldbook_admin.php">GoldBook</a>
+                                        <a class="nav-link" href="goldbook_admin.php">Goldbook</a>
                                     </nav>
                                 </div>
 
