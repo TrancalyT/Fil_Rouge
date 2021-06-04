@@ -78,23 +78,6 @@ for (const btn of btns) {
   });
 }
 
-// CACHER ALERT SI VIDE
-
-// $('.alert-success').ready(function (e) {
-//   if($('.alert-success').text().length == 190){
-//     $('.alert-success').css("display", "none")
-    
-//   };
-
-// });
-
-// $('.alert-error').ready(function (e) {
-//   if($('.alert-error').text().length == 190){
-//     $('.alert-error').css("display", "none")
-//   };
-
-// });
-
 // SET THUMBNAIL VIEW - CHANGE CSS VARIABLE
 rangeInput.addEventListener("input", function () {
   document.documentElement.style.setProperty(

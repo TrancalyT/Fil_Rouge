@@ -9,105 +9,6 @@ require_once(__DIR__.'/SERVICE/UserService.php');
 callHeader("Connexion / Inscription", "css/connexion.css");
 callMainTitle("Connexion");
 
-// CONTROLLER INSCRIPTION
-$messageInscription = [
-    "messageErrPseudoInscr" => "",
-    "messageErrMailInscr" => "",
-    "messageErrMDPInscr" => "",
-    "messageErrorInscri" => "",
-    "messageInscriOk" => "",
-    "messageErrDoublonPseudo" => "",
-    "messageErrDoublonMail" => "",
-    "messageErrTel" => "",
-    "messageErrCP" => "",
-    "doublonPseudo" => false,
-    "doublonMail" => false];
-  
-    // REGEX (A RENFORCER)
-  $regText = "#^[a-z0-9 _]{1,20}$#i"; // 20 caractères autorisés max (chiffres, lettres et _ et " ")
-  $regTextLong = "#^[a-z0-9 _]{1,40}$#i"; // 40 caractères autorisés max (chiffres, lettres et _ et " ")
-  $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.[a-z]{2,3}$#i";
-  $regTel = "#^[0-9]{10}$#"; // 10 chiffres seulements
-  $regCP = "#^[0-9]{5}$#"; // 5 chiffres seulements
-  
-  @$name = $_REQUEST['nominscription'];
-  @$lastname = $_REQUEST['prenominscription'];
-  @$nickname = $_REQUEST['pseudoinscription'];
-  @$mail = $_REQUEST['mailinscription'];
-  @$password = $_REQUEST["mdpinscription"];
-  @$repassword = $_REQUEST["mdp2inscription"];
-  @$adress = $_REQUEST["adresseinscription"];
-  @$city = $_REQUEST["villeinscription"];
-  @$cp = $_REQUEST["cpinscription"];
-  @$tel = $_REQUEST["telinscription"];
-  @$movie = $_REQUEST["filminscription"];
-  @$book = $_REQUEST["livreinscription"];
-  @$music = $_REQUEST["musiqueinscription"];
-  @$sport = $_REQUEST["sportinscription"];
-  @$vg = $_REQUEST["jvinscription"];
-  @$validerInscri = $_REQUEST["validerinscription"];
-    
-  if (isset($validerInscri)){
-  
-      if(isset($name) && !empty($name) 
-      && isset($lastname) && !empty($lastname) 
-      && isset($nickname) && !empty($nickname)
-      && isset($mail) && !empty($mail)
-      && isset($password) && !empty($password)
-      && isset($repassword) && !empty($repassword)){
-  
-          try{
-            $doublonUser = (new UserService())->ifAlreadyExist();
-  
-            foreach ($doublonUser as $value){
-              if ($value->getNICKNAME() == $nickname){
-                $messageInscription["messageErrDoublonPseudo"] = "Ce pseudo est déjà pris veuillez en saisir un nouveau.";
-                $error = "alert-error";
-                $messageInscription["doublonPseudo"] = true;
-              }
-              if ($value->getMAIL() == $mail){
-                $messageInscription["messageErrDoublonMail"] = "Cette adresse mail est déjà prise veuillez en saisir une nouvelle.";
-                $error = "alert-error";
-                $messageInscription["doublonMail"] = true;
-              }
-            }
-  
-            if (!preg_match($regMail, $mail)){
-              $messageInscription["messageErrMailInscr"] = "Veuillez saisir une adresse mail valide.";
-              $error = "alert-error";
-            }
-
-            if (!preg_match($regTel, $tel)){
-              $messageInscription["messageErrTel"] = "Veuillez saisir un numéro de téléphone valide.";
-              $error = "alert-error";
-            }
-
-            if (!preg_match($regCP, $cp)){
-              $messageInscription["messageErrCP"] = "Veuillez saisir un numéro d'adresse postale valide.";
-              $error = "alert-error";
-            }
-
-            if ($password != $repassword){
-              $messageInscription["messageErrMDPInscr"] = "Votre mot de passe est différent, veuillez saisir un mot de passe identique.";
-              $error = "alert-error";
-            }
-            if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && ($password === $repassword) && (!$messageInscription["doublonPseudo"]) && (!$messageInscription["doublonMail"])){
-              $messageInscription["messageInscriOk"] = "Votre inscription est bien enregistrée " .$nickname. ", vous pouvez dès à présent vous connecter :)";
-              $sucess = "alert-success";
-                header("Location:CONTROLLER/suscribe_process.php?name=$name&lastname=$lastname&nickname=$nickname&mail=$mail&password=$password&adress=$adress&city=$city&cp=$cp&tel=$tel&movie=$movie&book=$book&music=$music&sport=$sport&vg=$vg");
-            }
-          } catch (UserServiceException $error) {
-            $messageError = $error->getMessage();
-            $error = "alert-error";
-            header("Location:connexion.php?messageError=$messageError");
-          }
-          
-      } else {
-        $messageInscription["messageErrorInscri"] = "Veuillez saisir et remplir les informations manquantes.";
-        $error = "alert-error";
-      }
-  }
-
 // CONTROLLER CONNEXION
 
 $messageConnexion = [
@@ -205,8 +106,8 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
 } else {
 
-    callConnexion($messageConnexion, $messageInscription, $error, $success, $mailCo);
-    callInscription($messageInscription, $error, $success, $name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $music, $sport, $vg);
+    callConnexion($messageConnexion, $error, @$goodMail);
+    callInscription();
 }
 
 
@@ -217,3 +118,4 @@ callFooter();
 
 <!-- SCRIPT -->
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/inscription.js"></script>

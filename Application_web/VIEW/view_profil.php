@@ -3,7 +3,7 @@
 function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form class="view-profil" action="profil.php" method="get">
+<form class="view-profil" action="profil.php?#Modif" method="get">
     <div class="<?=@$_GET['error']?>" id="targetscript1">
         <p>
         <?php echo @$_GET['messageError'] ?>
@@ -81,7 +81,7 @@ function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adr
             </div>
             </section>
             <section class="modif">
-                <button type="submit" class="buttonmain" name="modifprofil" value="<?= $_SESSION['user_id'] ?>" id="Modif">Modifier mon profil</button>
+                <button type="submit" class="buttonmain" name="modifprofil" value="<?= $_SESSION['user_id'] ?>" id="modifprofil">Modifier mon profil</button>
             </section>  
     </div>
 </form> 
@@ -91,9 +91,14 @@ function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adr
 function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form action="CONTROLLER/updateUser_process.php" method="post" enctype="multipart/form-data">
-    <div class="contenant">
-        <section class="info border bg-light" id="Focus">
+<!-- <form action="CONTROLLER/updateUser_process.php" method="post" enctype="multipart/form-data" id="formmodif"> -->
+<form method="post" enctype="multipart/form-data" id="formmodif" name="formmodif">
+    <div class="" id="errorsuscribe">
+    </div>
+    <div class="" id="successsuscribe">
+    </div>
+    <div class="contenant" id="Modif">
+        <section class="info border bg-light">
             <h4>Infos</h4>
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
