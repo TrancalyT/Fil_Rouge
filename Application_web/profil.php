@@ -5,43 +5,48 @@ require_once(__DIR__.'/VIEW/view_profil.php');
 require_once(__DIR__.'/SERVICE/GoldbookService.php');
 require_once(__DIR__.'/SERVICE/UserService.php');
 
-// RECUPERATION DES INFOS DU GOLDBOOK
-$userMessage = new GoldbookService();
-$userGoldbook = $userMessage->userRated($_SESSION['user_id']);
+if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
-if ($userGoldbook != null){
-    foreach ($userGoldbook as $value) {
+    // RECUPERATION DES INFOS DU GOLDBOOK
+    $userMessage = new GoldbookService();
+    $userGoldbook = $userMessage->userRated($_SESSION['user_id']);
 
-        $messageGb = $value->getTEXT();
-        $rateGb= $value->getSTARS();
-    
-    
-        if ($rateGb == 1){
-          $rateGb = "★";
-        } else if ($rateGb == 2){
-          $rateGb = "★★";
-        } else if ($rateGb == 3){
-          $rateGb = "★★★";
-        } else if ($rateGb == 4){
-          $rateGb = "★★★★";
-        } else if ($rateGb == 5){
-          $grateGb = "★★★★★";
+    if ($userGoldbook != null){
+        foreach ($userGoldbook as $value) {
+
+            $messageGb = $value->getTEXT();
+            $rateGb= $value->getSTARS();
+        
+        
+            if ($rateGb == 1){
+            $rateGb = "★";
+            } else if ($rateGb == 2){
+            $rateGb = "★★";
+            } else if ($rateGb == 3){
+            $rateGb = "★★★";
+            } else if ($rateGb == 4){
+            $rateGb = "★★★★";
+            } else if ($rateGb == 5){
+            $grateGb = "★★★★★";
+            }
         }
+    } else {
+        $messageGb = null;
+        $rateGb = null;
     }
-} else {
-    $messageGb = null;
-    $rateGb = null;
+
+    $userService = new UserService();
+    $userInfo = $userService->displayUser($_SESSION['user_id']);
+
+    // AFFICHAGE AVATAR SI PAS D'AVATAR
+    if ($userInfo->getAVATAR() == NULL){
+        $userInfo->setAVATAR("images/default_avatar.jpg");
+    } else {
+        $userInfo->setAVATAR("data:image;base64," . base64_encode($userInfo->getAVATAR()));
+    }
+
 }
 
-$userService = new UserService();
-$userInfo = $userService->displayUser($_SESSION['user_id']);
-
-// AFFICHAGE AVATAR SI PAS D'AVATAR
-if ($userInfo->getAVATAR() == NULL){
-    $userInfo->setAVATAR("images/default_avatar.jpg");
-} else {
-    $userInfo->setAVATAR("data:image;base64," . base64_encode($userInfo->getAVATAR()));
-}
 
 // SI MODIF
 if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
@@ -116,7 +121,8 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
 } else {
 
     $wrongWay = "Veuillez vous connecter pour accéder à cette page.";
-    header("Location:connexion.php?wrongway=$wrongWay");
+    $error = "alert-error";
+    header("Location:connexion.php?wrongway=$wrongWay&error=$error");
 
 }
 //FOOTER

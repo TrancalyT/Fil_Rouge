@@ -56,21 +56,24 @@ $sendModif = $_REQUEST["sendmodif"];
             foreach ($doublonUser as $value){
                 if ($_SESSION['user_nickname'] != $nickname){
                     if ($value->getNICKNAME() == $nickname){
-                        $messageUpdate["messageErrDoublonPseudo"] = "Ce pseudo est déjà pris veuillez en saisir un nouveau";
+                        $messageError = "Ce pseudo est déjà pris veuillez en saisir un nouveau.";
                         $messageUpdate["doublonPseudo"] = true;
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
                       }
                 }
 
                 if ($_SESSION['user_mail'] != $mail){
                     if ($value->getMAIL() == $mail){
-                        $messageUpdate["messageErrDoublonMail"] = "Cette adresse mail est déjà prise veuillez en saisir une nouvelle";
+                        $messageError = "Cette adresse mail est déjà prise veuillez en saisir une nouvelle.";
                         $messageUpdate["doublonMail"] = true;
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
                       }
                 }
             }
   
             if (!preg_match($regMail, $mail)){
-              $messageUpdate["messageErrMail"] = "Veuillez saisir une adresse mail valide";
+              $messageError = "Veuillez saisir une adresse mail valide.";
+              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
             }
 
             if (preg_match($regMail, $mail) && (!$messageUpdate["doublonPseudo"]) && (!$messageUpdate["doublonMail"])){
@@ -82,22 +85,22 @@ $sendModif = $_REQUEST["sendmodif"];
                   try {
                     $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
                     $updateUser->updateAvatar($avatar, $_SESSION['user_id']);
-                    $messageUpdate["messageOk"] = "Vos infos sont mises à jour !";
-                    header("Location:../profil.php?id={$_SESSION['user_id']}&successUpdate=true&sucess={$messageUpdate['messageOk']}");
+                    $messageSuccess = "Vos infos sont mises à jour !";
+                    header("Location:../profil.php?id={$_SESSION['user_id']}&messageSuccess=$messageSuccess&success=alert-success");
                     } catch (UserServiceException $error) {
                         $messageError = $error->getMessage();
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
                     }
 
                 } else {
                   
                   try {
                     $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
-                    $messageUpdate["messageOk"] = "Vos infos sont mises à jour !";
-                    header("Location:../profil.php?id={$_SESSION['user_id']}&successUpdate=true&sucess={$messageUpdate['messageOk']}");
+                    $messageSuccess = "Vos infos sont mises à jour !";
+                    header("Location:../profil.php?id={$_SESSION['user_id']}&messageSuccess=$messageSuccess&success=alert-success");
                     } catch (UserServiceException $error) {
                         $messageError = $error->getMessage();
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
                     }
 
                 }
@@ -105,11 +108,12 @@ $sendModif = $_REQUEST["sendmodif"];
             }
           } catch (UserServiceException $error) {
             $messageError = $error->getMessage();
-            header("../profil.php?id={$_SESSION['user_id']}&messageError=$messageError");
+            header("../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
           }
           
       } else {
-        $messageUpdate["messageErrorUpdate"] = "Veuillez saisir et remplir les informations manquantes";
+        $messageError = "Veuillez saisir et remplir les informations manquantes.";
+        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
       }
   }
 

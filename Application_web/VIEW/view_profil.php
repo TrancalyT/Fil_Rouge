@@ -3,8 +3,18 @@
 function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form action="profil.php" method="get">
-    <div class="contenant">
+<form class="view-profil" action="profil.php" method="get">
+    <div class="<?=@$_GET['error']?>" id="targetscript1">
+        <p>
+        <?php echo @$_GET['messageError'] ?>
+        </p>
+    </div>
+    <div class="<?=@$_GET['success']?>" id="targetscript2">
+        <p>
+        <?php echo @$_GET['messageSuccess'] ?>
+        </p>
+    </div>
+        <div class="contenant">
             <section class="info border bg-light">
             <h4>Infos</h4>
             <div class="col-12">
@@ -97,7 +107,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Pseudonyme : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="nickname" value="<?php echo $nickname ?>">
+                            <input size="30" maxlength="100" type="text" name="nickname" value="<?php echo $nickname ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -105,7 +115,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Nom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="name" value="<?php echo $name ?>">
+                            <input size="30" maxlength="100" type="text" name="name" value="<?php echo $name ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -113,7 +123,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Prénom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="lastname" value="<?php echo $lastname ?>">
+                            <input size="30" maxlength="100" type="text" name="lastname" value="<?php echo $lastname ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -121,7 +131,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">E-Mail : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="mail" name="mail" value="<?php echo $mail ?>">
+                            <input size="30" maxlength="100" type="mail" name="mail" value="<?php echo $mail ?>" required>
                         </div>
                     </div>         
                 </div>
@@ -145,7 +155,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Adresse : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="adress" value="<?php echo $adress?>">
+                            <input size="40" maxlength="100" type="text" name="adress" value="<?php echo $adress?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -153,7 +163,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Ville : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="city" value="<?php echo $city?>">
+                            <input size="40" maxlength="100" type="text" name="city" value="<?php echo $city?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -161,7 +171,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Code postale : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="5" type="text" name="cp" value="<?php echo $cp ?>">
+                            <input size="40" maxlength="5" type="text" name="cp" value="<?php echo $cp ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -169,7 +179,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Téléphone : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="10" type="text" name="tel" value="<?php echo $tel ?>">
+                            <input size="40" maxlength="10" type="text" name="tel" value="<?php echo $tel ?>" required>
                         </div>
                     </div>
                 </div>

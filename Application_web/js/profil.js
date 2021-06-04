@@ -20,3 +20,14 @@ $('#Modif').click(function (e) {
         document.getElementById(Focus).focus();
 
 });
+
+// CACHER HEADER SI MESSAGE ERREUR
+
+$(document).ready(function (e){
+
+    $('header').css("border-bottom", "none")
+
+    // if($("#targetscript1").hasClass("alert-error") | $("#targetscript2").hasClass("alert-success") ){
+    //     $('header').css("border-bottom", "none")
+    // }
+});

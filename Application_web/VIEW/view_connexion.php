@@ -6,7 +6,7 @@ function callConnexion($messageConnexion, $messageInscription, $error, $success)
     <div class="form_connexion">
         <form action="connexion.php" method="get" class="col g-3 justify-content form-info">
             <div class="container-lg">
-            <div class="<?=$error?>">
+            <div class="<?=$error?><?=@$_GET['error']?>">
                         <p>
                         <?php echo $messageConnexion["messageNoMail"] ?>
                         <?php echo $messageConnexion["messageErrCo"] ?>
@@ -16,6 +16,7 @@ function callConnexion($messageConnexion, $messageInscription, $error, $success)
                         <?php echo $messageInscription["messageErrMDPInscr"] ?>
                         <?php echo $messageInscription["messageErrorInscri"] ?>
                         <?php echo @$_GET['messageError'] ?>
+                        <?php echo @$_GET['wrongway'] ?>
                         </p>
                     </div>
                     <div class="<?=$success?>">
