@@ -6,7 +6,11 @@ session_start();
 // UPDATE CONTROLLER
 
 // REGEX (A RENFORCER)
-$regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.com$|fr$#i";
+$regText = "#^[a-z0-9 _]{1,20}$#i"; // 20 caractères autorisés max (chiffres, lettres et _ et " ")
+$regTextLong = "#^[a-z0-9 _]{1,40}$#i"; // 40 caractères autorisés max (chiffres, lettres et _ et " ")
+$regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.[a-z]{2,3}$#i";
+$regTel = "#^[0-9]{10}$#"; // 10 chiffres seulements
+$regCP = "#^[0-9]{5}$#"; // 5 chiffres seulements
 
 $messageUpdate["doublonPseudo"] = false;
 $messageUpdate["doublonMail"] = false;
@@ -76,7 +80,17 @@ $sendModif = $_REQUEST["sendmodif"];
               header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
             }
 
-            if (preg_match($regMail, $mail) && (!$messageUpdate["doublonPseudo"]) && (!$messageUpdate["doublonMail"])){
+            if (!preg_match($regTel, $tel)){
+              $messageError = "Veuillez saisir un numéro de téléphone valide.";
+              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+            }
+
+            if (!preg_match($regCP, $cp)){
+              $messageError = "Veuillez saisir un numéro d'adresse postale valide.";
+              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+            }
+
+            if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && (!$messageUpdate["doublonPseudo"]) && (!$messageUpdate["doublonMail"])){
                 
               $updateUser = new UserService();
 

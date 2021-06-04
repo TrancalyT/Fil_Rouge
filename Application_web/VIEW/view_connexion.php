@@ -15,6 +15,8 @@ function callConnexion($messageConnexion, $messageInscription, $error, $success,
                         <?php echo $messageInscription["messageErrMailInscr"] ?>
                         <?php echo $messageInscription["messageErrMDPInscr"] ?>
                         <?php echo $messageInscription["messageErrorInscri"] ?>
+                        <?php echo $messageInscription["messageErrTel"] ?>
+                        <?php echo $messageInscription["messageErrCP"] ?>
                         <?php echo @$_GET['messageError'] ?>
                         <?php echo @$_GET['wrongway'] ?>
                         </p>
@@ -70,6 +72,8 @@ function callInscription($messageInscription, $error, $success, $name, $lastname
                         <?php echo $messageInscription["messageErrMailInscr"] ?>
                         <?php echo $messageInscription["messageErrMDPInscr"] ?>
                         <?php echo $messageInscription["messageErrorInscri"] ?>
+                        <?php echo $messageInscription["messageErrTel"] ?>
+                        <?php echo $messageInscription["messageErrCP"] ?>
                         </p>
                     </div>
                     <div class="<?=$success?>">

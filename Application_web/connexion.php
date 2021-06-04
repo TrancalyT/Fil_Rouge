@@ -18,12 +18,17 @@ $messageInscription = [
     "messageInscriOk" => "",
     "messageErrDoublonPseudo" => "",
     "messageErrDoublonMail" => "",
+    "messageErrTel" => "",
+    "messageErrCP" => "",
     "doublonPseudo" => false,
     "doublonMail" => false];
   
     // REGEX (A RENFORCER)
-  $regPseudoInscr = "#[a-z]{1,20}#i";
-  $regMailInscr = "#^[a-z]{1,}@{1}[a-z]{1,}\.com$|fr$#i";
+  $regText = "#^[a-z0-9 _]{1,20}$#i"; // 20 caractères autorisés max (chiffres, lettres et _ et " ")
+  $regTextLong = "#^[a-z0-9 _]{1,40}$#i"; // 40 caractères autorisés max (chiffres, lettres et _ et " ")
+  $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.[a-z]{2,3}$#i";
+  $regTel = "#^[0-9]{10}$#"; // 10 chiffres seulements
+  $regCP = "#^[0-9]{5}$#"; // 5 chiffres seulements
   
   @$name = $_REQUEST['nominscription'];
   @$lastname = $_REQUEST['prenominscription'];
@@ -67,15 +72,26 @@ $messageInscription = [
               }
             }
   
-            if (!preg_match($regMailInscr, $mail)){
+            if (!preg_match($regMail, $mail)){
               $messageInscription["messageErrMailInscr"] = "Veuillez saisir une adresse mail valide.";
               $error = "alert-error";
             }
+
+            if (!preg_match($regTel, $tel)){
+              $messageInscription["messageErrTel"] = "Veuillez saisir un numéro de téléphone valide.";
+              $error = "alert-error";
+            }
+
+            if (!preg_match($regCP, $cp)){
+              $messageInscription["messageErrCP"] = "Veuillez saisir un numéro d'adresse postale valide.";
+              $error = "alert-error";
+            }
+
             if ($password != $repassword){
               $messageInscription["messageErrMDPInscr"] = "Votre mot de passe est différent, veuillez saisir un mot de passe identique.";
               $error = "alert-error";
             }
-            if (preg_match($regMailInscr, $mail) && ($password === $repassword) && (!$messageInscription["doublonPseudo"]) && (!$messageInscription["doublonMail"])){
+            if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && ($password === $repassword) && (!$messageInscription["doublonPseudo"]) && (!$messageInscription["doublonMail"])){
               $messageInscription["messageInscriOk"] = "Votre inscription est bien enregistrée " .$nickname. ", vous pouvez dès à présent vous connecter :)";
               $sucess = "alert-success";
                 header("Location:CONTROLLER/suscribe_process.php?name=$name&lastname=$lastname&nickname=$nickname&mail=$mail&password=$password&adress=$adress&city=$city&cp=$cp&tel=$tel&movie=$movie&book=$book&music=$music&sport=$sport&vg=$vg");
