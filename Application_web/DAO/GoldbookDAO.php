@@ -19,7 +19,7 @@ class GoldbookDAO extends Connection
         
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON ADDGB\"";
             throw new GoldbookDAOException($message);
         }
     }
@@ -36,7 +36,7 @@ class GoldbookDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON DISPLAYGB\"";
             throw new GoldbookDAOException($message);
         }
 
@@ -65,7 +65,7 @@ class GoldbookDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON ALREADYRATED\"";
             throw new GoldbookDAOException($message);
         }
 
@@ -92,7 +92,7 @@ class GoldbookDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON USERRATED\"";
             throw new GoldbookDAOException($message);
         }
 
@@ -121,7 +121,7 @@ class GoldbookDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON MESSTOCHECK\"";
             throw new GoldbookDAOException($message);
         }
 
@@ -157,8 +157,8 @@ class GoldbookDAO extends Connection
             $stmt->execute();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
-            throw new UserDAOException($message);
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON VALIDATIONGB\"";
+            throw new GoldbookDAOException($message);
         }
     }
 }

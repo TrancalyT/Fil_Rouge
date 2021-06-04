@@ -19,7 +19,7 @@ class UserDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative de connexion a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON LOGIN\"";
             throw new UserDAOException($message);
         }
 
@@ -82,7 +82,7 @@ class UserDAO extends Connection
             $stmt->execute();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON SUSCRIBE\"";
             throw new UserDAOException($message);
         }
     }
@@ -99,7 +99,7 @@ class UserDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative de vérification a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON CHECKUSER\"";
             throw new UserDAOException($message);
         }
 
@@ -126,7 +126,7 @@ class UserDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative de connexion a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON DISPLAYUSER\"";
             throw new UserDAOException($message);
         }
 
@@ -198,7 +198,7 @@ class UserDAO extends Connection
             $stmt->execute();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON UPDATEUSER\"";
             throw new UserDAOException($message);
         }
     }
@@ -218,7 +218,7 @@ class UserDAO extends Connection
             $stmt->execute();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative d'inscription a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON UPDATEAVATAR\"";
             throw new UserDAOException($message);
         }
     }
@@ -236,7 +236,7 @@ class UserDAO extends Connection
             $result->free();
             $db->close();
         } catch (mysqli_sql_exception $error) {
-            $message = "La requête que vous tentez d'obtenir n'a pas pu aboutir. \"" . $error->getCode() . " La tentative de vérification a échoué\"";
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON DISPLAYAVATAR\"";
             throw new UserDAOException($message);
         }
 

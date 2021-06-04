@@ -9,8 +9,8 @@ class UserService
         $userDAO = new UserDAO;
         try {
             $userService = $userDAO->login($mail);
-        } catch (UserDAOException $e) {
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
         return $userService;
     }
@@ -23,8 +23,8 @@ class UserService
 
         try {
             $userDAO->register($name, $lastname, $nickname, $mail, $passwordHash, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar);
-        } catch (UserDAOException $e){
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
     }
 
@@ -33,8 +33,8 @@ class UserService
         $userDAO = new UserDAO();
         try{
             $userService = $userDAO->ifAlreadyExist();
-        } catch (UserDAOException $e){
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
 
         return $userService;
@@ -45,8 +45,8 @@ class UserService
         $userDAO = new UserDAO();
         try{
             $userService = $userDAO->displayUser($id);
-        } catch (UserDAOException $e){
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
 
         return $userService;
@@ -60,8 +60,8 @@ class UserService
 
         try {
             $userDAO->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id);
-        } catch (UserDAOException $e){
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
     }
 
@@ -71,8 +71,8 @@ class UserService
 
         try {
             $userDAO->updateAvatar($avatar, $id);
-        } catch (UserDAOException $e){
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
     }
 
@@ -81,8 +81,8 @@ class UserService
         $userDAO = new UserDAO;
         try {
             $userService = $userDAO->displayAvatar($id);
-        } catch (UserDAOException $e) {
-            throw new UserServiceException($e->getMessage(), $e->getCode());
+        } catch (UserDAOException $error){
+            throw new UserServiceException($error->getMessage());
         }
         return $userService;
     }

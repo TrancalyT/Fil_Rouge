@@ -1,6 +1,6 @@
 <?php
 
-function callConnexion($messageConnexion, $messageInscription, $error, $success)
+function callConnexion($messageConnexion, $messageInscription, $error, $success, $mailCo)
 {
 ?>
     <div class="form_connexion">
@@ -29,7 +29,7 @@ function callConnexion($messageConnexion, $messageInscription, $error, $success)
                     <div class="row justify-content-end">
                         <label for="E-Mail-Connexion" class="col-sm col-form-label">E-Mail : </label>
                         <div class="col-sm-8">
-                            <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailco" class="form-control" required>
+                            <input id="E-Mail-Connexion" size="50" maxlength="100" type="mail" placeholder="" name="mailco" class="form-control" value="<?php echo @$mailCo ?>" required>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ function callConnexion($messageConnexion, $messageInscription, $error, $success)
 
 <?php
 
-function callInscription($messageInscription, $error, $success)
+function callInscription($messageInscription, $error, $success, $name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $music, $sport, $vg)
 {
 ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
@@ -90,25 +90,25 @@ function callInscription($messageInscription, $error, $success)
                                         <div class="row justify-content-end">
                                             <label for="Nom-Inscription" class="col-sm col-form-label">*Nom : </label>
                                             <div class="col-sm-8">
-                                                <input id="Nom-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre nom ici" name="nominscription" class="form-control" required>
+                                                <input id="Nom-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre nom ici" name="nominscription" class="form-control" value="<?php echo @$name ?>" required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Prenom-Inscription" class="col-sm col-form-label">*Prénom : </label>
                                             <div class="col-sm-8">
-                                                <input id="Prenom-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre prénom ici" name="prenominscription" class="form-control" required>
+                                                <input id="Prenom-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre prénom ici" name="prenominscription" class="form-control" value="<?php  echo @$lastname ?>" required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Pseudonyme-Inscription" class="col-sm col-form-label">*Pseudonyme : </label>
                                             <div class="col-sm-8">
-                                                <input id="Pseudonyme-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre pseudonyme ici" name="pseudoinscription" class="form-control" required>
+                                                <input id="Pseudonyme-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre pseudonyme ici" name="pseudoinscription" class="form-control" value="<?php  echo @$nickname ?>" required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="E-Mail-Inscription" class="col-sm col-form-label">*E-Mail : </label>
                                             <div class="col-sm-8">
-                                                <input id="E-Mail-Inscription" size="50" maxlength="100" type="mail" placeholder="Veuillez entrer votre adresse e-mail ici" name="mailinscription" class="form-control" required>
+                                                <input id="E-Mail-Inscription" size="50" maxlength="100" type="mail" placeholder="Veuillez entrer votre adresse e-mail ici" name="mailinscription" class="form-control" value="<?php  echo @$mail ?>" required>
                                             </div>
                                         </div>
                                     </div>
@@ -137,25 +137,25 @@ function callInscription($messageInscription, $error, $success)
                                         <div class="row justify-content-end">
                                             <label for="Adresse-Inscription" class="col-sm col-form-label">*Adresse : </label>
                                             <div class="col-sm-8">
-                                                <input id="Adresse-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre adresse ici" name="adresseinscription" class="form-control" required>
+                                                <input id="Adresse-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre adresse ici" name="adresseinscription" class="form-control" value="<?php  echo @$adress ?>" required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Ville-Inscription" class="col-sm col-form-label">*Ville : </label>
                                             <div class="col-sm-8">
-                                                <input id="Ville-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre ville ici" name="villeinscription" class="form-control" required>
+                                                <input id="Ville-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre ville ici" name="villeinscription" class="form-control" value="<?php  echo @$city ?>"  required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="CP-Inscription" class="col-sm col-form-label">*Code Postal : </label>
                                             <div class="col-sm-8">
-                                                <input id="CP-Inscription" size="50" maxlength="5" type="text" placeholder="Veuillez entrer votre code postal ici" name="cpinscription" class="form-control" required>
+                                                <input id="CP-Inscription" size="50" maxlength="5" type="text" placeholder="Veuillez entrer votre code postal ici" name="cpinscription" class="form-control" value="<?php  echo @$cp ?>"  required>
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Tel-Inscription" class="col-sm col-form-label">*Téléphone : </label>
                                             <div class="col-sm-8">
-                                                <input id="Tel-Inscription" size="50" maxlength="10" type="text" placeholder="Veuillez entrer votre code postal ici" name="telinscription" class="form-control" required>
+                                                <input id="Tel-Inscription" size="50" maxlength="10" type="text" placeholder="Veuillez entrer votre code postal ici" name="telinscription" class="form-control" value="<?php  echo @$tel ?>"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -167,31 +167,31 @@ function callInscription($messageInscription, $error, $success)
                                         <div class="row justify-content-end">
                                             <label for="Film-Inscription" class="col-sm col-form-label">Film favori : </label>
                                             <div class="col-sm-8">
-                                                <input id="Film-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre film favori ici" name="filminscription" class="form-control">
+                                                <input id="Film-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre film favori ici" name="filminscription" class="form-control" value="<?php  echo @$movie ?>" >
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Livre-Inscription" class="col-sm col-form-label">Livre favori : </label>
                                             <div class="col-sm-8">
-                                                <input id="Livre-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre livre favori ici" name="livreinscription" class="form-control">
+                                                <input id="Livre-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre livre favori ici" name="livreinscription" class="form-control" value="<?php  echo @$book ?>" >
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Musique-Inscription" class="col-sm col-form-label">Musique favorite : </label>
                                             <div class="col-sm-8">
-                                                <input id="Musique-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre musique favorite ici" name="musiqueinscription" class="form-control">
+                                                <input id="Musique-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre musique favorite ici" name="musiqueinscription" class="form-control" value="<?php  echo @$music ?>" >
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="Sport-Inscription" class="col-sm col-form-label">Sport favori : </label>
                                             <div class="col-sm-8">
-                                                <input id="Sport-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre sport favori ici" name="sportinscription" class="form-control">
+                                                <input id="Sport-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre sport favori ici" name="sportinscription" class="form-control" value="<?php  echo @$sport ?>" >
                                             </div>
                                         </div>
                                         <div class="row justify-content-end">
                                             <label for="JV-Inscription" class="col-sm col-form-label">Jeu-vidéo favori : </label>
                                             <div class="col-sm-8">
-                                                <input id="JV-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre jeu-vidéo favori ici" name="jvinscription" class="form-control">
+                                                <input id="JV-Inscription" size="50" maxlength="100" type="text" placeholder="Veuillez entrer votre jeu-vidéo favori ici" name="jvinscription" class="form-control" value="<?php  echo @$vg ?>" >
                                             </div>
                                         </div>
                                     </div>

@@ -21,6 +21,12 @@
                         Messages à valider
                     </div>
                     <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                        <?= @$_GET['messageError'] ?>
+                        </div>
+                        <div class="alert alert-success" role="alert">
+                        <?= @$_GET['messageSuccess']?>
+                        </div>
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
@@ -47,7 +53,14 @@
                             <tbody>
                                 <?php
 
-                                $messages = (new GoldbookService())->messageToCheck();
+                               
+                                try {
+                                    $messages = (new GoldbookService())->messageToCheck();
+                                } catch (UserServiceException $error) {
+                                        $messageError = $error->getMessage();
+                                        header("Location:goldbook_admin.php?messageError=$messageError");
+                                }
+                                
 
                                 if ($messages != NULL){
                                     foreach ($messages as $value) {

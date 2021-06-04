@@ -112,6 +112,11 @@ $messageConnexion = [
         
         try {
           $setConnexion = (new UserService())->login($mailCo);
+        } catch (UserServiceException $error) {
+          $messageError = $error->getMessage();
+          $error = "alert-error";
+          header("Location:connexion.php?messageError=$messageError&error=$error");
+        }
   
           if ($setConnexion){
   
@@ -171,11 +176,7 @@ $messageConnexion = [
             $error = "alert-error";
           }
     
-        } catch (UserServiceException $error) {
-          $messageError = $error->getMessage();
-          $error = "alert-error";
-          header("Location:connexion.php?messageError=$messageError");
-        }
+
   
       }
       
@@ -188,8 +189,8 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
 } else {
 
-    callConnexion($messageConnexion, $messageInscription, $error, $success);
-    callInscription($messageInscription, $error, $success);
+    callConnexion($messageConnexion, $messageInscription, $error, $success, $mailCo);
+    callInscription($messageInscription, $error, $success, $name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $music, $sport, $vg);
 }
 
 

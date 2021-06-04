@@ -12,8 +12,8 @@ class GoldbookService
         
         try {
             $goldBookDAO->addToGoldbook($avis, $stars, $userID);
-        } catch (GoldbookDAOException $e) {
-            throw new GoldbookServiceException($e->getMessage());
+        } catch (GoldbookDAOException $error){
+            throw new GoldbookServiceException($error->getMessage());
         }
     }
 
@@ -22,7 +22,7 @@ class GoldbookService
         $goldbookDAO = new GoldbookDAO();
         try {
             $goldbookService = $goldbookDAO->displayGoldbook();
-        } catch (GoldbookDAOException $error) {
+        } catch (GoldbookDAOException $error){
             throw new GoldbookServiceException($error->getMessage());
         }
 
@@ -34,7 +34,7 @@ class GoldbookService
         $goldbookDAO = new GoldbookDAO();
         try {
             $goldbookService = $goldbookDAO->alreadyRated($id);
-        } catch (GoldbookDAOException $error) {
+        } catch (GoldbookDAOException $error){
             throw new GoldbookServiceException($error->getMessage());
         }
         
@@ -46,7 +46,7 @@ class GoldbookService
         $goldbookDAO = new GoldbookDAO();
         try {
             $goldbookService = $goldbookDAO->userRated($id);
-        } catch (GoldbookDAOException $error) {
+        } catch (GoldbookDAOException $error){
             throw new GoldbookServiceException($error->getMessage());
         }
         
@@ -58,7 +58,7 @@ class GoldbookService
         $goldbookDAO = new GoldbookDAO();
         try {
             $goldbookService = $goldbookDAO->messageToCheck();
-        } catch (GoldbookDAOException $error) {
+        } catch (GoldbookDAOException $error){
             throw new GoldbookServiceException($error->getMessage());
         }
         
@@ -70,7 +70,7 @@ class GoldbookService
         $goldbookDAO = new GoldbookDAO();
         try {
             $goldbookService = $goldbookDAO->validation($validation, $id);
-        } catch (GoldbookDAOException $error) {
+        } catch (GoldbookDAOException $error){
             throw new GoldbookServiceException($error->getMessage());
         }
         

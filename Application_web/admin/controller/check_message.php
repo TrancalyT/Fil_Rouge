@@ -11,7 +11,7 @@ try {
     header("Location: ../goldbook_admin.php?messageSuccess=$messageSuccess");
     } catch (UserServiceException $error) {
         $messageError = $error->getMessage();
-        header("Location: ../goldbook_admin.php?messageSuccess=$messageError");
+        header("Location: ../goldbook_admin.php?messageError=$messageError");
     }
 
 ?>
