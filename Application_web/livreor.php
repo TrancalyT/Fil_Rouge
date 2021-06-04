@@ -11,7 +11,7 @@ callMainTitle("Livre d'or");
 
 // CONTROLLER FORMULAIRE LIVRE D'OR
 
-$messageError = [
+$messageGb = [
   "messageError" => ""];
 
 if (isset($_REQUEST['5stars'])){
@@ -33,10 +33,11 @@ if (isset($valider)){
   if(isset($avis) && !empty($avis)  
   && isset($stars) && !empty($stars) ){
 
-    header("Location:CONTROLLER/goldbook_process.php?avis=$avis&stars=$stars"); // CREER process écriture sur DB
+    header("Location:CONTROLLER/goldbook_process.php?avis=$avis&stars=$stars");
 
   } else {
-      $messageError["messageError"] = "Veuillez saisir et remplir les informations manquantes";
+      $messageGb["messageError"] = "Veuillez saisir et remplir les informations manquantes.";
+      $error = "alert-error";
   }
 }
 
@@ -47,10 +48,10 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
   if ($alreadyRated->alreadyRated($_SESSION['user_id']) != $_SESSION['user_id']){
 
-    callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageError);
+    callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageGb, $error, @$_GET['error']);
 
   } else {
-    callGoldBookRated();
+    callGoldBookRated(@$_GET['success']);
   }
 
 } else {

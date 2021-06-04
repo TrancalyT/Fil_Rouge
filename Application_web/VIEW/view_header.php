@@ -1,5 +1,7 @@
 <?php
 session_start();
+$error = "";
+$success ="";
 
 function callHeader(string $title, string $css)
 {

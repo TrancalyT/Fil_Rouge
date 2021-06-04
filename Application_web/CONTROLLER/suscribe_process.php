@@ -23,7 +23,7 @@ $suscribeUser = new UserService();
 
 try {
     $suscribeUser->register($name, $lastname, $nickname, $mail, $password, $adress, $city, $cp, $tel, $movie, $book, $music, $sport, $vg, $bio, $avatar);
-    header("Location:../connexion.php?successInscri=true&nickname=$nickname");
+    header("Location: ../connexion.php?successInscri=true&nickname=$nickname");
 } catch (UserServiceException $error) {
     $messageError = $error->getMessage();
     header("Location: ../connexion.php?messageError=$messageError");

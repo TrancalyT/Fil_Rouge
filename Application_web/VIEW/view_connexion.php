@@ -1,6 +1,6 @@
 <?php
 
-function callConnexion($messageConnexion, $messageInscription, $messageError, $error, $success)
+function callConnexion($messageConnexion, $messageInscription, $error, $success)
 {
 ?>
     <div class="form_connexion">
@@ -15,7 +15,7 @@ function callConnexion($messageConnexion, $messageInscription, $messageError, $e
                         <?php echo $messageInscription["messageErrMailInscr"] ?>
                         <?php echo $messageInscription["messageErrMDPInscr"] ?>
                         <?php echo $messageInscription["messageErrorInscri"] ?>
-                        <?php echo $messageError ?>
+                        <?php echo @$_GET['messageError'] ?>
                         </p>
                     </div>
                     <div class="<?=$success?>">

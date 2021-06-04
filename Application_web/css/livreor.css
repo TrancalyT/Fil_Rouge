@@ -60,6 +60,7 @@ html {
   font-size: small;
   text-transform: none;
   color: tomato;
+  margin-top: 5px;
 }
 .notif p {
   margin-bottom: 0ch;

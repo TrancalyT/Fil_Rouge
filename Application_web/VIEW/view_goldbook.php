@@ -1,15 +1,21 @@
 <?php
 
-function callGoldBookConnected($name, $lastname, $avis, $messageError)
+function callGoldBookConnected($name, $lastname, $avis, $messageGb, $error, $errorGet)
 {
 ?>
 
 <div class="form_livreor">
     <form action="livreor.php" method="post" class="col g-3 justify-content form-info">
       <div class="container-lg">
-      <span class="fs-6 fst-italic text-danger"><?php echo $messageError["messageError"] ?></span>
-      <span class="fs-6 fst-italic text-danger"><?php echo @$_GET['messageError'] ?></span>
-      <span class="fs-6 fst-italic text-success"><?php echo @$_GET['messageSuccess'] ?></span>
+        <div class="<?=$error?><?=$errorGet?>">
+          <p>
+            <?php echo @$_GET['messageError'] ?>
+            <?php echo $messageGb["messageError"] ?>
+          </p>
+          </div>
+      <span class="fs-6 fst-italic text-danger"></span>
+      <span class="fs-6 fst-italic text-danger"></span>
+      <span class="fs-6 fst-italic text-success"></span>
         <div class="mb-3">
           <label for="Message" class="form-label">LAISSEZ NOUS VOTRE AVIS : </label>
           <div class="input-group">
@@ -60,11 +66,16 @@ function callGoldBookUnconnected()
 <?php
 }
 
-function callGoldBookRated()
+function callGoldBookRated($success)
 {
 ?>
 
 <div class="form_livreor">
+    <div class="<?=$success?>">
+      <p>
+        <?php echo @$_GET['messageSuccess'] ?>          
+      </p>
+    </div>
     <p class="text-center login">Merci pour votre message <?php echo $_SESSION['user_nickname'] ?>, nous éspérons vous satisfaire au maximum ! Si vous souhaitez nous faire part d'autres choses n'hésitez pas à nous contacter. Pour ce faire, rien de plus simple, cliquez sur le petit bouton juste sous ce petit bonhomme souriant !</p> 
     <p class ="text-center"><i style="font-size: 1em; color: tomato;"class="fas fa-smile"></i> </p>
     <div class="mb-3 text-center">

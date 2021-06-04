@@ -9,23 +9,28 @@ require_once(__DIR__.'/SERVICE/UserService.php');
 $userMessage = new GoldbookService();
 $userGoldbook = $userMessage->userRated($_SESSION['user_id']);
 
-foreach ($userGoldbook as $value) {
+if ($userGoldbook != null){
+    foreach ($userGoldbook as $value) {
 
-    $messageGb = $value->getTEXT();
-    $rateGb= $value->getSTARS();
-
-
-    if ($rateGb == 1){
-      $rateGb = "★";
-    } else if ($rateGb == 2){
-      $rateGb = "★★";
-    } else if ($rateGb == 3){
-      $rateGb = "★★★";
-    } else if ($rateGb == 4){
-      $rateGb = "★★★★";
-    } else if ($rateGb == 5){
-      $grateGb = "★★★★★";
+        $messageGb = $value->getTEXT();
+        $rateGb= $value->getSTARS();
+    
+    
+        if ($rateGb == 1){
+          $rateGb = "★";
+        } else if ($rateGb == 2){
+          $rateGb = "★★";
+        } else if ($rateGb == 3){
+          $rateGb = "★★★";
+        } else if ($rateGb == 4){
+          $rateGb = "★★★★";
+        } else if ($rateGb == 5){
+          $grateGb = "★★★★★";
+        }
     }
+} else {
+    $messageGb = null;
+    $rateGb = null;
 }
 
 $userService = new UserService();

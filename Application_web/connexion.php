@@ -9,9 +9,6 @@ require_once(__DIR__.'/SERVICE/UserService.php');
 callHeader("Connexion / Inscription", "css/connexion.css");
 callMainTitle("Connexion");
 
-$error = "";
-$success ="";
-
 // CONTROLLER INSCRIPTION
 $messageInscription = [
     "messageErrPseudoInscr" => "",
@@ -191,7 +188,7 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
 
 } else {
 
-    callConnexion($messageConnexion, $messageInscription, @$messageError, $error, $success);
+    callConnexion($messageConnexion, $messageInscription, $error, $success);
     callInscription($messageInscription, $error, $success);
 }
 
