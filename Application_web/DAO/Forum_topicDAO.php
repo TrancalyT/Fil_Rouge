@@ -10,8 +10,8 @@ class Forum_topicDAO extends Connection
     {
 
         try {
-            $query = "INSERT INTO forum_topic(ID,SUJET,TEXT)
-                    VALUES(?,?,?);";
+            $query = "INSERT INTO forum_topic(id,sujet)
+                    VALUES(NULL,?);";
 
             $db =$this->connectionDB();
             $stmt = $db->prepare($query);

@@ -10,8 +10,8 @@ class Forum_messageDAO extends Connection
     {
 
         try {
-            $query = "SELECT ID,MESSAGE,DATE_FORMAT(DATE_CREATION, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr,ID_USER,ID_TOPIC
-                    FROM forum_message ORDER BY DATE_CREATION DESC LIMIT 0, 5;";
+            $query = "SELECT id,message,DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr,id_user,id_topic
+                    FROM forum_message ORDER BY date_creation DESC LIMIT 0, 5;";
 
             $db = parent::connectionDB();
             $stmt = $db->prepare($query);

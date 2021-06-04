@@ -9,7 +9,7 @@ class Creation_TopicDAO extends Connection
     function addTopic($ID_USER, $ID_TOPIC)
     {
         try {
-            $query = "INSERT INTO creation_topic(ID_USER,ID_TOPIC,DATE_CREATION)
+            $query = "INSERT INTO creation_topic(is_user,id_topic,date_creation)
                     VALUES(NULL,?,?);";
 
             $db = parent::connectionDB();

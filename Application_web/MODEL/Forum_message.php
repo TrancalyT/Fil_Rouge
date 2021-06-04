@@ -1,108 +1,110 @@
 <?php
 
 class Forum_message extends Forum_topic{
-    private int $ID;
-    private string $MESSAGE;
-    private string $DATE_CREATION;
-    private User $ID_USER;
-    private Forum_topic $ID_TOPIC;
+    private int $id;
+    private string $message;
+    private string $date_creation;
+    private User $id_user;
+    private Forum_topic $id_topic;
+
+    
 
     /**
-     * Get the value of ID
+     * Get the value of id
      */ 
-    public function getID()
+    public function getId()
     {
-        return $this->ID;
+        return $this->id;
     }
 
     /**
-     * Set the value of ID
+     * Set the value of id
      *
      * @return  self
      */ 
-    public function setID($ID)
+    public function setId($id)
     {
-        $this->ID = $ID;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get the value of MESSAGE
+     * Get the value of message
      */ 
-    public function getMESSAGE()
+    public function getMessage()
     {
-        return $this->MESSAGE;
+        return $this->message;
     }
 
     /**
-     * Set the value of MESSAGE
+     * Set the value of message
      *
      * @return  self
      */ 
-    public function setMESSAGE($MESSAGE)
+    public function setMessage($message)
     {
-        $this->MESSAGE = $MESSAGE;
+        $this->message = $message;
 
         return $this;
     }
 
     /**
-     * Get the value of DATE_CREATION
+     * Get the value of date_creation
      */ 
-    public function getDATE_CREATION()
+    public function getDate_creation()
     {
-        return $this->DATE_CREATION;
+        return $this->date_creation;
     }
 
     /**
-     * Set the value of DATE_CREATION
+     * Set the value of date_creation
      *
      * @return  self
      */ 
-    public function setDATE_CREATION($DATE_CREATION)
+    public function setDate_creation($date_creation)
     {
-        $this->DATE_CREATION = $DATE_CREATION;
+        $this->date_creation = $date_creation;
 
         return $this;
     }
 
     /**
-     * Get the value of ID_USER
+     * Get the value of id_user
      */ 
-    public function getID_USER()
+    public function getId_user()
     {
-        return $this->ID_USER;
+        return $this->id_user;
     }
 
     /**
-     * Set the value of ID_USER
+     * Set the value of id_user
      *
      * @return  self
      */ 
-    public function setID_USER($ID_USER)
+    public function setId_user($id_user)
     {
-        $this->ID_USER = $ID_USER;
+        $this->id_user = $id_user;
 
         return $this;
     }
 
     /**
-     * Get the value of ID_TOPIC
+     * Get the value of id_topic
      */ 
-    public function getID_TOPIC()
+    public function getId_topic()
     {
-        return $this->ID_TOPIC;
+        return $this->id_topic;
     }
 
     /**
-     * Set the value of ID_TOPIC
+     * Set the value of id_topic
      *
      * @return  self
      */ 
-    public function setID_TOPIC($ID_TOPIC)
+    public function setId_topic($id_topic)
     {
-        $this->ID_TOPIC = $ID_TOPIC;
+        $this->id_topic = $id_topic;
 
         return $this;
     }

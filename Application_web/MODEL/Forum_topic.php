@@ -2,67 +2,47 @@
 
 class Forum_topic extends User
 {
-    private int $ID;
-    private string $SUJET;
-    private string $TEXT;
+    private int $id;
+    private string $sujet;
+
 
 
     /**
-     * Get the value of ID
-     */
-    public function getID()
+     * Get the value of id
+     */ 
+    public function getId()
     {
-        return $this->ID;
+        return $this->id;
     }
 
     /**
-     * Set the value of ID
+     * Set the value of id
      *
      * @return  self
-     */
-    public function setID($ID)
+     */ 
+    public function setId($id)
     {
-        $this->ID = $ID;
+        $this->id = $id;
 
         return $this;
     }
 
     /**
-     * Get the value of SUJET
-     */
-    public function getSUJET()
+     * Get the value of sujet
+     */ 
+    public function getSujet()
     {
-        return $this->SUJET;
+        return $this->sujet;
     }
 
     /**
-     * Set the value of SUJET
+     * Set the value of sujet
      *
      * @return  self
-     */
-    public function setSUJET($SUJET)
+     */ 
+    public function setSujet($sujet)
     {
-        $this->SUJET = $SUJET;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of TEXT
-     */
-    public function getTEXT()
-    {
-        return $this->TEXT;
-    }
-
-    /**
-     * Set the value of TEXT
-     *
-     * @return  self
-     */
-    public function setTEXT($TEXT)
-    {
-        $this->TEXT = $TEXT;
+        $this->sujet = $sujet;
 
         return $this;
     }
