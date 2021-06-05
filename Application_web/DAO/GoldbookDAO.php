@@ -161,5 +161,33 @@ class GoldbookDAO extends Connection
             throw new GoldbookDAOException($message);
         }
     }
+
+    function displayGoldbookNoLimit()
+    {
+        try {
+            $db = $this->connectionDB();
+            $stmt = $db->prepare("SELECT G.TEXT AS TEXT, G.STARS AS STARS, U.NAME AS NAME, U.LASTNAME AS LASTNAME 
+                                FROM goldbook AS G INNER JOIN user AS U ON G.USER_ID = U.ID WHERE VALIDATION = 'YES' ORDER BY RAND () LIMIT 15;");
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $data = $result->fetch_all(MYSQLI_ASSOC);
+            $result->free();
+            $db->close();
+        } catch (mysqli_sql_exception $error) {
+            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON DISPLAYGB\"";
+            throw new GoldbookDAOException($message);
+        }
+
+        $goldbookRated = [];
+        foreach ($data as $value) {
+            $user = (new User()) ->setNAME($value["NAME"])
+                                 ->setLASTNAME($value["LASTNAME"]);
+            $goldbookRated[] = (new Goldbook()) ->setTEXT($value["TEXT"])
+                                                ->setSTARS($value["STARS"])
+                                                ->setUSER_ID($user);
+        }
+        
+        return $goldbookRated;
+    }
 }
 ?>

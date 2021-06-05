@@ -128,6 +128,34 @@ html {
   font-size: large;
 }
 
+.table{
+  width : 70%;
+  margin-bottom: unset;
+}
+
+.messages{
+  padding-top: 5rem;
+  padding-bottom : 1em;
+}
+
+/* ANIMATION TEXT */
+
+@keyframes typing { from { width: 0; } }
+@keyframes blink-caret { 40% { border-color: transparent; } }
+
+.animation-text { 
+	font: bolder 1em Lato;
+  color: black;
+	border-right: .1em solid tomato;
+	width: calc(0.55em * 14); 
+	width: 150ch;
+	white-space: nowrap;
+	overflow: hidden;
+	animation: typing 8s steps(14, end),
+	           blink-caret .5s step-end infinite alternate;
+}
+
+
 /* NOTATION ETOILE */
 
 .rating {
@@ -185,6 +213,7 @@ html {
   left:2px;
 }
 
+
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
 
 .four input {
@@ -196,8 +225,29 @@ html {
 }
 
 /* ------------------------------------------------------RESPONSIVE------------------------------------------------------ */
+@media (max-width: 1440px){
+
+  .animation-text { 
+    width: calc(0.55em * 14); 
+    width: 100ch;
+  }
+}
+
+@media (max-width: 1024px){
+
+  .animation-text { 
+    width: calc(0.55em * 14); 
+    width: 85ch;
+  }
+}
 
 @media (max-width: 768px) {
+
+  .animation-text { 
+    width: calc(0.55em * 14); 
+    width: 60ch;
+  }
+
   .Footer {
     display: grid;
     grid-template-columns: 1fr;
@@ -234,6 +284,14 @@ html {
   header h1 {
     font-size: medium;
   }
+
+  .animation-text { 
+    width: calc(0.55em * 14); 
+    width: 60ch;
+    font: bolder 0.65em Lato;
+    border-right: 1px solid tomato;
+  }
+
 }
 
 @media (max-width: 320px) {
@@ -243,4 +301,13 @@ html {
   footer .five h5 {
     font-size: x-small;
   }
+
+  .animation-text { 
+    width: calc(0.55em * 14); 
+    width: 50ch;
+    font: bolder 0.65em Lato;
+    border-right: 1px solid tomato;
+    letter-spacing: unset;
+  }
+  
 }

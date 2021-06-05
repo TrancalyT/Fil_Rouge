@@ -76,6 +76,18 @@ class GoldbookService
         
         return $goldbookService;
     }
+
+    function displayGoldbookNoLimit()
+    {
+        $goldbookDAO = new GoldbookDAO();
+        try {
+            $goldbookService = $goldbookDAO->displayGoldbookNoLimit();
+        } catch (GoldbookDAOException $error){
+            throw new GoldbookServiceException($error->getMessage());
+        }
+        
+        return $goldbookService;
+    }
 }
 
 ?>

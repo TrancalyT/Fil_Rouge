@@ -41,7 +41,10 @@ if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
     callGoldBookConnected($_SESSION['user_name'], $_SESSION['user_lastname'], $avis, $messageGb, $error, @$_GET['error']);
 
   } else {
-    callGoldBookRated(@$_GET['success']);
+
+    $messageList = (new GoldbookService())->displayGoldbookNoLimit();
+
+    callGoldBookRated(@$_GET['success'], $messageList);
   }
 
 } else {

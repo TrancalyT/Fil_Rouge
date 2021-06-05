@@ -5,9 +5,9 @@ function callGoldBookConnected($name, $lastname, $avis, $messageGb, $error, $err
 ?>
 
 <div class="form_livreor">
-    <form action="livreor.php" method="post" class="col g-3 justify-content form-info">
+    <form action="livreor.php?#Event" method="post" class="col g-3 justify-content form-info">
       <div class="container-lg">
-        <div class="<?=$error?><?=$errorGet?>">
+        <div class="<?=$error?><?=$errorGet?>" id="Event">
           <p>
             <?php echo @$_GET['messageError'] ?>
             <?php echo $messageGb["messageError"] ?>
@@ -64,20 +64,55 @@ function callGoldBookUnconnected()
 <?php
 }
 
-function callGoldBookRated($success)
+function callGoldBookRated($success, $list)
 {
 ?>
 
 <div class="form_livreor">
-    <div class="<?=$success?>">
+    <div class="<?=$success?>" id="Event">
       <p>
         <?php echo @$_GET['messageSuccess'] ?>          
       </p>
     </div>
-    <p class="text-center login">Merci pour votre message <?php echo $_SESSION['user_nickname'] ?>, nous éspérons vous satisfaire au maximum ! Si vous souhaitez nous faire part d'autres choses n'hésitez pas à nous contacter. Pour ce faire, rien de plus simple, cliquez sur le petit bouton juste sous ce petit bonhomme souriant !</p> 
+    <p class="text-center login">Merci pour votre message <?php echo $_SESSION['user_nickname'] ?>, nous espérons vous satisfaire au maximum ! Si vous souhaitez nous faire part d'autres choses n'hésitez pas à nous contacter. Pour ce faire, rien de plus simple, cliquez sur le petit bouton juste sous ce petit bonhomme souriant !</p> 
     <p class ="text-center"><i style="font-size: 1em; color: tomato;"class="fas fa-smile"></i> </p>
     <div class="mb-3 text-center">
       <a href="contact.php"><button type="button" class="buttonmain">Oui, ici !</button></a>
+   </div>
+      <h2 class ="text-center fst-italic messages animation-text ">Eux aussi se sont exprimés ... </h2>
+      <p class ="text-center messages"><i style="font-size: 5em; color: tomato;" class="fas fa-hand-point-down"></i></p>
+    <div class="d-flex justify-content-center">
+        <table class="table table-hover table-stripped table-borderless" style="text-transform :none">
+      
+        <?php
+        foreach ($list as $value)
+        {
+          $list["TEXT"] = $value->getTEXT();
+          $list["STARS"] = $value->getSTARS();
+          $list["NAME"] = $value->getUSER_ID()->getNAME();
+          $list["LASTNAME"] = $value->getUSER_ID()->getLASTNAME();
+      
+          if ($list["STARS"] == 1){
+            $list["STARS"] = "★";
+          } else if ($list["STARS"] == 2){
+            $list["STARS"] = "★★";
+          } else if ($list["STARS"] == 3){
+            $list["STARS"] = "★★★";
+          } else if ($list["STARS"] == 4){
+            $list["STARS"] = "★★★★";
+          } else if ($list["STARS"] == 5){
+            $list["STARS"] = "★★★★★";
+          }
+        ?>
+          <tr>
+          <td><?= $list["LASTNAME"]. " " .$list["NAME"] ?></td>
+          <td >"<?= $list["TEXT"] ?>"</td>
+          <td style="color: tomato; text-align: center;"><?= $list["STARS"] ?></td>
+          </tr>
+        <?php
+          }
+        ?>
+      </table>
     </div>
 </div>
 
