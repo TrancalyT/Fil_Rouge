@@ -43,7 +43,12 @@ html {
 }
 
 /* ------------------------------------------------------ CORP ------------------------------------------------------ */
-.view-profil{
+
+.form-control {
+  color: #392d3b;
+  border-radius: 20px;
+  border: 1px solid #ced4da;
+  font-size : inherit;
   background-color: white;
   padding-top: 1px;
   padding-bottom: 1px;

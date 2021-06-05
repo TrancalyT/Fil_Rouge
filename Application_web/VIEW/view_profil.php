@@ -3,18 +3,8 @@
 function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<form class="view-profil" action="profil.php?#Modif" method="get">
-    <div class="<?=@$_GET['error']?>" id="targetscript1">
-        <p>
-        <?php echo @$_GET['messageError'] ?>
-        </p>
-    </div>
-    <div class="<?=@$_GET['success']?>" id="targetscript2">
-        <p>
-        <?php echo @$_GET['messageSuccess'] ?>
-        </p>
-    </div>
-        <div class="contenant">
+<form action="profil.php?#Modif" method="get">
+        <div class="contenant" id="Profil">
             <section class="info border bg-light">
             <h4>Infos</h4>
             <div class="col-12">
@@ -91,8 +81,7 @@ function callProfil($goldbook, $noteGb, $nickname, $name, $lastname, $mail, $adr
 function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp, $tel, $bio, $avatar, $movie, $book, $music, $sport, $vg)
 {
 ?>
-<!-- <form action="CONTROLLER/updateUser_process.php" method="post" enctype="multipart/form-data" id="formmodif"> -->
-<form method="post" enctype="multipart/form-data" id="formmodif" name="formmodif">
+<form method="post" class="form-control" style="border-radius:unset; padding-right:unset; padding-left:unset" enctype="multipart/form-data" id="formmodif" name="formmodif">
     <div class="" id="errorsuscribe">
     </div>
     <div class="" id="successsuscribe">
@@ -112,7 +101,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Pseudonyme : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="nickname" value="<?php echo $nickname ?>" required>
+                            <input size="30" class="form-control" maxlength="100" type="text" name="nickname" value="<?php echo $nickname ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -120,7 +109,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Nom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="name" value="<?php echo $name ?>" required>
+                            <input size="30" class="form-control" maxlength="100" type="text" name="name" value="<?php echo $name ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -128,7 +117,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Prénom : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="text" name="lastname" value="<?php echo $lastname ?>" required>
+                            <input size="30" class="form-control" maxlength="100" type="text" name="lastname" value="<?php echo $lastname ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -136,7 +125,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">E-Mail : </p>
                         </div>
                         <div class="col-6">
-                            <input size="30" maxlength="100" type="mail" name="mail" value="<?php echo $mail ?>" required>
+                            <input size="30" class="form-control" maxlength="100" type="mail" name="mail" value="<?php echo $mail ?>" required>
                         </div>
                     </div>         
                 </div>
@@ -147,7 +136,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
             <div class="col-12">
                 <div class="clearfix row align-items-center justify-content-center">
                     <p class="fw-bold fst-italic">A propos de moi ...</p>
-                    <textarea name="bio" rows="10"><?= $bio ?></textarea>
+                    <textarea name="bio" class="form-control"  rows="10"><?= $bio ?></textarea>
                 </div>
             </div>
             </section>
@@ -160,7 +149,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Adresse : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="adress" value="<?php echo $adress?>" required>
+                            <input size="40" class="form-control" maxlength="100" type="text" name="adress" value="<?php echo $adress?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -168,7 +157,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Ville : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="city" value="<?php echo $city?>" required>
+                            <input size="40" class="form-control" maxlength="100" type="text" name="city" value="<?php echo $city?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -176,7 +165,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Code postale : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="5" type="text" name="cp" value="<?php echo $cp ?>" required>
+                            <input size="40" class="form-control" maxlength="5" type="text" name="cp" value="<?php echo $cp ?>" required>
                         </div>
                     </div>
                     <div class="row">
@@ -184,7 +173,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Téléphone : </p>
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="10" type="text" name="tel" value="<?php echo $tel ?>" required>
+                            <input size="40" class="form-control" maxlength="10" type="text" name="tel" value="<?php echo $tel ?>" required>
                         </div>
                     </div>
                 </div>
@@ -201,7 +190,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Mon film favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="movie" value="<?php echo $movie ?>">
+                            <input size="40" class="form-control" maxlength="100" type="text" name="movie" value="<?php echo $movie ?>">
                         </div>
                     </div>  
                     <div class="row">
@@ -209,7 +198,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Mon livre favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="book" value="<?php echo $book ?>">
+                            <input size="40" class="form-control" maxlength="100" type="text" name="book" value="<?php echo $book ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -217,7 +206,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Mon groupe/artiste favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="text" name="music" value="<?php echo $music ?>">
+                            <input size="40" class="form-control" maxlength="100" type="text" name="music" value="<?php echo $music ?>">
                         </div>
                     </div>
                     <div class="row">
@@ -225,7 +214,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Mon sport favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="sport" value="<?php echo $sport ?>"> 
+                            <input size="40" class="form-control" maxlength="100" type="mail" name="sport" value="<?php echo $sport ?>"> 
                         </div>
                     </div>
                     <div class="row">
@@ -233,7 +222,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
                             <p class="fw-bold fst-italic">Mon JV favori : </p> 
                         </div>
                         <div class="col-6">
-                            <input size="40" maxlength="100" type="mail" name="vg" value="<?php echo $vg ?>">
+                            <input size="40" class="form-control" maxlength="100" type="mail" name="vg" value="<?php echo $vg ?>">
                         </div>
                     </div>
                 </div>
@@ -241,7 +230,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
             </section>
                 <section class="modif">
                     <button type="submit" class="buttonmain" name="sendmodif" value="sendmodif">Envoyer</button>
-                    <a href="profil.php?id=<?= $_SESSION['user_id'] ?>"><button type ="button" class="buttonmain2" name="backprofil" value="backprofil">Retour</button></a>
+                    <a href="profil.php?id=<?= $_SESSION['user_id'] ?>#Profil"><button type ="button" class="buttonmain2" name="backprofil" value="backprofil" id="backprofil">Retour</button></a>
                 </section> 
     </div>
 </form>
