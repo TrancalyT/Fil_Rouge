@@ -12,38 +12,37 @@ $regMail = "#^[a-z]{1,}@{1}[a-z]{1,}\.[a-z]{2,3}$#i";
 $regTel = "#^[0-9]{10}$#"; // 10 chiffres seulements
 $regCP = "#^[0-9]{5}$#"; // 5 chiffres seulements
 
-$messageUpdate["doublonPseudo"] = false;
-$messageUpdate["doublonMail"] = false;
+$doublonPseudo = false;
+$doublonMail = false;
 $avatarAlreadyExist = false;
 
-$name = $_REQUEST['name'];
-$lastname = $_REQUEST['lastname'];
-$nickname = $_REQUEST['nickname'];
-$mail = $_REQUEST['mail'];
-$adress = $_REQUEST["adress"];
-$city = $_REQUEST["city"];
-$cp = $_REQUEST["cp"];
-$tel = $_REQUEST["tel"];
-$movie = $_REQUEST["movie"];
-$book = $_REQUEST["book"];
-$music = $_REQUEST["music"];
-$sport = $_REQUEST["sport"];
-$vg = $_REQUEST["vg"];
-$bio = $_REQUEST["bio"];
+$name = $_POST['name'];
+$lastname = $_POST['lastname'];
+$nickname = $_POST['nickname'];
+$mail = $_POST['mail'];
+$adress = $_POST["adress"];
+$city = $_POST["city"];
+$cp = $_POST["cp"];
+$tel = $_POST["tel"];
+$movie = $_POST["movie"];
+$book = $_POST["book"];
+$music = $_POST["music"];
+$sport = $_POST["sport"];
+$vg = $_POST["vg"];
+$bio = $_POST["bio"];
 
-$file = $_FILES['avatar']['tmp_name'];
+// $file = $_FILES['avatar']['tmp_name'];
 
-if (isset($file) && !empty($file)){
-  $avatar = file_get_contents($file);
-} else if (empty($file) && $_SESSION['user_avatar'] != NULL) {
-  $avatarAlreadyExist = true;
+if (isset($_FILES) && !empty($_FILES)){
+    $file = $_FILES['avatar']['tmp_name'];
+    $avatar = file_get_contents($file);
+} else if (empty($_FILES) && $_SESSION['user_avatar'] != NULL) {
+    $avatarAlreadyExist = true;
 } else {
-  $avatar = null;
+    $avatar = null;
 }
-
-$sendModif = $_REQUEST["sendmodif"];
     
-  if (isset($sendModif)){
+  if (isset($_POST)){
     
       if(isset($name) && !empty($name) 
       && isset($lastname) && !empty($lastname) 
@@ -60,37 +59,32 @@ $sendModif = $_REQUEST["sendmodif"];
             foreach ($doublonUser as $value){
                 if ($_SESSION['user_nickname'] != $nickname){
                     if ($value->getNICKNAME() == $nickname){
-                        $messageError = "Ce pseudo est déjà pris veuillez en saisir un nouveau.";
-                        $messageUpdate["doublonPseudo"] = true;
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                        echo "Erreur : Ce pseudo est déjà pris veuillez en saisir un nouveau. </br>";
+                        $doublonPseudo = true;
                       }
                 }
 
                 if ($_SESSION['user_mail'] != $mail){
                     if ($value->getMAIL() == $mail){
-                        $messageError = "Cette adresse mail est déjà prise veuillez en saisir une nouvelle.";
-                        $messageUpdate["doublonMail"] = true;
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                        echo "Erreur : Cette adresse mail est déjà prise veuillez en saisir une nouvelle. </br>";
+                        $doublonMail = true;
                       }
                 }
             }
   
             if (!preg_match($regMail, $mail)){
-              $messageError = "Veuillez saisir une adresse mail valide.";
-              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                echo "Erreur : Veuillez saisir une adresse mail valide. </br>";
             }
 
             if (!preg_match($regTel, $tel)){
-              $messageError = "Veuillez saisir un numéro de téléphone valide.";
-              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                echo "Erreur : Veuillez saisir un numéro de téléphone valide. </br>";
             }
 
             if (!preg_match($regCP, $cp)){
-              $messageError = "Veuillez saisir un numéro d'adresse postale valide.";
-              header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                echo "Erreur : Veuillez saisir un numéro d'adresse postale valide. </br>";
             }
 
-            if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && (!$messageUpdate["doublonPseudo"]) && (!$messageUpdate["doublonMail"])){
+            if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && (!$doublonPseudo) && (!$doublonMail)){
                 
               $updateUser = new UserService();
 
@@ -99,22 +93,20 @@ $sendModif = $_REQUEST["sendmodif"];
                   try {
                     $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
                     $updateUser->updateAvatar($avatar, $_SESSION['user_id']);
-                    $messageSuccess = "Vos infos sont mises à jour !";
-                    header("Location:../profil.php?id={$_SESSION['user_id']}&messageSuccess=$messageSuccess&success=alert-success");
+                    echo "DONE : Vos infos sont mises à jour !";
                     } catch (UserServiceException $error) {
                         $messageError = $error->getMessage();
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                        echo $messageError;
                     }
 
                 } else {
                   
                   try {
                     $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
-                    $messageSuccess = "Vos infos sont mises à jour !";
-                    header("Location:../profil.php?id={$_SESSION['user_id']}&messageSuccess=$messageSuccess&success=alert-success");
+                    echo "DONE : Vos infos sont mises à jour !";
                     } catch (UserServiceException $error) {
                         $messageError = $error->getMessage();
-                        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+                        echo $messageError;
                     }
 
                 }
@@ -122,12 +114,11 @@ $sendModif = $_REQUEST["sendmodif"];
             }
           } catch (UserServiceException $error) {
             $messageError = $error->getMessage();
-            header("../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+            echo $messageError;
           }
           
       } else {
-        $messageError = "Veuillez saisir et remplir les informations manquantes.";
-        header("Location:../profil.php?id={$_SESSION['user_id']}&messageError=$messageError&error=alert-error");
+        echo "Erreur : Veuillez saisir et remplir les informations manquantes.";
       }
   }
-
+?>
