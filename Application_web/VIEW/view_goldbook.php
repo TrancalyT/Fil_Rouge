@@ -106,7 +106,7 @@ function callGoldBookRated($success, $list)
         ?>
           <tr>
           <td><?= $list["LASTNAME"]. " " .$list["NAME"] ?></td>
-          <td >"<?= $list["TEXT"] ?>"</td>
+          <td class="fst-italic">"<?= $list["TEXT"] ?>"</td>
           <td style="color: tomato; text-align: center;"><?= $list["STARS"] ?></td>
           </tr>
         <?php
