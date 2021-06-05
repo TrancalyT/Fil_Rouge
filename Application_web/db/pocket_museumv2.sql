@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mer. 02 juin 2021 à 22:45
--- Version du serveur :  10.4.17-MariaDB
--- Version de PHP : 7.4.15
+-- Host: 127.0.0.1
+-- Generation Time: Jun 05, 2021 at 01:00 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `pocket_museumv2`
+-- Database: `pocket_museumv2`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `achat`
+-- Table structure for table `achat`
 --
 
 CREATE TABLE `achat` (
@@ -36,7 +36,7 @@ CREATE TABLE `achat` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -49,7 +49,7 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`ID`, `NAME`, `PRICE`, `QUANTITY`, `DESCRIPTION`, `PHOTO`) VALUES
@@ -64,19 +64,30 @@ INSERT INTO `article` (`ID`, `NAME`, `PRICE`, `QUANTITY`, `DESCRIPTION`, `PHOTO`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `creation_topic`
+-- Table structure for table `creation_topic`
 --
 
 CREATE TABLE `creation_topic` (
-  `ID_USER` int(11) NOT NULL,
-  `ID_TOPIC` int(11) NOT NULL,
-  `DATE_CREATION` date NOT NULL
+  `id_user` int(11) NOT NULL,
+  `id_topic` int(11) NOT NULL,
+  `date_creation` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `creation_topic`
+--
+
+INSERT INTO `creation_topic` (`id_user`, `id_topic`, `date_creation`) VALUES
+(1, 1, '2021-06-04 13:53:54'),
+(2, 2, '2021-06-04 13:53:54'),
+(5, 3, '2021-06-04 16:29:31'),
+(6, 4, '2021-06-04 17:12:19'),
+(7, 5, '2021-06-04 23:51:40');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `donation`
+-- Table structure for table `donation`
 --
 
 CREATE TABLE `donation` (
@@ -89,33 +100,54 @@ CREATE TABLE `donation` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forum_message`
+-- Table structure for table `forum_message`
 --
 
 CREATE TABLE `forum_message` (
-  `ID` int(11) NOT NULL,
-  `MESSAGE` text NOT NULL,
-  `DATE_CREATION` date NOT NULL,
-  `ID_USER` int(11) NOT NULL,
-  `ID_TOPIC` int(11) NOT NULL
+  `id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `date_creation` datetime NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_topic` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `forum_message`
+--
+
+INSERT INTO `forum_message` (`id`, `message`, `date_creation`, `id_user`, `id_topic`) VALUES
+(1, 'Qui se positionne sur la visite de demain à 15h?', '2021-06-04 13:54:15', 1, 1),
+(2, 'Helloooooo!!! Conseillez moi syoupléééé', '2021-06-04 13:54:15', 2, 2),
+(3, 'BlaBlaBla', '2021-06-04 16:29:52', 5, 3),
+(4, 'Where can I get some?\r\nThere are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum.', '2021-06-04 17:12:34', 6, 4),
+(5, 'The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from \"de Finibus Bonorum et Malorum\" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.', '2021-06-04 23:52:12', 7, 5);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `forum_topic`
+-- Table structure for table `forum_topic`
 --
 
 CREATE TABLE `forum_topic` (
-  `ID` int(11) NOT NULL,
-  `SUJET` varchar(100) NOT NULL,
-  `TEXT` text NOT NULL
+  `id` int(11) NOT NULL,
+  `sujet` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `forum_topic`
+--
+
+INSERT INTO `forum_topic` (`id`, `sujet`) VALUES
+(1, 'Renseignement'),
+(2, 'Conseil'),
+(3, 'BlaBla'),
+(4, 'Visite'),
+(5, 'Donation');
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `goldbook`
+-- Table structure for table `goldbook`
 --
 
 CREATE TABLE `goldbook` (
@@ -127,7 +159,7 @@ CREATE TABLE `goldbook` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `goldbook`
+-- Dumping data for table `goldbook`
 --
 
 INSERT INTO `goldbook` (`ID`, `TEXT`, `STARS`, `VALIDATION`, `USER_ID`) VALUES
@@ -139,7 +171,7 @@ INSERT INTO `goldbook` (`ID`, `TEXT`, `STARS`, `VALIDATION`, `USER_ID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `movies`
+-- Table structure for table `movies`
 --
 
 CREATE TABLE `movies` (
@@ -157,7 +189,7 @@ CREATE TABLE `movies` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `movies`
+-- Dumping data for table `movies`
 --
 
 INSERT INTO `movies` (`ID`, `TITLE`, `IMAGE`, `DATE`, `TIME`, `LOCALISATION`, `PG`, `DURATION`, `DIRECTION`, `RELEASED`, `DESCRIPTION`) VALUES
@@ -168,7 +200,7 @@ INSERT INTO `movies` (`ID`, `TITLE`, `IMAGE`, `DATE`, `TIME`, `LOCALISATION`, `P
 -- --------------------------------------------------------
 
 --
--- Structure de la table `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -179,7 +211,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`ID`, `TITLE`, `CONTENT`, `DATE`) VALUES
@@ -189,7 +221,7 @@ INSERT INTO `news` (`ID`, `TITLE`, `CONTENT`, `DATE`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `popvehicules`
+-- Table structure for table `popvehicules`
 --
 
 CREATE TABLE `popvehicules` (
@@ -203,7 +235,7 @@ CREATE TABLE `popvehicules` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `popvehicules`
+-- Dumping data for table `popvehicules`
 --
 
 INSERT INTO `popvehicules` (`ID`, `NAME`, `DESCRIPTION`, `IMAGE`, `CONTENT`, `TYPE`, `EVALUATION`) VALUES
@@ -218,7 +250,7 @@ INSERT INTO `popvehicules` (`ID`, `NAME`, `DESCRIPTION`, `IMAGE`, `CONTENT`, `TY
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -243,7 +275,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`ID`, `NAME`, `LASTNAME`, `NICKNAME`, `MAIL`, `PASSWORD`, `ADRESS`, `CITY`, `CP`, `TEL`, `MOVIE`, `BOOK`, `SPORT`, `MUSIC`, `VG`, `BIO`, `AVATAR`, `ROLE`) VALUES
@@ -257,11 +289,11 @@ INSERT INTO `user` (`ID`, `NAME`, `LASTNAME`, `NICKNAME`, `MAIL`, `PASSWORD`, `A
 (7, 'Tutu', 'Tutu', 'Tutu', 'tutu@tutu.com', '$2y$10$KpfjQN7csuCA1g4TvumpoOyTRbsT9VuYAF/eVFZxVNmSQ.Risti72', '123', '123', '123', '123', 'Rambo', '', '', '', 'Les goonies le jeu lol', NULL, NULL, 'User');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `achat`
+-- Indexes for table `achat`
 --
 ALTER TABLE `achat`
   ADD PRIMARY KEY (`ID_ARTICLE`,`ID_USER`),
@@ -269,162 +301,161 @@ ALTER TABLE `achat`
   ADD KEY `ID_ARTICLE` (`ID_ARTICLE`) USING BTREE;
 
 --
--- Index pour la table `article`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `creation_topic`
+-- Indexes for table `creation_topic`
 --
 ALTER TABLE `creation_topic`
-  ADD PRIMARY KEY (`ID_USER`,`ID_TOPIC`),
-  ADD KEY `ID_TOPIC` (`ID_TOPIC`),
-  ADD KEY `ID_USER` (`ID_USER`);
+  ADD PRIMARY KEY (`id_user`,`id_topic`),
+  ADD KEY `ID_TOPIC` (`id_topic`),
+  ADD KEY `ID_USER` (`id_user`);
 
 --
--- Index pour la table `donation`
+-- Indexes for table `donation`
 --
 ALTER TABLE `donation`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `ID_USER` (`ID_USER`);
 
 --
--- Index pour la table `forum_message`
+-- Indexes for table `forum_message`
 --
 ALTER TABLE `forum_message`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `ID_TOPIC` (`ID_TOPIC`),
-  ADD KEY `ID_USER` (`ID_USER`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ID_TOPIC` (`id_topic`),
+  ADD KEY `ID_USER` (`id_user`);
 
 --
--- Index pour la table `forum_topic`
+-- Indexes for table `forum_topic`
 --
 ALTER TABLE `forum_topic`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `goldbook`
+-- Indexes for table `goldbook`
 --
 ALTER TABLE `goldbook`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `USER_ID` (`USER_ID`);
 
 --
--- Index pour la table `movies`
+-- Indexes for table `movies`
 --
 ALTER TABLE `movies`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `popvehicules`
+-- Indexes for table `popvehicules`
 --
 ALTER TABLE `popvehicules`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`ID`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `article`
+-- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `donation`
+-- AUTO_INCREMENT for table `donation`
 --
 ALTER TABLE `donation`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `forum_message`
+-- AUTO_INCREMENT for table `forum_message`
 --
 ALTER TABLE `forum_message`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `forum_topic`
+-- AUTO_INCREMENT for table `forum_topic`
 --
 ALTER TABLE `forum_topic`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `goldbook`
+-- AUTO_INCREMENT for table `goldbook`
 --
 ALTER TABLE `goldbook`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT pour la table `movies`
+-- AUTO_INCREMENT for table `movies`
 --
 ALTER TABLE `movies`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `news`
+-- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT pour la table `popvehicules`
+-- AUTO_INCREMENT for table `popvehicules`
 --
 ALTER TABLE `popvehicules`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `achat`
+-- Constraints for table `achat`
 --
 ALTER TABLE `achat`
   ADD CONSTRAINT `achat_ibfk_1` FOREIGN KEY (`ID_ARTICLE`) REFERENCES `article` (`ID`),
   ADD CONSTRAINT `achat_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
 
 --
--- Contraintes pour la table `creation_topic`
+-- Constraints for table `creation_topic`
 --
 ALTER TABLE `creation_topic`
   ADD CONSTRAINT `creation_topic_ibfk_1` FOREIGN KEY (`ID_TOPIC`) REFERENCES `forum_topic` (`ID`),
   ADD CONSTRAINT `creation_topic_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
 
 --
--- Contraintes pour la table `donation`
+-- Constraints for table `donation`
 --
 ALTER TABLE `donation`
   ADD CONSTRAINT `donation_ibfk_1` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
 
 --
--- Contraintes pour la table `forum_message`
+-- Constraints for table `forum_message`
 --
 ALTER TABLE `forum_message`
-  ADD CONSTRAINT `forum_message_ibfk_1` FOREIGN KEY (`ID_TOPIC`) REFERENCES `forum_topic` (`ID`),
-  ADD CONSTRAINT `forum_message_ibfk_2` FOREIGN KEY (`ID_USER`) REFERENCES `user` (`ID`);
+  ADD CONSTRAINT `forum_message_ibfk_1` FOREIGN KEY (`id_topic`) REFERENCES `forum_topic` (`id`);
 
 --
--- Contraintes pour la table `goldbook`
+-- Constraints for table `goldbook`
 --
 ALTER TABLE `goldbook`
   ADD CONSTRAINT `goldbook_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `user` (`ID`);
