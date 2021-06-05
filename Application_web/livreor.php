@@ -14,17 +14,7 @@ callMainTitle("Livre d'or");
 $messageGb = [
   "messageError" => ""];
 
-if (isset($_REQUEST['5stars'])){
-  @$stars = 5;
-} else if (isset($_REQUEST['4stars'])){
-  @$stars = 4;
-} else if (isset($_REQUEST['3stars'])){
-  @$stars = 3;
-} else if (isset($_REQUEST['2stars'])){
-  @$stars = 2;
-} else if (isset($_REQUEST['1stars'])){
-  @$stars = 1;
-}
+@$stars = $_REQUEST['rated'];
 @$avis = $_REQUEST['avis'];
 @$valider= $_REQUEST["valider"];
 

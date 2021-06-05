@@ -24,15 +24,13 @@ function callGoldBookConnected($name, $lastname, $avis, $messageGb, $error, $err
           <div class="notif">
             <p class="text">(*) Votre commentaire est soumis à modération avant diffusion</p>
           </div>
-          <div class="rating">
-            <div class="stars">
-                <input name="5stars" id="5star" class = "star" type="radio"></a><label for="5star">★</label>
-                <input name="4stars" id="4star" class = "star" type="radio"></a><label for="4star">★</label>
-                <input name="3stars" id="3star" class = "star" type="radio"></a><label for="3star">★</label>
-                <input name="2stars" id="2star" class = "star" type="radio"></a><label for="2star">★</label>
-                <input name="1stars" id="1star" class = "star" type="radio"></a><label for="1star">★</label>
+            <div class="rating">
+                <input type="radio" id="star5" name="rated" value="5" /><label for="star5" title="Rocks!">★</label>
+                <input type="radio" id="star4" name="rated" value="4" /><label for="star4" title="Pretty good">★</label>
+                <input type="radio" id="star3" name="rated" value="3" /><label for="star3" title="Meh">★</label>
+                <input type="radio" id="star2" name="rated" value="2" /><label for="star2" title="Kinda bad">★</label>
+                <input type="radio" id="star1" name="rated" value="1" /><label for="star1" title="Sucks big time">★</label>
             </div>
-          </div>
         </div>
         <div class="mb-3">
           <div class="row justify-content-start">

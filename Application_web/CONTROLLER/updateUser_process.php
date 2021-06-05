@@ -31,8 +31,6 @@ $sport = $_POST["sport"];
 $vg = $_POST["vg"];
 $bio = $_POST["bio"];
 
-// $file = $_FILES['avatar']['tmp_name'];
-
 if (isset($_FILES) && !empty($_FILES)){
     $file = $_FILES['avatar']['tmp_name'];
     $avatar = file_get_contents($file);

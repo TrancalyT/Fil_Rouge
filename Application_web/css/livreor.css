@@ -47,7 +47,6 @@ html {
 .form_livreor {
   padding-top: 8%;
   padding-bottom: 5%;
-  /* margin-bottom: 5%; */
   border-radius: 5px 5px 5px 5px;
   text-transform: uppercase;
   color: #392d3b;
@@ -132,47 +131,58 @@ html {
 /* NOTATION ETOILE */
 
 .rating {
-  display: flex;
   flex-direction: column;
   align-items: flex-end;
   overflow: hidden;
-  font-size: 1.5em;
 }
 
-.rating input {
+.rating:not(:checked) > input {
+  clip:rect(0,0,0,0);
   float: right;
   opacity: 0;
   position: absolute;
 }
 
-.rating a,
-.rating label {
-  float: right;
-  color: #aaa;
-  text-decoration: none;
-  -webkit-transition: color 0.4s;
-  -moz-transition: color 0.4s;
-  -o-transition: color 0.4s;
-  transition: color 0.4s;
+.rating:not(:checked) > label {
+  float:right;
+  width:1em;
+  padding:0 .1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:175%;
+  line-height:1.2;
+  color:#ddd;
 }
 
-.rating label:hover ~ label,
-.rating input:focus ~ label,
-.rating label:hover,
-.rating a:hover,
-.rating a:hover ~ a,
-.rating a:focus,
-.rating a:focus ~ a {
+.rating:not(:checked) > label:before {
+  content: '★ ';
+}
+
+.rating > input:checked ~ label {
   color: tomato;
-  cursor: pointer;
+
 }
 
-.rating2 {
-  direction: rtl;
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: tomato;
+
 }
 
-.rating2 a {
-  float: none;
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: tomato;
+
+}
+
+.rating > label:active {
+  position:relative;
+  top:2px;
+  left:2px;
 }
 
 /* ------------------------------------------------------FOOTER------------------------------------------------------ */
