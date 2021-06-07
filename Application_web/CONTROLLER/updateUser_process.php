@@ -31,10 +31,10 @@ $sport = $_POST["sport"];
 $vg = $_POST["vg"];
 $bio = $_POST["bio"];
 
-if (isset($_FILES) && !empty($_FILES)){
+if (isset($_FILES) && !empty($_FILES['avatar']['tmp_name'])){
     $file = $_FILES['avatar']['tmp_name'];
     $avatar = file_get_contents($file);
-} else if (empty($_FILES) && $_SESSION['user_avatar'] != NULL) {
+} else if (empty($_FILES['avatar']['tmp_name']) && $_SESSION['user_avatar'] != NULL) {
     $avatarAlreadyExist = true;
 } else {
     $avatar = null;
@@ -89,7 +89,23 @@ if (isset($_FILES) && !empty($_FILES)){
                 if (!$avatarAlreadyExist){
                                   
                   try {
-                    $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
+                    $user = (new User())->setNAME(strtoupper($name))
+                                        ->setLASTNAME($lastname)
+                                        ->setNICKNAME($nickname)
+                                        ->setMAIL($mail)
+                                        ->setADRESS($adress)
+                                        ->setCITY($city)
+                                        ->setCP($cp)
+                                        ->setTEL($tel)
+                                        ->setMOVIE($movie)
+                                        ->setBOOK($book)
+                                        ->setMUSIC($music)
+                                        ->setSPORT($sport)
+                                        ->setVG($vg)
+                                        ->setBIO($bio)
+                                        ->setID(intval($_SESSION['user_id']));
+
+                    $updateUser->updateUser($user);
                     $updateUser->updateAvatar($avatar, $_SESSION['user_id']);
                     echo "DONE : Vos infos sont mises à jour !";
                     } catch (UserServiceException $error) {
@@ -100,7 +116,23 @@ if (isset($_FILES) && !empty($_FILES)){
                 } else {
                   
                   try {
-                    $updateUser->updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $_SESSION['user_id']);
+                    $user = (new User())->setNAME(strtoupper($name))
+                                        ->setLASTNAME($lastname)
+                                        ->setNICKNAME($nickname)
+                                        ->setMAIL($mail)
+                                        ->setADRESS($adress)
+                                        ->setCITY($city)
+                                        ->setCP($cp)
+                                        ->setTEL($tel)
+                                        ->setMOVIE($movie)
+                                        ->setBOOK($book)
+                                        ->setMUSIC($music)
+                                        ->setSPORT($sport)
+                                        ->setVG($vg)
+                                        ->setBIO($bio)
+                                        ->setID(intval($_SESSION['user_id']));
+                                        
+                    $updateUser->updateUser($user);
                     echo "DONE : Vos infos sont mises à jour !";
                     } catch (UserServiceException $error) {
                         $messageError = $error->getMessage();

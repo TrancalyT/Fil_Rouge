@@ -93,7 +93,7 @@ $(function(){
                             } else {
                                 $('#successsuscribe').addClass( "alert-success");
                                 $("#successsuscribe").append(data);
-                                window.location.hash = '#focuserror';
+                                window.location.hash = '#focusdone';
                             }
                 },
             error : function(data){

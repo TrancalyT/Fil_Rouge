@@ -51,10 +51,27 @@ class UserDAO extends Connection
         }
     }
 
-    function register($name, $lastname, $nickname, $mail, $password, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $avatar)
+    function register($user)
     {
         try {
             $db = parent::connectionDB();
+
+            $name = $user->getNAME();
+            $lastname = $user->getLASTNAME();
+            $nickname = $user->getNICKNAME();
+            $mail = $user->getMAIL();
+            $password = $user->getPASSWORD();
+            $adress = $user->getADRESS();
+            $city = $user->getCITY();
+            $cp = $user->getCP();
+            $tel = $user->getTEL();
+            $movie = $user->getMOVIE();
+            $book = $user->getBOOK();
+            $sport = $user->getSPORT();
+            $music = $user->getMUSIC();
+            $vg = $user->getVG();
+            $bio = $user->getBIO();
+            $avatar = $user->getAVATAR();
 
             $query = "INSERT INTO user (ID, NAME, LASTNAME, NICKNAME, MAIL, PASSWORD, ADRESS, CITY, CP, TEL, MOVIE, BOOK, SPORT, MUSIC, VG, BIO, AVATAR, ROLE)
             VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'User');";
@@ -81,10 +98,10 @@ class UserDAO extends Connection
             );
             $stmt->execute();
             $db->close();
-        } catch (mysqli_sql_exception $error) {
-            $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON SUSCRIBE\"";
-            throw new UserDAOException($message);
-        }
+            } catch (mysqli_sql_exception $error) {
+                $message = "Un problème technique est survenu. Veuillez réessayer ultérieurement. Si le problème persiste, veuillez nous contacter en nous communiquant l'erreur suivante : \"ERROR CODE : " .$error->getCode(). " ON SUSCRIBE\"";
+                throw new UserDAOException($message);
+            }
     }
 
     public function ifAlreadyExist(): array
@@ -156,10 +173,26 @@ class UserDAO extends Connection
         }
     }
 
-    function updateUser($name, $lastname, $nickname, $mail, $adress, $city, $cp, $tel, $movie, $book, $sport, $music, $vg, $bio, $id)
+    function updateUser($user)
     {
         try {
             $db = parent::connectionDB();
+
+            $name = $user->getNAME();
+            $lastname = $user->getLASTNAME();
+            $nickname = $user->getNICKNAME();
+            $mail = $user->getMAIL();
+            $adress = $user->getADRESS();
+            $city = $user->getCITY();
+            $cp = $user->getCP();
+            $tel = $user->getTEL();
+            $movie = $user->getMOVIE();
+            $book = $user->getBOOK();
+            $sport = $user->getSPORT();
+            $music = $user->getMUSIC();
+            $vg = $user->getVG();
+            $bio = $user->getBIO();
+            $id = $user->getID();
 
             $query = "UPDATE user SET NAME = ?,
                                       LASTNAME = ?,

@@ -74,7 +74,24 @@ $doublonMail = false;
             if (preg_match($regMail, $mail) && preg_match($regTel, $tel) && preg_match($regCP, $cp) && ($password === $repassword) && (!$doublonPseudo) && (!$doublonMail)){
 
               try {
-                $suscribeUser->register($name, $lastname, $nickname, $mail, $password, $adress, $city, $cp, $tel, $movie, $book, $music, $sport, $vg, $bio, $avatar);
+                $user = (new User())->setNAME(strtoupper($name))
+                                    ->setLASTNAME($lastname)
+                                    ->setNICKNAME($nickname)
+                                    ->setMAIL($mail)
+                                    ->setPASSWORD(password_hash($password, PASSWORD_DEFAULT))
+                                    ->setADRESS($adress)
+                                    ->setCITY($city)
+                                    ->setCP($cp)
+                                    ->setTEL($tel)
+                                    ->setMOVIE($movie)
+                                    ->setBOOK($book)
+                                    ->setMUSIC($music)
+                                    ->setSPORT($sport)
+                                    ->setVG($vg)
+                                    ->setBIO($bio)
+                                    ->setAVATAR($avatar);
+                                    
+                $suscribeUser->register($user);
                 echo "DONE : Vous pouvez dès à présent vous connecter !";
                 } catch (UserServiceException $error) {
                     $messageError = $error->getMessage();
