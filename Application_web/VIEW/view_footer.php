@@ -19,7 +19,7 @@ function callFooter()
                 <a href="evenements.php">
                     <li>Evènements</li>
                 </a>
-                <a href="forum.php">
+                <a href="forum_topic.php">
                     <li>Forum</li>
                 </a>
                 <a href="shop.php">
