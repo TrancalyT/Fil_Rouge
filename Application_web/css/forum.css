@@ -37,55 +37,41 @@
    border-bottom:  10px grey solid;
    height: auto;
 }
-/* tableau ds topics */
-.news p
-{
-  background-color:#CCCCCC;
-  border-radius: 0px 0px 5px 5px ;
-  margin-top:0px;
-  font-family: "lato",sans-serif;
+/* nav */
+.navbar{
+  margin-bottom: 80px;
 }
-.news
-{
-  width:70%;
-  margin:auto;
-}
-.topic{
-  position: absolute;
-  right:27%;
-  text-align: center;
-}
+/* tableau ds messages*/
 h3
 {
   text-align:center;
   font-family: "Lato",sans-serif;
-  background-color:black;
+  background-color:rgb(128, 128, 128);
   border-radius: 5px 5px 0px 0px;
   color:white;
   font-size:0.9em;
   margin-bottom:0px;
-}
-.buttonmain4 {
-  font-weight: bold;
+  padding: 9px;
   text-transform: uppercase;
-  color: #392d3b;
-  border: 1px solid white;
-  display: inline-block;
-  padding: 8px 8px;
-  transition: all 0.3s ease-in 0s;
-  border-radius: 20px;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  background: #fff;
-  opacity: 0.6;
 }
-.buttonmain4:hover {
-  background: #fff;
+.news p
+{
+  background-color:#e6e6e6;
   color: #392d3b;
-  text-decoration: none;
-  opacity: 1;
+  border-radius: 0px 0px 5px 5px ;
+  margin-top:0px;
+  font-family: "lato",sans-serif;
+  padding: 9px;
+  text-transform: capitalize;
 }
-/* side barr */
+.news
+{
+  width:auto;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  max-width:1000px;
+}
 .buttonmain3 {
   font-weight: bold;
   text-transform: uppercase;
@@ -103,27 +89,33 @@ h3
 }
 .buttonmain3:hover {
   background: #fff;
-  color: #392d3b;
+  color: tomato;
   text-decoration: none;
   opacity: 1;
 }
-.input{
-  font-size: smaller;
-  margin: auto;
-  padding-top: 5px;
-}
-#creationTopic{
-  border-radius: 5px;
-  size: 10px;
-  width: auto;
-}
-a{
+/* tab des topics */
+.buttonmain4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #392d3b;
+  border: 1px solid white;
+  display: inline-block;
+  padding:3px 3px;
+  transition: all 0.3s ease-in 0s;
+  border-radius: 20px;
+  letter-spacing: 0.2em;
   text-decoration: none;
-  color: #fff;
-  font-family: "Lato",sans-serif;
+  background: #fff;
+  opacity: 0.6;
 }
-a:hover{
+.buttonmain4:hover {
+  background: #fff;
   color: tomato;
+  text-decoration: none;
+  opacity: 1;
+}
+.table{
+  margin-bottom: 100px;
 }
 /* --------------------RESPONSIVE -----------------------------------*/
 @media (max-width: 768px) {

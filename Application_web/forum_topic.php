@@ -1,6 +1,7 @@
 <?php require_once('VIEW/view_header_bootstrap.php'); ?>
 <?php require_once('VIEW/view_footer.php'); ?>
 <?php callHeader("Forum", "css/forum.css"); ?>
+
 <!-- HEADER -->
 <?php callMainTitle("Forum");
 // Connexion à la base de données
@@ -26,87 +27,61 @@ $req = $bdd->query('SELECT f1.id,
 
 <!-------------------------------------CORP--------------------------------------------->
 <div class="contenant">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-            </svg>
-            <span class="fs-4"></span>
-        </a>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item">
-                <a href="forum_topic.php" class="nav-link" aria-current="page">
-                    <svg class="bi me-2" width="16" height="16">
-                    </svg>
-                    Acceuil forum
-                </a>
-            </li>
-            <li>
-                <a href="profil.php" class="nav-link">
-                    <svg class="bi me-2" width="16" height="16">
-                    </svg>
-                    Mon profil
-                </a>
-            </li>
-            <li>
-                <a href="#" class="nav-link">
-                    <svg class="bi me-2" width="16" height="16">
-                    </svg>
-                    Mes topic
-                </a>
-            </li>
-            <li>
-                <a href="accueil.php" class="nav-link">
-                    <svg class="bi me-2" width="16" height="16">
-                    </svg>
-                    Retour au musée
-                </a>
-            </li>
-            <li>
-                <a href="profil.php" class="nav-link">
-                    <svg class="bi me-2" width="16" height="16">
-                    </svg>
-                    Espace Admin
-                </a>
-            </li>
-            <br><br>
-            <form class="input" action="">
-                <input id="creationTopic" maxlength="20" type="text" placeholder="Créer un topic?" name="creationTopic" class="form-control" required>
-                <button type="submit" class="buttonmain3" name="creationTopic" value="creationTopic">je créer un topic</button></a>
-            </form>
-        </ul>
-        <div class="topic">
-            <table class="table table-hover">
-                <thead class="thead-dark">
-                    <tr>
-                        <th>TOPIC</th>
-                        <th>CREER PAR</th>
-                        <th>LE</th>
-                        <th>OPTION</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($donnees = $req->fetch()) {
-                    ?>
-                        <div class="row">
-                            <div class="col-lg-offset-3 col-lg-6">
-                                <tr>
-                                    <td><strong><?php echo htmlspecialchars($donnees['sujet']); ?></strong></td>
-                                    <td>créer par:<em> <?php echo nl2br(htmlspecialchars($donnees['NICKNAME'])); ?></em></td>
-                                    <td>le <?php echo $donnees['date_creation_fr']; ?></td>
-                                    <td><a href='forum_message.php?billet=<?php echo $donnees['id']; ?>'><button type="submit" class="buttonmain4" name="afficheTopic" value="afficheTopic">Afficher</button></a></td>
-                                </tr>
-                            </div>
-                        </div>
-                    <?php
-                    } // Fin de la boucle des topics
-                    $req->closeCursor();
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="accueil.php">Retour au musée</a>
+            <div class="collapse navbar-collapse" id="navbarsExample03">
+                <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="profil.php">Mon profil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Topic</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdown03">
+                            <li><a class="dropdown-item" href="#">Mes topic</a></li>
+                            <li><a class="dropdown-item" href="forum_topic.php">Tous les topics</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+                    <input type="search" class="form-control form-control-dark" placeholder="Créer un topic..." aria-label="Search">
+                </form>
 
+                <div class="text-end">
+                    <button type="button" class="btn btn-outline-light me-2">Valider</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>TOPIC</th>
+                <th>CREER PAR</th>
+                <th>LE</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            while ($donnees = $req->fetch()) {
+            ?>
+                <div class="row">
+                    <div class="col-lg-offset-3 col-lg-6">
+                        <tr>
+                            <td><strong><?php echo htmlspecialchars($donnees['sujet']); ?></strong></td>
+                            <td>créer par:<em> <?php echo nl2br(htmlspecialchars($donnees['NICKNAME'])); ?></em></td>
+                            <td>le <?php echo $donnees['date_creation_fr']; ?></td>
+                            <td><a href='forum_message.php?billet=<?php echo $donnees['id']; ?>'><button type="submit" class="buttonmain4" name="afficheTopic" value="afficheTopic">Afficher</button></a></td>
+                        </tr>
+                    </div>
+                </div>
+            <?php
+            } // Fin de la boucle des topics
+            $req->closeCursor();
+            ?>
+        </tbody>
+    </table>
 </div>
 <!---------------------------------------- FOOTER -------------------------------------->
 <?php callFooter(); ?>
