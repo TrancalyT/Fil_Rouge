@@ -61,6 +61,7 @@ $(function(){
         music = $(this).find('input[name=music').val()
         sport = $(this).find('input[name=sport').val()
         vg = $(this).find('input[name=vg').val()
+        csrf_token = $(this).find('input[name=csrf_token').val()
 
         formData = new FormData();
         formData.append('avatar', avatar)
@@ -78,6 +79,7 @@ $(function(){
         formData.append('music', music)
         formData.append('sport', sport)
         formData.append('vg', vg)
+        formData.append('csrf_token', csrf_token)
 
         $.ajax({
             url: 'CONTROLLER/updateUser_process.php',

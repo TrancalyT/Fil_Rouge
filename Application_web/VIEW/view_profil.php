@@ -229,6 +229,7 @@ function callProfilModif($nickname, $name, $lastname, $mail, $adress, $city, $cp
             </div>
             </section>
                 <section class="modif">
+                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?>">
                     <button type="submit" class="buttonmain" name="sendmodif" value="sendmodif">Envoyer</button>
                     <a href="profil.php?id=<?= $_SESSION['user_id'] ?>#Profil"><button type ="button" class="buttonmain2" name="backprofil" value="backprofil" id="backprofil">Retour</button></a>
                 </section> 

@@ -76,9 +76,9 @@ if (isset($_GET['modifprofil']) && isset($_SESSION['user_id']) && !empty($_SESSI
     }
 
     // AFFICHAGE PROFIL MODIF
-    callProfilModif($userInfo->getNICKNAME(), $userInfo->getNAME(), $userInfo->getLASTNAME(), $userInfo->getMAIL(),
-                    $userInfo->getADRESS(), $userInfo->getCITY(), $userInfo->getCP(), $userInfo->getTEL(), $userInfo->getBIO(),
-                    $userInfo->getAVATAR(), $userInfo->getMOVIE(), $userInfo->getBOOK(), $userInfo->getMUSIC(), $userInfo->getSPORT(), $userInfo->getVG());
+    callProfilModif($userInfo->getNICKNAME(), $userInfo->getNAME(), $userInfo->getLASTNAME(), $userInfo->getMAIL(), $userInfo->getADRESS(), 
+                    $userInfo->getCITY(), $userInfo->getCP(), $userInfo->getTEL(), $userInfo->getBIO(), $userInfo->getAVATAR(), $userInfo->getMOVIE(), 
+                    $userInfo->getBOOK(), $userInfo->getMUSIC(), $userInfo->getSPORT(), $userInfo->getVG());
 
 // SI PAS DE MODIF OU RETOUR MODIF
 } else if (isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) || isset($_REQUEST['backprofil'])){

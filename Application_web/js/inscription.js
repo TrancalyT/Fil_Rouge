@@ -25,6 +25,7 @@ $('#forminscri').submit(function(e){
     musiqueinscription = $(this).find('input[name=musiqueinscription').val()
     sportinscription = $(this).find('input[name=sportinscription').val()
     jvinscription = $(this).find('input[name=jvinscription').val()
+    csrf_token = $(this).find('input[name=csrf_token').val()
 
     $.post("CONTROLLER/suscribe_process.php", {nominscription: nominscription, 
                             prenominscription: prenominscription,
@@ -40,7 +41,8 @@ $('#forminscri').submit(function(e){
                             livreinscription: livreinscription,
                             musiqueinscription: musiqueinscription,
                             sportinscription: sportinscription,
-                            jvinscription: jvinscription}, function(data){
+                            jvinscription: jvinscription,
+                            csrf_token: csrf_token}, function(data){
             
            if(data != "DONE : Vous pouvez dès à présent vous connecter !"){
                 $('#errorsuscribe').addClass( "alert-error");

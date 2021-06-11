@@ -4,6 +4,8 @@ include_once(__DIR__ . "/../SERVICE/UserService.php");
 
 $doublonPseudo = false;
 $doublonMail = false;
+
+session_start();
   
     // REGEX (A RENFORCER)
   $regText = "#^[a-z0-9 _]{1,20}$#i"; // 20 caractères autorisés max (chiffres, lettres et _ et " ")
@@ -27,12 +29,19 @@ $doublonMail = false;
   $music = $_POST["musiqueinscription"];
   $sport = $_POST["sportinscription"];
   $vg = $_POST["jvinscription"];
+  $csrf = $_POST["csrf_token"];
   $bio = null;
   $avatar = null;
 
   $suscribeUser = new UserService();
     
   if (isset($_POST)){
+    
+    if($_SESSION['csrf_token'] !== $csrf){
+
+       echo "Erreur : CRSF Token Invalide !";
+       exit();
+    }
   
       if(isset($name) && !empty($name) 
       && isset($lastname) && !empty($lastname) 

@@ -1,6 +1,6 @@
 <?php
 
-function callConnexion($messageConnexion, $error, $mailCo)
+function callConnexion($messageConnexion, $error, $mailCo, $token)
 {
 ?>
     <div class="form_connexion">
@@ -31,6 +31,7 @@ function callConnexion($messageConnexion, $error, $mailCo)
                     </div>
                 </div>
                 <div class="mb-3 text-center">
+                    <input type="hidden" name="csrf_token" value="<?= $token ?>">
                     <button type="submit" class="buttonmain3" name="validerconnexion" value="validerconnexion">Connexion</button>
                 </div>
                 <div class="mb-3 text-center">
@@ -45,7 +46,7 @@ function callConnexion($messageConnexion, $error, $mailCo)
 
 <?php
 
-function callInscription()
+function callInscription($token)
 {
 ?>
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel">
@@ -180,6 +181,7 @@ function callInscription()
                                 </div>
                                 <div class="mb-3">
                                     <div class="g-recaptcha row justify-content-center" data-sitekey="your_site_key"></div>
+                                    <input type="hidden" name="csrf_token" value="<?= $token ?>">
                                 </div>
                                 <div class="mb-3 text-center">
                                     <button type="submit" class="buttonmain" name="validerinscription" value="validerinscription" id="validerinscription">Envoyer</button>

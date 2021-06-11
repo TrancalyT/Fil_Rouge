@@ -30,6 +30,7 @@ $music = $_POST["music"];
 $sport = $_POST["sport"];
 $vg = $_POST["vg"];
 $bio = $_POST["bio"];
+$csrf = $_POST["csrf_token"];
 
 if (isset($_FILES) && !empty($_FILES['avatar']['tmp_name'])){
     $file = $_FILES['avatar']['tmp_name'];
@@ -41,6 +42,13 @@ if (isset($_FILES) && !empty($_FILES['avatar']['tmp_name'])){
 }
     
   if (isset($_POST)){
+
+    if($_SESSION['csrf_token'] !== $csrf){
+
+      echo "Erreur : CRSF Token Invalide !";
+      exit();
+   }
+ 
     
       if(isset($name) && !empty($name) 
       && isset($lastname) && !empty($lastname) 
