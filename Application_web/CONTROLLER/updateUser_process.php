@@ -16,20 +16,20 @@ $doublonPseudo = false;
 $doublonMail = false;
 $avatarAlreadyExist = false;
 
-$name = $_POST['name'];
-$lastname = $_POST['lastname'];
-$nickname = $_POST['nickname'];
-$mail = $_POST['mail'];
-$adress = $_POST["adress"];
-$city = $_POST["city"];
-$cp = $_POST["cp"];
-$tel = $_POST["tel"];
-$movie = $_POST["movie"];
-$book = $_POST["book"];
-$music = $_POST["music"];
-$sport = $_POST["sport"];
-$vg = $_POST["vg"];
-$bio = $_POST["bio"];
+$name = htmlentities($_POST['name']);
+$lastname = htmlentities($_POST['lastname']);
+$nickname = htmlentities($_POST['nickname']);
+$mail = htmlentities($_POST['mail']);
+$adress = htmlentities($_POST["adress"]);
+$city = htmlentities($_POST["city"]);
+$cp = htmlentities($_POST["cp"]);
+$tel = htmlentities($_POST["tel"]);
+$movie = htmlentities($_POST["movie"]);
+$book = htmlentities($_POST["book"]);
+$music = htmlentities($_POST["music"]);
+$sport = htmlentities($_POST["sport"]);
+$vg = htmlentities($_POST["vg"]);
+$bio = htmlentities($_POST["bio"]);
 $csrf = $_POST["csrf_token"];
 
 if (isset($_FILES) && !empty($_FILES['avatar']['tmp_name'])){
